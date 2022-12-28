@@ -1,0 +1,124 @@
+interviews:
+  - id: 0
+    images: 
+      - 
+        img: "../../assets/images/interviews/0-0.jpg"
+        transform: "rotate(-4deg)"
+        top: 46px
+        left: 66px
+      - 
+        img: "../../assets/images/interviews/0-1.jpg"
+        transform: "rotate(-12deg)"
+        top: 229px
+        left: 183px
+
+    svgs: 
+      - img: "../../assets/svg/interview/left-vertical-lines.svg"
+        top: "0px"
+        left: "0px"
+
+    lead: "<strong>Валерия Шарова,</strong> выпускница бакалавриата кафедры магнетизма физического факультета МГУ им. М. В. Ломоносова. "
+    text: 
+      - Валерия Шарова, выпускница бакалавриата кафедры магнетизма физического факультета МГУ им. М. В. Ломоносова. 
+      - «Быть одной девушкой в группе молодых людей на физфаке — это абсолютно нормально, и так было со мной на 3-4-м курсе. Хотя в последнее время я заметила увеличение количества девушек-физиков. И, кстати, многие из них могут составить юношам неплохую конкуренцию по знаниям».
+  
+  - id: 1
+    images: 
+      - 
+        img: "../../assets/images/interviews/1-0.jpg"
+        transform: " rotate(-6deg)"
+        top: 155px
+        left: 145px
+
+    svgs:
+      - img: "../../assets/svg/interview/pluses.svg"
+        top: "132px"
+        left: "0px"
+      - img: "../../assets/svg/interview/T.svg"
+        bottom: "24px"
+        left: "248px"
+
+    lead: "<strong>Виталия Кулешова,</strong> выпускница нижегородского университета Лобачевского, студентка первого курса магистратуры по направлению «Теоретическая физика», рассказывает о таком же опыте:"
+    text: 
+      - «Я с детства в мужском коллективе, начиная с физико-математического садика, а затем и в лицее, и в вузе. В детские лагеря я ездила на математические смены, и там тоже в основном там были мальчики».
+      - content: <img class='text-svg' src="../../assets/svg/science-wave.svg"/>
+
+  - id: 2
+    images: 
+      - 
+        img: "../../assets/images/interviews/2-0.jpg"
+        transform: "rotate(-15deg)"
+        top: 63px
+        left: 89px
+
+      - 
+        img: "../../assets/images/interviews/2-1.jpg"
+        transform: "rotate(16.71deg)"
+        top: 293px
+        left: 300px
+
+    svgs:
+      - img: "../../assets/svg/interview/science-circle.svg"
+        top: "190px"
+        left: "50px"
+
+      - img: "../../assets/svg/interview/quotes.svg"
+        top: "13px"
+        left: "50%"
+        transform: "translateX(-50%)"
+
+    lead: "Впрочем, в немногочисленном коллективе <wbr><strong>МГУ Сарова</strong> состав «уравновесился»: «В нашей группе на удивление много девушек, нас целых три на пять мальчиков, поэтому баланс присутствует»."
+    text: 
+      - Согласно мировой статистике, физика — как раз одно из самых популярных у девушек направлений.
+      - content: "<strong>2019 году среди выпускников</strong>"
+      - content: "<ul class='list'><li class='list-item'>физических специальностей было 43% девушек.</li><li class='list-item'>В математических специальностях — 38%.</li><li class='list-item'>Инженеров и специалистов по компьютерным технологиям — всего по 16%.</li></ul>"
+  
+  - id: 3
+    images: 
+        - 
+          img: "../../assets/images/interviews/3-0.jpg"
+          transform: "rotate(-3deg)"
+          top: 70px
+          left: 58px
+
+        - 
+          img: "../../assets/images/interviews/3-1.jpg"
+          transform: "rotate(3deg)"
+          top: 311px
+          left: 326px
+
+    svgs:
+      - img: "../../assets/svg/interview/science-rus.svg"
+        bottom: "0px"
+        left: "0px"
+
+    lead: "<strong>Диляра Уразова</strong>, студентка второго курса направления «Суперкомпьютерные технологии и фундаментальная информатика», мечтала об исследовательской деятельности со школьных лет."
+    text: 
+      - Диляра Уразова, студентка второго курса направления «Суперкомпьютерные технологии и фундаментальная информатика», мечтала об исследовательской деятельности со школьных лет.
+  
+  - id: 4
+    images: 
+      - 
+        img: "../../assets/images/interviews/4-0.jpg"
+        transform: "rotate(6deg)"
+        top: 75px
+        left: 93px
+      - 
+        img: "../../assets/images/interviews/4-1.jpg"
+        transform: "rotate(-12deg)"
+        top: 292px
+        left: 307px
+
+    svgs:
+      - img: "../../assets/svg/interview/dsigma-domega.svg"
+        bottom: "65px"
+        right: "96px"
+
+      - img: "../../assets/svg/interview/quotes.svg"
+        top: "13px"
+        left: "50%"
+        transform: "translateX(-50%)"
+
+    lead: "Аспирантка <strong>Мария Александровна Ямщикова</strong> тоже делится впечатлениями: "
+    text: 
+      -  "«Интересно, что на работе у нас девушек намного меньше, чем мужчин. Но зато в аспирантуре мы “отыгрались” — из десяти человек семь девушек! Причем с хорошим научным опытом: публикациями и участием в конференциях»."

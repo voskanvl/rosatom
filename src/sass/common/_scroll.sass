@@ -1,0 +1,31 @@
+@import "@var"
+
+.scroll
+    scroll-behavior: smooth
+    overflow-y: auto
+    // padding-top: 160px
+    scrollbar-width: none
+    transform: translate(0,0)
+
+    &::-webkit-scrollbar
+        width: 0px
+    @media ($MOBILE)
+        overflow: auto
+
+//thin scrollbar
+
+// .scroll
+//     scroll-behavior: smooth
+//     overflow-y: auto
+//     // padding-top: 160px
+//     scrollbar-width: thin
+//     transform: translate(0,0)
+
+//     &::-webkit-scrollbar
+//         width: 2px
+//         background-color: #0001
+//     &::-webkit-scrollbar-thumb
+//         background: linear-gradient(#0000,#000,#0000)
+//         cursor: pointer
+//     @media ($MOBILE)
+//         overflow: auto

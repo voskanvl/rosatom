@@ -1,0 +1,21 @@
+@import "./_import"
+@import "@var"
+
+*,*::after,*::before
+    box-sizing: border-box
+    margin: 0
+
+body
+    font-family: Rosatom, sans-serif
+
+.screen
+    display: grid
+    place-items: center
+    height: 100vh
+    width: 100vw
+    position: fixed
+    top: 0
+    left: 0
+    transition: top .6s ease-in-out
+    &:not([active])
+        top: 100vh

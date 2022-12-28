@@ -1,0 +1,14 @@
+.list-item
+    list-style: none
+    position: relative
+    font-size: 16px
+    &::before
+        content: ""
+        position: absolute
+        width: 8px
+        height: 8px
+        background: #A5D936
+        left: -22px
+        top: 10px
+    & + &
+        margin-top: 8px

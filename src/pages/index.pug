@@ -1,0 +1,5 @@
+extends ../pug/templates/template.pug
+block main 
+    each i, idx in Array(8).fill(null)
+        section.screen(data-number=idx, style="background: linear-gradient(45deg, #fff, #"+idx+idx+idx+")", active=idx===0)
+            h1= idx

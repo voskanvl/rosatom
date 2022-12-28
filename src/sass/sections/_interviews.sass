@@ -1,0 +1,96 @@
+.interviews
+    --height: 688px
+    background-color: #126B89
+    background-image: url("../../../assets/images/Texture-inteviews1.png")
+    background-blend-mode: multiply
+    color: #fff
+    position: relative
+
+    &__container.grid
+        justify-items: center
+        row-gap: 140px
+
+    &__slide
+        height: var(--height)
+        padding: 0 80px
+        position: relative
+        overflow: hidden
+        align-items: center
+
+    &__image
+        @media ($MOBILE)
+            width: 100%
+
+        // position: absolute
+
+    &__left
+        position: relative
+        transform: translateY(-17%)
+        transform: none
+        margin: 50px 0 0
+
+    &__scroll
+        height: var(--height)
+        display: flex
+        flex-direction: column
+        // row-gap: 2em
+        padding: 200px 0
+        & > *
+            opacity: 0.5
+            transition: opacity .2s
+            z-index: 2
+            &.current
+                opacity: 0.99
+
+        & > * + *
+            margin-top: 24px
+
+        @media ($MOBILE)
+            padding: 32px 0
+            &.scroll
+                height: auto
+                overflow: unset
+                & > *
+                    opacity: 1
+
+    &__block
+        margin-top: 24px
+        & > .interviews__text + .interviews__text
+            margin-top: 16px
+
+    &__svg
+        &.image-svg
+            position: absolute
+            @media ($MOBILE)
+                background-image: url("../../../assets/svg/interview/waves.svg")
+                // height: min(495px, 66vh) !important
+                width: 100%
+                height: 295px
+                background-position: 50% 100%
+
+    &__img:nth-child(1)
+        width: 100%
+
+    &__img:nth-child(2)
+        width: 80%
+        @media ($MOBILE)
+            left: calc(100/768*100vw) !important
+
+    &__post
+        & > .text-svg
+            display: none
+            margin: 0 auto
+
+            @media ($MOBILE)
+                display: block
+
+            &.svg-left
+                position: absolute
+                right: 0px
+                transform: translateY(-77%)
+
+        &#interviews1-pluses
+            transform: translateY(-20%)
+
+    & .text-svg
+        width: 100%

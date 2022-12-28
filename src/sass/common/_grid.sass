@@ -1,0 +1,9 @@
+@import "@var"
+.grid
+    // padding-left: 80px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    align-items: center
+    column-gap: min(81/1295*100vw,137px)
+    @media ($MOBILE)
+        grid-template-columns: 100%

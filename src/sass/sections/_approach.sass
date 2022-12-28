@@ -1,0 +1,100 @@
+// @import 
+.approach
+    position: relative
+    @media ($MOBILE)
+        background: url("../../../assets/images/Texture-inteviews1.png")
+    &__container
+        height: 808px
+        @media ($MOBILE)
+            height: unset
+            justify-items: center
+            padding-top: 41px
+            row-gap: 24px
+
+    &__back
+        background-image: url("../../../assets/images/Ripped_White_Paper_8 6.png")
+        background-repeat: no-repeat
+        top: -26%
+        width: 100%
+        height: 126%
+        position: absolute
+        background-size: cover
+        @media ($MOBILE)
+            background-size: 100%
+            top: -2%
+            height: 102px
+
+    &__image
+        @extend .interviews__image
+        @media ($MOBILE)
+            width: 80%
+            display: flex
+            margin: 0 auto
+
+    &__lead
+        margin-bottom: 24px
+        @media ($MOBILE)
+            margin-bottom: 16px
+
+    &__title
+        @extend .not__title
+        @media ($MOBILE)
+            padding: 0
+            margin: 0
+
+    &__block
+        @extend .interviews__block
+        width: 626px
+
+    &__green-square
+        z-index: 2
+    &__scroll
+        @extend .interviews__scroll
+        gap: unset
+        height: 630px
+        padding: 50px 0 200px
+
+        // & > *:not(:has(.text-svg)) + *
+        //     margin-top: 2em
+        & > * + *
+            margin-top: 2em
+
+        @media ($MOBILE)
+            height: unset
+            padding-bottom: 50px
+
+    &__img
+        width: min(480px,100%)
+        @media ($MOBILE)
+            transform: rotateZ(2.15deg) rotateY(180deg)
+
+    &__left
+        position: relative
+
+    &__right
+        @media ($MOBILE)
+            grid-area: 1 / 1 / 2 / 2
+
+    &__svg
+        position: absolute
+        @media ($MOBILE)
+            right: unset !important
+            top: 250px !important
+            width: 80%
+            left: -43px
+
+    #approach__y-kt
+        display: block
+        position: relative
+        width: max-content
+        margin-left: auto
+
+    #approach__pluses
+        position: absolute
+        right: 0
+        transform: translateY(-100%)
+
+    #approach__scema
+        display: none
+        @media ($MOBILE)
+            display: block

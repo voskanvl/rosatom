@@ -1,0 +1,35 @@
+.footer
+    background: #126B89
+    &__container.container
+        padding: 43px 16px
+        color: #fff
+        display: flex
+        flex-wrap: wrap-reverse
+        row-gap: 24px
+        flex-direction: column-reverse
+        align-items: center
+
+    &__logo
+        filter: invert(1)
+
+    & .socials
+        display: flex
+        column-gap: 16px
+
+    &__wrap
+        display: flex
+        flex-wrap: wrap
+        column-gap: calc(24/1920*100vw)
+        font-size: 16px
+        font-weight: 400
+        align-items: center
+        flex-direction: column-reverse
+        & > p
+            text-align: center
+
+    &__right
+        @media ($MOBILE)
+            order: 0
+
+    & .logo
+        justify-content: center

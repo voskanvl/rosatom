@@ -1,0 +1,14 @@
+common:
+  name: Спецстройтехника
+  phone1:
+    - 8 (8412)
+    - 99-99-69
+  phone2:
+    - 8 (8412)
+    - 22-22-58
+  email: tcm58@bk.ru
+  address: 440052, Пензенская область, г. Пенза, ул. Калинина, д. 9, оф. 40
+  coords: 
+    - 53.179114
+    - 45.013770
+  map: "https://yandex.ru/maps/49/penza/house/ulitsa_kalinina_9/YEwYdgZjTkIHQFtpfX12eH1iYA==/?ll=45.013772%2C53.179128&z=17.49"

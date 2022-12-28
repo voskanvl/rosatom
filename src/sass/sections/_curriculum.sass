@@ -1,0 +1,109 @@
+$D1149: "width > 1149px"
+.curriculum
+    background-color: #126B89
+    padding-top: 333px
+    padding-bottom: 8vw
+    margin-top: -200px
+    color: #fff
+
+    &__container
+        display: grid
+        gap: 16px 24px
+        position: relative
+        & > *
+            padding: 0 16px
+
+        @media ($D1149)
+            grid-template-columns: 1fr 2fr
+            width: min(1295px,98%)
+            margin: 0 auto
+
+    &__direction
+        margin: 0 16px
+        @media ($D1149)
+            grid-area: 1 / 1 / 2 / 2
+            align-self: start
+            justify-self: end
+            width: 196px
+
+    &__title
+        font-weight: 800
+        font-size: 36px
+        line-height: 120%
+        letter-spacing: -0.01em
+        padding: 32px 0 24px
+
+    &__list
+        padding-left: 1.5em
+        padding-top: 1em
+
+    &__img
+        width: min(375px,100%)
+        margin: 0 auto
+        @media ($D1149)
+            position: absolute
+            width: unset
+        &--1
+            @media ($D1149)
+                top: 40%
+        &--2
+            @media ($D1149)
+                top: 75%
+                left: 70px
+
+    &__learning
+        display: flex
+        flex-direction: column
+        row-gap: 16px
+        line-height: 30px
+        @media ($D1149)
+            grid-column: 2 / span 1
+
+    &__scrap
+        margin: 0 -16px
+        color: #000
+        position: relative
+        z-index: 1
+        overflow: hidden
+        & > .curriculum__context
+            rotate: 0
+            z-index: 2
+        @media ($D1149)
+            overflow: visible
+
+    &__scrap-image
+        position: absolute
+        z-index: 0
+        bottom: 0
+        height: 500px
+        width: 128%
+        left: -25%
+        object-fit: cover
+        top: 0
+        @media ($D1149)
+            bottom: unset
+            top: -100px
+            width: 100%
+            object-fit: contain
+    //     background-image: url("../../../assets/svg/сurrriculum/scrap.svg")
+    //     background-repeat: no-repeat
+    //     background-size: 100% 100%
+    //     background-position: -100px -67px
+    //     width: 100%
+    //     height: 400px
+    //     position: absolute
+    //     transform-origin: 50% 30%
+    //     z-index: 0
+    //     // scale: 1.4 3
+    //     // translate: -5%
+
+    &__quotes
+        rotate: 0
+
+    &__virus
+        width: max(375px, 90%)
+        position: absolute
+        z-index: 1
+        bottom: -13%
+        // left: 50%
+        // translate: -50% 0

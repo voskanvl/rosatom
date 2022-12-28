@@ -1,0 +1,71 @@
+.review
+    background: #126B89
+    color: #fff
+    position: relative
+    height: 526px
+    @media ($REVIEW)
+        height: unset
+        background: none
+        color: #000
+
+    &__container.container
+        display: grid
+        grid-template-columns: repeat(2,1fr)
+        align-items: end
+        height: 100%
+        @media (max-width: 1256px)
+            width: 100%
+            grid-template-columns: 100%
+            grid-template-rows: 263px auto
+
+    &__left
+        position: relative
+        height: 100%
+        @media ($REVIEW)
+            background: #126B89
+            margin-top: -10%
+
+    &__right
+        padding: 120px 0
+        @media ($REVIEW)
+            padding: 24px 1em
+
+    &__green-square.green-square
+        top: 60px
+        left: 50%
+        transform: translateX(-50%)
+        width: 36px
+        height: 36px
+        z-index: 0
+        @media ($REVIEW)
+            z-index: -1
+    &__green-square1
+        right: 0
+        bottom: 0
+        width: 190px
+        height: 36px
+
+    &__svg
+        position: absolute
+        top: 0
+        left: 0
+        width: 15%
+        @media ($REVIEW)
+            z-index: 1
+        @media ($MOBILE)
+            width: 162px
+
+    &__img
+        display: block
+        align-self: end
+        // width: 100%
+        position: absolute
+        bottom: 20px
+        @media ($REVIEW)
+            width: 323px
+            bottom: 0px
+            z-index: 2
+            left: 53px
+        @media (max-width: 364px)
+            left: 15px
+        //     position: static

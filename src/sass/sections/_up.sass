@@ -1,0 +1,84 @@
+@import "@var"
+.up
+    background-image: url("../../../assets/images/up/Ripped_White_Paper_8_2.png")
+    background-repeat: no-repeat
+    background-position: 100% 0
+    background-color: #126B89
+    color: #fff
+    height: 800px
+    // overflow: hidden
+    padding-top: 40px
+    padding-inline: calc(20/768*100vw)
+    position: relative
+    @media ($MOBILE)
+        height: unset
+        background-image: none
+
+    & .logo
+        filter: invert(1)
+        padding-left: calc((314 - 20)/1920*100vw)
+        @media ($MOBILE)
+            padding: 0
+
+    &__content
+        display: grid
+        grid-template-columns: repeat(2,1fr)
+        gap: 24px
+        margin-top: 52px
+        @media ($MOBILE)
+            grid-template-columns: 100%
+            grid-template-rows: min-content 1fr
+
+    &__content.container
+        margin-top: 52px
+
+    &__left-side
+        display: flex
+        flex-direction: column
+        padding-left: 12.1vw
+        gap: 40px
+        @media ($MOBILE)
+            padding: 0
+
+    &__title
+        font-size: clamp(29px,32/768*100vw,54px)
+        font-weight: 800
+        letter-spacing: -0.01em
+        line-height: 120%
+
+    &__ticket
+        background-color: #A5D936
+        padding: 16px
+        color: #126B89
+        font-size: clamp(20px, 24/1920*100vw, 24px)
+        font-weight: 800
+        @media ($MOBILE)
+            font-weight: 700
+
+    &__text
+        opacity: 0.9
+        font-size: 16px
+        z-index: 1
+
+    &__right-side
+        height: 752px
+        @media ($MOBILE)
+            height: unset
+            & > img
+                width: 100%
+
+    &__svg, &__img
+        position: absolute
+
+    &__svg
+        top: 45px
+        @media ($MOBILE)
+            position: static
+
+    &__img
+        bottom: 0
+        right: 0
+        object-position: bottom
+        width: max(500px,50vw)
+        @media ($MOBILE)
+            width: 100%

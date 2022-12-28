@@ -1,0 +1,61 @@
+.impressions
+    position: relative
+    column-gap: 0
+    background-image: url(../../../assets/images/Texture-inteviews1.png)
+    background-blend-mode: multiply
+    height: 770px
+    display: grid
+    align-items: center
+    @media ($MOBILE)
+        padding-top: 32px
+        height: unset
+
+    &__container.grid
+        align-items: center
+
+    &__title
+        @extend .up__title
+        font-size: clamp(40px, 64/1050*100vw, 64px)
+        margin-bottom: 40px
+        text-align: left
+        padding-right: 0
+        align-items: start
+        @media ($MOBILE)
+            margin-top: 32px
+
+    &__lead
+        margin-bottom: 24px
+
+    &__plug
+        & + &
+            margin-top: 89px
+
+    &__svg
+        position: absolute
+        bottom: 0
+        right: 0
+        pointer-events: none
+        @media ($MOBILE)
+            bottom: unset
+            // top: 620px
+            top: 20%
+            height: 50vw
+
+    &__list
+        padding-bottom: 89px
+        user-select: none
+
+    &__right
+        & > img
+            width: 100%
+            &:nth-child(2)
+                display: none
+        @media ($MOBILE)
+            grid-area: 1 / 1 / 2 / 2
+            & > img
+                &:nth-child(2)
+                    display: block
+
+    &__green-square
+        @media ($MOBILE)
+            display: none
