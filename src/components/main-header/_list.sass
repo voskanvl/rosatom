@@ -1,0 +1,41 @@
+.list
+    padding: 10em 200px 0
+    display: none
+    background: #1C376A
+    color: #fff
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    cursor: url("../../../assets/cursor/white.png") 19 19, default
+    z-index: -1
+    // grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+    grid-template-columns: repeat(4,1fr)
+    column-gap: 5%
+    place-items: start center
+
+    &__item
+        list-style: none
+        cursor: url("../../../assets/cursor/white.png") 19 19, default
+        & > a
+            color: #fff
+            text-decoration: none
+            cursor: url("../../../assets/cursor/white.png") 19 19, pointer
+        &--big
+            font-size: 40px
+            font-weight: bold
+            & > span
+                line-height: 1.09
+        &--small
+            font-size: 20px
+            font-weight: normal
+
+    &--details
+        padding: 0
+        margin: 0
+        margin-top: 20px
+        display: flex
+        flex-direction: column
+        row-gap: 13px
+        max-width: 80%

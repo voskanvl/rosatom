@@ -1,4 +1,6 @@
 @import "./_menu"
+@import "./_list"
+
 .main-header
     position: fixed
     top: 0
@@ -6,22 +8,6 @@
     display: flex
     align-items: center
     cursor: url("../../../assets/cursor/black.png") 19 19, default
-    // & > .menu
-    //     display: grid
-    //     grid-auto-flow: column
-    //     & > .menu__item
-    //         padding: 0 10px
-    //         transition: color .2s
-    //         display: block
-    //         list-style: none
-    //         text-transform: uppercase
-
-    //         &:hover
-    //             cursor: url("../../../assets/cursor/white.png") 19 19, default
-    //             & > span
-    //                 color: #30A842
-    //             & > .list
-    //                 display: block
 
     & > .logo
         background-image: url("../../../assets/logo/logo.png")
@@ -33,21 +19,6 @@
             background-image: url("../../../assets/logo/logo-white.png")
         & > .menu > .menu__item
             color: #fff
-
-.list
-    padding: 10em
-    display: none
-    background: #1C376A
-    color: #fff
-    position: fixed
-    top: 0
-    left: 0
-    width: 100vw
-    height: 100vh
-    cursor: url("../../../assets/cursor/white.png") 19 19, default
-    z-index: -1
-    & > li
-        cursor: url("../../../assets/cursor/white.png") 19 19, default
 
 .cristal
     position: absolute
