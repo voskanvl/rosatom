@@ -1,0 +1,16 @@
+.menu
+    display: grid
+    grid-auto-flow: column
+    & > .menu__item
+        padding: 0 10px
+        transition: color .2s
+        display: block
+        list-style: none
+        text-transform: uppercase
+
+        &:hover
+            cursor: url("../../../assets/cursor/white.png") 19 19, default
+            & > span
+                color: #30A842
+            & > .list
+                display: block

@@ -1,5 +1,18 @@
 extends ../pug/templates/template.pug
 block main 
-    each i, idx in Array(8).fill(null)
-        section.screen(data-number=idx, style="background: linear-gradient(45deg, #fff, #"+idx+idx+idx+")", active=idx===0)
-            h1= idx
+    header.header 
+        include ../components/main-header/main-header.pug
+        section.screen(data-number=0, active)
+            include ./sections/0.pug
+        section.screen(data-number=1)
+            include ./sections/1.pug
+        section.screen(data-number=2)
+            include ./sections/2.pug
+        section.screen(data-number=3)
+            include ./sections/3.pug
+        section.screen(data-number=4)
+            include ./sections/4.pug
+        section.screen(data-number=5)
+            include ./sections/5.pug
+        section.screen(data-number=6)
+            include ./sections/6.pug

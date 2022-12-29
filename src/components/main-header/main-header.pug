@@ -1,0 +1,17 @@
+nav.main-header
+    .burger 
+    .logo 
+    ul.menu
+        each i in menu 
+            li.menu__item
+                ul.list 
+                    each j in [0,1,2,3]
+                        li.list__item list #{i} #{j}
+                    img.cristal(src="../../../assets/svg/cristal.svg")
+                span= i
+    .options 
+        .search 
+        .lk 
+        .international 
+
+
