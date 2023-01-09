@@ -1,0 +1,13 @@
+.text-masked-element
+    --x: 0%
+    --background: #303031
+    --circle-color: #115DA1
+    background: var(--background)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+    &:hover
+        background: radial-gradient(circle at 100%, var(--circle-color) var(--x)-1%, var(--background) var(--x))
+        background-clip: text
+        -webkit-background-clip: text
+        color: transparent

@@ -9,9 +9,15 @@ import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 
 toggleLogoImage();
 scrollScreens();
-const mainTitle = document.querySelector<HTMLElement>(".main-block__title");
-if (!mainTitle) throw Error("нет .main-block__title");
-moveMaskText(mainTitle);
+
+const moveMaskTextCreator = (element: string) => {
+    const el = document.querySelector<HTMLElement>(element);
+    if (!el) throw Error("нет " + element);
+    moveMaskText(el);
+};
+
+moveMaskTextCreator(".main-block__title");
+moveMaskTextCreator(".data-center__title");
 
 controlSearchPopup({
     close: ".search-popup__close",
