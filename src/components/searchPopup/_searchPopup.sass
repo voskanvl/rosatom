@@ -1,0 +1,47 @@
+.search-popup
+    position: fixed
+    inset: 0
+    background: #0000
+    backdrop-filter: blur(0px)
+    z-index: 100
+    flex-direction: column
+    align-items: center
+    display: none
+    opacity: 0
+    transition-property: opacity, backdrop-filter
+    transition-duration: 1s
+
+    &[open]
+        // display: flex !important
+
+        opacity: 1
+        backdrop-filter: blur(10px)
+        +cur-b
+
+    &__input
+        display: flex
+        align-items: center
+        border-bottom: 1px #303031 solid
+        margin-top: 225px
+        min-width: 840px
+
+        & > input
+            background: none
+            border: none
+            flex: 1
+            font-size: 35px
+            &::placeholder
+                color: #303031
+
+    &__close
+        position: absolute
+        top: 48px
+        right: 25%
+
+// @keyframes anim-blur-in
+//     0%
+//         backdrop-filter: blur(0px)
+//         opacity: 0
+//     100%
+//         backdrop-filter: blur(10px)
+//         opacity: 1

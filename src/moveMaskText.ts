@@ -6,7 +6,6 @@ export default function moveMaskText(element: HTMLElement) {
                 100 +
                 "%",
         );
-        console.log(element.offsetWidth, event.clientX);
     });
     element.addEventListener("mouseout", () => {
         element.style.setProperty("--x", "");
