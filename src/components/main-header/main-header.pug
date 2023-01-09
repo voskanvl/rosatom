@@ -12,10 +12,10 @@ nav.main-header
                                 ul.list--details     
                                     each k in j.menu 
                                         li.list__item.list__item--small
-                                            a(href=k.href)= k.name
+                                            a(href=k.href)!= k.name
                         else
                             li.list__item.list__item--big
-                                a(href=j.href)= j.name
+                                a(href=j.href)!= j.name
                     img.cristal(src="../../../assets/svg/cristal.svg")
                 span= i.title
     .options 
