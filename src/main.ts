@@ -3,6 +3,7 @@ import "./sass/style.sass";
 import { scrollScreens } from "./scrollScreens";
 import toggleLogoImage from "./toggleLogoImage";
 import { controlSearchPopup } from "./changeSearchPopup";
+import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 
 // import '@splidejs/splide/css';
 
@@ -16,3 +17,5 @@ controlSearchPopup({
     close: ".search-popup__close",
     open: ".options__search",
 });
+
+changeMainHeaderByScroll();
