@@ -1,5 +1,4 @@
-import { StoreApi } from "zustand/vanilla";
-import { StoreState } from "./main";
+import { store } from "./store";
 
 type ThresholdScrollMsg = "up" | "down";
 
@@ -34,7 +33,34 @@ class ThresholdScroll {
     }
 }
 
-export function scrollScreens(store: StoreApi<StoreState>) {
+export const changeScreen = (x: number) => {
+    const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
+    const { activeScreenNumber: current, activeScreenElement: currentElement } = store.getState();
+
+    if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
+
+    let next = current + x;
+    if (next < 0) next = 0;
+    if (next > screens.length - 1) next = screens.length - 1;
+
+    const nextElement = screens.find(e => e.dataset.number === next + "");
+    if (!nextElement) throw Error("невозможно найти следующий скрин");
+
+    currentElement.removeAttribute("active");
+    if (next > current) {
+        currentElement.style.top = "-100vh";
+    } else {
+        currentElement.style.top = "100vh";
+    }
+
+    nextElement.setAttribute("active", "active");
+    nextElement.style.top = "0";
+
+    store.setState(state => ({ ...state, activeScreenElement: nextElement }));
+    store.setState(state => ({ ...state, activeScreenNumber: next }));
+};
+
+export function scrollScreens() {
     //получаем список всех скринов
     const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
     let currentActive = screens.find(e => e.getAttribute("active"));
@@ -57,33 +83,6 @@ export function scrollScreens(store: StoreApi<StoreState>) {
     window.addEventListener("wheel", ({ deltaY }: WheelEvent) => {
         deltaY > 0 ? threshold.inc() : threshold.dec();
     });
-
-    const changeScreen = (x: number) => {
-        const { activeScreenNumber: current, activeScreenElement: currentElement } =
-            store.getState();
-
-        if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
-
-        let next = current + x;
-        if (next < 0) next = 0;
-        if (next > screens.length - 1) next = screens.length - 1;
-
-        const nextElement = screens.find(e => e.dataset.number === next + "");
-        if (!nextElement) throw Error("невозможно найти следующий скрин");
-
-        currentElement.removeAttribute("active");
-        if (next > current) {
-            currentElement.style.top = "-100vh";
-        } else {
-            currentElement.style.top = "100vh";
-        }
-
-        nextElement.setAttribute("active", "active");
-        nextElement.style.top = "0";
-
-        store.setState(state => ({ ...state, activeScreenElement: nextElement }));
-        store.setState(state => ({ ...state, activeScreenNumber: next }));
-    };
 
     threshold.subscribe((msg: ThresholdScrollMsg) => {
         if (msg === "down") changeScreen(-1);

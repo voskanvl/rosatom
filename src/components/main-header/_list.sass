@@ -1,6 +1,8 @@
 .list
     padding: 10em 200px 0
-    display: none
+    scale: 1 0 1
+    transform-origin: top
+    transition: transform .3s ease-in
     background: #1C376A
     color: #fff
     position: fixed
@@ -11,6 +13,7 @@
     cursor: url("../../../assets/cursor/white.png") 19 19, default
     z-index: -1
     // grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+    display: grid
     grid-template-columns: repeat(4,1fr)
     column-gap: 5%
     place-items: start center

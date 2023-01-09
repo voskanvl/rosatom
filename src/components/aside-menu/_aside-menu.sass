@@ -1,0 +1,22 @@
+@import "@var"
+.aside-menu
+    &__list
+        display: flex
+        flex-direction: column
+        row-gap: 50px
+        & > li
+            list-style: none
+            & > a
+                +cur-b
+                text-decoration: none
+                color: #303031
+
+    &__item
+        max-width: 153px
+
+    &__title
+        font-size: 40px
+        font-weight: bold
+
+    &__caption
+        font-size: 18px

@@ -1,0 +1,8 @@
+.aside-menu 
+    .aside-menu__list
+        each i in asideMenu
+            li 
+                a(href=i.href)
+                    .aside-menu__item 
+                        .aside-menu__title= i.title 
+                        .aside-menu__caption= i.caption

@@ -14,11 +14,13 @@
         // background-repeat: no-repeat
         width: 320px
         height: 80px
-    &:hover
-        & > .logo
-            background-image: url("../../../assets/logo/logo-white.png")
-        & > .menu > .menu__item
-            color: #fff
+    // &:hover
+    //     & > .logo
+    //         background-image: url("../../../assets/logo/logo-white.png")
+    //     & > .menu > .menu__item
+    //         color: #fff
+    &:has(.menu:hover) > .logo
+        background-image: url("../../../assets/logo/logo-white.png")
 
 .cristal
     position: absolute

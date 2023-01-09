@@ -1,1 +1,15 @@
-.screen.screen--0
+.main-block
+    .inserting 
+        img(src="../../../assets/images/Vectary-texture.png")
+    .main-block__leftside
+        h1.main-block__title    
+            p consectetur
+            p sit amet
+            p &adipiscing
+        .socials
+            each i in socials
+                a.socials__item(href=i.href) 
+                    img(src=i.img)
+    aside.main-block__aside
+        include ../../components/aside-menu/aside-menu.pug
+            

@@ -1,0 +1,7 @@
+socials:
+  - img: "../../../assets/svg/socials/telegram.svg"
+    href: "#"
+  - img: "../../../assets/svg/socials/youtube.svg"
+    href: "#"
+  - img: "../../../assets/svg/socials/vk.svg"
+    href: "#"
