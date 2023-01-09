@@ -1,5 +1,6 @@
 @import "./_menu"
 @import "./_list"
+@import "./_burger"
 
 .main-header
     position: fixed
@@ -9,8 +10,8 @@
     z-index: 1
     display: flex
     align-items: center
+    padding: 0 100px 0 50px
     cursor: url("../../../assets/cursor/black.png") 19 19, default
-    padding-right: 100px
 
     & > .logo
         background-image: url("../../../assets/logo/logo.png")
@@ -28,9 +29,8 @@
         & > .options
             &
                 color: #fff
-                svg
-                    path
-                        fill: #fff
+                img
+                    filter: invert(1)
                 a
                     color: #fff
 
