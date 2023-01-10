@@ -1,0 +1,32 @@
+.screen-switcher
+    position: fixed
+    top: 50%
+    right: 100px
+    translate: 0 -50%
+    list-style-type: none
+    counter-reset: counter
+    cursor: pointer
+    z-index: 100
+
+    &__item
+        position: relative
+        user-select: none
+        &::before
+            content: counter(counter)
+            counter-increment: counter
+
+        &:nth-child(-n+9)::before
+            content: "0" counter(counter)
+
+        & + .screen-switcher__item
+            margin-top: 26px
+
+.green-circle
+    position: absolute
+    aspect-ratio: 1
+    width: 2em
+    border-radius: 50%
+    border: 1px solid #30A842
+    top: 50%
+    left: 50%
+    translate: -50% -50% 0

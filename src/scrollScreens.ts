@@ -33,7 +33,34 @@ class ThresholdScroll {
     }
 }
 
-export const changeScreen = (x: number) => {
+export const setScreen = (x: number) => {
+    const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
+    const { activeScreenNumber: current, activeScreenElement: currentElement } = store.getState();
+
+    if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
+
+    let next = x;
+    if (next < 0) next = 0;
+    if (next > screens.length - 1) next = screens.length - 1;
+
+    const nextElement = screens.find(e => e.dataset.number === next + "");
+    if (!nextElement) throw Error("невозможно найти следующий скрин");
+
+    currentElement.removeAttribute("active");
+    if (next > current) {
+        currentElement.style.top = "-100vh";
+    } else {
+        currentElement.style.top = "100vh";
+    }
+
+    nextElement.setAttribute("active", "active");
+    nextElement.style.top = "0";
+
+    store.setState(state => ({ ...state, activeScreenElement: nextElement }));
+    store.setState(state => ({ ...state, activeScreenNumber: next }));
+};
+
+export const changeScreen = (x: 1 | -1) => {
     const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
     const { activeScreenNumber: current, activeScreenElement: currentElement } = store.getState();
 

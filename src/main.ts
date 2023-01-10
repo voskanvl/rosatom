@@ -4,6 +4,7 @@ import { scrollScreens } from "./scrollScreens";
 import toggleLogoImage from "./toggleLogoImage";
 import { controlSearchPopup } from "./changeSearchPopup";
 import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
+import screenSwitcher from "./screenSwitcher";
 
 // import '@splidejs/splide/css';
 
@@ -25,3 +26,4 @@ controlSearchPopup({
 });
 
 changeMainHeaderByScroll();
+screenSwitcher();

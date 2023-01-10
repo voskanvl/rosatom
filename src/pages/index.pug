@@ -2,6 +2,7 @@ extends ../pug/templates/template.pug
 block main 
         include ../components/searchPopup/searchPopup.pug
         include ../components/main-header/main-header.pug
+        ol.screen-switcher
         section.screen(data-number=0, active)
             include ./sections/0.pug
         section.screen(data-number=1)
