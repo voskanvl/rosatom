@@ -1,1 +1,9 @@
-h1 5
+include ../../pug/splides.pug
+.innopolis
+    .innopolis__container 
+        .innopolis__leftside
+            h1.innopolis__title.text-masked-element(style="--background: #fff; --circle-color: #30A842") ЦОД INNOPOLIS
+            a.innopolis__details.text-masked-element(style="--background: #fff; --circle-color: #30A842", href="#")!= "подробнее о ЦОД \u27F6"
+        .innopolis__rightside
+            +splide("innopolis",[0,1,2,3,5])
+                p= val

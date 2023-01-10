@@ -35,7 +35,7 @@ export default function changeMainHeaderByScroll() {
         const mainHeader = document.querySelector<HTMLElement>(".main-header");
         if (!mainHeader) throw Error("отсутвует main header");
 
-        if (state.activeScreenNumber === 1) {
+        if (state.activeScreenNumber === 1 || state.activeScreenNumber === 5) {
             changeMainHeader(mainHeader, changingElements)("add");
         } else {
             changeMainHeader(mainHeader, changingElements)("remove");

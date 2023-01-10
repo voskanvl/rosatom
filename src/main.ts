@@ -7,7 +7,8 @@ import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 import screenSwitcher from "./screenSwitcher";
 import advantagesHovers from "./advantagesHovers";
 
-// import '@splidejs/splide/css';
+import "@splidejs/splide/css";
+import { MSplides } from "./initSlides";
 
 toggleLogoImage();
 scrollScreens();
@@ -30,3 +31,14 @@ controlSearchPopup({
 changeMainHeaderByScroll();
 screenSwitcher();
 advantagesHovers();
+
+const splidesInstance = new MSplides();
+const innopolis = document.querySelector("#innopolis");
+
+innopolis &&
+    splidesInstance.add("#innopolis", {
+        type: "loop",
+        arrows: false,
+        pagination: false,
+        perMove: 1,
+    });
