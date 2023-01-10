@@ -1,0 +1,6 @@
+mixin service-card(i)
+    .service-card__container
+        .service-card__title= i.title
+        ul.service-card__list
+            each j in i.list 
+                p= j

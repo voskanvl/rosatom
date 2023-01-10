@@ -11,14 +11,15 @@ import screenSwitcher from "./screenSwitcher";
 toggleLogoImage();
 scrollScreens();
 
-const moveMaskTextCreator = (element: string) => {
-    const el = document.querySelector<HTMLElement>(element);
-    if (!el) throw Error("нет " + element);
-    moveMaskText(el);
+const moveMaskTextCreator = (element: HTMLElement) => {
+    if (!element) throw Error("нет " + element);
+    moveMaskText(element);
 };
 
-moveMaskTextCreator(".main-block__title");
-moveMaskTextCreator(".data-center__title");
+const textMaskedElements = document.querySelectorAll<HTMLElement>(".text-masked-element");
+if (textMaskedElements && textMaskedElements.length > 0) {
+    textMaskedElements.forEach(e => moveMaskTextCreator(e));
+}
 
 controlSearchPopup({
     close: ".search-popup__close",

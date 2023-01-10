@@ -1,1 +1,8 @@
-h1 2
+include ../../components/service-card/service-card.pug
+.service-center
+    .service-center__container
+        .service-center__title.text-masked-element(style="--background: #303031") УСЛУГИ
+        ul.service-center__list
+            each i in serviceCards
+                li.service-center__card
+                    +service-card(i)
