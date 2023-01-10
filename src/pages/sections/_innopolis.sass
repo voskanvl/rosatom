@@ -2,12 +2,14 @@
     background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     position: absolute
     inset: 0
+    color: #fff
 
     &__container
         +cur-w
         +wid(1512px)
         padding-top: 186px
         display: grid
+        grid-template-columns: repeat(2,1fr)
 
     &__title
         width: fit-content
@@ -17,3 +19,18 @@
     &__details
         +cur-w
         width: fit-content
+
+    &__img
+        width: min(300px,100%)
+        border-radius: 10px
+
+    &__text
+        font-size: 18px
+        font-weight: lighter
+
+    .splide
+        margin-top: 61px
+        mask-image: linear-gradient(to right, transparent, #000, transparent)
+
+    .splide__slide
+        margin-right: 20px

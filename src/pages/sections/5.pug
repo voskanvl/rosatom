@@ -4,6 +4,8 @@ include ../../pug/splides.pug
         .innopolis__leftside
             h1.innopolis__title.text-masked-element(style="--background: #fff; --circle-color: #30A842") ЦОД INNOPOLIS
             a.innopolis__details.text-masked-element(style="--background: #fff; --circle-color: #30A842", href="#")!= "подробнее о ЦОД \u27F6"
+            +splide("innopolis",["https://upload.wikimedia.org/wikipedia/commons/2/23/Innopolis_University.jpg","https://mf.b37mrtl.ru/rbthmedia/images/2019.07/original/5d2c644185600a17ca3f0a85.jpg","https://digitalinnopolisdays.ru/local/js/innopolis/winter22/img/about_img.jpg","https://upload.wikimedia.org/wikipedia/commons/4/46/Technopark_in_Innopolis_%282%29.jpg","https://tadviser.com/images/thumb/a/ae/2020-12-10_11.28.31.jpg/840px-2020-12-10_11.28.31.jpg"])
+                img.innopolis__img(src= val)
+            .innopolis__controls 
+            p.innopolis__text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates praesentium eum accusantium consequatur, neque omnis expedita. Vel error perferendis odit iusto ex eveniet officiis nobis a non. Explicabo maxime adipisci illum ducimus nihil neque laboriosam rerum, quis ipsa vel commodi!
         .innopolis__rightside
-            +splide("innopolis",[0,1,2,3,5])
-                p= val

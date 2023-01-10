@@ -41,4 +41,7 @@ innopolis &&
         arrows: false,
         pagination: false,
         perMove: 1,
+        perPage: 3,
+        padding: "10px",
+        focus: "center",
     });
