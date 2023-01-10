@@ -12,6 +12,7 @@
     &__item
         position: relative
         user-select: none
+        color: #404041
         &::before
             content: counter(counter)
             counter-increment: counter
@@ -21,6 +22,9 @@
 
         & + .screen-switcher__item
             margin-top: 26px
+
+        &[current]
+            color: #30A842
 
 .green-circle
     position: absolute

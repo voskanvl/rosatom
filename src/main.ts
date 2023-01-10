@@ -5,6 +5,7 @@ import toggleLogoImage from "./toggleLogoImage";
 import { controlSearchPopup } from "./changeSearchPopup";
 import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 import screenSwitcher from "./screenSwitcher";
+import advantagesHovers from "./advantagesHovers";
 
 // import '@splidejs/splide/css';
 
@@ -28,3 +29,4 @@ controlSearchPopup({
 
 changeMainHeaderByScroll();
 screenSwitcher();
+advantagesHovers();

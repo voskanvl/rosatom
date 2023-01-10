@@ -10,11 +10,21 @@
                 background-color: #115DA1
                 color: #fff
 
+        &--advantages
+            &:hover
+                & > .service-card__title
+                    border-color: #30A842
+                    background-color: #30A842
+                    color: #fff
+            &[glass]
+                @extend .data-card__container
+
     &__title
         padding: 6px 19px
         border-radius: 33px
         border: 1px solid #115DA1
         transition: background-color .5s
+        width: fit-content
 
     &__list
         padding: 0

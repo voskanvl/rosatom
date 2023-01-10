@@ -1,0 +1,25 @@
+advantages:
+  - id: 300
+    title: Бесперебойность
+    list:
+      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+  - id: 301
+    title: Безопасность
+    list:
+      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+  - id: 302
+    title: Экономия
+    list:
+      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+  - id: 303
+    title: Масштабируемость
+    list:
+      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+  - id: 304
+    title: Комфорт
+    list:
+      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+  - id: 304
+    title: Бесперебойность
+    list:
+      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.

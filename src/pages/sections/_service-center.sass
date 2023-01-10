@@ -3,9 +3,22 @@
     background: #ECF0F3
     height: 100vh
 
+    & > img
+        position: absolute
+        inset: 0
+        object-fit: cover
+        z-index: 0
+        opacity: 0
+        transition: opacity .5s
+        &[show]
+            opacity: 1
+
     &__container
         +wid(1520px)
         padding-top: 186px
+        position: absolute
+        left: 50%
+        translate: -50%
 
     &__title
         font-size: 80px

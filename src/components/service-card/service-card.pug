@@ -1,5 +1,5 @@
-mixin service-card(i)
-    .service-card__container
+mixin service-card(i,x)
+    .service-card__container(class=x?"service-card__container--"+x:"")
         .service-card__title= i.title
         ul.service-card__list
             each j in i.list 
