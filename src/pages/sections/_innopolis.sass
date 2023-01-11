@@ -16,14 +16,19 @@
         width: fit-content
         font-size: 80px
         font-weight: bold
+        line-height: 0.8
 
     &__details
+        display: block
         +cur-w
         width: fit-content
+        margin-top: 14px
 
     &__img
         width: min(300px,100%)
         border-radius: 10px
+        min-height: 236px
+        object-fit: cover
 
     &__text
         font-size: 18px
@@ -33,5 +38,18 @@
         margin-top: 61px
         mask-image: linear-gradient(to right, transparent, #000, transparent)
 
-    .splide__slide
-        margin-right: 20px
+        &__slide
+            margin-right: 20px
+
+    &__controls
+        display: flex
+        justify-content: center
+        margin: 30px 0
+
+    &__control-button
+        color: #fff
+        background: none
+        border: none
+        font-size: 24px
+        font-weight: lighter
+        +cur-w
