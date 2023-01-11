@@ -4,7 +4,7 @@ export interface changingElementsData {
     changingClass: string;
 }
 
-const SCREEN_NUMBER_TO_CHANGE = [1, 5, 8];
+const SCREEN_NUMBER_TO_CHANGE = [1, 5, 6, 8];
 
 export const changingElements: { [key: string]: changingElementsData } = {
     logo: {

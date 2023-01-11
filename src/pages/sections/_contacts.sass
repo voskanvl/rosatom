@@ -15,7 +15,11 @@
 
     &__title
         font-size: 80px
+        font-weight: 700
         width: fit-content
+        display: flex
+        align-items: center
+        column-gap: 23px
 
     &__data
         display: grid
@@ -85,3 +89,12 @@
         & > *
             height: 100% !important
             +cur-w
+
+    &__go
+        font-size: 16px
+
+    &__line
+        display: block
+        width: 54px
+        height: 1px
+        background-color: #fff
