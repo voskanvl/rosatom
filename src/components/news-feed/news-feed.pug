@@ -1,0 +1,19 @@
+.news-feed
+    .news-feed__left
+        .news-feed__news.news 
+            img.news__image(src= newsFeed[0].img)
+            .news__data 
+                p.news__text= newsFeed[0].text
+                p.news__date= newsFeed[0].date
+            button.news__go= "Перейти \u27F6"
+        form.news-feed__subscribe 
+            label(for="subscribe") 
+                input(type="text", id="subscribe", placeholder="1a11757d20@inb")
+                button(type="submit") 
+                    img(src="../../../assets/svg/send.svg")
+    .news-feed__right
+        ul.news-feed__list 
+            each i in newsFeed 
+                li.news-feed__list-item(data-item= i.id) 
+                    p= i.text
+                    p= i.date

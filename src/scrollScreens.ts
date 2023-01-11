@@ -107,7 +107,8 @@ export function scrollScreens() {
 
     const threshold = new ThresholdScroll();
 
-    window.addEventListener("wheel", ({ deltaY }: WheelEvent) => {
+    window.addEventListener("wheel", ({ deltaY, target }: WheelEvent) => {
+        if ((target as HTMLElement).closest(".news-feed__list")) return;
         deltaY > 0 ? threshold.inc() : threshold.dec();
     });
 
