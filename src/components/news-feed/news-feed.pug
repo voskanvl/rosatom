@@ -15,5 +15,6 @@
         ul.news-feed__list 
             each i in newsFeed 
                 li.news-feed__list-item(data-item= i.id) 
-                    p= i.text
-                    p= i.date
+                    p.news-feed__itemdata-text= i.text
+                    p.news-feed__itemdata-date= i.date
+                    p.news-feed__itemdata-img.news-feed__hidden= i.img

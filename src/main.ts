@@ -9,6 +9,7 @@ import advantagesHovers from "./advantagesHovers";
 
 import "@splidejs/splide/css";
 import { MSplides } from "./initSlides";
+import newsFeedHandler from "./news-feed-handeler";
 
 toggleLogoImage();
 scrollScreens();
@@ -45,3 +46,5 @@ innopolis &&
         padding: "10px",
         focus: "center",
     });
+
+newsFeedHandler();

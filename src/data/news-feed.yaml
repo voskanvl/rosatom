@@ -2,56 +2,56 @@ newsFeed:
   - id: 400
     text: Lorem ipsum dolor sit amet
     date: "10.11.22"
-    img: "https://picsum.photos/id/400/200/300"
+    img: "https://picsum.photos/id/400/350/200"
   - id: 401
     text: Suspendisse lobortis nisl vestibulum sapien rutrum
-    date: "10.11.22"
-    img: "https://picsum.photos/id/401/200/300"
+    date: "11.11.22"
+    img: "https://picsum.photos/id/401/350/200"
   - id: 402
     text: Suspendisse mi ligula
-    date: "10.11.22"
-    img: "https://picsum.photos/id/402/200/300"
+    date: "12.11.22"
+    img: "https://picsum.photos/id/402/350/200"
   - id: 403
     text: Integer tempor et leo at commodo
-    date: "10.11.22"
-    img: "https://picsum.photos/id/403/200/300"
+    date: "13.11.22"
+    img: "https://picsum.photos/id/403/350/200"
   - id: 404
     text: Nullam felis ante
-    date: "10.11.22"
-    img: "https://picsum.photos/id/404/200/300"
+    date: "14.11.22"
+    img: "https://picsum.photos/id/404/350/200"
   - id: 405
     text: Ut vel dolor id nulla commodo posuere
-    date: "10.11.22"
-    img: "https://picsum.photos/id/405/200/300"
+    date: "15.11.22"
+    img: "https://picsum.photos/id/405/350/200"
   - id: 406
     text: Ut vel dolor id nulla commodo posuere
-    date: "10.11.22"
-    img: "https://picsum.photos/id/406/200/300"
+    date: "16.11.22"
+    img: "https://picsum.photos/id/406/350/200"
   - id: 407
     text: Ut vel dolor id nulla commodo posuere
-    date: "10.11.22"
-    img: "https://picsum.photos/id/407/200/300"
+    date: "17.11.22"
+    img: "https://picsum.photos/id/407/350/200"
   - id: 408
     text: Нашим читателям он наверняка знаком по ежедневным
-    date: "10.11.22"
-    img: "https://picsum.photos/id/408/200/300"
+    date: "18.11.22"
+    img: "https://picsum.photos/id/408/350/200"
   - id: 409
     text: Нашим читателям он наверняка знаком по ежедневным
-    date: "10.11.22"
-    img: "https://picsum.photos/id/409/200/300"
+    date: "19.11.22"
+    img: "https://picsum.photos/id/409/350/200"
   - id: 410
     text: Кроме того, чтобы смотреть на графики и ленту новостей есть еще множество повседневных дел, требующих нашего участия.
-    date: "10.11.22"
-    img: "https://picsum.photos/id/410/200/300"
+    date: "20.11.22"
+    img: "https://picsum.photos/id/410/350/200"
   - id: 411
     text: Кроме того, чтобы смотреть на графики и ленту новостей есть еще множество повседневных дел, требующих нашего участия.
-    date: "10.11.22"
-    img: "https://picsum.photos/id/411/200/300"
+    date: "21.11.22"
+    img: "https://picsum.photos/id/411/350/200"
   - id: 412
     text: With the old syntax, we can write the selectors without attaching them to an element
-    date: "10.11.22"
-    img: "https://picsum.photos/id/412/200/300"
+    date: "22.11.22"
+    img: "https://picsum.photos/id/412/350/200"
   - id: 413
     text: and they will be applied to all scrollable elements
-    date: "10.11.22"
-    img: "https://picsum.photos/id/413/200/300"
+    date: "23.11.22"
+    img: "https://picsum.photos/id/413/350/200"
