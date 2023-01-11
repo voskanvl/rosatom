@@ -3,6 +3,9 @@ export interface changingElementsData {
     selector: string;
     changingClass: string;
 }
+
+const SCREEN_NUMBER_TO_CHANGE = [1, 5, 8];
+
 export const changingElements: { [key: string]: changingElementsData } = {
     logo: {
         selector: ".logo",
@@ -35,7 +38,7 @@ export default function changeMainHeaderByScroll() {
         const mainHeader = document.querySelector<HTMLElement>(".main-header");
         if (!mainHeader) throw Error("отсутвует main header");
 
-        if (state.activeScreenNumber === 1 || state.activeScreenNumber === 5) {
+        if (SCREEN_NUMBER_TO_CHANGE.some(e => e === state.activeScreenNumber)) {
             changeMainHeader(mainHeader, changingElements)("add");
         } else {
             changeMainHeader(mainHeader, changingElements)("remove");
