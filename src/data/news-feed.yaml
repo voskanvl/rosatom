@@ -3,55 +3,69 @@ newsFeed:
     text: Lorem ipsum dolor sit amet
     date: "10.11.22"
     img: "https://picsum.photos/id/400/350/200"
+    href: "#0"
   - id: 401
     text: Suspendisse lobortis nisl vestibulum sapien rutrum
     date: "11.11.22"
     img: "https://picsum.photos/id/401/350/200"
+    href: "#1"
   - id: 402
     text: Suspendisse mi ligula
     date: "12.11.22"
     img: "https://picsum.photos/id/402/350/200"
+    href: "#2"
   - id: 403
     text: Integer tempor et leo at commodo
     date: "13.11.22"
     img: "https://picsum.photos/id/403/350/200"
+    href: "#3"
   - id: 404
     text: Nullam felis ante
     date: "14.11.22"
     img: "https://picsum.photos/id/404/350/200"
+    href: "#4"
   - id: 405
     text: Ut vel dolor id nulla commodo posuere
     date: "15.11.22"
     img: "https://picsum.photos/id/405/350/200"
+    href: "#5"
   - id: 406
     text: Ut vel dolor id nulla commodo posuere
     date: "16.11.22"
     img: "https://picsum.photos/id/406/350/200"
+    href: "#6"
   - id: 407
     text: Ut vel dolor id nulla commodo posuere
     date: "17.11.22"
     img: "https://picsum.photos/id/407/350/200"
+    href: "#7"
   - id: 408
     text: Нашим читателям он наверняка знаком по ежедневным
     date: "18.11.22"
     img: "https://picsum.photos/id/408/350/200"
+    href: "#8"
   - id: 409
     text: Нашим читателям он наверняка знаком по ежедневным
     date: "19.11.22"
     img: "https://picsum.photos/id/409/350/200"
+    href: "#9"
   - id: 410
     text: Кроме того, чтобы смотреть на графики и ленту новостей есть еще множество повседневных дел, требующих нашего участия.
     date: "20.11.22"
     img: "https://picsum.photos/id/410/350/200"
+    href: "#10"
   - id: 411
     text: Кроме того, чтобы смотреть на графики и ленту новостей есть еще множество повседневных дел, требующих нашего участия.
     date: "21.11.22"
     img: "https://picsum.photos/id/411/350/200"
+    href: "#11"
   - id: 412
     text: With the old syntax, we can write the selectors without attaching them to an element
     date: "22.11.22"
     img: "https://picsum.photos/id/412/350/200"
+    href: "#12"
   - id: 413
     text: and they will be applied to all scrollable elements
     date: "23.11.22"
     img: "https://picsum.photos/id/413/350/200"
+    href: "#13"
