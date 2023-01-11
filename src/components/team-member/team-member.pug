@@ -1,0 +1,9 @@
+mixin teamMember(val)
+    .team-member(data-id= val.id)
+        .team-member__image
+            .team-member__back
+            img.team-member__img(src= val.img)
+            .team-member__front
+        .team-member__data
+            .team-member__name= val.name
+            .team-member__post= val.post

@@ -1,0 +1,17 @@
+team:
+  - id: 520
+    name: Кристина Воронцова
+    post: директор по связям
+    img: "../../assets/images/team/1.png"
+  - id: 521
+    name: Николай Гончаров
+    post: директор по поставкам
+    img: "../../assets/images/team/2.png"
+  - id: 522
+    name: Иван Герасимов
+    post: директор по продажам
+    img: "../../assets/images/team/3.png"
+  - id: 522
+    name: Ника Овчинникова
+    post: по всему, директор
+    img: "../../assets/images/team/4.png"

@@ -1,1 +1,12 @@
-h1 7
+include ../../components/team-member/team-member.pug
+.team 
+    .team__container 
+        .team__title.text-masked-element(style="--background: #303031; --circle-color: #115DA1") НАША
+            br
+            |КОМАНДА
+        +splide("team",team)
+            +teamMember(val)
+        .team__controls 
+            button.team__control-button.team__control-button--left= "\u27F5"
+            button.team__control-button.team__control-button--right= "\u27F6"
+        
