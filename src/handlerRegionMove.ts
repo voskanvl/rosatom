@@ -27,8 +27,10 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
     const listMonitor = monitor.childNodes[1] as HTMLElement;
 
     const target = event.target as HTMLElement;
-    const { region } = target.dataset;
+    const { region } = target.parentElement!.dataset;
+    const { color } = target.dataset;
     !!regionMonitor && !!region && (regionMonitor.innerText = region);
+    !!regionMonitor && !!color && (regionMonitor.style.backgroundColor = color);
 
     const dcList = target.querySelectorAll<HTMLImageElement>("img");
     dcList.forEach(img => {
@@ -60,8 +62,9 @@ export default function handlerRegionMove() {
     const popup = document.querySelector<HTMLElement>(".geo-popup");
     const connector = document.querySelector<HTMLElement>(".geonet__connector");
     if (!popup) throw Error("отсутствует .geo-popup");
+    if (!connector) throw Error("отсутствует .geonet__connector");
 
-    const regionsElementList = document.querySelectorAll<HTMLElement>(".geonet__region");
+    const regionsElementList = document.querySelectorAll<HTMLElement>(".geonet__grouped");
     regionsElementList.forEach(e => {
         e.addEventListener("mouseenter", handleMouseEnter(popup, connector));
         e.addEventListener("mouseleave", handleMouseLeave(popup, connector));

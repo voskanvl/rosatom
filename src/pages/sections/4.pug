@@ -26,7 +26,7 @@
                             - const grouped = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
                             
                             each key in Object.keys(grouped)
-                                .geonet__grouped(data-group= key)
+                                .geonet__grouped(data-group= key, data-color= typedc[key].color )
                                     each j in grouped[key]
                                         img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
 
