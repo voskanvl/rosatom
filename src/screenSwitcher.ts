@@ -3,7 +3,6 @@ import { store } from "./store";
 
 function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[]) {
     const currentScreen = store.getState().activeScreenNumber;
-    console.log("🚀 ~ currentScreen", currentScreen);
     screens.forEach((_, i) => {
         const element = document.createElement("li");
         element.classList.add("screen-switcher__item");

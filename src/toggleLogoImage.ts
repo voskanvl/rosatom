@@ -1,3 +1,6 @@
+import { store } from "./store";
+import { SCREEN_NUMBER_TO_CHANGE } from "./changeMainHeaderByScroll";
+
 export default function toggleLogoImage() {
     const menu = document.querySelector<HTMLElement>(".menu");
     const logo = document.querySelector<HTMLElement>(".logo");
@@ -11,13 +14,17 @@ export default function toggleLogoImage() {
     if (navigator.userAgent.toLocaleLowerCase().includes("firefox")) {
         menu &&
             menu.addEventListener("mouseenter", () => {
-                logo.style.backgroundImage = "url('../../../assets/logo/logo-white.png')";
+                if (+store.getState().activeScreenNumber in SCREEN_NUMBER_TO_CHANGE) return;
+                // logo.style.backgroundImage = "url('../../../assets/logo/logo-white.png')";
+                logo.classList.add("logo--white");
                 optionsSearch.style.filter = "invert(1)";
                 optionsInternational.style.color = "#fff";
             });
         menu &&
             menu.addEventListener("mouseleave", () => {
-                logo.style.backgroundImage = "url('../../../assets/logo/logo.png')";
+                if (+store.getState().activeScreenNumber in SCREEN_NUMBER_TO_CHANGE) return;
+                // logo.style.backgroundImage = "url('../../../assets/logo/logo.png')";
+                logo.classList.remove("logo--white");
                 optionsSearch.style.filter = "";
                 optionsInternational.style.color = "";
             });
