@@ -45,7 +45,7 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
         listMonitor.append(dcparam);
     });
 
-    connectTargetAndMonitor(target, monitor, connector);
+    connectTargetAndMonitor(target.parentElement!, monitor, connector);
 };
 
 const handleMouseLeave = (monitor: HTMLElement, connector: HTMLElement) => () => {
