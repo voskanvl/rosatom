@@ -1,5 +1,28 @@
-const handleMouseEnter = (monitor: HTMLElement) => (event: MouseEvent) => {
+const connectTargetAndMonitor = (
+    target: HTMLElement,
+    monitor: HTMLElement,
+    connector: HTMLElement,
+) => {
+    if (!connector) throw Error("отсутствует .geonet__connector");
+
+    const targetRect = target.getBoundingClientRect();
+    const targetHalfHeight = targetRect.y + targetRect.height / 2;
+
+    const monitorRect = monitor.getBoundingClientRect();
+    const monitorRight = monitorRect.x + monitorRect.width;
+    const monitorHalfHeight = monitorRect.y + monitorRect.height / 2;
+
+    connector.style.top =
+        monitorHalfHeight >= targetHalfHeight ? targetHalfHeight + "px" : monitorHalfHeight + "px";
+
+    connector.style.left = monitorRight + "px";
+    connector.style.width = targetRect.x - monitorRight + "px";
+    connector.style.height = Math.abs(monitorHalfHeight - targetHalfHeight) + "px";
+};
+
+const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (event: MouseEvent) => {
     monitor.style.display = "block";
+    connector.style.display = "grid";
     const regionMonitor = monitor.childNodes[0] as HTMLElement;
     const listMonitor = monitor.childNodes[1] as HTMLElement;
 
@@ -19,8 +42,12 @@ const handleMouseEnter = (monitor: HTMLElement) => (event: MouseEvent) => {
         dcparam.innerText = img.dataset.param || "";
         listMonitor.append(dcparam);
     });
+
+    connectTargetAndMonitor(target, monitor, connector);
 };
-const handleMouseLeave = (monitor: HTMLElement) => (event: MouseEvent) => {
+
+const handleMouseLeave = (monitor: HTMLElement, connector: HTMLElement) => () => {
+    connector.style.display = "none";
     monitor.style.display = "none";
     const regionMonitor = monitor.childNodes[0] as HTMLElement;
     const listMonitor = monitor.childNodes[1] as HTMLElement;
@@ -28,13 +55,15 @@ const handleMouseLeave = (monitor: HTMLElement) => (event: MouseEvent) => {
     regionMonitor.innerText = "";
     listMonitor.innerText = "";
 };
+
 export default function handlerRegionMove() {
     const popup = document.querySelector<HTMLElement>(".geo-popup");
+    const connector = document.querySelector<HTMLElement>(".geonet__connector");
     if (!popup) throw Error("отсутствует .geo-popup");
 
     const regionsElementList = document.querySelectorAll<HTMLElement>(".geonet__region");
     regionsElementList.forEach(e => {
-        e.addEventListener("mouseenter", handleMouseEnter(popup));
-        e.addEventListener("mouseleave", handleMouseLeave(popup));
+        e.addEventListener("mouseenter", handleMouseEnter(popup, connector));
+        e.addEventListener("mouseleave", handleMouseLeave(popup, connector));
     });
 }
