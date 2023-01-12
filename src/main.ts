@@ -6,10 +6,12 @@ import { controlSearchPopup } from "./changeSearchPopup";
 import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 import screenSwitcher from "./screenSwitcher";
 import advantagesHovers from "./advantagesHovers";
+import allocateRegionIcons from "./allocateRegionIcons";
 
 import "@splidejs/splide/css";
 import newsFeedHandler from "./news-feed-handeler";
 import splides from "./splides";
+import handlerRegionMove from "./handlerRegionMove";
 
 toggleLogoImage();
 scrollScreens();
@@ -36,3 +38,5 @@ advantagesHovers();
 splides();
 
 newsFeedHandler();
+allocateRegionIcons();
+handlerRegionMove();

@@ -6,12 +6,24 @@
         .geonet__data 
             .geonet__data-left
                 .geonet__data-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta illum quo quisquam dolores corporis iure qui cupiditate laborum quae eligendi consequatur ipsam aperiam modi consectetur animi porro nulla ex veniam quis, accusamus corrupti provident delectus nobis? Iusto, vitae quidem?
-                ul.geonet__data-types 
-                    each i in typedc
-                        li.geonet__data-type
-                            .geonet__data-mark(style=`background:${i.color}`)
-                            .geonet__data-name= i.name
+                    ul.geonet__data-types 
+                        each i in typedc
+                            li.geonet__data-type
+                                .geonet__data-mark(style="background: "+i.color)
+                                .geonet__data-name= i.name
+                    .geonet__popup
+                        include ../../components/geo-popup/geo-popup.pug 
 
             .geonet__data-right
-                include ../../../assets/svg/map.svg
+                #regions
+                    include ../../../assets/svg/map.svg
+                .geonet__icon-layer 
+                    each i in geo
+                        .geonet__region(data-regionid= i.id, data-region= i.name)
+                            - const grouped = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
+                            
+                            each key in Object.keys(grouped)
+                                .geonet__grouped(data-group= key)
+                                    each j in grouped[key]
+                                        img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
 

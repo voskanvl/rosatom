@@ -1,6 +1,7 @@
 .geonet
     background-color: #ECF0F3
     height: 100vh
+    +cur-b
 
     &__container
         @extend .contacts__container
@@ -14,8 +15,11 @@
         grid-template-columns: repeat(2,45%)
         column-gap: 5.208333vw
 
+        &-left
+            position: relative
+
         &-right
-            & > svg
+            & > #regions
                 width: 100%
                 margin-top: -186px
 
@@ -36,3 +40,29 @@
             width: 45px
             height: 45px
             border-radius: 50%
+
+    &__icon-layer
+        position: absolute
+        top: 0
+
+    &__region
+        position: absolute
+        top: 0
+        z-index: 10
+        display: grid
+        grid-auto-flow: column
+
+    &__grouped
+        & > * + *
+            margin-top: -30px
+
+    &__icon
+        width: 44px
+        height: 44px
+
+    &__popup
+        position: absolute
+        right: 0
+        translate: 0 -50%
+        right: 0
+        width: max-content
