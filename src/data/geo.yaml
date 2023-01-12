@@ -1,0 +1,61 @@
+geo:
+  - id: 77
+    name: г. Москва
+    dc:
+      - name: ЦОД “Москва 1”
+        param: до 40 МВт, 4000 стоек
+        type: project
+      - name: ЦОД “Москва 2”
+        param: до 40 МВт, 4000 стоек
+        type: project
+      - name: ЦОД “Москва 3”
+        param: до 16 МВт, 2000 стоек
+        type: project
+      - name: ЦОД “Москва first”
+        param: до 16 МВт, 2000 стоек
+        type: active
+      - name: ЦОД “Москва 4”
+        param: до 80 МВт, 8000 стоек
+        type: perspective
+  - id: 69
+    name: Тверская область
+    dc:
+      - name: ЦОД “Тверь 1”
+        param: до 40 МВт, 4000 стоек
+        type: active
+      - name: ЦОД “Тверь 2”
+        param: до 40 МВт, 4000 стоек
+        type: active
+  - id: 78
+    name: Санкт-Петербург
+    dc:
+      - name: ЦОД ”Питер 1”
+        param: до 40 МВт, 4000 стоек
+        type: active
+  - id: 16
+    name: Татарстан
+    dc:
+      - name: ЦОД ”Татарстан 1”
+        param: до 40 МВт, 4000 стоек
+        type: project
+  - id: 51
+    name: Мурманск
+    dc:
+      - name: ЦОД ”Мурманск”
+        param: до 40 МВт, 4000 стоек
+        type: perspective
+
+typedc:
+  perspective: 
+    color: "#30A842"
+    icon: "../../assets/svg/map/green.svg"
+    name: Перспективные проекты
+  active: 
+    color: "#6EABDD"
+    icon: "../../assets/svg/map/blue.svg"
+    name: ЦОД введён в эксплуатацию
+  project: 
+    color: "#404041"
+    icon: "../../assets/svg/map/black.svg"
+    name: ЦОД на этапе проектирование и строительства
+

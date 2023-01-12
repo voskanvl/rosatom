@@ -1,0 +1,38 @@
+.geonet
+    background-color: #ECF0F3
+    height: 100vh
+
+    &__container
+        @extend .contacts__container
+
+    &__title
+        & > p
+            line-height: 1.3
+
+    &__data
+        display: grid
+        grid-template-columns: repeat(2,45%)
+        column-gap: 5.208333vw
+
+        &-right
+            & > svg
+                width: 100%
+                margin-top: -186px
+
+        &-types
+            margin-top: 30px
+            padding: 0
+            list-style: none
+            display: flex
+            flex-direction: column
+            row-gap: 20px
+
+        &-type
+            display: flex
+            align-items: center
+            column-gap: 10px
+
+        &-mark
+            width: 45px
+            height: 45px
+            border-radius: 50%
