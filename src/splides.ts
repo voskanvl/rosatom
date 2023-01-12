@@ -4,6 +4,7 @@ export default function splides() {
     const splidesInstance = new MSplides();
     const innopolis = document.querySelector("#innopolis");
     const team = document.querySelector("#team");
+    const partners = document.querySelector("#partners");
 
     innopolis &&
         splidesInstance.add("#innopolis", {
@@ -46,4 +47,26 @@ export default function splides() {
     );
     !!teamSplideControlLeft && (teamSplideControlLeft.onclick = () => teamSplideInstance.go("<"));
     !!teamSplideControlRight && (teamSplideControlRight.onclick = () => teamSplideInstance.go(">"));
+
+    partners &&
+        splidesInstance.add("#partners", {
+            type: "loop",
+            arrows: false,
+            pagination: false,
+            perMove: 1,
+            perPage: 4,
+            padding: "10px",
+            // focus: "center",
+        });
+    const partnersSplideInstance = splidesInstance.instances["#partners"];
+    const partnersSplideControlLeft = document.querySelector<HTMLButtonElement>(
+        ".partners__control-button--left",
+    );
+    const partnersSplideControlRight = document.querySelector<HTMLButtonElement>(
+        ".partners__control-button--right",
+    );
+    !!partnersSplideControlLeft &&
+        (partnersSplideControlLeft.onclick = () => partnersSplideInstance.go("<"));
+    !!partnersSplideControlRight &&
+        (partnersSplideControlRight.onclick = () => partnersSplideInstance.go(">"));
 }

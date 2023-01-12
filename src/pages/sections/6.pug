@@ -2,3 +2,22 @@
     .partners__container
         .partners__title.text-masked-element(style="--background: #fff; --circle-color: #30A842") ПАРТНЕРЫ
             span.contacts__go= "перейти \u27f6"
+        .partners__data 
+            .partners__data-left
+                - 
+                    const partnersEdited = partners.reduce(
+                        (acc, e, i) => {
+                        acc[acc.length - 1].length > 1 ? acc.push([e]) : acc[acc.length - 1].push(e);
+                        return acc;
+                        },
+                        [[]]
+                    )
+                +splide("partners", partnersEdited)
+                    .partners__cell
+                        img(src= val[0])
+                        img(src= val[1])
+                .partners__controls 
+                    button.partners__control-button.partners__control-button--left= "\u27F5"
+                    button.partners__control-button.partners__control-button--right= "\u27F6"
+            .partners__data-right
+                include ../../components/partners-form/partners-form.pug

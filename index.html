@@ -30,30 +30,30 @@
                         boundsAutoApply: true,
                     },
                 );
-                const myGeoObject = new ymaps.GeoObject(
-                    {
-                        // Описание геометрии.
-                        geometry: {
-                            type: "Point",
-                            coordinates: [55.751837, 48.751597],
-                        },
-                        // Свойства.
-                        properties: {
-                            // Контент метки.
-                            iconContent: "Университетская, 7",
-                            hintContent: "ЦОД ИННОПОЛИС",
-                        },
-                    },
-                    {
-                        // Опции.
-                        // Иконка метки будет растягиваться под размер ее содержимого.
-                        preset: "islands#blackStretchyIcon",
-                        // Метку можно перемещать.
-                        draggable: true,
-                    },
-                );
+                // const myGeoObject = new ymaps.GeoObject(
+                //     {
+                //         // Описание геометрии.
+                //         geometry: {
+                //             type: "Point",
+                //             coordinates: [55.751837, 48.751597],
+                //         },
+                //         // Свойства.
+                //         properties: {
+                //             // Контент метки.
+                //             iconContent: "Университетская, 7",
+                //             hintContent: "ЦОД ИННОПОЛИС",
+                //         },
+                //     },
+                //     {
+                //         // Опции.
+                //         // Иконка метки будет растягиваться под размер ее содержимого.
+                //         preset: "islands#blackStretchyIcon",
+                //         // Метку можно перемещать.
+                //         draggable: true,
+                //     },
+                // );
 
-                map.geoObjects.add(myGeoObject);
+                // map.geoObjects.add(myGeoObject);
                 // map.geoObjects.add(multiRoute);
                 map.behaviors.disable("scrollZoom");
                 map.behaviors.disable("drag");

@@ -1,0 +1,30 @@
+.partners-form
+
+    &__title
+        font-size: 30px
+        font-weight: 700
+        margin-bottom: 23px
+
+    &__form
+        display: grid
+        grid-template-columns: repeat(2,50%)
+        gap: 20px
+
+        textarea
+            grid-column: -2 / -1
+            grid-row: 1 / 4
+
+        input, textarea
+            background: rgba(9, 8, 21, 0.01)
+            box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+            backdrop-filter: blur(24px)
+            border-radius: 7px
+            color: #fff
+            border: none
+            padding: 11px 22px
+            font-size: 16px
+
+        button
+            width: fit-content
+            font-size: 16px
+            font-weight: 350
