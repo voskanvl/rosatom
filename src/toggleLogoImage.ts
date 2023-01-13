@@ -14,7 +14,7 @@ export default function toggleLogoImage() {
     if (navigator.userAgent.toLocaleLowerCase().includes("firefox")) {
         menu &&
             menu.addEventListener("mouseenter", () => {
-                if (+store.getState().activeScreenNumber in SCREEN_NUMBER_TO_CHANGE) return;
+                if (SCREEN_NUMBER_TO_CHANGE.includes(+store.getState().activeScreenNumber)) return;
                 // logo.style.backgroundImage = "url('../../../assets/logo/logo-white.png')";
                 logo.classList.add("logo--white");
                 optionsSearch.style.filter = "invert(1)";
@@ -22,7 +22,7 @@ export default function toggleLogoImage() {
             });
         menu &&
             menu.addEventListener("mouseleave", () => {
-                if (+store.getState().activeScreenNumber in SCREEN_NUMBER_TO_CHANGE) return;
+                if (SCREEN_NUMBER_TO_CHANGE.includes(+store.getState().activeScreenNumber)) return;
                 // logo.style.backgroundImage = "url('../../../assets/logo/logo.png')";
                 logo.classList.remove("logo--white");
                 optionsSearch.style.filter = "";
