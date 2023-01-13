@@ -7,8 +7,8 @@ function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[])
         const element = document.createElement("li");
         element.classList.add("screen-switcher__item");
         element.dataset.item = i + "";
+        element.innerHTML = `<div class="green-circle"></div>`;
         if (i === currentScreen) {
-            element.innerHTML = `<div class="green-circle"></div>`;
             element.setAttribute("current", "current");
         }
         screenSwitcher.append(element);
@@ -42,10 +42,10 @@ function changeCurrentSwitchByStore() {
             `.screen-switcher__item[data-item="${currentScreen}"]`,
         );
 
-        !!previousSwitcher && (previousSwitcher.innerHTML = "");
+        // !!previousSwitcher && (previousSwitcher.innerHTML = "");
         !!previousSwitcher && previousSwitcher.removeAttribute("current");
 
-        !!currentSwitcher && (currentSwitcher.innerHTML = `<div class="green-circle"></div>`);
+        // !!currentSwitcher && (currentSwitcher.innerHTML = `<div class="green-circle"></div>`);
         !!currentSwitcher && currentSwitcher.setAttribute("current", "current");
     });
 }

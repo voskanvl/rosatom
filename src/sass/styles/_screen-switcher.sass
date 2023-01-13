@@ -15,6 +15,7 @@
         color: #404041
         font-size: 30px
         font-weight: 350
+        position: relative
         &::before
             content: counter(counter)
             counter-increment: counter
@@ -27,6 +28,8 @@
 
         &[current]
             color: #30A842
+            & > .green-circle
+                transform: scale(1) translate(-50%, -50%)
 
 .green-circle
     position: absolute
@@ -36,4 +39,6 @@
     border: 1px solid #30A842
     top: 50%
     left: 50%
-    translate: -50% -50% 0
+    transform: scale(0) translate(-50%, -50%)
+    transform-origin: 0% 0%
+    transition: transform .5s
