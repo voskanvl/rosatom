@@ -12,7 +12,9 @@ import "@splidejs/splide/css";
 import newsFeedHandler from "./news-feed-handeler";
 import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
+import openBurger from "./openBurger";
 
+openBurger();
 toggleLogoImage();
 scrollScreens();
 
