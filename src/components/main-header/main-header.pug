@@ -16,7 +16,16 @@ nav.main-header
         ul.list 
             +menuList(burger)
         img(src="../../../assets/svg/burger.svg")
-    .logo 
+
+    .logo
+
+    .menu-reduced 
+        ul.menu-reduced__list.list
+            each i in menu
+                li.menu-reduced= i.title
+            img.cristal(src="../../../assets/svg/cristal.svg")
+        span МЕНЮ
+
     ul.menu
         each i in menu 
             li.menu__item

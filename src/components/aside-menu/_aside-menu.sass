@@ -3,7 +3,11 @@
     &__list
         display: flex
         flex-direction: column
-        row-gap: 50px
+        row-gap: 5vh
+
+        @media (height < 800px)
+            row-gap: 2vh
+
         & > li
             list-style: none
             & > a
@@ -18,8 +22,8 @@
             color: #115DA1
 
     &__title
-        font-size: 40px
+        font-size: 4vh
         font-weight: bold
 
     &__caption
-        font-size: 18px
+        font-size: 1.8vh
