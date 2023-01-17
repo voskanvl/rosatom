@@ -8,7 +8,7 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "createComponent": " bash ./create-component.bash",
-        "tar": "tar -czvf mgusarov.tar.gz ./dist"
+        "tar": "tar -czvf rosatom.tar.gz ./dist"
     },
     "devDependencies": {
         "css-has-pseudo": "^4.0.2",

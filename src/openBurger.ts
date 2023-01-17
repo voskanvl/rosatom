@@ -7,13 +7,17 @@ import {
 import { store } from "./store";
 
 const handleBurgeEnter =
-    (mainHeader: HTMLElement, changingElements: { [key: string]: changingElementsData }) => () => {
+    (mainHeader: HTMLElement, changingElements: { [key: string]: changingElementsData }) => ({currentTarget}:Event) => {
         if (SCREEN_NUMBER_TO_CHANGE.some(e => e === store.getState().activeScreenNumber)) return;
+        const img = (currentTarget as HTMLElement).querySelector<HTMLImageElement>("img")
+        !!img && (img.src="../assets/svg/x.svg")
         changeMainHeader(mainHeader, changingElements)("add");
     };
 const handleBurgerLeave =
-    (mainHeader: HTMLElement, changingElements: { [key: string]: changingElementsData }) => () => {
+    (mainHeader: HTMLElement, changingElements: { [key: string]: changingElementsData }) => ({currentTarget}:Event) => {
         if (SCREEN_NUMBER_TO_CHANGE.some(e => e === store.getState().activeScreenNumber)) return;
+        const img = (currentTarget as HTMLElement).querySelector<HTMLImageElement>("img")
+        !!img && (img.src="../assets/svg/burger.svg")
         changeMainHeader(mainHeader, changingElements)("remove");
     };
 

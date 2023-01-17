@@ -1,3 +1,10 @@
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+
+const j = require("../../../../Downloads/carsBase/cars.json");
+
+import { writeFileSync } from "fs";
+
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const res = arr.reduce(
@@ -33,3 +40,5 @@ console.log(a1);
     c:['c','c']
 }
 */
+// console.log(Object.keys(j.list));
+writeFileSync("carnames.json", JSON.stringify(Object.keys(j.list)));
