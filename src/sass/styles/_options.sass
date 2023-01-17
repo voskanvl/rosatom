@@ -2,7 +2,10 @@
     margin-left: auto
     display: flex
     align-items: center
+    justify-content: center
+    flex-wrap: wrap
     z-index: 1
+    row-gap: 10px
     &__lk
         margin: 0 18px 0 25px
         & > a
@@ -10,6 +13,7 @@
             background: #30A842
             border-radius: 33px
             padding: 7px 21px
+            font-size: clamp(12px,20/1920*100vw,20px)
     & a
         text-decoration: none
         text-transform: uppercase
@@ -25,5 +29,7 @@
             color: #fff
 
     &__search
+        & > img 
+            width: 100%
         &--white
             filter: invert(1)
