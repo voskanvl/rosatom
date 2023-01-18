@@ -1,8 +1,9 @@
 import { setScreen } from "./scrollScreens";
+// import { setScreen } from "./scrollScreens";
 import { store } from "./store";
 
 function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[]) {
-    const currentScreen = store.getState().activeScreenNumber;
+    const { activeScreenNumber: currentScreen, setScreen } = store.getState();
     screens.forEach((_, i) => {
         const element = document.createElement("li");
         element.classList.add("screen-switcher__item");

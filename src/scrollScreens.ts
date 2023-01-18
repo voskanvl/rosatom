@@ -33,72 +33,13 @@ class ThresholdScroll {
     }
 }
 
-export const setScreen = (x: number) => {
-    const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
-    const { activeScreenNumber: current, activeScreenElement: currentElement } = store.getState();
-
-    if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
-
-    let next = x;
-    if (next < 0) next = 0;
-    if (next > screens.length - 1) next = screens.length - 1;
-
-    const nextElement = screens.find(e => e.dataset.number === next + "");
-    if (!nextElement) throw Error("невозможно найти следующий скрин");
-
-    currentElement.removeAttribute("active");
-    if (next > current) {
-        currentElement.style.top = "-100vh";
-    } else {
-        currentElement.style.top = "100vh";
-    }
-
-    nextElement.setAttribute("active", "active");
-    nextElement.style.top = "0";
-
-    store.setState(state => ({ ...state, activeScreenElement: nextElement }));
-    store.setState(state => ({ ...state, activeScreenNumber: next }));
-};
-
 export const changeScreen = (x: 1 | -1) => {
-    const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
-    const { activeScreenNumber: current, activeScreenElement: currentElement } = store.getState();
+    const { activeScreenNumber: current, setScreen } = store.getState();
 
-    if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
-
-    let next = current + x;
-    if (next < 0) next = 0;
-    if (next > screens.length - 1) next = screens.length - 1;
-
-    const nextElement = screens.find(e => e.dataset.number === next + "");
-    if (!nextElement) throw Error("невозможно найти следующий скрин");
-
-    currentElement.removeAttribute("active");
-    if (next > current) {
-        currentElement.style.top = "-100vh";
-    } else {
-        currentElement.style.top = "100vh";
-    }
-
-    nextElement.setAttribute("active", "active");
-    nextElement.style.top = "0";
-
-    store.setState(state => ({ ...state, activeScreenElement: nextElement }));
-    store.setState(state => ({ ...state, activeScreenNumber: next }));
+    setScreen(current + x);
 };
 
 export function scrollScreens() {
-    //получаем список всех скринов
-    const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
-    let currentActive = screens.find(e => e.getAttribute("active"));
-    if (!currentActive) throw Error("нет активного скрина при инициализации приложения");
-    store.setState(state => ({ ...state, activeScreenElement: currentActive }));
-
-    const currentActiveNumber = Number(currentActive.dataset.number); //номер активного скрина
-    if (isNaN(currentActiveNumber))
-        throw Error("data-number активного скрина не проелбразуется в число");
-
-    store.setState(state => ({ ...state, activeScreenNumber: currentActiveNumber }));
     /*
         в store activeScreenNumber - номер текущкго скрина
         в store activeScreenElement - текщий элемент скрина
