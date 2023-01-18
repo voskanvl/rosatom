@@ -1,5 +1,6 @@
 import create from "zustand/vanilla";
 export interface StoreState {
+    block: boolean;
     activeScreenNumber: number;
     activeScreenElement: HTMLElement | null;
     previousScreenNumber: number | null;
@@ -19,6 +20,7 @@ export const recomposing = (next: number, screens: HTMLElement[] | []) => {
 };
 
 export const store = create<StoreState>(set => ({
+    block: false,
     activeScreenNumber: 0,
     activeScreenElement: null,
     previousScreenNumber: null,
@@ -26,6 +28,7 @@ export const store = create<StoreState>(set => ({
     screens: [...document.querySelectorAll<HTMLElement>(".screen")],
     setScreen: x =>
         set(state => {
+            if (state.block) return state;
             const { activeScreenElement: currentElement, screens } = state;
             if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
 

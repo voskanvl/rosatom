@@ -25,20 +25,16 @@ $toggle-menu: 545px
                 scale: 1 1 1
     &:hover > .menu__item
         color: #fff
-        
 
     &--white
         color: #fff
 
-    
     @media (width < $toggle-menu)
         display: none
-
 
 .burger:hover
     & > .list
         scale: 1 1
-        
 
 .menu-reduced
     display: none
@@ -47,5 +43,5 @@ $toggle-menu: 545px
         &:hover
             & > .menu-reduced__list
                 scale: 1 1 1
-                
-            
+                display: grid
+                grid-template-columns: 100%
