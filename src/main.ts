@@ -14,11 +14,13 @@ import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
 import openBurger from "./openBurger";
 import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
+import touchedScroll from "./touchedScroll";
 
 openBurger();
 toggleLogoImage();
 scrollScreens();
 hideScreenSwitcherByMenu();
+touchedScroll();
 
 const moveMaskTextCreator = (element: HTMLElement) => {
     if (!element) throw Error("нет " + element);

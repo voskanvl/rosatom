@@ -1,3 +1,4 @@
+import { StoreState } from "./store";
 import create from "zustand/vanilla";
 export interface StoreState {
     block: boolean;
@@ -6,6 +7,8 @@ export interface StoreState {
     previousScreenNumber: number | null;
     previousScreenElement: HTMLElement | null;
     screens: HTMLElement[] | [];
+    inc: () => void;
+    dec: () => void;
     setScreen: (x: number) => void;
 }
 
@@ -19,6 +22,36 @@ export const recomposing = (next: number, screens: HTMLElement[] | []) => {
     });
 };
 
+const setScreen = (x: number) => (state: StoreState) => {
+    if (state.block) return state;
+    const { activeScreenElement: currentElement, screens } = state;
+    if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
+
+    let next = x;
+    if (next < 0) next = 0;
+    if (next > screens.length - 1) next = screens.length - 1;
+
+    const nextElement = screens.find(e => e.dataset.number === next + "");
+    if (!nextElement) throw Error("невозможно найти следующий скрин");
+
+    currentElement.removeAttribute("active");
+    recomposing(x, state.screens);
+
+    nextElement.setAttribute("active", "active");
+    nextElement.style.top = "0";
+
+    return { ...state, activeScreenElement: nextElement, activeScreenNumber: next };
+};
+
+const inc = (state: StoreState) => {
+    if (state.activeScreenNumber + 1 >= state.screens.length) return state;
+    else return setScreen(state.activeScreenNumber + 1)(state);
+};
+const dec = (state: StoreState) => {
+    if (state.activeScreenNumber - 1 <= 0) return state;
+    else return setScreen(state.activeScreenNumber - 1)(state);
+};
+
 export const store = create<StoreState>(set => ({
     block: false,
     activeScreenNumber: 0,
@@ -26,27 +59,9 @@ export const store = create<StoreState>(set => ({
     previousScreenNumber: null,
     previousScreenElement: null,
     screens: [...document.querySelectorAll<HTMLElement>(".screen")],
-    setScreen: x =>
-        set(state => {
-            if (state.block) return state;
-            const { activeScreenElement: currentElement, screens } = state;
-            if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
-
-            let next = x;
-            if (next < 0) next = 0;
-            if (next > screens.length - 1) next = screens.length - 1;
-
-            const nextElement = screens.find(e => e.dataset.number === next + "");
-            if (!nextElement) throw Error("невозможно найти следующий скрин");
-
-            currentElement.removeAttribute("active");
-            recomposing(x, state.screens);
-
-            nextElement.setAttribute("active", "active");
-            nextElement.style.top = "0";
-
-            return { ...state, activeScreenElement: nextElement, activeScreenNumber: next };
-        }),
+    inc: () => set(inc),
+    dec: () => set(dec),
+    setScreen: x => set(setScreen(x)),
 }));
 
 const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
