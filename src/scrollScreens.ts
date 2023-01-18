@@ -49,7 +49,11 @@ export function scrollScreens() {
     const threshold = new ThresholdScroll();
 
     window.addEventListener("wheel", ({ deltaY, target }: WheelEvent) => {
-        if ((target as HTMLElement).closest(".news-feed__list")) return;
+        if (
+            (target as HTMLElement).closest(".news-feed__list") ||
+            (target as HTMLElement).closest(".data-center__container")
+        )
+            return;
         deltaY > 0 ? threshold.inc() : threshold.dec();
     });
 

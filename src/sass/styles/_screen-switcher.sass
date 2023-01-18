@@ -1,7 +1,7 @@
 .screen-switcher
     position: fixed
     top: 50%
-    right: 100px
+    right: 5.208333vw
     translate: 0 -50%
     list-style-type: none
     counter-reset: counter
@@ -9,11 +9,14 @@
     z-index: 100
     transition: opacity .5s
 
+    @media (width<545px)
+        right: 2.5vw
+
     &__item
         position: relative
         user-select: none
         color: #404041
-        font-size: 30px
+        font-size: clamp(11px,30/1920*100vw,30px)
         font-weight: 350
         position: relative
         &::before
@@ -34,7 +37,7 @@
 .green-circle
     position: absolute
     aspect-ratio: 1
-    width: 50px
+    width: clamp(20px,50/1920*100vw,50px)
     border-radius: 50%
     border: 1px solid #30A842
     top: 50%
