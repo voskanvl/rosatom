@@ -1,3 +1,4 @@
+include ../accordion/accordion.pug
 mixin menuList(arr)
     each j in arr
         if j.menu 
@@ -11,6 +12,8 @@ mixin menuList(arr)
             li.list__item.list__item--big
                 a(href=j.href)!= j.name
 
+
+
 nav.main-header
     .burger 
         ul.list 
@@ -21,8 +24,7 @@ nav.main-header
 
     .menu-reduced 
         ul.menu-reduced__list.list
-            each i in menu
-                li.menu-reduced= i.title
+            +accordion(menu,"menu-reduced__item")
             img.cristal(src="../../../assets/svg/cristal.svg")
         span МЕНЮ
 
