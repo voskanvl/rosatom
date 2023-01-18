@@ -1,7 +1,12 @@
 .accordion
-    list-style: none
-    text-transform: uppercase
-    font-size: clamp(12px,16/545*100vw,16px)
+    max-height: 75vh
+    overflow-y: auto
+
+    &__container
+        padding-left: 0.5em
+        list-style: none
+        text-transform: uppercase
+        font-size: clamp(12px,16/545*100vw,16px)
 
     & li
         margin-bottom: 1em
@@ -14,14 +19,19 @@
     &__item-list
         overflow: auto
         max-height: 0vh
-        transition: max-height .5s
+        transition: .5s
         margin-top: 1em
+        padding-left: 0.5em
+        border-radius: 10px
+        background-color: #0002
+        margin-inline: 1em
 
     &__menu
         list-style-type: none//" \2192 "
 
         &:hover > .accordion__item-list
             max-height: 50vh
+            padding: 2em
 
         & > a
             color: #fff
