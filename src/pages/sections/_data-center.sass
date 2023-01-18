@@ -18,9 +18,7 @@
         left: 50%
         translate: -50% -50%
         width: 84%
-        height: 75vh
-        overflow-y: auto
-        +delete-scrollbar
+
         @media (height<590px)
             top: 66.66%
 
@@ -29,6 +27,9 @@
 
     &__list
         $precent-repeat: 23%
+        height: 75vh
+        overflow-y: auto
+        +delete-scrollbar
         display: grid
         grid-template-columns: repeat(auto-fit,minmax($precent-repeat,1fr))
         grid-auto-rows: 18.9vh
