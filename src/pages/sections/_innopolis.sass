@@ -6,11 +6,16 @@
 
     &__container
         +cur-w
-        +wid(1512px)
-        padding-top: 186px
+        +center-a
+    &__grid
+        height: 75vh
         display: grid
         grid-template-columns: repeat(2,1fr)
         column-gap: 19px
+        @media ( width <= 1440px)
+            grid-template-columns: 100%
+            overflow-y: auto
+            +delete-scrollbar
 
     &__details
         display: block
@@ -29,8 +34,10 @@
         font-weight: lighter
 
     & .splide
+        --x: 50%
+        --spread: 15%
         margin-top: 61px
-        mask-image: linear-gradient(to right, transparent, #000, transparent)
+        mask-image: linear-gradient(to right, transparent 0 calc(50% - var(--x)/2 - var(--spread)), #000 , transparent calc(50% + var(--x)/2 + var(--spread)) 100%)
 
         &__slide
             margin-right: 20px
