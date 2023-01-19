@@ -25,6 +25,7 @@
     "dependencies": {
         "@cjting/vite-plugin-svg-sprite": "^0.2.1",
         "@splidejs/splide": "^4.0.7",
+        "imask": "^6.4.3",
         "js-yaml": "^4.1.0",
         "zustand": "^4.1.5"
     }
