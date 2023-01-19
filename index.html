@@ -12,7 +12,7 @@
             var map = ymaps.ready(function () {
                 const map = new ymaps.Map("map", {
                     center: [55.751837, 48.751597],
-                    zoom: 16,
+                    zoom: 13,
                     controls: ["routePanelControl"],
                 });
                 var multiRoute = new ymaps.multiRouter.MultiRoute(
@@ -56,7 +56,7 @@
                 // map.geoObjects.add(myGeoObject);
                 // map.geoObjects.add(multiRoute);
                 map.behaviors.disable("scrollZoom");
-                map.behaviors.disable("drag");
+                // map.behaviors.disable("drag");
 
                 const control = map.controls.get("routePanelControl");
                 control.routePanel.state.set({
