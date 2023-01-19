@@ -1,3 +1,4 @@
+import listDisabledElementToScroll from "./listDisabledElementToScroll";
 import { store } from "./store";
 
 type ThresholdScrollMsg = "up" | "down";
@@ -48,12 +49,9 @@ export function scrollScreens() {
 
     const threshold = new ThresholdScroll();
 
-    window.addEventListener("wheel", ({ deltaY, target }: WheelEvent) => {
-        if (
-            (target as HTMLElement).closest(".news-feed__list") ||
-            (target as HTMLElement).closest(".data-center__container")
-        )
-            return;
+    window.addEventListener("wheel", (event: WheelEvent) => {
+        const { deltaY } = event;
+        if (listDisabledElementToScroll(event)) return;
         deltaY > 0 ? threshold.inc() : threshold.dec();
     });
 

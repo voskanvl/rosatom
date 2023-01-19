@@ -1,4 +1,3 @@
-import { StoreState } from "./store";
 import create from "zustand/vanilla";
 export interface StoreState {
     block: boolean;
