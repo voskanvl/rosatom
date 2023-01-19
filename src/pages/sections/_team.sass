@@ -2,9 +2,11 @@
     background-color: #ECF0F3
     height: 100vh
     &__container
-        +cur-w
-        +wid(1512px)
-        padding-top: 186px
+        +center-a
+        width: 80%
+
+        @media(width <= 1024px)
+            top: 60%
 
     &__title
         font-weight: 700

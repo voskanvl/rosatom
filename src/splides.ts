@@ -69,4 +69,14 @@ export default function splides() {
         (partnersSplideControlLeft.onclick = () => partnersSplideInstance.go("<"));
     !!partnersSplideControlRight &&
         (partnersSplideControlRight.onclick = () => partnersSplideInstance.go(">"));
+
+    const setPerPage = () => {
+        const mm = matchMedia("(max-width: 700px)").matches;
+        const mm1 = matchMedia("(max-width: 510px)").matches;
+        const mm2 = matchMedia("(max-width: 370px)").matches;
+        teamSplideInstance.options.perPage = mm ? (mm1 ? (mm2 ? 1 : 2) : 3) : 4; //:)))
+        teamSplideInstance.refresh();
+    };
+    setPerPage(); //initial
+    window.addEventListener("resize", setPerPage);
 }
