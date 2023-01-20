@@ -5,6 +5,9 @@ const connectTargetAndMonitor = (
 ) => {
     if (!connector) throw Error("отсутствует .geonet__connector");
 
+    const container = document.querySelector<HTMLElement>(".geonet__container")!;
+    const containerRect = container.getBoundingClientRect();
+
     const targetRect = target.getBoundingClientRect();
     const targetHalfHeight = targetRect.y + targetRect.height / 2;
 
@@ -13,9 +16,11 @@ const connectTargetAndMonitor = (
     const monitorHalfHeight = monitorRect.y + monitorRect.height / 2;
 
     connector.style.top =
-        monitorHalfHeight >= targetHalfHeight ? targetHalfHeight + "px" : monitorHalfHeight + "px";
+        monitorHalfHeight >= targetHalfHeight
+            ? targetHalfHeight - containerRect.top + "px"
+            : monitorHalfHeight - containerRect.top + "px";
 
-    connector.style.left = monitorRight + "px";
+    connector.style.left = monitorRight - containerRect.left + "px";
     connector.style.width = targetRect.x - monitorRight + "px";
     connector.style.height = Math.abs(monitorHalfHeight - targetHalfHeight) + "px";
 };

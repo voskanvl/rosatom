@@ -1,3 +1,4 @@
+import Splide from "@splidejs/splide";
 import { MSplides } from "./initSlides";
 
 export default function splides() {
@@ -70,13 +71,21 @@ export default function splides() {
     !!partnersSplideControlRight &&
         (partnersSplideControlRight.onclick = () => partnersSplideInstance.go(">"));
 
-    const setPerPage = () => {
+    const setPerPage = (instance: Splide) => () => {
         const mm = matchMedia("(max-width: 1500px)").matches;
         const mm1 = matchMedia("(max-width: 1120px)").matches;
         const mm2 = matchMedia("(max-width: 370px)").matches;
-        teamSplideInstance.options.perPage = mm ? (mm1 ? (mm2 ? 1 : 2) : 3) : 4; //:)))
-        teamSplideInstance.refresh();
+        instance.options.perPage = mm ? (mm1 ? (mm2 ? 1 : 2) : 3) : 4; //:)))
+        instance.refresh();
     };
-    setPerPage(); //initial
-    window.addEventListener("resize", setPerPage);
+
+    setPerPage(teamSplideInstance)(); //initial
+    setPerPage(innopolisSplideInstance)(); //initial
+
+    window.addEventListener("resize", () => {
+        setPerPage(teamSplideInstance)();
+        setPerPage(innopolisSplideInstance)();
+        console.log("🚀 ~ innopolisSplideInstance.root", innopolisSplideInstance.root);
+        innopolisSplideInstance.root.style.setProperty("--x", `50%`);
+    });
 }
