@@ -11,7 +11,7 @@
         display: flex
         justify-content: space-between
         align-items: center
-        column-gap: 70px
+        column-gap: 3.645833vw
 
     &__date
         background: #30A842
@@ -20,7 +20,7 @@
 
     &__text
         font-weight: 700
-        font-size: 20px
+        font-size: clamp(12px,12/900*100vw,20px)
         overflow: hidden
         text-overflow: ellipsis
         display: -moz-box
@@ -46,6 +46,6 @@
         margin-top: 28px
         text-decoration: none
         +cur-w
-        &:hover 
+        &:hover
             background: #30A842
             border: 1px solid #30A842

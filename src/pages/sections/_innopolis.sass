@@ -7,21 +7,33 @@
     &__container
         +cur-w
         +center-a
+        top: 60%
+        @media (height <= 480px)
+            top: 70%
+
+    &__title
+        margin-bottom: 14px
+
     &__grid
         height: 75vh
         display: grid
         grid-template-columns: repeat(2,1fr)
-        column-gap: 19px
+        gap: 19px
         @media ( width <= 1440px)
             grid-template-columns: 100%
             overflow-y: auto
             +delete-scrollbar
 
+    &__rightside
+        @media ( width <= 1440px)
+            border-top: 1px solid #888
+            padding-top: 2em
+
     &__details
         display: block
         +cur-w
         width: fit-content
-        margin-top: 14px
+        // margin-top: 14px
 
     &__img
         width: min(300px,100%)
@@ -35,12 +47,20 @@
 
     & .splide
         --x: 50%
-        --spread: 15%
+        --spread: 10%
         margin-top: 61px
-        mask-image: linear-gradient(to right, transparent 0 calc(50% - var(--x)/2 - var(--spread)), #000 , transparent calc(50% + var(--x)/2 + var(--spread)) 100%)
+        // mask-image: linear-gradient(to right, transparent 0 calc(50% - var(--x)/2 - var(--spread)), #000 , transparent calc(50% + var(--x)/2 + var(--spread)) 100%)
+        mask-image: linear-gradient(to right, transparent 0 var(--spread), #000 , transparent calc(100% - var(--spread)) 100%)
 
         &__slide
             margin-right: 20px
+
+        @media (width <= 768px)
+            --spread: 5%
+        @media (width <= 568px)
+            --spread: 2%
+        @media (width <= 368px)
+            mask-image: none
 
     &__controls
         display: flex
