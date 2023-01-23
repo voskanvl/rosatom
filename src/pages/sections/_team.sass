@@ -4,7 +4,7 @@
     &__container
         +center-a
 
-        @media(width <= 1024px)
+        @media(height <= 520px)
             top: 60%
 
     &__title
@@ -13,6 +13,8 @@
         width: fit-content
         margin-bottom: 48px
         margin-left: 22px
+        @media (width <= 510px)
+            margin-left: 0
 
     .team__controls
         @extend .innopolis__controls

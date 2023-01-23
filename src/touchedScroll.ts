@@ -27,6 +27,8 @@ export default function touchedScroll() {
     const handleStart = (event: TouchEvent) => {
         const target = event.target as HTMLElement;
 
+        if (target.closest(".main-header") || target.closest(".search-popup__input")) return;
+
         if (isScrolable(target)) return;
         event.preventDefault();
         console.log("touchstart", target);
@@ -35,21 +37,27 @@ export default function touchedScroll() {
 
     const handleEnd = (event: TouchEvent) => {
         // if (listDisabledElementToScroll(event)) return;
+        // const mouseEvent = new Event();
+
         const target = event.target as HTMLElement;
         if (target.classList.contains("screen-switcher__item")) return target.click();
         if (target.closest(".geonet__region")) return target.click();
         if (target.closest(".team__controls")) return target.click();
         if (target.closest(".team__container")) return;
+        // if (target.closest(".main-header"))
+        //     return target.dispatchEvent(new Event("mouseenter", { bubbles: true }));
 
         if (isScrolable(target)) return;
 
-        event.preventDefault();
+        // event.preventDefault();
         console.log("target", target);
 
         const delta = event.changedTouches[0].screenY - y;
         delta > 1 && delta / innerHeight > THRESHOLD_TOUCHED_SCROLL
             ? store.getState().inc()
             : store.getState().dec();
+
+        return true;
     };
 
     document.addEventListener("touchstart", handleStart, { passive: false });

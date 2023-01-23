@@ -5,9 +5,6 @@
         +center-a
         @media (width <= 1024px)
             top: 60%
-            height: 75vh
-            overflow-y: auto
-            +delete-scrollbar
 
     &__data
         display: grid
@@ -15,9 +12,14 @@
         column-gap: calc(111/1920*100vw)
         @media (width <= 1024px)
             grid-template-columns: 98%
+            height: 75vh
+            overflow-y: auto
+            +delete-scrollbar
+            padding-bottom: 100px
 
     &__title
         @extend .contacts__title
+        padding-bottom: 10px
 
     &__cell
         display: flex
