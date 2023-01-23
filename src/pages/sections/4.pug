@@ -3,6 +3,10 @@
         .geonet__connector
             .geonet__connector-left
             .geonet__connector-right
+        
+        .geonet__popup
+                    include ../../components/geo-popup/geo-popup.pug 
+                    
         .geonet__title.title.text-masked-element(style="--background: #303031; --circle-color: #115DA1") 
             p ГЕОРАСПРЕДЕЛЕННАЯ 
             p СЕТЬ
@@ -14,8 +18,7 @@
                         li.geonet__data-type
                             .geonet__data-mark(style="background: "+i.color)
                             .geonet__data-name= i.name
-                .geonet__popup
-                    include ../../components/geo-popup/geo-popup.pug 
+                
 
             .geonet__data-right
                 #regions
