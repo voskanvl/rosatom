@@ -1,3 +1,4 @@
+$change_lay: "width <= 768px"
 .geonet
     background-color: #ECF0F3
     height: 100vh
@@ -17,6 +18,8 @@
         display: grid
         grid-template-columns: repeat(2,45%)
         column-gap: 5.208333vw
+        @media ($change_lay)
+            grid-template-columns: 100%
 
         &-left
             position: relative
@@ -32,23 +35,24 @@
             list-style: none
             display: flex
             flex-direction: column
-            row-gap: 20px
+            row-gap: 2vh
 
         &-type
             display: flex
             align-items: center
             column-gap: 10px
+            font-size: clamp(13px,20/1024*100vw,20px)
 
         &-mark
-            width: 45px
-            height: 45px
+            width: 4.5vmin
+            height: 4.5vmin
             border-radius: 50%
+            flex-shrink: 0
 
         &-name
-            font-size: 20px
 
         &-text
-            font-size: 18px
+            font-size: clamp(12px,18/1024*100vw,18px)
 
     &__icon-layer
         position: absolute
@@ -66,7 +70,7 @@
             margin-top: -3vh
 
     &__icon
-        width: 2.291667vw
+        width: max(20px,2.291667vw)
         height: 4.4vh
 
     &__popup
@@ -76,13 +80,19 @@
         translate: 30% -70%
         right: 0%
         width: max-content
+        z-index: 11
+        @media ($change_lay)
+            right: unset
+            left: 0
+            top: 70%
+            translate: unset
 
     &__connector
         position: absolute
         display: grid
         grid-template-columns: 1fr 2fr
         padding: 0 5px
-        scale: 1
+        scale: 0
         translate: -50%
         transition: .5s
         transform-origin: left
@@ -91,5 +101,15 @@
             border: 2px solid #303031
             border-top-color: transparent
             border-left-color: transparent
+            @media ($change_lay)
+                border-top-color: #303031
+                scale: 2.5 1
+                border-width: 1px
+
         &-right
             border-top: 2px solid #303031
+            @media ($change_lay)
+                display: none
+
+    & #regions > svg
+        width: 100%

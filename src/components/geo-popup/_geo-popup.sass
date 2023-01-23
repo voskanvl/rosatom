@@ -12,9 +12,9 @@
         display: flex
         align-items: center
         justify-content: center
-        margin-bottom: 19px
+        margin-bottom: 1.9vh
         width: fit-content
-        padding: 6px 26px
+        padding: 0.6vh 2.539063vw
 
     &__dclist
         display: flex
@@ -23,12 +23,12 @@
 
     &__dcname
         font-weight: 700
-        font-size: 25px
+        font-size: clamp(13px,25/768*100vw,25px)
         text-transform: uppercase
         color: #115DA1
 
     &__dcparam
-        font-size: 18px
+        font-size: clamp(11px,18/768*100vw,18px)
         margin-bottom: 15px
         &:last-child
             margin-bottom: unset
