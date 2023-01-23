@@ -59,3 +59,4 @@ const partnersFormPhoneMask = IMask(partnersFormPhone, {
 });
 
 // store.getState().inc();
+window.addEventListener("resize", () => allocateRegionIcons());
