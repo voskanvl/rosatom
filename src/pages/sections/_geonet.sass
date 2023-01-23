@@ -2,6 +2,7 @@ $change_lay: "width <= 768px"
 .geonet
     background-color: #ECF0F3
     height: 100vh
+    position: relative
     +cur-b
 
     &__container
@@ -9,6 +10,10 @@ $change_lay: "width <= 768px"
         // left: 0
         // top: 0
         // translate: 0
+        // @media (width < 768px)
+        //     overflow-y: auto
+        //     height: 75vh
+        //     padding-bottom: 100px
 
     &__title
         & > p
@@ -20,17 +25,26 @@ $change_lay: "width <= 768px"
         column-gap: 5.208333vw
         @media ($change_lay)
             grid-template-columns: 100%
+            overflow-y: auto
+            height: 75vh
+            padding-bottom: 150px
 
         &-left
             position: relative
 
         &-right
+            position: relative
             & > #regions
                 width: 100%
                 margin-top: -186px
+            @media ($change_lay)
+                margin-top: 0
+                grid-area: 1/1/2/2
+                & > #regions
+                    margin-top: 0
 
         &-types
-            margin-top: 30px
+            margin-top: 3vh
             padding: 0
             list-style: none
             display: flex
@@ -48,8 +62,6 @@ $change_lay: "width <= 768px"
             height: 4.5vmin
             border-radius: 50%
             flex-shrink: 0
-
-        &-name
 
         &-text
             font-size: clamp(12px,18/1024*100vw,18px)
@@ -82,10 +94,8 @@ $change_lay: "width <= 768px"
         width: max-content
         z-index: 11
         @media ($change_lay)
-            right: unset
-            left: 0
-            top: 70%
-            translate: unset
+            top: -100%
+            translate: -50% 0
 
     &__connector
         position: absolute
@@ -96,20 +106,18 @@ $change_lay: "width <= 768px"
         translate: -50%
         transition: .5s
         transform-origin: left
+        z-index: 2
+        @media ($change_lay)
+            display: none
 
         &-left
             border: 2px solid #303031
             border-top-color: transparent
             border-left-color: transparent
-            @media ($change_lay)
-                border-top-color: #303031
-                scale: 2.5 1
-                border-width: 1px
 
         &-right
             border-top: 2px solid #303031
-            @media ($change_lay)
-                display: none
 
     & #regions > svg
         width: 100%
+        height: auto

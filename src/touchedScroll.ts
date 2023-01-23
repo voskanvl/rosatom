@@ -38,6 +38,8 @@ export default function touchedScroll() {
         const target = event.target as HTMLElement;
         if (target.classList.contains("screen-switcher__item")) return target.click();
         if (target.closest(".geonet__region")) return target.click();
+        if (target.closest(".team__controls")) return target.click();
+        if (target.closest(".team__container")) return;
 
         if (isScrolable(target)) return;
 

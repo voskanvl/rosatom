@@ -1,5 +1,5 @@
 export default function allocateRegionIcons() {
-    const container = document.querySelector<HTMLElement>(".geonet__container")!;
+    const container = document.querySelector<HTMLElement>(".geonet__data-right")!;
     const containerRect = container.getBoundingClientRect();
 
     const iconGroups = [...document.querySelectorAll<HTMLElement>(".geonet__region")];

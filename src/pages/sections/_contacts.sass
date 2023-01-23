@@ -16,10 +16,12 @@ $media2: "width <= 1024px"
     &__container
         +center-a
         height: 75vh
-        @media ($media1)
-            top: 55%
-        @media ($media2)
-            top: 62%
+        top: 60vh
+        // @media ($media1)
+        //     top: 55%
+        // @media ($media2)
+        //     top: 62%
+        +delete-scrollbar
 
     &__title
         display: flex
