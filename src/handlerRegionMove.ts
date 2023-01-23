@@ -31,7 +31,10 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
     const regionMonitor = monitor.childNodes[0] as HTMLElement;
     const listMonitor = monitor.childNodes[1] as HTMLElement;
 
-    const target = event.target as HTMLElement;
+    regionMonitor.innerText = "";
+    listMonitor.innerText = "";
+
+    const target = event.currentTarget as HTMLElement;
     const { region } = target.parentElement!.dataset;
     const { color } = target.dataset;
     !!regionMonitor && !!region && (regionMonitor.innerText = region);
@@ -73,5 +76,6 @@ export default function handlerRegionMove() {
     regionsElementList.forEach(e => {
         e.addEventListener("mouseenter", handleMouseEnter(popup, connector));
         e.addEventListener("mouseleave", handleMouseLeave(popup, connector));
+        e.addEventListener("click", handleMouseEnter(popup, connector));
     });
 }
