@@ -17,7 +17,7 @@ const isScrolable = (el: HTMLElement): boolean => {
     ) {
         canParent = canParent.parentElement as HTMLElement;
     }
-    if (canParent.classList.contains("screen") || canParent !== document.body) return false;
+    if (canParent.classList.contains("screen") || canParent === document.body) return false;
     return true;
 };
 
@@ -26,7 +26,8 @@ export default function touchedScroll() {
 
     const handleStart = (event: TouchEvent) => {
         const target = event.target as HTMLElement;
-        if (isScrolable(target) || target.closest(".geonet__region")) return;
+
+        if (isScrolable(target)) return;
         event.preventDefault();
         console.log("touchstart", target);
         y = event.touches[0].screenY;
@@ -35,13 +36,15 @@ export default function touchedScroll() {
     const handleEnd = (event: TouchEvent) => {
         // if (listDisabledElementToScroll(event)) return;
         const target = event.target as HTMLElement;
+        if (target.classList.contains("screen-switcher__item")) return target.click();
+        if (target.classList.contains(".geonet__region")) return target.click();
+
         if (isScrolable(target)) return;
 
         event.preventDefault();
         console.log("target", target);
 
         const delta = event.changedTouches[0].screenY - y;
-        console.log("🚀 ~ delta / innerHeight", delta / innerHeight);
         delta > 1 && delta / innerHeight > THRESHOLD_TOUCHED_SCROLL
             ? store.getState().inc()
             : store.getState().dec();

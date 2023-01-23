@@ -21,8 +21,10 @@ export const recomposing = (next: number, screens: HTMLElement[] | []) => {
     });
 };
 
-const setScreen = (x: number) => (state: StoreState) => {
+const setScreenHandler = (x: number) => (state: StoreState) => {
     if (state.block) return state;
+    console.log("🚀 ~ setScreen x", x);
+
     const { activeScreenElement: currentElement, screens } = state;
     if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
 
@@ -44,11 +46,11 @@ const setScreen = (x: number) => (state: StoreState) => {
 
 const inc = (state: StoreState) => {
     if (state.activeScreenNumber + 1 >= state.screens.length) return state;
-    else return setScreen(state.activeScreenNumber + 1)(state);
+    else return setScreenHandler(state.activeScreenNumber + 1)(state);
 };
 const dec = (state: StoreState) => {
     if (state.activeScreenNumber - 1 <= 0) return state;
-    else return setScreen(state.activeScreenNumber - 1)(state);
+    else return setScreenHandler(state.activeScreenNumber - 1)(state);
 };
 
 export const store = create<StoreState>(set => ({
@@ -60,7 +62,7 @@ export const store = create<StoreState>(set => ({
     screens: [...document.querySelectorAll<HTMLElement>(".screen")],
     inc: () => set(inc),
     dec: () => set(dec),
-    setScreen: x => set(setScreen(x)),
+    setScreen: x => set(setScreenHandler(x)),
 }));
 
 const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
