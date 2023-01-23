@@ -4,34 +4,41 @@ import { store } from "./store";
 const THRESHOLD_TOUCHED_SCROLL = 0.1;
 
 const isScrolable = (el: HTMLElement): boolean => {
-    const getOverflow = (el: HTMLElement): boolean => {
+    const getOverflow = (el: Element): boolean => {
         const { overflowY } = window.getComputedStyle(el);
         return overflowY === "scroll" || overflowY === "auto";
     };
 
     let canParent = el;
-    while (!getOverflow(canParent) && !canParent.classList.contains("screen")) {
+    while (
+        !canParent.classList.contains("screen") &&
+        canParent !== document.body &&
+        !getOverflow(canParent)
+    ) {
         canParent = canParent.parentElement as HTMLElement;
     }
-    if (canParent.classList.contains("screen")) return false;
+    if (canParent.classList.contains("screen") || canParent !== document.body) return false;
     return true;
 };
 
 export default function touchedScroll() {
     let y = 0;
+
     const handleStart = (event: TouchEvent) => {
-        if (isScrolable(event.target as HTMLElement)) return;
+        const target = event.target as HTMLElement;
+        if (isScrolable(target) || target.closest(".geonet__region")) return;
         event.preventDefault();
-        console.log("touchstart", event.target);
+        console.log("touchstart", target);
         y = event.touches[0].screenY;
     };
+
     const handleEnd = (event: TouchEvent) => {
         // if (listDisabledElementToScroll(event)) return;
-
-        if (isScrolable(event.target as HTMLElement)) return;
+        const target = event.target as HTMLElement;
+        if (isScrolable(target)) return;
 
         event.preventDefault();
-        console.log("event.target", event.target);
+        console.log("target", target);
 
         const delta = event.changedTouches[0].screenY - y;
         console.log("🚀 ~ delta / innerHeight", delta / innerHeight);
@@ -39,7 +46,7 @@ export default function touchedScroll() {
             ? store.getState().inc()
             : store.getState().dec();
     };
+
     document.addEventListener("touchstart", handleStart, { passive: false });
     document.addEventListener("touchend", handleEnd, { passive: false });
-    document.addEventListener("scroll", console.log);
 }

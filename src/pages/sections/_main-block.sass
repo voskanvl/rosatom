@@ -13,11 +13,13 @@
     // &__leftside
     //     margin-top: 98px
     &__title
-        font-size: clamp(25px,4.6875vw, 90px)
+        font-size: clamp(35px,4.6875vw, 90px)
         // line-height: 1.5
         font-weight: bold
         color: #303031
         text-transform: uppercase
+        @media (width <= 475px)
+            letter-spacing: -2px
 
         & > p + p
             margin-top: -13px
