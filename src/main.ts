@@ -1,3 +1,4 @@
+import { store } from "./store";
 import moveMaskText from "./moveMaskText";
 import "./sass/style.sass";
 import { scrollScreens } from "./scrollScreens";
@@ -14,14 +15,14 @@ import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
 import openBurger from "./openBurger";
 import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
-// import touchedScroll from "./touchedScroll";
+import touchedScroll from "./touchedScroll";
 import IMask from "imask";
 
 openBurger();
 toggleLogoImage();
 scrollScreens();
 hideScreenSwitcherByMenu();
-// touchedScroll();
+touchedScroll();
 
 const moveMaskTextCreator = (element: HTMLElement) => {
     if (!element) throw Error("нет " + element);
@@ -56,3 +57,5 @@ const partnersFormPhoneMask = IMask(partnersFormPhone, {
     mask: "+{7}(000)000-00-00",
     lazy: false,
 });
+
+store.getState().inc();
