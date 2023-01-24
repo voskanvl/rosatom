@@ -1,5 +1,6 @@
 .burger
     margin-right: clamp(5px,74/1920*100vw,74px)
+    width: 46px
 
     // @media (width < 1440px)
     //     margin-right: 5px
@@ -9,7 +10,6 @@
         position: absolute
         top: -5px
         left: 0
-
         height: 100vh
         width: 100vw
         z-index: -1
@@ -24,8 +24,8 @@
             @media (width <= 1024px)
                 padding: 0
 
-    &:hover
-        & .burger__list
-            scale: 1 1
-            & > .list
-                scale: 1 1
+    // &:hover
+    //     & > .burger__list
+    //         scale: 1 1
+    //         & > .list
+    //             scale: 1 1
