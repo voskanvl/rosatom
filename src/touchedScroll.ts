@@ -44,6 +44,7 @@ export default function touchedScroll() {
         if (target.closest(".geonet__region")) return target.click();
         if (target.closest(".team__controls")) return target.click();
         if (target.closest(".team__container")) return;
+        if (target.closest(".main-header")) return;
         // if (target.closest(".main-header"))
         //     return target.dispatchEvent(new Event("mouseenter", { bubbles: true }));
 
@@ -53,7 +54,7 @@ export default function touchedScroll() {
         console.log("target", target);
 
         const delta = event.changedTouches[0].screenY - y;
-        delta > 1 && delta / innerHeight > THRESHOLD_TOUCHED_SCROLL
+        delta > 1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL
             ? store.getState().inc()
             : store.getState().dec();
 

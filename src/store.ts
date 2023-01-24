@@ -49,7 +49,7 @@ const inc = (state: StoreState) => {
     else return setScreenHandler(state.activeScreenNumber + 1)(state);
 };
 const dec = (state: StoreState) => {
-    if (state.activeScreenNumber - 1 <= 0) return state;
+    if (state.activeScreenNumber - 1 < 0) return state;
     else return setScreenHandler(state.activeScreenNumber - 1)(state);
 };
 

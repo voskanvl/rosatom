@@ -38,7 +38,7 @@ export default function openBurger() {
 
     burgerStore.subscribe(({ isOpen }) => openBurgerList(isOpen));
 
-    burger.addEventListener("mouseenter", handleBurgerEnter(mainHeader, changingElements));
-    burger.addEventListener("mouseleave", handleBurgerLeave(mainHeader, changingElements));
+    // burger.addEventListener("mouseenter", handleBurgerEnter(mainHeader, changingElements));
+    // burger.addEventListener("mouseleave", handleBurgerLeave(mainHeader, changingElements));
     burger.addEventListener("click", handleBurgerEnter(mainHeader, changingElements));
 }
