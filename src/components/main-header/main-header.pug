@@ -16,8 +16,9 @@ mixin menuList(arr)
 
 nav.main-header
     .burger 
-        ul.list 
-            +menuList(burger)
+        ul.burger__list
+            .list
+                +menuList(burger)
         img(src="../../../assets/svg/burger.svg")
 
     .logo
