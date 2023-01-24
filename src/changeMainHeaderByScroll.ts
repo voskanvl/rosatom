@@ -23,6 +23,10 @@ export const changingElements: { [key: string]: changingElementsData } = {
         selector: ".options__search",
         changingClass: "options__search--white",
     },
+    menuReduced: {
+        selector: ".menu-reduced__caption",
+        changingClass: "menu-reduced__caption--white",
+    },
 };
 
 export const changeMainHeader =
