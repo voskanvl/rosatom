@@ -81,7 +81,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": resolve(__dirname, "./src"),
-            "@var": resolve(__dirname, "./src/sass/_variables.sass"),
+            "@var": resolve(__dirname, "./src/sass/_variables.styl"),
         },
     },
 });

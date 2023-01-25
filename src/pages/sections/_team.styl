@@ -1,0 +1,24 @@
+.team
+    background-color #ECF0F3
+    height 100vh
+    &__container
+        center-a()
+
+        @media(max-height: 520px)
+            top 60%
+
+    &__title
+        font-weight 700
+        font-size 80px
+        width fit-content
+        margin-bottom 48px
+        margin-left 22px
+        @media (max-width: 510px)
+            margin-left 0
+
+    .team__controls
+        @extend .innopolis__controls
+
+    .team__control-button
+        @extend .innopolis__control-button
+        color #404041

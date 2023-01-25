@@ -1,0 +1,48 @@
+.search-popup
+    position fixed
+    inset 0
+    background #0000
+    backdrop-filter blur(0px)
+    z-index 102
+    flex-direction column
+    align-items center
+    display none
+    opacity 0
+    transition-property opacity, backdrop-filter
+    transition-duration 1s
+
+    &[open]
+
+        opacity 1
+        backdrop-filter blur(10px)
+        cur-b()
+
+    &__input
+        position relative
+        display flex
+        align-items center
+        border-bottom 1px #303031 solid
+        margin-top 225px
+        width min(840px,80%)
+
+        & > input
+            background none
+            border none
+            flex 1
+            font-size clamp(18px,3.5vw,35px)
+            outline none
+            &::placeholder
+                color #303031
+
+    &__input-icon
+        aspect-ratio 1
+        width clamp(19px,3.4vmin,34px)
+        & > img
+            width 100%
+
+    &__close
+        position absolute
+        top -400%
+        right 0%
+
+

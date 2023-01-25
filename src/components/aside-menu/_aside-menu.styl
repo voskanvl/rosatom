@@ -1,0 +1,29 @@
+@import "../../sass/_variables"
+.aside-menu
+    &__list
+        display flex
+        flex-direction column
+        row-gap 5vh
+
+        @media (max-height: 800px)
+            row-gap 2vh
+
+        & > li
+            list-style none
+            & > a
+                cur-b()
+                text-decoration none
+                color #303031
+
+    &__item
+        max-width 153px
+        transition color .4s
+        &:hover
+            color #115DA1
+
+    &__title
+        font-size 4vh
+        font-weight bold
+
+    &__caption
+        font-size 1.8vh

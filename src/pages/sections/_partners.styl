@@ -1,0 +1,36 @@
+@import "../../sass/_variables"
+.partners
+    @extend .innopolis
+    cur-w()
+    &__container
+        center-a()
+        @media (max-height: 520px)
+            top 65%
+
+    &__data
+        display grid
+        grid-template-columns repeat(2,45%)
+        column-gap calc(111/1920*100vw)
+        @media (max-width: 1024px)
+            grid-template-columns 98%
+            height 75vh
+            overflow-y auto
+            delete-scrollbar()
+            padding-bottom 100px
+
+    &__title
+        @extend .contacts__title
+        padding-bottom 10px
+
+    &__cell
+        display flex
+        flex-direction column
+
+    & .splide
+        mask-image none
+
+    &__controls
+        @extend .innopolis__controls
+
+    &__control-button
+        @extend .innopolis__control-button

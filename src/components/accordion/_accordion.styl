@@ -1,0 +1,46 @@
+@import "../../sass/_variables"
+.accordion
+    max-height 75vh
+    overflow-y auto
+    scrollbar-width thin
+    scrollbar-color #0000
+    delete-scrollbar()
+
+    &__container
+        padding-left 0.5em
+        list-style none
+        text-transform uppercase
+        font-size: clamp(12px,16/545*100vw,16px)
+
+    & li
+        margin-bottom 1em
+
+    &__item
+
+        &:hover > &-list
+            max-height 50vh
+
+    &__item-list
+        overflow auto
+        max-height 0vh
+        transition .5s
+        margin-top: 1em
+        padding-left 0.5em
+        border-radius 10px
+        margin-inline 1em
+        scrollbar-width 0
+        delete-scrollbar()
+
+    &__menu
+        list-style-type none//" \2192 "
+
+        &:hover > .accordion__item-list
+            max-height 50vh
+
+        & > a
+            color #fff
+
+    &__node
+        list-style-type none
+        & > a
+            color #fff

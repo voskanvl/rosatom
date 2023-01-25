@@ -1,0 +1,51 @@
+@import "./_menu"
+@import "./_list"
+@import "./_burger"
+
+.main-header
+    position fixed
+    top 5px
+    left 0
+    right 0
+    z-index 1
+    display flex
+    align-items center
+    padding 0 clamp(5px,100/1920*100vw,100px) 0 clamp(5px,50/1920*100vw,50px)
+    cursor url("../../../assets/cursor/black.png") 19 19, default
+
+    & > .logo
+        background-image url("../../../assets/logo/logo.png")
+        background-repeat no-repeat
+        background-size contain
+        background-position 0 50%
+        width 18%
+        height 80px
+
+        &--white
+            background-image url("../../../assets/logo/logo-white.png")
+
+    &:has(.menu:hover), &:has(.menu-reduced:hover), &:has(.menu:active), &:has(.menu-reduced:active)
+        & > .logo
+            background-image url("../../../assets/logo/logo-white.png")
+        & > .options
+            &
+                color #fff
+                img
+                    filter invert(1)
+                a
+                    color #fff
+
+    @media (max-width: 1440px)
+        padding 0 1vw 0 1vw
+        flex-wrap wrap
+        & > .logo
+            order -2
+            flex 1 0 47%
+            height 40px
+
+.cristal
+    position absolute
+    bottom 0
+    right 0
+    width 50%
+    z-index -1

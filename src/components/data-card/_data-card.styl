@@ -1,0 +1,33 @@
+.data-card
+    &__container
+        color #fff
+        background rgba(9, 8, 21, 0.01)
+        box-shadow inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+        backdrop-filter blur(24px)
+        border-radius 10px
+        padding 1.041667vw 1.5625vw
+        height 100%
+        overflow hidden
+
+        &:hover
+            & > .data-card__front
+                opacity 0
+
+            & > .data-card__back
+                opacity 1
+
+    &__title
+        font-size clamp(25px,40/1000*100vh,40px)
+        font-weight bold
+
+    &__front, &__back
+        opacity 1
+        position absolute
+        transition opacity .5s
+
+    &__back
+        opacity 0
+        font-size clamp(12px,18/1000*100vh,18px)
+
+    &__caption
+        font-size clamp(12px,18/1000*100vh,18px)

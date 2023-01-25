@@ -1,0 +1,51 @@
+.news
+    user-select none
+    img
+        width 100%
+        border-radius 10px
+        max-height 206px
+        object-fit cover
+
+    &__data
+        margin-top 14px
+        display flex
+        justify-content space-between
+        align-items center
+        column-gap 3.645833vw
+
+    &__date
+        background #30A842
+        border-radius 33px
+        padding 4px 17px
+
+    &__text
+        font-weight 700
+        font-size clamp(12px,12/900*100vw,20px)
+        overflow hidden
+        text-overflow ellipsis
+        display -moz-box
+        -moz-box-orient vertical
+        display -webkit-box
+        -webkit-line-clamp 3
+        -webkit-box-orient vertical
+        line-clamp 3
+        box-orient vertical
+
+    &__go
+        display block
+        width fit-content
+        border 1px solid #FFFFFF
+        border-radius 33px
+        background transparent
+        color #fff
+        padding 4px 16px
+        font-weight 350
+        font-size 16px
+        font-family 'Rosatom', sans-serif
+        font-style normal
+        margin-top 28px
+        text-decoration none
+        cur-w()
+        &:hover
+            background #30A842
+            border 1px solid #30A842

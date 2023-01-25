@@ -1,0 +1,27 @@
+wid(x=1320px,percent=95%)
+    width min(x,percent)
+    margin 0 auto
+
+cur-b(cursor=pointer)
+    cursor url("../../assets/cursor/black.png") 19 19, cursor
+cur-w(cursor= pointer)
+    cursor url("../../assets/cursor/white.png") 19 19, cursor
+
+delete-scrollbar()
+    scrollbar-color #0000 #0000
+    overflow -moz-scrollbars-none
+    &::-webkit-scrollbar
+        width 0
+        height 0
+        display none
+    &::-moz-scrollbar
+        width 0
+        height 0
+        display none
+
+center-a()
+    position absolute
+    left 50%
+    top 50%
+    translate -50% -50%
+    width 80%

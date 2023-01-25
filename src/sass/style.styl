@@ -1,0 +1,41 @@
+@import "./_import"
+@import "../sass/_variables"
+
+*,*::after,*::before
+    box-sizing: border-box
+    margin: 0
+
+body
+    font-family Rosatom, sans-serif
+    user-select none
+    -webkit-tap-highlight-color transparent
+
+main > header.header
+    position fixed
+    top 0
+    z-index 1
+
+.screen
+    height 100vh
+    width 100vw
+    position fixed
+    top 0
+    left 0
+    transition top .6s ease-in-out
+    &:not([active])
+        top 100vh
+    &[data-number="0"]
+        background linear-gradient(to left, #E9F3FC, #fff)
+        cursor url("../assets/cursor/black.png") 19 19, default
+    &[data-number="5"]
+        background: linear-gradient(210.71deg, #1C376A 16.3%, #404041 85.06%)
+
+.title
+    width fit-content
+    font-size clamp(22px,80/1920*100vw,80px)
+    font-weight bold
+    line-height 0.8
+    @media (max-width: 510px )
+        width 100%
+        text-align center
+        justify-content center
