@@ -53,7 +53,7 @@ const dec = (state: StoreState) => {
     else return setScreenHandler(state.activeScreenNumber - 1)(state);
 };
 
-export const store = create<StoreState>(set => ({
+const store = create<StoreState>(set => ({
     block: false,
     activeScreenNumber: 0,
     activeScreenElement: null,
@@ -75,3 +75,5 @@ if (isNaN(currentActiveNumber))
     throw Error("data-number активного скрина не проебразуется в число");
 
 store.setState(state => ({ ...state, activeScreenNumber: currentActiveNumber }));
+
+export default store;

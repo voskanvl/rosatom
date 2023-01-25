@@ -1,4 +1,4 @@
-import { store } from "./store";
+import store from "./store/store";
 import { SCREEN_NUMBER_TO_CHANGE } from "./changeMainHeaderByScroll";
 
 export default function toggleLogoImage() {

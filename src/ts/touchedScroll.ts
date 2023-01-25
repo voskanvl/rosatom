@@ -1,5 +1,5 @@
-import listDisabledElementToScroll from "./listDisabledElementToScroll";
-import { store } from "./store";
+// import listDisabledElementToScroll from "./listDisabledElementToScroll";
+import store from "./store/store";
 
 const THRESHOLD_TOUCHED_SCROLL = 0.1;
 

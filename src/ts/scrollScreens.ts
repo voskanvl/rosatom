@@ -1,5 +1,5 @@
 import listDisabledElementToScroll from "./listDisabledElementToScroll";
-import { store } from "./store";
+import store from "./store/store";
 
 type ThresholdScrollMsg = "up" | "down";
 

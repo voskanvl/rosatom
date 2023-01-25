@@ -1,6 +1,6 @@
-import { setScreen } from "./scrollScreens";
 // import { setScreen } from "./scrollScreens";
-import { store } from "./store";
+// import { setScreen } from "./scrollScreens";
+import store from "./store/store";
 
 function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[]) {
     const { activeScreenNumber: currentScreen, setScreen } = store.getState();

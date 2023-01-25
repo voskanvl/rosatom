@@ -1,4 +1,4 @@
-import { store } from "./store";
+import store from "./store/store";
 
 export default function hideScreenSwitcherByMenu() {
     const menu = document.querySelector<HTMLElement>(".main-header");

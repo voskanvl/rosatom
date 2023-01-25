@@ -1,11 +1,11 @@
-import burgerStore from "./burgerStore";
+import burgerStore from "./store/burgerStore";
 import {
     changeMainHeader,
     changingElements,
     changingElementsData,
     SCREEN_NUMBER_TO_CHANGE,
 } from "./changeMainHeaderByScroll";
-import { store } from "./store";
+import store from "./store/store";
 
 const handleBurgerCreator =
     (action: "add" | "remove") =>
@@ -18,7 +18,7 @@ const handleBurgerCreator =
     };
 
 const handleBurgerEnter = handleBurgerCreator("add");
-const handleBurgerLeave = handleBurgerCreator("remove");
+// const handleBurgerLeave = handleBurgerCreator("remove");
 
 export default function openBurger() {
     const burger = document.querySelector<HTMLElement>(".burger");
