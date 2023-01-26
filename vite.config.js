@@ -8,19 +8,8 @@ import colors from "picocolors";
 import * as fs from "fs";
 import * as path from "path";
 
-const options = { pretty: true }; // FIXME: pug pretty is deprecated!
-const locals = {
-    name: "ШВСМ",
-};
-
-const STANDART = "yaml";
-
-function getShortName(file, root) {
-    return file.startsWith(root + "/") ? posix.relative(root, file) : file;
-}
-
 const merge = () => {
-    console.log(`now merging ${STANDART} files`);
+    console.log(`now merging data files`);
     // const fn = { json: JSON.stringify, yaml: yaml.load }[standart];
     const fn = { json: JSON.stringify, yaml: yaml.load };
     const files = readdirSync(resolve(__dirname, "src/data"));
@@ -33,27 +22,6 @@ const merge = () => {
         {},
     );
 };
-
-function CustomHmr() {
-    return {
-        name: "custom-hmr",
-        enforce: "post",
-        // HMR
-        handleHotUpdate({ file, server }) {
-            if (file.endsWith("." + STANDART)) {
-                server.config.logger.info(
-                    colors.green(STANDART + " reload ") +
-                        colors.dim(getShortName(file, server.config.root)),
-                    { clear: true, timestamp: true },
-                );
-                server.ws.send({
-                    type: "full-update",
-                });
-            }
-        },
-        transformIndexHtml: vitePugPlugin({ pugLocals: merge() }).transformIndexHtml,
-    };
-}
 
 function htmlsFiles() {
     let files = fs.readdirSync(path.resolve(process.cwd()));
