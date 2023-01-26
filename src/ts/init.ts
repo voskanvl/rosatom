@@ -37,10 +37,10 @@ export default function init() {
     splides();
 
     newsFeedHandler();
-    allocateRegionIcons();
     handlerRegionMove();
 
     applyIMaskToField();
 
+    allocateRegionIcons();
     window.addEventListener("resize", () => allocateRegionIcons());
 }
