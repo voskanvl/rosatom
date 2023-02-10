@@ -1,10 +1,11 @@
+import debounce from "./debounce";
 import listDisabledElementToScroll from "./listDisabledElementToScroll";
 import store from "./store/store";
 
 type ThresholdScrollMsg = "up" | "down";
 
 class ThresholdScroll {
-    static threshold = 7;
+    static threshold = 1;
     private _thresholdUp = 0;
     private _thresholdDown = 0;
     subscribers: ((val: ThresholdScrollMsg) => void)[] | null = null;
@@ -49,11 +50,14 @@ export function scrollScreens() {
 
     const threshold = new ThresholdScroll();
 
-    window.addEventListener("wheel", (event: WheelEvent) => {
-        const { deltaY } = event;
-        if (listDisabledElementToScroll(event)) return;
-        deltaY > 0 ? threshold.inc() : threshold.dec();
-    });
+    window.addEventListener(
+        "wheel",
+        debounce((event: WheelEvent) => {
+            const { deltaY } = event;
+            // if (listDisabledElementToScroll(event)) return;
+            deltaY > 0 ? threshold.inc() : threshold.dec();
+        }, 200),
+    );
 
     threshold.subscribe((msg: ThresholdScrollMsg) => {
         if (msg === "down") changeScreen(-1);

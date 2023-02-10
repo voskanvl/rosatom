@@ -10,7 +10,7 @@ export default function allocateRegionIcons() {
     );
 
     if (!mapEl) throw Error("отсутвтует #map");
-    const { x: mapLeft, y: mapTop } = mapEl.getBoundingClientRect();
+    const { x: mapLeft } = mapEl.getBoundingClientRect();
 
     iconGroups.forEach(group => {
         const groupRegionId = group.dataset.regionid;
