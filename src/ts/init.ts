@@ -17,6 +17,7 @@ import applyMaskText from "./applyMaskText";
 import applyIMaskToField from "./applyIMaskToField";
 import toggleMobileMenu from "./toggleMobileMenu";
 import toggleMainMenu from "./toggleMainMenu";
+import changeScreenSwitcherByScroll from "./changeScreenSwitcherByScroll";
 
 export default function init() {
     openBurger();
@@ -37,6 +38,7 @@ export default function init() {
     });
 
     changeMainHeaderByScroll();
+    changeScreenSwitcherByScroll();
     screenSwitcher();
     advantagesHovers();
 

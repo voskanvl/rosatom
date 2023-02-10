@@ -8,6 +8,11 @@
     cursor: pointer
     z-index: 100
     transition: opacity .5s
+    color: #404041
+
+    &.screen-switcher--white
+        color: #ECF0F3
+        font-size: 200px
 
     @media (width<545px)
         right: 2.5vw
@@ -15,7 +20,6 @@
     &__item
         position: relative
         user-select: none
-        color: #404041
         font-size: clamp(11px,30/1920*100vw,30px)
         font-weight: 350
         position: relative
