@@ -20,20 +20,35 @@
         background-position: 0 50%
         width: 18%
         height: 80px
-
         &--white
             background-image: url("../../../assets/logo/logo-white.png")
 
-    &:has(.menu:hover), &:has(.menu-reduced:hover), &:has(.menu:active), &:has(.menu-reduced:active)
+    & > .options > .options__search
+        &--while > img
+            filter: invert(1)
+
+    &.show
         & > .logo
             background-image: url("../../../assets/logo/logo-white.png")
         & > .options
             &
                 color: #fff
-                img
-                    filter: invert(1)
+                & > .options__search:not(.options__search--white)
+                    & > img
+                        filter: invert(1)
                 a
                     color: #fff
+
+    // &:has(.menu:hover), &:has(.menu-reduced:hover), &:has(.menu:active), &:has(.menu-reduced:active)
+    //     & > .logo
+    //         background-image: url("../../../assets/logo/logo-white.png")
+    //     & > .options
+    //         &
+    //             color: #fff
+    //             img
+    //                 filter: invert(1)
+    //             a
+    //                 color: #fff
 
     @media (width < 1440px)
         padding: 0 1vw 0 1vw

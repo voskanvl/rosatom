@@ -15,9 +15,8 @@ export default function toggleLogoImage() {
         menu &&
             menu.addEventListener("mouseenter", () => {
                 if (SCREEN_NUMBER_TO_CHANGE.includes(+store.getState().activeScreenNumber)) return;
-                // logo.style.backgroundImage = "url('../../../assets/logo/logo-white.png')";
                 logo.classList.add("logo--white");
-                optionsSearch.style.filter = "invert(1)";
+                optionsSearch.classList.add(".options__search--white");
                 optionsInternational.style.color = "#fff";
             });
         menu &&

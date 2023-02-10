@@ -19,11 +19,19 @@ $toggle-menu: 545px
         &:hover
             cursor: url("../../../assets/cursor/white.png") 19 19, default
 
-            & > span
-                color: #30A842
-            & > .list
-                scale: 1 1 1
-    &:hover > .menu__item
+            // & > .list
+            //     scale: 1 1 1
+        & > .list.show
+            scale: 1 1 1
+            color: #fff
+            & + span
+                // color: #30A842
+                color: transparent
+                background-image: url("../../../assets/svg/x.svg")
+                background-repeat: no-repeat
+                background-position: 50% 50%
+
+    &.show > .menu__item > span
         color: #fff
 
     &--white
@@ -37,13 +45,38 @@ $toggle-menu: 545px
 
     @media (width < $toggle-menu)
         display: block
-        &:hover
-            color: #fff
-            & > .menu-reduced__list
-                scale: 1 1 1
-                display: grid
-                grid-template-columns: 100%
+        // &:hover
+        //     color: #fff
+        //     & > .menu-reduced__list
+        //         scale: 1 1 1
+        //         display: grid
+        //         grid-template-columns: 100%
+        //     & > .menu-reduced__close
+        //         scale: 1 1
+
+    &__list.show
+        scale: 1 1 1
+        display: grid
+        grid-template-columns: 100%
+        & + .menu-reduced__close
+            scale: 1 1
+        & ~ .menu-reduced__caption
+            color: transparent
+            background-image: url("../../../assets/svg/x.svg")
+            background-size: contain
+            background-repeat: no-repeat
 
     &__caption
-        &--white
-            color: #fff
+        color: #000
+        transition: color .8s
+
+    &__close
+        background: none
+        border: none
+        padding: 0
+        margin: 0
+        position: absolute
+        right: 2em
+        top: 7em
+        scale: 0 0
+        transition: transform .2s

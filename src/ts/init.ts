@@ -15,12 +15,18 @@ import touchedScroll from "./touchedScroll";
 
 import applyMaskText from "./applyMaskText";
 import applyIMaskToField from "./applyIMaskToField";
+import toggleMobileMenu from "./toggleMobileMenu";
+import toggleMainMenu from "./toggleMainMenu";
 
 export default function init() {
     openBurger();
     toggleLogoImage();
     scrollScreens();
     hideScreenSwitcherByMenu();
+
+    toggleMainMenu();
+    toggleMobileMenu();
+
     touchedScroll();
 
     applyMaskText();
