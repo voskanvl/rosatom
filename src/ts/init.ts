@@ -18,9 +18,13 @@ import applyIMaskToField from "./applyIMaskToField";
 import toggleMobileMenu from "./toggleMobileMenu";
 import toggleMainMenu from "./toggleMainMenu";
 import changeScreenSwitcherByScroll from "./changeScreenSwitcherByScroll";
+import changePointerByScreen from "./changePointerByScreen";
+import clickToLogo from "./clickToLogo";
 
 export default function init() {
-    openBurger();
+    changePointerByScreen();
+    clickToLogo();
+    // openBurger();
     toggleLogoImage();
     scrollScreens();
     hideScreenSwitcherByMenu();

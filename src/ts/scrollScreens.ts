@@ -54,8 +54,9 @@ export function scrollScreens() {
         "wheel",
         debounce((event: WheelEvent) => {
             const { deltaY } = event;
-            // if (listDisabledElementToScroll(event)) return;
-            deltaY > 0 ? threshold.inc() : threshold.dec();
+            if (listDisabledElementToScroll(event)) return;
+            // deltaY > 0 ? threshold.inc() : threshold.dec();
+            deltaY > 0 ? changeScreen(1) : changeScreen(-1);
         }, 200),
     );
 
@@ -64,3 +65,5 @@ export function scrollScreens() {
         if (msg === "up") changeScreen(1);
     });
 }
+
+//TODO: удалить ThresholdScroll из-за ненадобности

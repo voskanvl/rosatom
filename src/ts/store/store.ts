@@ -1,4 +1,5 @@
 import create from "zustand/vanilla";
+import { devtools } from 'zustand/middleware'
 export interface StoreState {
     block: boolean;
     activeScreenNumber: number;
@@ -53,7 +54,7 @@ const dec = (state: StoreState) => {
     else return setScreenHandler(state.activeScreenNumber - 1)(state);
 };
 
-const store = create<StoreState>(set => ({
+const store = create<StoreState, [["zustand/devtools", never]]>(devtools(set => ({
     block: false,
     activeScreenNumber: 0,
     activeScreenElement: null,
@@ -63,7 +64,7 @@ const store = create<StoreState>(set => ({
     inc: () => set(inc),
     dec: () => set(dec),
     setScreen: x => set(setScreenHandler(x)),
-}));
+})));
 
 const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
 let currentActive = screens.find(e => e.getAttribute("active"));

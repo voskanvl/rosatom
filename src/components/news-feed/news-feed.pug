@@ -5,13 +5,13 @@
             .news__data 
                 p.news__text= newsFeed[0].text
                 p.news__date= newsFeed[0].date
-            a.news__go(href= newsFeed[0].href)= "Перейти \u27F6"
+            a.news__go(href= newsFeed[0].href)= "Перейти \u27F6" 
         form.news-feed__subscribe 
             span Подпишись на наши новости
             label(for="subscribe") 
-                input(type="text", id="subscribe", placeholder="1a11757d20@inb")
+                input(type="text" id="subscribe" placeholder="1a11757d20@inb")
                 button(type="submit") 
-                    img(src="../../../assets/svg/send.svg")
+                    img(src="../../../assets/svg/email.svg")
     .news-feed__right
         ul.news-feed__list 
             each i in newsFeed 
