@@ -1,4 +1,5 @@
-import { changeMainHeader, changingElements } from "./changeMainHeaderByScroll";
+import { changeMainHeader } from "./changeMainHeaderByScroll";
+import { changingElements } from "./changingElementByScroll";
 
 export default function advantagesHovers() {
     const cards = document.querySelectorAll<HTMLElement>(".service-card__container--advantages");
