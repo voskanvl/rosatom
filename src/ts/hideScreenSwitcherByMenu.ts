@@ -6,12 +6,14 @@ export default function hideScreenSwitcherByMenu() {
     if (!screenSwitcher) throw Error("отсутствует screen-switcher");
     !!menu &&
         menu.addEventListener("mouseenter", () => {
-            screenSwitcher.style.zIndex = "0";
             store.setState(state => ({ ...state, block: true }));
         });
     !!menu &&
         menu.addEventListener("mouseleave", () => {
-            screenSwitcher.style.zIndex = "";
             store.setState(state => ({ ...state, block: false }));
         });
+    document.addEventListener("click", ({ target }: Event) => {
+        if ((target as HTMLElement).closest(".main-header")) return;
+        store.setState(state => ({ ...state, block: false }));
+    });
 }

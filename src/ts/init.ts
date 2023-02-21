@@ -9,7 +9,7 @@ import allocateRegionIcons from "./allocateRegionIcons";
 import newsFeedHandler from "./news-feed-handeler";
 import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
-import openBurger from "./openBurger";
+// import openBurger from "./openBurger";
 import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
 import touchedScroll from "./touchedScroll";
 

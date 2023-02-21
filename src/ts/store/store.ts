@@ -1,5 +1,5 @@
 import create from "zustand/vanilla";
-import { devtools } from 'zustand/middleware'
+import { devtools } from "zustand/middleware";
 export interface StoreState {
     block: boolean;
     activeScreenNumber: number;
@@ -23,7 +23,7 @@ export const recomposing = (next: number, screens: HTMLElement[] | []) => {
 };
 
 const setScreenHandler = (x: number) => (state: StoreState) => {
-    if (state.block) return state;
+    // if (state.block) return state;
     console.log("🚀 ~ setScreen x", x);
 
     const { activeScreenElement: currentElement, screens } = state;
@@ -54,17 +54,19 @@ const dec = (state: StoreState) => {
     else return setScreenHandler(state.activeScreenNumber - 1)(state);
 };
 
-const store = create<StoreState, [["zustand/devtools", never]]>(devtools(set => ({
-    block: false,
-    activeScreenNumber: 0,
-    activeScreenElement: null,
-    previousScreenNumber: null,
-    previousScreenElement: null,
-    screens: [...document.querySelectorAll<HTMLElement>(".screen")],
-    inc: () => set(inc),
-    dec: () => set(dec),
-    setScreen: x => set(setScreenHandler(x)),
-})));
+const store = create<StoreState, [["zustand/devtools", never]]>(
+    devtools(set => ({
+        block: false,
+        activeScreenNumber: 0,
+        activeScreenElement: null,
+        previousScreenNumber: null,
+        previousScreenElement: null,
+        screens: [...document.querySelectorAll<HTMLElement>(".screen")],
+        inc: () => set(inc),
+        dec: () => set(dec),
+        setScreen: x => set(setScreenHandler(x)),
+    })),
+);
 
 const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
 let currentActive = screens.find(e => e.getAttribute("active"));

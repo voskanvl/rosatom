@@ -23,11 +23,16 @@ function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[])
 }
 
 function changeSwitcherByStore() {
-    store.subscribe(({ activeScreenNumber: currentScreen }) => {
+    const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
+    if (!screenSwitcher) throw Error("отсутствует screen-switcher");
+
+    store.subscribe(({ activeScreenNumber: currentScreen, block }) => {
         const opacity = currentScreen !== 0 ? 1 : 0;
 
         const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
         !!screenSwitcher && (screenSwitcher.style.opacity = opacity + "");
+
+        screenSwitcher!.style.zIndex = block ? "0" : "";
     });
 }
 

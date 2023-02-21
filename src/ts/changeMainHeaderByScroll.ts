@@ -1,4 +1,4 @@
-import { changingElements } from "./changingElementByScroll";
+import { changingElements, changingElementsData } from "./changingElementByScroll";
 import store from "./store/store";
 
 export const SCREEN_NUMBER_TO_CHANGE = [1, 5, 6, 8];
