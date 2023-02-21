@@ -23,6 +23,9 @@ const connectTargetAndMonitor = (
     connector.style.left = monitorRight - containerRect.left + "px";
     connector.style.width = targetRect.x - monitorRight + "px";
     connector.style.height = Math.abs(monitorHalfHeight - targetHalfHeight) + "px";
+    monitorHalfHeight < targetHalfHeight
+        ? (connector.style.transform = "rotateX(180deg)")
+        : (connector.style.transform = "rotateX(0deg)");
 };
 
 const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (event: MouseEvent) => {
