@@ -1,35 +1,43 @@
 @import "../../pages/sections/_service-center"
 .service-card
+
     &__container
         padding: 2.5vh clamp(10px, 1.302083vw,25px)
         border-radius: 33px
-        background: #ECF0F3
-        box-shadow: 1vw 1.8vh 3vmin #D1D9E6, -1vw -1.8vh 3vmin #FFFFFF
+        // background: #ECF0F3b0
+        background: rgba(9, 8, 21, 0.01)
+        // box-shadow: 1vw 1.8vh 3vmin #D1D9E6
         height: 100%
         display: flex
         flex-direction: column
+        backdrop-filter: blur(18px)
+        transition: 1s
 
         &:hover
+            background: #ECF0F3ef
+            background: #fefefeee
             & > .service-card__title
                 background-color: #115DA1
                 color: #fff
 
-        &--advantages
-            &:hover
-                & > .service-card__title
-                    border-color: #30A842
-                    background-color: #30A842
-                    color: #fff
-            &[glass]
-                @extend .data-card__container
+        // &--advantages
+        //     &:hover
+        //         & > .service-card__title
+        //             border-color: #30A842
+        //             background-color: #30A842
+        //             color: #fff
+        //     &[glass]
+        //         @extend .data-card__container
 
     &__title
-        padding: 6px 19px
+        padding: 6px 10px
+        margin-inline: -9px
         border-radius: 33px
-        border: 1px solid #115DA1
+        // border: 1px solid #115DA1
         transition: background-color .5s
         width: fit-content
-        font-size: clamp(13px,1.5vmax,20px)
+        font-size: clamp(18px,1.5vmax,26px)
+        font-weight: 700
         // font-size: 20px
         @media ($change_point1)
             font-size: 16px

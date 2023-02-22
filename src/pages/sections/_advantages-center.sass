@@ -2,7 +2,7 @@
 $change_point0: "width <= 860px"
 $change_point1: "width <= 510px"
 $change_point2: "width <= 380px"
-.service-center
+.advantages-center
     // +cur-b
     background: #ECF0F3
     height: 100vh
@@ -12,10 +12,15 @@ $change_point2: "width <= 380px"
         inset: 0
         width: 100vw
         height: 100vh
-        z-index: 0
+        z-index: -1
         object-fit: cover
         rotate: 0 1 0 180deg
-        filter: grayscale(0.9) brightness(240%) contrast(100%)
+        filter: grayscale(0.9) brightness(300%) contrast(100%)
+        opacity: 0
+        transition: opacity 1s
+        &[show], &[const]
+            z-index: 0
+            opacity: 1
 
     &__container
         // +wid(1520px)
@@ -53,3 +58,8 @@ $change_point2: "width <= 380px"
             overflow: scroll
             padding: 20px 10px 0
             padding-bottom: 20vh
+
+    &__card
+        color: #fff
+        &:hover
+            color: #303031
