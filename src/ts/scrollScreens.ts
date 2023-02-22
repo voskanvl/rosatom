@@ -57,7 +57,7 @@ export function scrollScreens() {
             if (listDisabledElementToScroll(event)) return;
             // deltaY > 0 ? threshold.inc() : threshold.dec();
             deltaY > 0 ? changeScreen(1) : changeScreen(-1);
-        }, 200),
+        }, 290),
     );
 
     threshold.subscribe((msg: ThresholdScrollMsg) => {

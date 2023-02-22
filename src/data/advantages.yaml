@@ -1,25 +1,25 @@
 advantages:
   - id: 300
-    title: Бесперебойность
+    title: ИТ-решения под ключ
     list:
-      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+      - Мы подберем лучшее решение под вашу задачу и встроим его в ваш существующий ИТ-ландшафт.
   - id: 301
-    title: Безопасность
+    title: КОМФОРТ
     list:
-      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+      - Контралируем дата центр 24/7 Территория оснащена  удобной парковкой и офисами для дежурств технических специалистов. По желанию заказчика мы можем оказать помощь в переезде и дальнейшем размещении техники в data center. Каждый клиент может  воспользоваться услугами Online-мониторинга в личном кабинете клиента.
   - id: 302
-    title: Экономия
+    title: БЕЗОПАСНОСТЬ
     list:
-      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+      - отказоустойчивый дата-центр уровня Tier III оснащён многоуровневой системой контроля и управления доступом для предотвращения несанкционированного доступа к вашему оборудованию.Для заказчиков, решивших воспользоваться colocation, организуется отдельный доступ в зону, где размещено их оборудование. Другие клиенты хостинга в это помещение попасть не смогут. 
   - id: 303
-    title: Масштабируемость
+    title: НАДЕЖНОСТЬ
     list:
-      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+      - Высокая надежность, благодаря многократному резервированию каналов связи, подачи электроэнергии и кондиционирования. Технологические решения для нашего ЦОД разрабатывались в соответствии со стандартами и ГОСТами.
   - id: 304
-    title: Комфорт
+    title: КАЧЕСТВО
     list:
-      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+      - Высокое качество предоставления услуг достигается благодаря новейшему оборудованию (ввод в экслуатацию 2024г), клиенториентированному подходу и следованию стандарта ГОСТ Р ИСО 9001-2015.
   - id: 304
-    title: Бесперебойность
+    title: ЭКОЛОГИЧНОСТЬ
     list:
-      - Praesent lobortis ex leo, quis mattis lacus porta vitae. Nullam quis hendrerit quam. Sed lacus lorem, tempor vitae rutrum nec, finibus sed nibh.
+      - АО Атомдата Иннополис за осознанное потребление энергетических ресурсов, поэтому используются  альтернативные источники питания для освещения здания и отопления

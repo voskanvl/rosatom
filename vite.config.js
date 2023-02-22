@@ -11,7 +11,7 @@ import * as path from "path";
 const merge = () => {
     console.log(`now merging data files`);
     // const fn = { json: JSON.stringify, yaml: yaml.load }[standart];
-    const fn = { json: JSON.stringify, yaml: yaml.load };
+    const fn = { json: JSON.stringify, yaml: yaml.load, yml: yaml.load };
     const files = readdirSync(resolve(__dirname, "src/data"));
     // const jsons = files.filter(file => extname(file) === "." + STANDART);
     return files.reduce(

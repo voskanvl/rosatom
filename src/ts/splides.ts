@@ -1,5 +1,6 @@
-import Splide from "@splidejs/splide";
+import Splide, { SlideComponent } from "@splidejs/splide";
 import { MSplides } from "./initSlides";
+import innopolisData from "./innopolisData.json";
 
 export default function splides() {
     const splidesInstance = new MSplides();
@@ -28,6 +29,18 @@ export default function splides() {
         (innopolisSplideControlLeft.onclick = () => innopolisSplideInstance.go("<"));
     !!innopolisSplideControlRight &&
         (innopolisSplideControlRight.onclick = () => innopolisSplideInstance.go(">"));
+
+    innopolisSplideInstance.on("active", (slide: SlideComponent) => {
+        if (slide.isClone) return;
+        const img = slide.slide.querySelector<HTMLImageElement>("img");
+        if (!img) throw Error("there isn't img in innopolis slider");
+        const dataInnopolis = innopolisData.innopolisSlider.find(
+            ({ id }) => id === +img.dataset.id!,
+        );
+        if (!dataInnopolis) return;
+        const textElement = document.querySelector<HTMLElement>(".innopolis__text");
+        textElement!.textContent = dataInnopolis?.name;
+    });
 
     team &&
         splidesInstance.add("#team", {

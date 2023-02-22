@@ -12,14 +12,13 @@ $change_point2: "width <= 380px"
         inset: 0
         width: 100vw
         height: 100vh
-        z-index: -1
+        z-index: 0
         object-fit: cover
         rotate: 0 1 0 180deg
         filter: grayscale(0.9) brightness(300%) contrast(100%)
         opacity: 0
         transition: opacity 1s
         &[show], &[const]
-            z-index: 0
             opacity: 1
 
     &__container
