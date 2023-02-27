@@ -31,7 +31,6 @@ export default function touchedScroll() {
 
         if (isScrolable(target)) return;
         event.preventDefault();
-        console.log("touchstart", target);
         y = event.touches[0].screenY;
     };
 
@@ -51,7 +50,6 @@ export default function touchedScroll() {
         if (isScrolable(target)) return;
 
         // event.preventDefault();
-        console.log("target", target);
 
         const delta = event.changedTouches[0].screenY - y;
         delta > 1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL

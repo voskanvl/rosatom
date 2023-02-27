@@ -1,4 +1,4 @@
-import create from "zustand/vanilla";
+import { createStore } from "zustand/vanilla";
 import { devtools } from "zustand/middleware";
 export interface StoreState {
     block: boolean;
@@ -24,7 +24,6 @@ export const recomposing = (next: number, screens: HTMLElement[] | []) => {
 
 const setScreenHandler = (x: number) => (state: StoreState) => {
     // if (state.block) return state;
-    console.log("🚀 ~ setScreen x", x);
 
     const { activeScreenElement: currentElement, screens } = state;
     if (!currentElement) throw Error("нет активного элемента. ошибка инициализации");
@@ -54,7 +53,7 @@ const dec = (state: StoreState) => {
     else return setScreenHandler(state.activeScreenNumber - 1)(state);
 };
 
-const store = create<StoreState, [["zustand/devtools", never]]>(
+const store = createStore<StoreState, [["zustand/devtools", never]]>(
     devtools(set => ({
         block: false,
         activeScreenNumber: 0,

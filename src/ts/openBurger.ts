@@ -1,5 +1,5 @@
 import burgerStore from "./store/burgerStore";
-import { changeMainHeader, SCREEN_NUMBER_TO_CHANGE } from "./changeMainHeaderByScroll";
+import { changeMainHeader, SCREEN_NUMBER_TO_CHANGE } from "./SCREEN_NUMBER_TO_CHANGE";
 import store from "./store/store";
 import { changingElements, changingElementsData } from "./changingElementByScroll";
 

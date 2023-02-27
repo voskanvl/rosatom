@@ -14,7 +14,6 @@ function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[])
         }
         screenSwitcher.append(element);
         element.addEventListener("click", () => {
-            console.log("🚀 ~ screenSwitcher element", element, i);
             setScreen(i);
         });
         const opacity = currentScreen !== 0 ? 1 : 0;

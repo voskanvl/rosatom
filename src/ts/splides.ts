@@ -98,7 +98,6 @@ export default function splides() {
     window.addEventListener("resize", () => {
         setPerPage(teamSplideInstance)();
         setPerPage(innopolisSplideInstance)();
-        console.log("🚀 ~ innopolisSplideInstance.root", innopolisSplideInstance.root);
         innopolisSplideInstance.root.style.setProperty("--x", `50%`);
     });
 }

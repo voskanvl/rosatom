@@ -26,14 +26,13 @@ export default function advantagesHovers() {
             if (!img) throw Error(`отсутствует .advantages-center > img[data-number="${num}"]`);
             if (!title) throw Error("отсутствует .advantages-center__title");
 
-            changeMainHeader(mainHeader, changingElements)(act);
+            // changeMainHeader(mainHeader, changingElements)(act);
 
             if (act === "add") {
                 img.setAttribute("show", "show");
                 title.style.setProperty("--background", "#fff");
                 cards.forEach(e => {
                     if (e === target) {
-                        e.style.boxShadow = "none";
                         e.removeAttribute("glass");
                     } else {
                         e.setAttribute("glass", "glass");
@@ -44,7 +43,6 @@ export default function advantagesHovers() {
                 // title.style.setProperty("--background", "#303031");
                 cards.forEach(e => {
                     e.removeAttribute("glass");
-                    e.style.boxShadow = "";
                 });
             }
         };

@@ -72,7 +72,6 @@ export default function slides() {
         "resize",
         debounce(() => {
             const perPage = 2 + (matchRange(innerWidth, rangesTabs) || 0);
-            console.log("🚀 ~ perPage", perPage);
 
             splidesInstance.instances["#tabs"] &&
                 (splidesInstance.instances["#tabs"].options.perPage = perPage);
@@ -87,7 +86,6 @@ export default function slides() {
         splidesInstance.instances["#service-package"].refresh();
 
     perPage = 2 + (matchRange(innerWidth, rangesTabs) || 0);
-    console.log("🚀 ~ perPage", matchRange(innerWidth, rangesTabs), perPage);
     splidesInstance.instances["#tabs"] &&
         (splidesInstance.instances["#tabs"].options.perPage = perPage);
     splidesInstance.instances["#tabs"] && splidesInstance.instances["#tabs"].refresh();

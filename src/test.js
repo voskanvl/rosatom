@@ -15,9 +15,6 @@ const res = arr.reduce(
     [[]],
 );
 
-console.log(res);
-// [[0,1],[2,3],[4,5],[6,7],[8,9]]
-
 const a1 = [
     { name: "a" },
     { name: "b" },

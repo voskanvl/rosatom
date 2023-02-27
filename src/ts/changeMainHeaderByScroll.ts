@@ -1,7 +1,6 @@
 import { changingElements, changingElementsData } from "./changingElementByScroll";
+import { SCREEN_NUMBER_TO_CHANGE } from "./SCREEN_NUMBER_TO_CHANGE";
 import store from "./store/store";
-
-export const SCREEN_NUMBER_TO_CHANGE = [1, 5, 6, 8];
 
 export const changeMainHeader =
     (mainHeader: HTMLElement, changingElements: { [key: string]: changingElementsData }) =>

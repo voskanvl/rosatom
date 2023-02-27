@@ -1,4 +1,4 @@
-import { SCREEN_NUMBER_TO_CHANGE } from "./changeMainHeaderByScroll";
+import { SCREEN_NUMBER_TO_CHANGE } from "./SCREEN_NUMBER_TO_CHANGE";
 import store from "./store/store";
 
 export default function changeScreenSwitcherByScroll() {
