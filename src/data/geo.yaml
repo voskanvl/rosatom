@@ -20,7 +20,7 @@ geo:
 
   - id: 78
     name: Санкт-Петербург
-    dc:
+    dc: 
       - name: ЦОД Xelent
         param: 984 стойко-мест, 10 МВт.
         type: active
