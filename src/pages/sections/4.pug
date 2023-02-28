@@ -3,11 +3,11 @@
         .geonet__connector
             .geonet__connector-left
             .geonet__connector-right
-        
+
         .geonet__popup
-                    include ../../components/geo-popup/geo-popup.pug 
-                    
-        .geonet__title.title.text-masked-element(style="--background: #303031; --circle-color: #115DA1") 
+            include ../../components/geo-popup/geo-popup.pug 
+
+        .geonet__title.title.text-masked-element(style="--background: #fff; --circle-color: #07461b") 
             p ГЕОРАСПРЕДЕЛЕННАЯ 
             p СЕТЬ
         .geonet__data 
@@ -18,7 +18,7 @@
                         li.geonet__data-type
                             .geonet__data-mark(style="background: "+i.color)
                             .geonet__data-name= i.name
-                
+
 
             .geonet__data-right
                 #regions
@@ -27,7 +27,7 @@
                     each i in geo
                         .geonet__region(data-regionid= i.id, data-region= i.name)
                             - const grouped = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
-                            
+
                             each key in Object.keys(grouped)
                                 .geonet__grouped(data-group= key, data-color= typedc[key].color )
                                     each j in grouped[key]

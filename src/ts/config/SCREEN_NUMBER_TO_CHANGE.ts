@@ -1,1 +1,1 @@
-export const SCREEN_NUMBER_TO_CHANGE = [1, 3, 4, 5, 6, 8];
+export const SCREEN_NUMBER_TO_CHANGE = [2, 4, 6, 8];

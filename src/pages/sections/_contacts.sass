@@ -36,7 +36,7 @@ $media2: "width <= 1024px"
         overflow: auto
         display: grid
         grid-template-columns: 24% 24% 49%
-        grid-template-rows: repeat(2, minmax(200px, 23.2vh))
+        grid-template-rows: repeat(2, minmax(260px, 23.2vh))
         grid-template-areas: "details sales map" "details support map"
         gap: 13px
         margin-top: 6.1vh
@@ -51,14 +51,22 @@ $media2: "width <= 1024px"
             grid-template-rows: repeat(4,auto)
             grid-template-areas: "details" "sales" "support" "map"
 
+        & > *
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            row-gap: 10px
+            @media ($media1)
+                justify-content: space-between
+
     &__panel
         background: rgba(9, 8, 21, 0.01)
         box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
         backdrop-filter: blur(24px)
         border-radius: 10px
         padding: 2.5vh 2.142857vw
-        & > * + *
-            margin-top: 10px
+        // & > * + *
+        //     margin-top: 10px
 
     &__details
         display: flex
@@ -66,33 +74,43 @@ $media2: "width <= 1024px"
         column-gap: 1.041667vw
         font-size: clamp(11px,14/1400*100vw,14px)
         &:nth-child(2)
-            flex: 1
+            // flex: 1
         & > img
             width: min(20%,34px)
 
     &__details-title
         font-weight: 400
         font-size: 20px
-        margin-bottom: 1.5vh
+        // margin-bottom: 1.5vh
 
     &__buttons
         width: 100%
         display: flex
-        align-items: stretch
+        // align-items: stretch
         justify-content: space-evenly
         column-gap: clamp(5px,12/1400*100vw,12px)
+        flex-direction: column
+        row-gap: 1.2vh
+        margin-top: 2vh
+        @media ($media1)
+            margin-top: unset
 
     &__button
+        +cur_w()
+        display: block
+        width: 100%
         border-radius: 33px
         padding: 5px 19px
         background: none
         border: 1px solid #fff
         color: #fff
-        width: fit-content
+        // width: fit-content
         font-weight: 350
         font-size: clamp(12px,16/1400*100vw,16px)
         // white-space: nowrap
         // +cur-w
+        max-width: 360px
+        margin: 0 auto
 
         &:hover
             background-color: #30A842
