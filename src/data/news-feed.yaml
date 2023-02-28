@@ -2,7 +2,7 @@ newsFeed:
   - id: 400
     text: Lorem ipsum dolor sit amet
     date: "10.11.22"
-    img: "https://picsum.photos/id/400/350/200"
+    img: "../../assets/images/news/photo_2023-02-27_17-00-15.jpg"
     href: "#0"
   - id: 401
     text: Suspendisse lobortis nisl vestibulum sapien rutrum

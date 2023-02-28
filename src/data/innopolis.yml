@@ -1,9 +1,9 @@
 innopolisSlider:
   - id: 101
-    img: "https://upload.wikimedia.org/wikipedia/commons/2/23/Innopolis_University.jpg"
+    img: "../../assets/images/galery/photo_2023-02-27_17-00-14.jpg"
     name: Innopolis_University
   - id: 102
-    img: "https://mf.b37mrtl.ru/rbthmedia/images/2019.07/original/5d2c644185600a17ca3f0a85.jpg"
+    img: "../../assets/images/galery/photo_2023-02-27_17-00-15.jpg"
     name: Innopolis of University
   - id: 103
     img: "https://digitalinnopolisdays.ru/local/js/innopolis/winter22/img/about_img.jpg"

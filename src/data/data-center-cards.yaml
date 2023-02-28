@@ -1,49 +1,49 @@
 dataCenterCards:
   - id: 100
-    title: 2N
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 2000
+    caption: стойко-мест для клиентов
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 101
-    title: N+1
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 16 МВт
+    caption: полная электрическая мощность
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 102
-    title: 5
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: До 22 кВт
+    caption: мощность на стойку
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 103
-    title: 8
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 5000 м<sup>2</sup>
+    caption: общая площадь машинных залов
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 104
-    title: 2000
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 2N
+    caption: схема резервирования систем электроснабжения
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 105
-    title: 99,982%
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: N+1
+    caption: схема резервирования систем охлаждения
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 106
-    title: 4+
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 5
+    caption: контуров физической безопасности
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 107
-    title: До 7 Тбит/с
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 8
+    caption: машинных залов по 250 стойко-мест
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 108
-    title: 16 МВт
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 4+
+    caption: провайдера связи
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 109
-    title: 24х7х365
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 24*7*365
+    caption: техническая поддержка
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 110
-    title: 24х7х365
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    title: 99,982%
+    caption: коэффициент отказоустойчивости
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 111
     title: TIER III
-    caption: Lorem ipsum dolor sit amet,  turpis consectetur adipiscing elit
+    caption: соответствие требованиям Uptime
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
