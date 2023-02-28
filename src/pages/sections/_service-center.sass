@@ -15,7 +15,7 @@ $change_point2: "width <= 380px"
         z-index: 0
         object-fit: cover
         rotate: 0 1 0 180deg
-        // filter: grayscale(0.9) brightness(240%) contrast(100%)
+        filter: brightness(90%) contrast(100%)
 
     &__container
         // +wid(1520px)
@@ -30,6 +30,13 @@ $change_point2: "width <= 380px"
             top: 60%
         @media ($change_point2)
             top: 70%
+
+    &__plug
+        position: absolute
+        z-index: 0
+        inset: 0
+        background: linear-gradient(#000, #fff)
+        mix-blend-mode: multiply
 
     &__list
         display: grid
