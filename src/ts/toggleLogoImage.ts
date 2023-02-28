@@ -1,5 +1,5 @@
 import store from "./store/store";
-import { SCREEN_NUMBER_TO_CHANGE } from "./SCREEN_NUMBER_TO_CHANGE";
+import { SCREEN_NUMBER_TO_CHANGE } from "./config";
 
 export default function toggleLogoImage() {
     const menu = document.querySelector<HTMLElement>(".menu");

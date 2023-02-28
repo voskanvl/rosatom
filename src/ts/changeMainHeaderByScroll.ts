@@ -1,5 +1,5 @@
 import { changingElements, changingElementsData } from "./changingElementByScroll";
-import { SCREEN_NUMBER_TO_CHANGE } from "./SCREEN_NUMBER_TO_CHANGE";
+import { SCREEN_NUMBER_TO_CHANGE } from "./config";
 import store from "./store/store";
 
 export const changeMainHeader =

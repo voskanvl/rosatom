@@ -1,5 +1,6 @@
 // import listDisabledElementToScroll from "./listDisabledElementToScroll";
 import store from "./store/store";
+import { ignoredElementOnTouch } from "./config";
 
 const THRESHOLD_TOUCHED_SCROLL = 0.1;
 
@@ -40,10 +41,16 @@ export default function touchedScroll() {
 
         const target = event.target as HTMLElement;
         if (target.classList.contains("screen-switcher__item")) return target.click();
-        if (target.closest(".geonet__region")) return target.click();
-        if (target.closest(".team__controls")) return target.click();
-        if (target.closest(".team__container")) return;
-        if (target.closest(".main-header")) return;
+        ignoredElementOnTouch.click.forEach(e => {
+            if (target.closest(e)) return target.click();
+        });
+        // if (target.closest(".geonet__region")) return target.click();
+        // if (target.closest(".team__controls")) return target.click();
+        if (ignoredElementOnTouch.drop.some(e => !!target.closest(e))) return;
+
+        // if (target.closest(".team__container")) return;
+        // if (target.closest(".main-header")) return;
+        // if (target.closest(".splide")) return;
         // if (target.closest(".main-header"))
         //     return target.dispatchEvent(new Event("mouseenter", { bubbles: true }));
 

@@ -1,7 +1,8 @@
 import burgerStore from "./store/burgerStore";
-import { changeMainHeader, SCREEN_NUMBER_TO_CHANGE } from "./SCREEN_NUMBER_TO_CHANGE";
+import { SCREEN_NUMBER_TO_CHANGE } from "./config";
 import store from "./store/store";
 import { changingElements, changingElementsData } from "./changingElementByScroll";
+import { changeMainHeader } from "./changeMainHeaderByScroll";
 
 const handleBurgerCreator =
     (action: "add" | "remove") =>
