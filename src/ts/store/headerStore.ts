@@ -1,8 +1,9 @@
+import { BooleanStoreState } from "./booleanStoreState.type";
 import { createStore } from "zustand/vanilla";
 import { devtools } from "zustand/middleware";
-import { BooleanStoreState } from "./booleanStoreState.type";
+import { BurgerStoreState } from "./burgerStore";
 
-const burgerStore = createStore<BooleanStoreState, [["zustand/devtools", never]]>(
+const headerStore = createStore<BooleanStoreState, [["zustand/devtools", never]]>(
     devtools(
         set => ({
             isOpen: false,
@@ -10,8 +11,8 @@ const burgerStore = createStore<BooleanStoreState, [["zustand/devtools", never]]
             close: () => set(state => ({ ...state, isOpen: false })),
             toggle: () => set(state => ({ ...state, isOpen: !state.isOpen })),
         }),
-        { name: "burger" },
+        { name: "header" },
     ),
 );
 
-export default burgerStore;
+export default headerStore;

@@ -24,8 +24,18 @@
             @media (width <= 1024px)
                 padding: 0 1em
 
-    // &:hover
-    //     & > .burger__list
-    //         scale: 1 1
-    //         & > .list
-    //             scale: 1 1
+    &__image
+        background-image: url("../../../assets/svg/burger.svg")
+        background-repeat: no-repeat
+        width: 46px
+        height: 12px
+
+    &.show
+        & .burger__list
+            scale: 1 1
+
+            & > .list
+                scale: 1
+        & > .burger__image
+            background-image: url("../../../assets/svg/x.svg")
+            height: 46px

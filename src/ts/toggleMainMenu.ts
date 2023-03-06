@@ -1,3 +1,5 @@
+import Store from "./store";
+
 export default function toggleMainMenu() {
     const mainHeader = document.querySelector<HTMLElement>(".main-header");
     const mainMenu = document.querySelector<HTMLElement>(".menu");
@@ -16,11 +18,15 @@ export default function toggleMainMenu() {
             );
             menu.classList.toggle("show");
             if (matching.some(({ menu }) => menu.classList.contains("show"))) {
+                Store.menuStore.getState().open();
                 mainMenu!.classList.add("show");
                 mainHeader!.classList.add("show");
+                mainHeader!.style.cursor = "url('../../assets/cursor/white.png') 19 19, pointer";
             } else {
+                Store.menuStore.getState().close();
                 mainMenu!.classList.remove("show");
                 mainHeader!.classList.remove("show");
+                mainHeader!.style.cursor = "";
             }
         });
     });

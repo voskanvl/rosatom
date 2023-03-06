@@ -1,7 +1,7 @@
 import { scrollScreens } from "./scrollScreens";
 import toggleLogoImage from "./toggleLogoImage";
 import { controlSearchPopup } from "./changeSearchPopup";
-import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
+// import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 import screenSwitcher from "./screenSwitcher";
 import advantagesHovers from "./advantagesHovers";
 import allocateRegionIcons from "./allocateRegionIcons";
@@ -9,8 +9,8 @@ import allocateRegionIcons from "./allocateRegionIcons";
 import newsFeedHandler from "./news-feed-handeler";
 import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
-// import openBurger from "./openBurger";
-import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
+import openBurger from "./openBurger";
+// import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
 import touchedScroll from "./touchedScroll";
 
 import applyMaskText from "./applyMaskText";
@@ -21,16 +21,19 @@ import changeScreenSwitcherByScroll from "./changeScreenSwitcherByScroll";
 import changePointerByScreen from "./changePointerByScreen";
 import clickToLogo from "./clickToLogo";
 import closeMenu from "./closeMenu";
+import changeMainHeader from "./changeMainHeader";
 
 export default function init() {
+    document.body.style.cursor = "url('../../assets/cursor/black.png') 19 19, pointer";
     changePointerByScreen();
     clickToLogo();
-    // openBurger();
+    openBurger();
     toggleLogoImage();
     scrollScreens();
     // hideScreenSwitcherByMenu();
 
-    closeMenu();
+    closeMenu("ul.list");
+    closeMenu(".burger__list");
 
     toggleMainMenu();
     toggleMobileMenu();
@@ -44,7 +47,9 @@ export default function init() {
         open: ".options__search",
     });
 
-    changeMainHeaderByScroll();
+    // changeMainHeaderByScroll();
+    changeMainHeader();
+
     changeScreenSwitcherByScroll();
     screenSwitcher();
     advantagesHovers();
