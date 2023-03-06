@@ -15,16 +15,17 @@ $toggle-menu: 545px
         & > span
             font-size: clamp(11px,1.166667vw,14px)
             white-space: nowrap
+            transition: color .6s
 
         & > .list.show
             scale: 1 1 1
             color: #fff
-            & + span
-                // color: #30A842
-                color: transparent
-                background-image: url("../../../assets/svg/x.svg")
-                background-repeat: no-repeat
-                background-position: 50% 50%
+            // & + span
+            //     // color: #30A842
+            //     color: transparent
+            //     background-image: url("../../../assets/svg/x.svg")
+            //     background-repeat: no-repeat
+            //     background-position: 50% 50%
 
     &.show > .menu__item > span
         color: #fff

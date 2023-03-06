@@ -20,6 +20,7 @@ import toggleMainMenu from "./toggleMainMenu";
 import changeScreenSwitcherByScroll from "./changeScreenSwitcherByScroll";
 import changePointerByScreen from "./changePointerByScreen";
 import clickToLogo from "./clickToLogo";
+import closeMenu from "./closeMenu";
 
 export default function init() {
     changePointerByScreen();
@@ -27,7 +28,9 @@ export default function init() {
     // openBurger();
     toggleLogoImage();
     scrollScreens();
-    hideScreenSwitcherByMenu();
+    // hideScreenSwitcherByMenu();
+
+    closeMenu();
 
     toggleMainMenu();
     toggleMobileMenu();
