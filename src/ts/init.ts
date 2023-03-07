@@ -23,6 +23,7 @@ import closeMenu from "./closeMenu";
 import changeMainHeader from "./changeMainHeader";
 import burger from "./burger";
 import changeCursorByMenu from "./changeCursorByMenu";
+import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
 
 export default function init() {
     document.body.style.cursor = "url('../../assets/cursor/black.png') 19 19, pointer";
@@ -34,6 +35,7 @@ export default function init() {
     burger.open();
     burger.change();
     burger.close();
+    hideBurgerThenMenu();
 
     toggleLogoImage();
     scrollScreens();
