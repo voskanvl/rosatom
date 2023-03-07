@@ -1,7 +1,8 @@
+@import "@var"
 .burger
     margin-right: clamp(5px,74/1920*100vw,74px)
     width: 46px
-    transition: opacity .6s
+    transition: opacity $std_trans
 
     &__list
         scale: 1 0
@@ -12,7 +13,7 @@
         width: 100vw
         z-index: -1
         background-color: #1C376A
-        transition: transform .5s
+        transition: transform $std_trans
         transform-origin: 50% 0
         & > .list
             top: 25vh

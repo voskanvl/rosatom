@@ -1,3 +1,4 @@
+@import "@var"
 $toggle-menu: 545px
 .menu
     display: grid
@@ -15,7 +16,7 @@ $toggle-menu: 545px
         & > span
             font-size: clamp(11px,1.166667vw,14px)
             white-space: nowrap
-            transition: color .6s
+            transition: color $std_trans
 
         & > .list.show
             scale: 1 1 1
@@ -77,4 +78,4 @@ $toggle-menu: 545px
         right: 2em
         top: 7em
         scale: 0 0
-        transition: transform .6s
+        transition: transform $std_trans

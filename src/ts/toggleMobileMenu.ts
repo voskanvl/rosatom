@@ -1,4 +1,4 @@
-import store from "./store/store";
+import store from "./store";
 
 export default function toggleMobileMenu() {
     const trigger = document.querySelector<HTMLElement>(".menu-reduced__caption");
@@ -8,8 +8,11 @@ export default function toggleMobileMenu() {
     !!trigger &&
         trigger.addEventListener("click", () => {
             goal.classList.toggle("show");
+            // goal.classList.contains("show")
+            //     ? store.setState(state => ({ ...state, block: true }))
+            //     : store.setState(state => ({ ...state, block: false }));
             goal.classList.contains("show")
-                ? store.setState(state => ({ ...state, block: true }))
-                : store.setState(state => ({ ...state, block: false }));
+                ? store.menuStore.getState().open()
+                : store.menuStore.getState().close();
         });
 }
