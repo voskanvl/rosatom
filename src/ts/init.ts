@@ -9,7 +9,6 @@ import allocateRegionIcons from "./allocateRegionIcons";
 import newsFeedHandler from "./news-feed-handeler";
 import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
-import openBurger from "./openBurger";
 // import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
 import touchedScroll from "./touchedScroll";
 
@@ -22,12 +21,20 @@ import changePointerByScreen from "./changePointerByScreen";
 import clickToLogo from "./clickToLogo";
 import closeMenu from "./closeMenu";
 import changeMainHeader from "./changeMainHeader";
+import burger from "./burger";
+import changeCursorByMenu from "./changeCursorByMenu";
 
 export default function init() {
     document.body.style.cursor = "url('../../assets/cursor/black.png') 19 19, pointer";
+
     changePointerByScreen();
+    changeCursorByMenu();
     clickToLogo();
-    openBurger();
+
+    burger.open();
+    burger.change();
+    burger.close();
+
     toggleLogoImage();
     scrollScreens();
     // hideScreenSwitcherByMenu();

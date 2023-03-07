@@ -21,12 +21,12 @@ export default function toggleMainMenu() {
                 Store.menuStore.getState().open();
                 mainMenu!.classList.add("show");
                 mainHeader!.classList.add("show");
-                mainHeader!.style.cursor = "url('../../assets/cursor/white.png') 19 19, pointer";
+                // mainHeader!.style.cursor = "url('../../assets/cursor/white.png') 19 19, pointer";
             } else {
                 Store.menuStore.getState().close();
                 mainMenu!.classList.remove("show");
                 mainHeader!.classList.remove("show");
-                mainHeader!.style.cursor = "";
+                mainHeader!.style.cursor = "inherit";
             }
         });
     });

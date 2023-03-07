@@ -8,7 +8,7 @@ const burgerStore = createStore<BooleanStoreState, [["zustand/devtools", never]]
             isOpen: false,
             open: () => set(state => ({ ...state, isOpen: true })),
             close: () => set(state => ({ ...state, isOpen: false })),
-            toggle: () => set(state => ({ ...state, isOpen: !state.isOpen })),
+            // toggle: () => set(state => ({ ...state, isOpen: !state.isOpen })),
         }),
         { name: "burger" },
     ),

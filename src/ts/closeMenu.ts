@@ -1,5 +1,3 @@
-import { changeMainHeader } from "./changeMainHeaderByScroll";
-import { changingElements } from "./changingElementByScroll";
 import Store from "./store";
 
 export default function closeMenu(selector: string) {
@@ -11,14 +9,17 @@ export default function closeMenu(selector: string) {
 
     lists.length &&
         lists.forEach(list =>
-            list.addEventListener("click", ({ target, currentTarget }: Event) => {
+            list.addEventListener("click", (event: Event) => {
+                event.stopPropagation();
+                const { target, currentTarget } = event;
                 const targetElement = target as HTMLElement;
-                const closest = targetElement.closest(".list__item");
-                if (!closest && !targetElement.closest(".accordion")) {
+                const closestListItem = targetElement.closest(".list__item");
+                const closestAccordion = targetElement.closest(".accordion");
+                if (!closestListItem && !closestAccordion) {
                     (currentTarget as HTMLElement).classList.remove("show");
                     mainHeader?.classList.remove("show");
                     mainMenu?.classList.remove("show");
-                    changeMainHeader(mainHeader!, changingElements)("remove");
+
                     Store.menuStore.getState().close();
                     Store.burgerStore.getState().close();
                 }
