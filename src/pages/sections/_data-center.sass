@@ -3,19 +3,27 @@
     // height: 100vh
     // +cur-w
     color: #303031
-    background: linear-gradient(to right, #dcfbfb 85%, #cee3f2) no-repeat
+    // background: linear-gradient(to right, #dcfbfb 85%, #cee3f2) no-repeat
     background-size: contain
     height: 100vw
     & > img
         position: absolute
         inset: 0
-        top: 111px
+        top: 0
         width: 100vw
         height: 100vh
         z-index: 0
         object-fit: cover
         rotate: 0 1 0 180deg
         filter: brightness(300%) grayscale(40%)
+
+    & > .data-center__plug
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        background: linear-gradient(#fff 10%, transparent) no-repeat
 
     &__container
         // +wid(1520px)
