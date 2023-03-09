@@ -47,10 +47,32 @@
 
     & .splide
         --x: 50%
-        --spread: 10%
+        --spread: 8%
         margin-top: 6.1vh
         // mask-image: linear-gradient(to right, transparent 0 calc(50% - var(--x)/2 - var(--spread)), #000 , transparent calc(50% + var(--x)/2 + var(--spread)) 100%)
         mask-image: linear-gradient(to right, transparent 0 var(--spread), #000 , transparent calc(100% - var(--spread)) 100%)
+
+        & .splide__track
+            overflow: visible
+            height: 42vh
+            @media (width <= 768px)
+                height: unset
+
+        & .splide__slide
+            & > img
+                transform-origin: 50% 0
+                box-shadow: 0 0 0 #0002
+                transition: .6s
+            &.is-active
+                z-index: 2
+                & > img
+                    box-shadow: 0 10px 10px #0002
+                    scale: 1.5 1.5
+                    translate: 0 10px
+                    @media (width <= 768px)
+                        box-shadow: 0 0 0 #0002
+                        scale: 1 1
+                        translate: 0 0
 
         &__slide
             margin-right: 20px
