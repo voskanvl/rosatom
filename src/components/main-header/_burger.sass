@@ -4,6 +4,15 @@
     width: 46px
     transition: opacity $std_trans
 
+    &__title
+        color: #fff
+        position: fixed
+        top: 15%
+        left: 0
+        width: 100%
+        padding: 0 clamp(5px,200/1920*100vw,200px)
+        font-size: clamp(20px,5vmin,60px)
+
     &__list
         scale: 1 0
         position: absolute
@@ -16,10 +25,11 @@
         transition: transform $std_trans
         transform-origin: 50% 0
         & > .list
-            top: 25vh
-            height: 75vh
+            top: 30vh
+            height: 60vh
             padding-top: 0
             overflow-y: auto
+            gap: 3%
             @media (width <= 1024px)
                 padding: 0 1em
 
