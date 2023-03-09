@@ -17,18 +17,18 @@ import applyIMaskToField from "./applyIMaskToField";
 import toggleMobileMenu from "./toggleMobileMenu";
 import toggleMainMenu from "./toggleMainMenu";
 import changeScreenSwitcherByScroll from "./changeScreenSwitcherByScroll";
-import changePointerByScreen from "./changePointerByScreen";
+// import changePointerByScreen from "./changePointerByScreen";
 import clickToLogo from "./clickToLogo";
 import closeMenu from "./closeMenu";
 import changeMainHeader from "./changeMainHeader";
 import burger from "./burger";
-import changeCursorByMenu from "./changeCursorByMenu";
+// import changeCursorByMenu from "./changeCursorByMenu";
 import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
 import cursor from "./cursor";
 
 export default function init() {
-    // document.body.style.cursor = "url('../../assets/cursor/black.png') 19 19, pointer";
-    document.body.style.cursor = "none";
+    document.body.style.cursor = "url('../../assets/cursor/mini-black.svg') 19 19, pointer";
+    // document.body.style.cursor = "none";
 
     cursor();
     // changePointerByScreen();
