@@ -18,8 +18,8 @@ export default function cursor() {
         cursorRoundCoords.y = clientY;
     });
 
-    store.store.subscribe(({ activeScreenNumber }) => {
-        SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber)
+    const handlerStore = (x: boolean) => {
+        x
             ? (function () {
                   cursorRound!.style.setProperty("--color", "#fff");
                   document.body.style.cursor =
@@ -30,5 +30,15 @@ export default function cursor() {
                   document.body.style.cursor =
                       "url('../../assets/cursor/mini-black.svg') 19 19, pointer";
               })();
+    };
+
+    store.store.subscribe(({ activeScreenNumber }) => {
+        handlerStore(SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber));
+    });
+    store.menuStore.subscribe(({ isOpen }) => {
+        handlerStore(isOpen);
+    });
+    store.burgerStore.subscribe(({ isOpen }) => {
+        handlerStore(isOpen);
     });
 }
