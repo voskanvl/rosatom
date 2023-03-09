@@ -1,0 +1,28 @@
+.cursor
+    --x: 0
+    --y: 0
+    --color: #000
+    position: fixed
+    z-index: 999
+    top: var(--y)
+    left: var(--x)
+    will-change: top, left
+
+    &__center
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        background: var(--color)
+
+    &__round
+        --x: 0
+        --y: 0
+        position: fixed
+        top: var(--y)
+        left: var(--x)
+        width: 35px
+        height: 35px
+        border-radius: 50%
+        border: 1px solid var(--color)
+        transform: translate(-7px, -7px)
+        transition: top .3s, left .3s

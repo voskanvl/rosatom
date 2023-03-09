@@ -24,12 +24,15 @@ import changeMainHeader from "./changeMainHeader";
 import burger from "./burger";
 import changeCursorByMenu from "./changeCursorByMenu";
 import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
+import cursor from "./cursor";
 
 export default function init() {
-    document.body.style.cursor = "url('../../assets/cursor/black.png') 19 19, pointer";
+    // document.body.style.cursor = "url('../../assets/cursor/black.png') 19 19, pointer";
+    document.body.style.cursor = "none";
 
-    changePointerByScreen();
-    changeCursorByMenu();
+    cursor();
+    // changePointerByScreen();
+    // changeCursorByMenu();
     clickToLogo();
 
     burger.open();
