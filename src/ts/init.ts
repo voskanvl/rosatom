@@ -78,8 +78,9 @@ export default function init() {
     allocateRegionIcons();
     window.addEventListener("resize", () => allocateRegionIcons());
     store.store.subscribe(({ activeScreenNumber }) => {
+        const { matches } = matchMedia("(max-width: 768px)");
         const map = document.querySelector<HTMLElement>(".geonet__map");
-        if (activeScreenNumber === 4) {
+        if (activeScreenNumber === 4 && matches) {
             map!.style.scale = "1.7 1.7";
         } else {
             map!.style.scale = "";
