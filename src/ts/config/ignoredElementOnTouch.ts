@@ -5,6 +5,7 @@ export const ignoredElementOnTouch = {
         ".innopolis__controls",
         ".geonet__data-right",
         ".geonet__map",
+        ".geonet__connector",
     ],
     drop: [
         ".team__container",
@@ -13,5 +14,6 @@ export const ignoredElementOnTouch = {
         ".innopolis__controls",
         ".geonet__data-right",
         ".geonet__map",
+        ".geonet__connector",
     ],
 };

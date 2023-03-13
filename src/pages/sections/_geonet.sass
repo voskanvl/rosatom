@@ -102,6 +102,7 @@ $change_lay: "width <= 768px"
         z-index: 11
 
     &__connector
+        pointer-events: none
         position: absolute
         display: grid
         grid-template-columns: 1fr 2fr
@@ -110,7 +111,7 @@ $change_lay: "width <= 768px"
         // translate: -50%
         transition: .5s
         transform-origin: left
-        z-index: 5
+        z-index: 0
         @media ($change_lay)
             display: none
 

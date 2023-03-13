@@ -19,6 +19,7 @@
 
             .geonet__data-right
 
+
     .geonet__map
         #regions
             include ../../../assets/svg/map-big.svg
@@ -36,12 +37,12 @@
                                     .geo__cod
                                         .geo-popup__dcname= j.name
                                         .geo-popup__dcparam= j.param
+
     .geonet__connector
         .geonet__connector-left
         .geonet__connector-right
     .geonet__popup
         include ../../components/geo-popup/geo-popup.pug 
-
             //- each j in grouped[key]
             //-     //- p= JSON.stringify(j, null, 2)
             //-     img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
