@@ -38,9 +38,9 @@ $change_lay: "width <= 768px"
             // position: relative
             & > #regions
                 top: 0
-                position: absolute
+                position: fixed
                 width: 100%
-                margin-top: -86px
+                // margin-top: -86px
             @media ($change_lay)
                 margin-top: 0
                 grid-area: 1/1/2/2
@@ -71,15 +71,17 @@ $change_lay: "width <= 768px"
             font-size: clamp(12px,18/1024*100vw,18px)
 
     &__icon-layer
-        position: absolute
+        position: fixed
         top: 0
+        z-index: 2
 
     &__region
-        position: absolute
+        position: fixed
         top: 0
         z-index: 10
-        display: grid
-        grid-auto-flow: column
+        // display: grid
+        // grid-auto-flow: column
+        display: flex
 
     &__grouped
         & > * + *
@@ -105,10 +107,10 @@ $change_lay: "width <= 768px"
         grid-template-columns: 1fr 2fr
         padding: 0 5px
         scale: 0
-        translate: -50%
+        // translate: -50%
         transition: .5s
         transform-origin: left
-        z-index: 2
+        z-index: 5
         @media ($change_lay)
             display: none
 
@@ -126,3 +128,9 @@ $change_lay: "width <= 768px"
 
     &__topopup
         visibility: hidden
+        position: absolute
+
+    &__map
+        // width: 50%
+        translate: 50% -10%
+        // scale: 0.9 0.9

@@ -5,22 +5,22 @@ const connectTargetAndMonitor = (
 ) => {
     if (!connector) throw Error("отсутствует .geonet__connector");
 
-    const container = document.querySelector<HTMLElement>(".geonet__container")!;
-    const containerRect = container.getBoundingClientRect();
+    // const container = document.querySelector<HTMLElement>(".geonet__container")!;
+    // const containerRect = container.getBoundingClientRect();
 
     const targetRect = target.getBoundingClientRect();
     const targetHalfHeight = targetRect.y + targetRect.height / 2;
 
+    // const monitor1 = document.querySelector<HTMLElement>(".geonet__popup");
+
     const monitorRect = monitor.getBoundingClientRect();
-    const monitorRight = monitorRect.x + monitorRect.width;
+    const monitorRight = monitorRect.right;
     const monitorHalfHeight = monitorRect.y + monitorRect.height / 2;
 
     connector.style.top =
-        monitorHalfHeight >= targetHalfHeight
-            ? targetHalfHeight - containerRect.top + "px"
-            : monitorHalfHeight - containerRect.top + "px";
+        monitorHalfHeight >= targetHalfHeight ? targetHalfHeight + "px" : monitorHalfHeight + "px";
 
-    connector.style.left = monitorRight - containerRect.left + "px";
+    connector.style.left = monitorRight + "px";
     connector.style.width = targetRect.x - monitorRight + "px";
     connector.style.height = Math.abs(monitorHalfHeight - targetHalfHeight) + "px";
     monitorHalfHeight < targetHalfHeight
@@ -62,9 +62,6 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
     console.log("🚀 ~ tmp:", target, tmp);
 
     connectTargetAndMonitor(target.parentElement!, monitor, connector);
-
-    //TODO: доделать копирование .geonet__topopup в popup
-    //TODO: координаты geonet__icon
 };
 
 const handleMouseLeave = (monitor: HTMLElement, connector: HTMLElement) => () => {

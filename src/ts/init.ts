@@ -25,6 +25,7 @@ import burger from "./burger";
 // import changeCursorByMenu from "./changeCursorByMenu";
 import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
 import cursor from "./cursor";
+import store from "./store";
 
 export default function init() {
     document.body.style.cursor = "url('../../assets/cursor/mini-black.svg'), pointer";
@@ -75,4 +76,7 @@ export default function init() {
 
     allocateRegionIcons();
     window.addEventListener("resize", () => allocateRegionIcons());
+    // store.store.subscribe(({ activeScreenNumber }) => {
+    //     if (activeScreenNumber === 4) allocateRegionIcons();
+    // });
 }

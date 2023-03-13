@@ -22,7 +22,7 @@ export default function allocateRegionIcons() {
         // group.style.left = x + width / 2 + "px";
         // x = x + containerRect.x;
         y -= containerRect.y;
-        // x -= containerRect.x;
+        // x += containerRect.x;
 
         group.style.top = y + "px";
         group.style.left = x - mapLeft + "px";
