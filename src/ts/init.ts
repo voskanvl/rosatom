@@ -26,7 +26,7 @@ import burger from "./burger";
 import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
 import cursor from "./cursor";
 import MobileDetect from "mobile-detect";
-// import store from "./store";
+import store from "./store";
 
 export default function init() {
     document.body.style.cursor = "url('../../assets/cursor/mini-black.svg'), pointer";
@@ -77,9 +77,14 @@ export default function init() {
 
     allocateRegionIcons();
     window.addEventListener("resize", () => allocateRegionIcons());
-    // store.store.subscribe(({ activeScreenNumber }) => {
-    //     if (activeScreenNumber === 4) allocateRegionIcons();
-    // });
+    store.store.subscribe(({ activeScreenNumber }) => {
+        const map = document.querySelector<HTMLElement>(".geonet__map");
+        if (activeScreenNumber === 4) {
+            map!.style.scale = "1.7 1.7";
+        } else {
+            map!.style.scale = "";
+        }
+    });
     const md = new MobileDetect(window.navigator.userAgent);
     if (md.mobile()) {
         const cursorRound = document.querySelector<HTMLElement>(".cursor__round");

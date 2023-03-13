@@ -45,5 +45,3 @@ export default function cursor() {
         handlerStore(isOpen);
     });
 }
-
-//TODO: удалить кружок из "мобильной версии"

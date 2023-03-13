@@ -16,6 +16,8 @@ $change_lay: "width <= 768px"
         //     overflow-y: auto
         //     height: 75vh
         //     padding-bottom: 100px
+        @media (width < 520px)
+            top: 63%
 
     &__title
         & > p
@@ -25,6 +27,9 @@ $change_lay: "width <= 768px"
         display: grid
         grid-template-columns: repeat(2,45%)
         column-gap: 5.208333vw
+        @media ($change_lay)
+            grid-template-columns: 100%
+
         // @media ($change_lay)
         //     grid-template-columns: 100%
         //     overflow-y: auto
@@ -54,6 +59,9 @@ $change_lay: "width <= 768px"
             display: flex
             flex-direction: column
             row-gap: 2vh
+            @media (width < 520px)
+                row-gap: 0.7vh
+                margin-top: 1vh
 
         &-type
             display: flex
@@ -88,13 +96,13 @@ $change_lay: "width <= 768px"
             margin-top: -3vh
 
     &__icon
-        width: max(20px,2.291667vw)
+        width: max(14px,2.291667vw)
         height: 4.4vh
 
     &__popup
         position: absolute
         bottom: 1em
-        left: 50%
+        left: 40%
         top: 50%
         translate: -50% 0
 
@@ -134,7 +142,12 @@ $change_lay: "width <= 768px"
 
     &__map
         // width: 50%
+        position: absolute
         translate: 50% -10%
         // scale: 0.9 0.9
         @media (width <= 1024px)
             translate: 50% 10%
+        @media (width <= 768px)
+            bottom: 10%
+            translate: 30% 0%
+            // scale: 1.7 1.7
