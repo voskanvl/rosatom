@@ -25,11 +25,11 @@ $change_lay: "width <= 768px"
         display: grid
         grid-template-columns: repeat(2,45%)
         column-gap: 5.208333vw
-        @media ($change_lay)
-            grid-template-columns: 100%
-            overflow-y: auto
-            height: 75vh
-            padding-bottom: 150px
+        // @media ($change_lay)
+        //     grid-template-columns: 100%
+        //     overflow-y: auto
+        //     height: 75vh
+        //     padding-bottom: 150px
 
         &-left
             position: relative
@@ -41,11 +41,11 @@ $change_lay: "width <= 768px"
                 position: fixed
                 width: 100%
                 // margin-top: -86px
-            @media ($change_lay)
-                margin-top: 0
-                grid-area: 1/1/2/2
-                & > #regions
-                    margin-top: 0
+            // @media ($change_lay)
+            //     margin-top: 0
+            //     grid-area: 1/1/2/2
+            //     & > #regions
+            //         margin-top: 0
 
         &-types
             margin-top: 3vh
@@ -94,8 +94,9 @@ $change_lay: "width <= 768px"
     &__popup
         position: absolute
         bottom: 1em
-        left: 33%
+        left: 50%
         top: 50%
+        translate: -50% 0
 
         // right: 0%
         width: max-content
@@ -135,3 +136,5 @@ $change_lay: "width <= 768px"
         // width: 50%
         translate: 50% -10%
         // scale: 0.9 0.9
+        @media (width <= 1024px)
+            translate: 50% 10%

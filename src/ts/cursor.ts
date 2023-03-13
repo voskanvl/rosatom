@@ -3,19 +3,11 @@ import store from "./store";
 
 export default function cursor() {
     const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
-    const cursorRoundCoords = {
-        x: 0,
-        y: 0,
-    };
-    setInterval(() => {
-        cursorRound!.style.setProperty("--x", cursorRoundCoords.x + "px");
-        cursorRound!.style.setProperty("--y", cursorRoundCoords.y + "px");
-    }, 200);
 
     document.addEventListener("mousemove", (event: MouseEvent) => {
         const { clientX, clientY } = event;
-        cursorRoundCoords.x = clientX;
-        cursorRoundCoords.y = clientY;
+        cursorRound!.style.setProperty("--x", clientX + "px");
+        cursorRound!.style.setProperty("--y", clientY + "px");
     });
 
     document.addEventListener("mousedown", () => {
@@ -53,3 +45,5 @@ export default function cursor() {
         handlerStore(isOpen);
     });
 }
+
+//TODO: удалить кружок из "мобильной версии"

@@ -36,27 +36,23 @@ export default function touchedScroll() {
     };
 
     const handleEnd = (event: TouchEvent) => {
-        // if (listDisabledElementToScroll(event)) return;
-        // const mouseEvent = new Event();
-
         const target = event.target as HTMLElement;
         if (target.classList.contains("screen-switcher__item")) return target.click();
         ignoredElementOnTouch.click.forEach(e => {
-            if (target.closest(e)) return target.click();
+            const closestElement = target.closest(e) as HTMLElement;
+            if (closestElement && "click" in target) return target.click();
+
+            //Ищем среди предков первый кликабельный элемент
+            let currentEl = target;
+            while (!("click" in currentEl) || currentEl === document.body) {
+                currentEl = currentEl.parentElement!;
+            }
+            currentEl.click();
         });
-        // if (target.closest(".geonet__region")) return target.click();
-        // if (target.closest(".team__controls")) return target.click();
+
         if (ignoredElementOnTouch.drop.some(e => !!target.closest(e))) return;
 
-        // if (target.closest(".team__container")) return;
-        // if (target.closest(".main-header")) return;
-        // if (target.closest(".splide")) return;
-        // if (target.closest(".main-header"))
-        //     return target.dispatchEvent(new Event("mouseenter", { bubbles: true }));
-
         if (isScrolable(target)) return;
-
-        // event.preventDefault();
 
         const delta = event.changedTouches[0].screenY - y;
         delta > 1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL

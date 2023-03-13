@@ -75,7 +75,7 @@ const handleMouseLeave = (monitor: HTMLElement, connector: HTMLElement) => () =>
 };
 
 export default function handlerRegionMove() {
-    const regionMap = document.querySelector<HTMLElement>("#regions")!;
+    const regionMap = document.querySelector<HTMLElement>(".geonet")!;
 
     const popup = document.querySelector<HTMLElement>(".geo-popup");
     const connector = document.querySelector<HTMLElement>(".geonet__connector");
@@ -90,6 +90,7 @@ export default function handlerRegionMove() {
     });
 
     regionMap.addEventListener("click", (event: Event) => {
+        console.log("🚀 ~ regionMap:", regionMap);
         const target = event.target as HTMLElement;
         if (!target.closest(".geonet__grouped")) handleMouseLeave(popup, connector)();
     });

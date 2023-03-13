@@ -25,7 +25,8 @@ import burger from "./burger";
 // import changeCursorByMenu from "./changeCursorByMenu";
 import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
 import cursor from "./cursor";
-import store from "./store";
+import MobileDetect from "mobile-detect";
+// import store from "./store";
 
 export default function init() {
     document.body.style.cursor = "url('../../assets/cursor/mini-black.svg'), pointer";
@@ -79,4 +80,9 @@ export default function init() {
     // store.store.subscribe(({ activeScreenNumber }) => {
     //     if (activeScreenNumber === 4) allocateRegionIcons();
     // });
+    const md = new MobileDetect(window.navigator.userAgent);
+    if (md.mobile()) {
+        const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
+        !!cursorRound && (cursorRound.style.display = "none");
+    }
 }
