@@ -38,17 +38,34 @@ export default function touchedScroll() {
     const handleEnd = (event: TouchEvent) => {
         const target = event.target as HTMLElement;
         if (target.classList.contains("screen-switcher__item")) return target.click();
-        ignoredElementOnTouch.click.forEach(e => {
-            const closestElement = target.closest(e) as HTMLElement;
-            if (closestElement && "click" in target) return target.click();
 
-            //Ищем среди предков первый кликабельный элемент
+        ignoredElementOnTouch.click.forEach(e => {
+            console.log("🚀 ~ target.tagName :", target.tagName, "click" in target);
             let currentEl = target;
-            while (!("click" in currentEl) || currentEl === document.body) {
-                currentEl = currentEl.parentElement!;
+            if (target.closest(e)) {
+                if ("click" in target) {
+                    return target.click();
+                } else {
+                    while (!("click" in currentEl) || currentEl === document.body) {
+                        currentEl = currentEl.parentElement!;
+                    }
+                    currentEl.click();
+                }
             }
-            currentEl.click();
         });
+
+        // if (target.classList.contains("screen-switcher__item")) return target.click();
+        // ignoredElementOnTouch.click.forEach(e => {
+        //     const closestElement = target.closest(e) as HTMLElement;
+        //     if (closestElement && "click" in target) return target.click();
+
+        //     //Ищем среди предков первый кликабельный элемент
+        //     let currentEl = target;
+        //     while (!("click" in currentEl) || currentEl === document.body) {
+        //         currentEl = currentEl.parentElement!;
+        //     }
+        //     currentEl.click();
+        // });
 
         if (ignoredElementOnTouch.drop.some(e => !!target.closest(e))) return;
 
