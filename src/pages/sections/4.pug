@@ -22,14 +22,23 @@
 
             .geonet__data-right
                 #regions
-                    include ../../../assets/svg/map-green.svg
+                    include ../../../assets/svg/map-big.svg
                 .geonet__icon-layer 
                     each i in geo
                         .geonet__region(data-regionid= i.id, data-region= i.name)
-                            - const grouped = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
+                            - const groupedByType = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
 
-                            each key in Object.keys(grouped)
+                            each key in Object.keys(groupedByType)
+                                //- p= JSON.stringify(key, null, 2)
                                 .geonet__grouped(data-group= key, data-color= typedc[key].color )
-                                    each j in grouped[key]
-                                        img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
+                                    img.geonet__icon(src= typedc[key].icon, data-name= typedc[key].name, data-param= typedc[key].param)
+                                    .geonet__topopup 
+                                        each j in i.dc.filter(({type})=>type===key)
+                                            .geo__cod
+                                                .geo__cod-name= j.name
+                                                .geo__cod-param= j.param
+
+                                    //- each j in grouped[key]
+                                    //-     //- p= JSON.stringify(j, null, 2)
+                                    //-     img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
 

@@ -101,3 +101,5 @@ export default function splides() {
         innopolisSplideInstance.root.style.setProperty("--x", `50%`);
     });
 }
+
+//TODO: исправить увеличение центрального слайда в мобильной версии (sass)

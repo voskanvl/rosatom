@@ -43,20 +43,28 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
     !!regionMonitor && !!region && (regionMonitor.innerText = region);
     !!regionMonitor && !!color && (regionMonitor.style.backgroundColor = color);
 
-    const dcList = target.querySelectorAll<HTMLImageElement>("img");
-    dcList.forEach(img => {
-        const dcname = document.createElement("div");
-        dcname.classList.add("geo-popup__dcname");
-        dcname.innerText = img.dataset.name || "";
-        listMonitor.append(dcname);
+    // const dcList = target.querySelectorAll<HTMLImageElement>("img");
+    // dcList.forEach(img => {
+    //     const dcname = document.createElement("div");
+    //     dcname.classList.add("geo-popup__dcname");
+    //     dcname.innerText = img.dataset.name || "";
+    //     listMonitor.append(dcname);
 
-        const dcparam = document.createElement("div");
-        dcparam.classList.add("geo-popup__dcparam");
-        dcparam.innerText = img.dataset.param || "";
-        listMonitor.append(dcparam);
-    });
+    //     const dcparam = document.createElement("div");
+    //     dcparam.classList.add("geo-popup__dcparam");
+    //     dcparam.innerText = img.dataset.param || "";
+    //     listMonitor.append(dcparam);
+    // });
+    const tmp = target.querySelector<HTMLElement>(".geonet__topopup");
+    const clone = tmp?.cloneNode(true);
+    (clone as HTMLElement).style.visibility = "visible";
+    clone && listMonitor.append(clone);
+    console.log("🚀 ~ tmp:", target, tmp);
 
     connectTargetAndMonitor(target.parentElement!, monitor, connector);
+
+    //TODO: доделать копирование .geonet__topopup в popup
+    //TODO: координаты geonet__icon
 };
 
 const handleMouseLeave = (monitor: HTMLElement, connector: HTMLElement) => () => {

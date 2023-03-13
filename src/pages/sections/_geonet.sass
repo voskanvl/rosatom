@@ -35,8 +35,10 @@ $change_lay: "width <= 768px"
             position: relative
 
         &-right
-            position: relative
+            // position: relative
             & > #regions
+                top: 0
+                position: absolute
                 width: 100%
                 margin-top: -86px
             @media ($change_lay)
@@ -121,3 +123,6 @@ $change_lay: "width <= 768px"
     & #regions > svg
         width: 100%
         height: auto
+
+    &__topopup
+        visibility: hidden
