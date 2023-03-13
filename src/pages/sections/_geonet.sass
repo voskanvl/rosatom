@@ -100,6 +100,7 @@ $change_lay: "width <= 768px"
         height: 4.4vh
 
     &__popup
+        pointer-events: none
         position: absolute
         bottom: 1em
         left: 40%
@@ -109,6 +110,9 @@ $change_lay: "width <= 768px"
         // right: 0%
         width: max-content
         z-index: 11
+        @media (width <= 768px)
+            translate: 0% 0%
+            right: 6vw
 
     &__connector
         pointer-events: none

@@ -5,13 +5,8 @@ const connectTargetAndMonitor = (
 ) => {
     if (!connector) throw Error("отсутствует .geonet__connector");
 
-    // const container = document.querySelector<HTMLElement>(".geonet__container")!;
-    // const containerRect = container.getBoundingClientRect();
-
     const targetRect = target.getBoundingClientRect();
     const targetHalfHeight = targetRect.y + targetRect.height / 2;
-
-    // const monitor1 = document.querySelector<HTMLElement>(".geonet__popup");
 
     const monitorRect = monitor.getBoundingClientRect();
     const monitorRight = monitorRect.right;
@@ -43,23 +38,10 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
     !!regionMonitor && !!region && (regionMonitor.innerText = region);
     !!regionMonitor && !!color && (regionMonitor.style.backgroundColor = color);
 
-    // const dcList = target.querySelectorAll<HTMLImageElement>("img");
-    // dcList.forEach(img => {
-    //     const dcname = document.createElement("div");
-    //     dcname.classList.add("geo-popup__dcname");
-    //     dcname.innerText = img.dataset.name || "";
-    //     listMonitor.append(dcname);
-
-    //     const dcparam = document.createElement("div");
-    //     dcparam.classList.add("geo-popup__dcparam");
-    //     dcparam.innerText = img.dataset.param || "";
-    //     listMonitor.append(dcparam);
-    // });
     const tmp = target.querySelector<HTMLElement>(".geonet__topopup");
     const clone = tmp?.cloneNode(true);
     (clone as HTMLElement).style.visibility = "visible";
     clone && listMonitor.append(clone);
-    console.log("🚀 ~ tmp:", target, tmp);
 
     connectTargetAndMonitor(target.parentElement!, monitor, connector);
 };
@@ -90,7 +72,7 @@ export default function handlerRegionMove() {
     });
 
     regionMap.addEventListener("click", (event: Event) => {
-        console.log("🚀 ~ regionMap:", regionMap);
+        event.stopPropagation();
         const target = event.target as HTMLElement;
         if (!target.closest(".geonet__grouped")) handleMouseLeave(popup, connector)();
     });
