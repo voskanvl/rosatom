@@ -1,7 +1,6 @@
 import { BooleanStoreState } from "./booleanStoreState.type";
 import { createStore } from "zustand/vanilla";
 import { devtools } from "zustand/middleware";
-import { BurgerStoreState } from "./burgerStore";
 
 const headerStore = createStore<BooleanStoreState, [["zustand/devtools", never]]>(
     devtools(
