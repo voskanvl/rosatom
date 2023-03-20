@@ -20,13 +20,14 @@ nav.main-header
             h2.burger__title Карта сайта
             .list
                 +menuList(burger)
+            img.cristal(src="../../../assets/svg/veil.svg")
         .burger__image
 
     .logo
 
     .menu-reduced 
         ul.menu-reduced__list.list
-            img.cristal(src="../../../assets/svg/cristal.svg")
+            img.cristal(src="../../../assets/svg/veil.svg")
             +accordion(menu,"menu-reduced__item")
         span.menu-reduced__caption МЕНЮ
 
@@ -35,7 +36,7 @@ nav.main-header
             li.menu__item
                 ul.list
                     +menuList(i.menu)
-                    img.cristal(src="../../../assets/svg/cristal.svg")
+                    img.cristal(src="../../../assets/svg/veil.svg")
                 span= i.title
     .options 
         .options__search 

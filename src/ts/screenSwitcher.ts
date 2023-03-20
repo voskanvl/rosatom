@@ -16,7 +16,8 @@ function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[])
         element.addEventListener("click", () => {
             setScreen(i);
         });
-        const opacity = currentScreen !== 0 ? 1 : 0;
+        // const opacity = currentScreen !== 0 ? 1 : 0;
+        const opacity = 1;
         !!screenSwitcher && (screenSwitcher.style.opacity = opacity + "");
     });
 }
@@ -25,8 +26,8 @@ function changeSwitcherByStore() {
     const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
     if (!screenSwitcher) throw Error("отсутствует screen-switcher");
 
-    store.subscribe(({ activeScreenNumber: currentScreen, block }) => {
-        const opacity = currentScreen !== 0 ? 1 : 0;
+    store.subscribe(({ block }) => {
+        const opacity = 1;
 
         const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
         !!screenSwitcher && (screenSwitcher.style.opacity = opacity + "");

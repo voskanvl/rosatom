@@ -2,6 +2,7 @@ $change_lay: "width <= 768px"
 .geonet
     // background-color: #ECF0F3
     background: linear-gradient(60deg, darken(#30A842, 30%), darken(#30A842, 7%))
+    background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     color: #fff
     height: 100vh
     position: relative
@@ -96,8 +97,12 @@ $change_lay: "width <= 768px"
             margin-top: -3vh
 
     &__icon
+        --period: 1.5s
+        --phase: 0
         width: max(14px,2.291667vw)
         height: 4.4vh
+        animation: puls var(--period) infinite
+        animation-delay: var(--phase)
 
     &__popup
         pointer-events: none
@@ -155,3 +160,12 @@ $change_lay: "width <= 768px"
             bottom: 10%
             translate: 30% 0%
             // scale: 1.7 1.7
+
+@keyframes puls
+    0%
+        scale: 1 1
+    50%
+        scale: 1.2 1.2
+
+    100%
+        scale: 1 1

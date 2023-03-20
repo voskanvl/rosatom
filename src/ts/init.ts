@@ -9,7 +9,7 @@ import allocateRegionIcons from "./allocateRegionIcons";
 import newsFeedHandler from "./news-feed-handeler";
 import splides from "./splides";
 import handlerRegionMove from "./handlerRegionMove";
-// import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
+import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
 import touchedScroll from "./touchedScroll";
 
 import applyMaskText from "./applyMaskText";
@@ -26,6 +26,7 @@ import burger from "./burger";
 import hideBurgerThenMenu from "./burger/hideBurgerThenMenu";
 import cursor from "./cursor";
 import MobileDetect from "mobile-detect";
+import randomizePulsIcons from "./randomizePulsIcons";
 import store from "./store";
 
 export default function init() {
@@ -44,7 +45,7 @@ export default function init() {
 
     toggleLogoImage();
     scrollScreens();
-    // hideScreenSwitcherByMenu();
+    hideScreenSwitcherByMenu();
 
     closeMenu("ul.list");
     closeMenu(".burger__list");
@@ -91,4 +92,6 @@ export default function init() {
         const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
         !!cursorRound && (cursorRound.style.display = "none");
     }
+
+    randomizePulsIcons();
 }
