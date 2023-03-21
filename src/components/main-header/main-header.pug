@@ -23,7 +23,7 @@ nav.main-header
             img.cristal(src="../../../assets/svg/veil.svg")
         .burger__image
 
-    .logo
+    .logo.logo--white
 
     .menu-reduced 
         ul.menu-reduced__list.list
@@ -31,7 +31,7 @@ nav.main-header
             +accordion(menu,"menu-reduced__item")
         span.menu-reduced__caption МЕНЮ
 
-    ul.menu
+    ul.menu.menu--white
         each i in menu 
             li.menu__item
                 ul.list
@@ -39,11 +39,11 @@ nav.main-header
                     img.cristal(src="../../../assets/svg/veil.svg")
                 span= i.title
     .options 
-        .options__search 
+        .options__search.options__search--white 
             img(src="../../../assets/svg/search.svg")
         .options__lk 
             a(href="#") ЛИЧНЫЙ КАБИНЕТ
-        .options__international 
+        .options__international.options__international--white 
             a(href="#") Rus
             a(href="#") Eng
 
