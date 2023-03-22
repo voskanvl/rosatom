@@ -2,9 +2,9 @@ export default function changeSearchPopup(state: "open" | "close") {
     const element = document.querySelector<HTMLElement>(".search-popup");
     if (!element) throw Error("отсутствует search popup");
 
-    function transitionendHandler({ target }: Event) {
-        target && ((target as HTMLElement).style.display = "none");
-        target && target.removeEventListener("transitionend", transitionendHandler);
+    function transitionendHandler({ currentTarget }: Event) {
+        currentTarget && ((currentTarget as HTMLElement).style.display = "none");
+        currentTarget && currentTarget.removeEventListener("transitionend", transitionendHandler);
     }
 
     switch (state) {

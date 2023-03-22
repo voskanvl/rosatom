@@ -12,7 +12,7 @@ export function scrollScreens() {
     /*
         в store activeScreenNumber - номер текущкго скрина
         в store activeScreenElement - текщий элемент скрина
-        screns - массив всех элментов скринов
+        screens - массив всех элментов скринов
     */
 
     window.addEventListener(

@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite  --host",
-        "build": "tsc && vite build",
+        "build": "tsc && vite build & cp -r assets/* ./dist/assets",
         "preview": "vite preview",
         "createComponent": " bash ./create-component.bash",
         "tar": "tar -czvf rosatom.tar.gz ./dist"

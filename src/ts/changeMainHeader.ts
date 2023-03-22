@@ -1,20 +1,15 @@
 import Store from "./store";
 import { SCREEN_NUMBER_TO_CHANGE } from "./config";
-import { changingElements } from "./changingElementByScroll";
 
 export default function changeMainHeader() {
     /*
         burger  menu screen(page)
     */
     let flag = 0;
+    const mainHeader = document.querySelector<HTMLElement>(".main-header");
 
     function setMainHeader() {
-        console.log("🚀 ~ flag:", flag);
-
-        Object.values(changingElements).forEach(({ selector, changingClass }) => {
-            const el = document.querySelector<HTMLElement>(selector);
-            el && el.classList[flag ? "add" : "remove"](changingClass);
-        });
+        !!mainHeader && mainHeader.classList[flag ? "add" : "remove"]("main-header--white");
     }
 
     Store.burgerStore.subscribe(({ isOpen }) => {

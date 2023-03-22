@@ -39,16 +39,17 @@
                 a
                     color: #fff
 
-    // &:has(.menu:hover), &:has(.menu-reduced:hover), &:has(.menu:active), &:has(.menu-reduced:active)
-    //     & > .logo
-    //         background-image: url("../../../assets/logo/logo-white.png")
-    //     & > .options
-    //         &
-    //             color: #fff
-    //             img
-    //                 filter: invert(1)
-    //             a
-    //                 color: #fff
+    &--white
+        & > .logo
+            background-image: url("../../../assets/logo/logo-white.png")
+        & > .menu
+            color: #fff
+        &  .options__international
+            color: #fff
+        &  .options__search
+            filter: invert(1)
+        &   .menu-reduced__caption
+            color: #fff
 
     @media (width < 1440px)
         padding: 0 1vw 0 1vw
@@ -64,4 +65,4 @@
     right: 0
     width: 100%
     height: 100%
-    z-index: -1
+    z-index: -2

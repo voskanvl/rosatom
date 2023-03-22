@@ -3,7 +3,7 @@
     inset: 0
     background: #0000
     backdrop-filter: blur(0px)
-    z-index: 102
+    z-index: -1
     flex-direction: column
     align-items: center
     display: none
@@ -16,15 +16,20 @@
 
         opacity: 1
         backdrop-filter: blur(10px)
+        z-index: 1000
         // +cur-b
 
     &__input
-        position: relative
+        position: absolute
+        left: 50%
+        top: 10%
+        translate: -50% -50%
         display: flex
         align-items: center
         border-bottom: 1px #303031 solid
         margin-top: 225px
         width: min(840px,80%)
+        transition: border-bottom-color $std_trans
 
         & > input
             background: none
@@ -34,10 +39,12 @@
             outline: none
             &::placeholder
                 color: #303031
+                transition: color $std_trans
 
     &__input-icon
         aspect-ratio: 1
         width: clamp(19px,3.4vmin,34px)
+        transition: $std_trans
         & > img
             width: 100%
 
@@ -45,11 +52,20 @@
         position: absolute
         top: -400%
         right: 0%
+        & > svg
+            stroke: #303031
+            transition: stroke $std_trans
 
-// @keyframes anim-blur-in
-//     0%
-//         backdrop-filter: blur(0px)
-//         opacity: 0
-//     100%
-//         backdrop-filter: blur(10px)
-//         opacity: 1
+    &--white
+        & > .search-popup__input
+            border-bottom: 1px #fff solid
+            & > input
+                &::placeholder
+                    color: #fff
+
+        & .search-popup__close
+            & > svg
+                stroke: #fff !important
+
+        & .search-popup__input-icon
+            filter: invert(1)

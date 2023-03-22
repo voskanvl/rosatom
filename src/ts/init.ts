@@ -28,30 +28,9 @@ import cursor from "./cursor";
 import MobileDetect from "mobile-detect";
 import randomizePulsIcons from "./randomizePulsIcons";
 import store from "./store";
+import changeSearchPopupByScreens from "./changeSearchPopupByScreens";
 
 export default function init() {
-    document.body.style.cursor = "url('../../assets/cursor/mini-black.svg'), pointer";
-    // document.body.style.cursor = "none";
-
-    // const video = document.querySelector<HTMLVideoElement>(".inserting > video");
-    // if (!video) throw Error("there isn't video");
-    // video.autoplay = true;
-    // document.addEventListener("mouseover", async () => {
-    //     try {
-    //         await video.play();
-    //     } catch (error: any) {
-    //         video.play();
-    //         console.log(error.message);
-    //     }
-    // });
-    // (async () => {
-    //     try {
-    //         await video!.play();
-    //     } catch (error: any) {
-    //         throw new Error(error);
-    //     }
-    // })();
-
     cursor();
     // changePointerByScreen();
     // changeCursorByMenu();
@@ -113,4 +92,5 @@ export default function init() {
     }
 
     randomizePulsIcons();
+    changeSearchPopupByScreens();
 }

@@ -1,7 +1,15 @@
 import { SCREEN_NUMBER_TO_CHANGE } from "./config";
 import store from "./store";
 
+// function initCursor() {
+//     document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), pointer";
+//     const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
+//     cursorRound!.style.setProperty("--color", "#fff");
+// }
+
 export default function cursor() {
+    // initCursor();
+
     const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
 
     document.addEventListener("mousemove", (event: MouseEvent) => {
@@ -34,6 +42,9 @@ export default function cursor() {
                       : "url('../../assets/cursor/mini-black.svg'), pointer";
               })();
     };
+
+    //---   init cursor ---
+    handlerStore(true);
 
     store.store.subscribe(({ activeScreenNumber }) => {
         handlerStore(SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber));
