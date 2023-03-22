@@ -40,9 +40,20 @@ $media2: "width <= 1024px"
         grid-template-areas: "details sales map" "details support map"
         gap: 13px
         margin-top: 6.1vh
+        scrollbar-width: thin
+        scrollbar-color: #30A842 #404041
+        &::-webkit-scrollbar
+            width: 4px
+            background: #404041
+        &::-webkit-scrollbar-thumb
+            background: #30A842
+            border-radius: 21px
 
         @media ($media0)
             grid-template-areas: "details details map" "sales support map"
+            grid-template-rows: 52% 45%
+            height: 66vh
+            margin-top: 3vh
         @media ($media1)
             grid-template-columns: 32% 32% 32%
             grid-template-areas: "details sales support" "map map map"
@@ -55,7 +66,7 @@ $media2: "width <= 1024px"
             display: flex
             flex-direction: column
             justify-content: flex-start
-            row-gap: 10px
+            row-gap: min(10px, 1.2vh)
             @media ($media1)
                 justify-content: space-between
 

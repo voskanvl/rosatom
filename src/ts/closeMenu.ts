@@ -12,6 +12,9 @@ export default function closeMenu(selector: string) {
             list.addEventListener("click", (event: Event) => {
                 event.stopPropagation();
                 const { target, currentTarget } = event;
+
+                if ((target as HTMLElement).closest(".options")) return;
+
                 const targetElement = target as HTMLElement;
                 const closestListItem = targetElement.closest(".list__item");
                 const closestAccordion = targetElement.closest(".accordion");

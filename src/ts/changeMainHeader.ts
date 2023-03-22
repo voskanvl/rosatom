@@ -4,8 +4,14 @@ import { SCREEN_NUMBER_TO_CHANGE } from "./config";
 export default function changeMainHeader() {
     /*
         burger  menu screen(page)
+
+        flag = < 4 2 1 >
+
+        1 = store
+        2 = menuStore
+        4 = burgerStore
     */
-    let flag = 0;
+    let flag = 1;
     const mainHeader = document.querySelector<HTMLElement>(".main-header");
 
     function setMainHeader() {
@@ -25,4 +31,6 @@ export default function changeMainHeader() {
         flag = page ? flag | 1 : flag & 6;
         setMainHeader();
     });
+
+    setMainHeader();
 }

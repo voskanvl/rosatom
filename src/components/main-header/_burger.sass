@@ -45,6 +45,9 @@
         background-repeat: no-repeat
         width: 46px
         height: 12px
+        @media (width <= $toggle-menu)
+            display: none
+            pointer-events: none
 
     &.show
         & .burger__list

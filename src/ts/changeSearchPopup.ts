@@ -22,16 +22,19 @@ export default function changeSearchPopup(state: "open" | "close") {
 }
 
 interface controlSearchPopupProps {
-    close?: string | HTMLElement | null;
-    open?: string | HTMLElement | null;
+    close?: string;
+    open?: string;
 }
 
 export function controlSearchPopup({ close, open }: controlSearchPopupProps) {
     if (open) {
-        const openControl = typeof open === "string" ? document.querySelector(open) : open;
-        openControl &&
-            openControl.addEventListener("click", () => {
-                changeSearchPopup("open");
+        const openControls = document.querySelectorAll<HTMLElement>(open);
+        openControls &&
+            openControls.length &&
+            openControls.forEach(e => {
+                e.addEventListener("click", () => {
+                    changeSearchPopup("open");
+                });
             });
     }
     if (close) {

@@ -1,5 +1,5 @@
 @import "@var"
-$toggle-menu: 545px
+
 .menu
     display: grid
     grid-auto-flow: column
@@ -36,22 +36,20 @@ $toggle-menu: 545px
     &--white
         color: #fff
 
-    @media (width < $toggle-menu)
+    @media (width <= $toggle-menu)
         display: none
 
 .menu-reduced
     display: none
 
-    @media (width < $toggle-menu)
+    @media (width <= $toggle-menu)
         display: block
-        // &:hover
-        //     color: #fff
-        //     & > .menu-reduced__list
-        //         scale: 1 1 1
-        //         display: grid
-        //         grid-template-columns: 100%
-        //     & > .menu-reduced__close
-        //         scale: 1 1
+
+        &  .options
+            margin-right: auto
+            column-gap: 10px
+            & > .options__international
+                column-gap: 6px
 
     &__list.show
         scale: 1 1 1
@@ -64,12 +62,21 @@ $toggle-menu: 545px
             background-image: url("../../../assets/svg/x.svg")
             background-size: contain
             background-repeat: no-repeat
+        @media (width <= $toggle-menu)
+            grid-template-rows: 10% 90%
+            padding-top: 6em
 
     &__caption
         color: #000
         transition: color .8s
         &--white
             color: #fff
+        @media (width <= $toggle-menu)
+            display: block
+            translate: -19px 0
+            color: transparent
+            background: url("../../../assets/svg/burger.svg") no-repeat
+            background-position: 0 50%
 
     &__close
         background: none
