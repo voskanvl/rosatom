@@ -39,6 +39,10 @@
                 a
                     color: #fff
 
+    &  .options__search svg path
+        fill: #000
+        transition: fill $std-trans
+
     &--white
         & > .logo
             background-image: url("../../../assets/logo/logo-white.png")
@@ -47,8 +51,9 @@
 
         &  .options__international
             color: #fff
-        &  .options__search
-            filter: invert(1)
+        &  .options__search svg path
+            fill: #fff
+
         &   .menu-reduced__caption
             color: #fff
             @media (width <= $toggle-menu)

@@ -1,6 +1,6 @@
 import { scrollScreens } from "./scrollScreens";
 import toggleLogoImage from "./toggleLogoImage";
-import { controlSearchPopup } from "./changeSearchPopup";
+import { controlSearchPopup } from "./popup/changeSearchPopup";
 // import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
 import screenSwitcher from "./screenSwitcher";
 import advantagesHovers from "./advantagesHovers";
@@ -28,7 +28,7 @@ import cursor from "./cursor";
 import MobileDetect from "mobile-detect";
 import randomizePulsIcons from "./randomizePulsIcons";
 import store from "./store";
-import changeSearchPopupByScreens from "./changeSearchPopupByScreens";
+import changeSearchPopupByScreensAndMenu from "./popup/changeSearchPopupByScreensAndMenu";
 
 export default function init() {
     cursor();
@@ -59,6 +59,7 @@ export default function init() {
         close: ".search-popup__close",
         open: ".options__search",
     });
+    changeSearchPopupByScreensAndMenu();
 
     // changeMainHeaderByScroll();
     changeMainHeader();
@@ -92,5 +93,4 @@ export default function init() {
     }
 
     randomizePulsIcons();
-    changeSearchPopupByScreens();
 }

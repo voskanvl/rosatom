@@ -1,7 +1,7 @@
-import Store from "./store";
-import { SCREEN_NUMBER_TO_CHANGE } from "./config";
+import Store from "../store";
+import { SCREEN_NUMBER_TO_CHANGE } from "../config";
 
-export default function changeMainHeader() {
+export default function changeSearchPopupByScreensAndMenu() {
     /*
         burger  menu screen(page)
     */
@@ -23,6 +23,10 @@ export default function changeMainHeader() {
     Store.store.subscribe(({ activeScreenNumber }) => {
         const page = SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber);
         flag = page ? flag | 1 : flag & 6;
+        setMainHeader();
+    });
+    Store.menuStore.subscribe(({ isOpen }) => {
+        flag = isOpen ? flag | 2 : flag & 5;
         setMainHeader();
     });
 }
