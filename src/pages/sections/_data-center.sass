@@ -31,8 +31,15 @@
         translate: -50% -50%
         width: 84%
 
-        @media (height<590px)
-            top: 66.66%
+        // @media (height<590px)
+            // top: 66.66%
+        @media (height < 550px)
+            top: max(100px, 10vh)
+            translate: -50% 0%
+
+        @media (height < 550px) and (width <= 510px)
+            top: max(70px, 17vh)
+            translate: -50% 0%
 
     &__title
         --circle-color: #30A842 !important
@@ -55,8 +62,9 @@
             $precent-repeat: 33%
             grid-template-columns: repeat(auto-fit,minmax($precent-repeat,1fr))
         @media (width <= 425px)
-            $precent-repeat: 50%
+            $precent-repeat: 49%
             grid-template-columns: repeat(auto-fit,minmax($precent-repeat,1fr))
+            margin-left: -10px
 
     &__card
         list-style: none

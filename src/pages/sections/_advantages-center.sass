@@ -22,11 +22,7 @@ $change_point2: "width <= 380px"
             opacity: 1
 
     &__container
-        +center-a
-        @media ($change_point1)
-            top: 60%
-        @media ($change_point2)
-            top: 57%
+        @extend .data-center__container
 
     &__list
         display: grid
