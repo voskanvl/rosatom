@@ -1,6 +1,7 @@
 import Splide, { SlideComponent } from "@splidejs/splide";
 import { MSplides } from "../../initSlides";
 import innopolisData from "../../innopolisData.json";
+import store from "../../store";
 
 export default function splides() {
     const splidesInstance = new MSplides();
@@ -42,6 +43,18 @@ export default function splides() {
         textElement!.textContent = dataInnopolis?.name;
     });
 
+    const breakpoints = {
+        550: {
+            perPage: 1,
+        },
+        800: {
+            perPage: 2,
+        },
+        1600: {
+            perPage: 3,
+        },
+    };
+
     team &&
         splidesInstance.add("#team", {
             type: "loop",
@@ -50,18 +63,7 @@ export default function splides() {
             perMove: 1,
             perPage: 4,
             padding: "10px",
-            // focus: "center",
-            breakpoints: {
-                1600: {
-                    perPage: 3,
-                },
-                800: {
-                    perPage: 2,
-                },
-                550: {
-                    perPage: 1,
-                },
-            },
+            breakpoints,
         });
     const teamSplideInstance = splidesInstance.instances["#team"];
     const teamSplideControlLeft = document.querySelector<HTMLButtonElement>(
@@ -72,6 +74,14 @@ export default function splides() {
     );
     !!teamSplideControlLeft && (teamSplideControlLeft.onclick = () => teamSplideInstance.go("<"));
     !!teamSplideControlRight && (teamSplideControlRight.onclick = () => teamSplideInstance.go(">"));
+
+    //--- bug with intiation slider, perPage is always = 2 on min resolution
+    store.store.subscribe(({ activeScreenNumber }) => {
+        if (activeScreenNumber === 6) {
+            teamSplideInstance.destroy();
+            setTimeout(() => teamSplideInstance.mount());
+        }
+    });
 
     partners &&
         splidesInstance.add("#partners", {
