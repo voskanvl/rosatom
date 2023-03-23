@@ -4,22 +4,26 @@
     background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     height: 100vh
     color: #fff
+    display: grid
+    place-items: center
     &__container
-        // +center-a
+        padding: 100px 10% 10%
+        width: 100vw
+        height: 100vh
+        margin: 0
 
-        // @media(height <= 520px)
-        //     top: 60%
-        @extend .data-center__container
-
-    &__title
+    &__title.title
         font-weight: 700
-        font-size: 80px
+        font-size: calc($index * 2.7)
         width: fit-content
         margin-bottom: 48px
         margin-left: 22px
         @media (width <= 510px)
-            margin-left: 0
-            margin-bottom: 1em
+            margin: 0 auto 1em
+
+            & > p
+                padding: 0
+                text-align: center
 
     .team__controls
         @extend .innopolis__controls
