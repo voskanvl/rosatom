@@ -1,5 +1,6 @@
-.main-block
+$toggle: 600px
 
+.main-block
     position: absolute
     top: 50%
     left: 50%
@@ -19,8 +20,15 @@
 
         & > p + p
             margin-top: -13px
+            @media (width <= $toggle)
+                margin-top: 0
     &__aside
         display: block
 
     &__leftside
         translate: 0 75%
+        @media (width <= $toggle)
+            translate: 0 -25%
+
+    @media (width <= $toggle)
+        flex-direction: column

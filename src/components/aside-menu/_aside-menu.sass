@@ -1,4 +1,6 @@
 @import "@var"
+$toggle: 600px
+
 .aside-menu
     background: #fff1
     backdrop-filter: blur(6px)
@@ -13,6 +15,12 @@
         @media (height < 800px)
             row-gap: 2vh
 
+        @media (width <= $toggle)
+            flex-direction: row
+            flex-wrap: wrap
+            align-items: flex-start
+            justify-content: space-between
+
         & > li
             list-style: none
             & > a
@@ -26,6 +34,10 @@
         transition: color .4s
         &:hover
             color: #115DA1
+
+        @media (width <= $toggle)
+            & > *
+                text-align: center
 
     &__title
         font-size: 4vh
