@@ -25,6 +25,7 @@ const connectTargetAndMonitor = (
 
 const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (event: MouseEvent) => {
     monitor.style.display = "block";
+    // monitor.style.opacity = "1";
     connector.style.transform = "scaleX(1)";
     const regionMonitor = monitor.childNodes[0] as HTMLElement;
     const listMonitor = monitor.childNodes[1] as HTMLElement;
@@ -49,6 +50,7 @@ const handleMouseEnter = (monitor: HTMLElement, connector: HTMLElement) => (even
 const handleMouseLeave = (monitor: HTMLElement, connector: HTMLElement) => () => {
     connector.style.transform = "scaleX(0)";
     monitor.style.display = "none";
+    // monitor.style.opacity = "0";
     const regionMonitor = monitor.childNodes[0] as HTMLElement;
     const listMonitor = monitor.childNodes[1] as HTMLElement;
 
