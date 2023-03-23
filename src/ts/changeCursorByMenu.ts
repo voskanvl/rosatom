@@ -6,7 +6,7 @@ export default function changeCursorByMenu() {
 
     const handlerChange = ({ isOpen }: BooleanStoreState) => {
         if (!prevCursor) prevCursor = document.body.style.cursor;
-        if (isOpen) document.body.style.cursor = "url('../../assets/cursor/white.png'), pointer";
+        if (isOpen) document.body.style.cursor = "url('../../assets/cursor/white.png'), none";
         if (!isOpen) {
             document.body.style.cursor = prevCursor;
             prevCursor = "";

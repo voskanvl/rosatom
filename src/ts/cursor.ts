@@ -1,11 +1,6 @@
 import { SCREEN_NUMBER_TO_CHANGE } from "./config";
 import store from "./store";
 
-// function initCursor() {
-//     document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), pointer";
-//     const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
-//     cursorRound!.style.setProperty("--color", "#fff");
-// }
 
 export default function cursor() {
     // initCursor();
@@ -31,15 +26,15 @@ export default function cursor() {
         x
             ? (function () {
                   cursorRound!.style.setProperty("--color", "#fff");
-                  document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), pointer";
+                  document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), none";
               })()
             : (function () {
                   cursorRound!.style.setProperty("--color", "#303031");
                   document.body.style.cursor = SCREEN_NUMBER_TO_CHANGE.some(
                       e => e === store.store.getState().activeScreenNumber,
                   )
-                      ? "url('../../assets/cursor/mini-white.svg'), pointer"
-                      : "url('../../assets/cursor/mini-black.svg'), pointer";
+                      ? "url('../../assets/cursor/mini-white.svg'), none"
+                      : "url('../../assets/cursor/mini-black.svg'), none";
               })();
     };
 
