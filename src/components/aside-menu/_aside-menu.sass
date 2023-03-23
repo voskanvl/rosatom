@@ -16,13 +16,17 @@ $toggle: 600px
             row-gap: 2vh
 
         @media (width <= $toggle)
-            flex-direction: row
-            flex-wrap: wrap
-            align-items: flex-start
-            justify-content: space-between
+            // flex-direction: row
+            // flex-wrap: wrap
+            // align-items: flex-start
+            // justify-content: center
+            display: grid
+            grid-template-columns: repeat(2, 49%)
+            gap: .5em
 
         & > li
             list-style: none
+            flex: 1 1 45%
             & > a
                 // +cur-b
                 text-decoration: none
@@ -45,3 +49,7 @@ $toggle: 600px
 
     &__caption
         font-size: 1.8vh
+
+    @media (width <= $toggle)
+        width: min(90%, 320px)
+        margin: 0 auto
