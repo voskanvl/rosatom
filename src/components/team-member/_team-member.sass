@@ -1,7 +1,8 @@
 .team-member
     height: 100%
+    margin-inline: 1em
     &__image
-        height: 33vmin
+        width: 100%
         aspect-ratio: 1
         position: relative
         overflow: hidden
@@ -10,11 +11,6 @@
             position: absolute
             inset: 0
 
-        @media (width <= 800px)
-            height: 30vw
-
-        @media (width <= 550px)
-            height: 55vw
     &__front
         --circle-size: 60%
         // clip-path: circle(50% at 50% 50%)
