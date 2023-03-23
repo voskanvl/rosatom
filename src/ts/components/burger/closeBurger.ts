@@ -1,4 +1,4 @@
-import store from "../store";
+import store from "../../store";
 
 export default function closeBurger() {
     const closeElement = document.querySelector<HTMLElement>(".burger__image");

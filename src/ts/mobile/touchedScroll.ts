@@ -1,6 +1,6 @@
 // import listDisabledElementToScroll from "./listDisabledElementToScroll";
-import store from "./store/store";
-import { ignoredElementOnTouch } from "./config";
+import store from "../store/store";
+import { ignoredElementOnTouch } from "../config";
 
 const THRESHOLD_TOUCHED_SCROLL = 0.1;
 

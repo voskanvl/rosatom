@@ -1,4 +1,4 @@
-import Store from "./store";
+import Store from "../../store";
 
 export default function toggleMainMenu() {
     const mainHeader = document.querySelector<HTMLElement>(".main-header");

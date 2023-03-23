@@ -1,5 +1,5 @@
-import { BooleanStoreState } from "./store/booleanStoreState.type";
-import store from "./store";
+import { BooleanStoreState } from "../../store/booleanStoreState.type";
+import store from "../../store";
 
 export default function hideScreenSwitcherByMenu() {
     const menu = document.querySelector<HTMLElement>(".main-header");

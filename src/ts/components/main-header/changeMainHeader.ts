@@ -1,5 +1,5 @@
-import Store from "./store";
-import { SCREEN_NUMBER_TO_CHANGE } from "./config";
+import Store from "../../store";
+import { SCREEN_NUMBER_TO_CHANGE } from "../../config";
 
 export default function changeMainHeader() {
     /*

@@ -1,4 +1,4 @@
-import store from "../store";
+import store from "../../store";
 
 export default function changeBurger() {
     const burger = document.querySelector<HTMLElement>(".burger");

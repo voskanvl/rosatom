@@ -1,5 +1,5 @@
-import { BooleanStoreState } from "./store/booleanStoreState.type";
-import store from "./store";
+import { BooleanStoreState } from "../../store/booleanStoreState.type";
+import store from "../../store";
 
 export default function changeCursorByMenu() {
     let prevCursor = "";

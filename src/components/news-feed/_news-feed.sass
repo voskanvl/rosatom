@@ -21,14 +21,7 @@ $change_grid1: 600px
         row-gap: 1.5vh
         max-height: 513px
         overflow-y: auto
-        scrollbar-width: thin
-        scrollbar-color: #30A842 #404041
-        &::-webkit-scrollbar
-            width: 7px
-            background: #404041
-        &::-webkit-scrollbar-thumb
-            background: #30A842
-            border-radius: 21px
+        +scroll-thin()
         @media (width <= $change_grid1)
             height: 20vh
             overflow-y: auto

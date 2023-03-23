@@ -1,4 +1,4 @@
-import store from "./store";
+import store from "../store";
 
 export default function toggleMobileMenu() {
     const trigger = document.querySelector<HTMLElement>(".menu-reduced__caption");

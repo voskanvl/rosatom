@@ -1,4 +1,4 @@
-import debounce from "./debounce";
+import debounce from "./helpers/debounce";
 import listDisabledElementToScroll from "./listDisabledElementToScroll";
 import store from "./store/store";
 

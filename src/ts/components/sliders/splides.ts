@@ -1,6 +1,6 @@
 import Splide, { SlideComponent } from "@splidejs/splide";
-import { MSplides } from "./initSlides";
-import innopolisData from "./innopolisData.json";
+import { MSplides } from "../../initSlides";
+import innopolisData from "../../innopolisData.json";
 
 export default function splides() {
     const splidesInstance = new MSplides();
@@ -51,6 +51,17 @@ export default function splides() {
             perPage: 4,
             padding: "10px",
             // focus: "center",
+            breakpoints: {
+                1600: {
+                    perPage: 3,
+                },
+                800: {
+                    perPage: 2,
+                },
+                550: {
+                    perPage: 1,
+                },
+            },
         });
     const teamSplideInstance = splidesInstance.instances["#team"];
     const teamSplideControlLeft = document.querySelector<HTMLButtonElement>(
@@ -96,7 +107,7 @@ export default function splides() {
     setPerPage(innopolisSplideInstance)(); //initial
 
     window.addEventListener("resize", () => {
-        setPerPage(teamSplideInstance)();
+        // setPerPage(teamSplideInstance)();
         setPerPage(innopolisSplideInstance)();
         innopolisSplideInstance.root.style.setProperty("--x", `50%`);
     });

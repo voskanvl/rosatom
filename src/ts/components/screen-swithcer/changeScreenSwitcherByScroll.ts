@@ -1,5 +1,5 @@
-import { SCREEN_NUMBER_TO_CHANGE } from "./config";
-import store from "./store/store";
+import { SCREEN_NUMBER_TO_CHANGE } from "../../config";
+import store from "../../store/store";
 
 export default function changeScreenSwitcherByScroll() {
     store.subscribe(state => {

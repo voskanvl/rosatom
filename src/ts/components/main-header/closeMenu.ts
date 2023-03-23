@@ -1,4 +1,4 @@
-import Store from "./store";
+import Store from "../../store";
 
 export default function closeMenu(selector: string) {
     if (!selector) throw Error("селектор должен быть непустым");
