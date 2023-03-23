@@ -3,13 +3,19 @@
     position: absolute
     z-index: -1
     inset: 0
-    & > img
+    & > #img
         display: block
-        margin-left: auto
-        width: 64%
+        position: absolute
+        inset: 0
+        width: 100vw
+        height: 100vh
+        object-fit: cover
+        z-index: -1
 
     & > video
         width: 100vw
         height: 100vh
         object-fit: cover
         object-position: center
+        @media (width <= 600px)
+            display: none
