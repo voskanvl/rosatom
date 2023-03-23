@@ -1,6 +1,5 @@
 $change_lay: "width <= 768px"
 .geonet
-    // background-color: #ECF0F3
     background: linear-gradient(60deg, darken(#30A842, 30%), darken(#30A842, 7%))
     background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     color: #fff
@@ -10,15 +9,10 @@ $change_lay: "width <= 768px"
 
     &__container
         @extend .contacts__container
-        // left: 0
-        // top: 0
-        // translate: 0
-        // @media (width < 768px)
-        //     overflow-y: auto
-        //     height: 75vh
-        //     padding-bottom: 100px
+
         height: 50vh
         z-index: 2
+        pointer-events: none
         @media (width < 520px)
             top: 38%
 
@@ -33,12 +27,6 @@ $change_lay: "width <= 768px"
         @media ($change_lay)
             grid-template-columns: 100%
 
-        // @media ($change_lay)
-        //     grid-template-columns: 100%
-        //     overflow-y: auto
-        //     height: 75vh
-        //     padding-bottom: 150px
-
         &-left
             position: relative
             margin-top: 50px
@@ -46,17 +34,10 @@ $change_lay: "width <= 768px"
                 margin-top: 1em
 
         &-right
-            // position: relative
             & > #regions
                 top: 0
                 position: fixed
                 width: 100%
-                // margin-top: -86px
-            // @media ($change_lay)
-            //     margin-top: 0
-            //     grid-area: 1/1/2/2
-            //     & > #regions
-            //         margin-top: 0
 
         &-types
             margin-top: 3vh
@@ -93,8 +74,6 @@ $change_lay: "width <= 768px"
         position: fixed
         top: 0
         z-index: 10
-        // display: grid
-        // grid-auto-flow: column
         display: flex
 
     &__grouped
@@ -115,9 +94,6 @@ $change_lay: "width <= 768px"
         bottom: 1em
         left: 40%
         bottom: 10%
-        // translate: 0% 40%
-
-        // right: 0%
         width: max-content
         z-index: 11
         @media (width <= 768px)
@@ -131,7 +107,6 @@ $change_lay: "width <= 768px"
         grid-template-columns: 1fr 2fr
         padding: 0 5px
         scale: 0
-        // translate: -50%
         transition: .5s
         transform-origin: left
         z-index: 0
@@ -155,16 +130,13 @@ $change_lay: "width <= 768px"
         position: absolute
 
     &__map
-        // width: 50%
         position: absolute
         translate: 60% 0%
-        // scale: 0.9 0.9
         @media (width <= 1024px)
             translate: 50% 10%
         @media (width <= 768px)
             bottom: 10%
             translate: 30% 0%
-            // scale: 1.7 1.7
 
 @keyframes puls
     0%

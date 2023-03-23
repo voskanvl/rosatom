@@ -26,5 +26,15 @@
     translate: -50% -50%
     width: 80%
 
+=scroll-thin()
+    scrollbar-width: thin
+    scrollbar-color: #30A842 #404041
+    &::-webkit-scrollbar
+        width: 7px
+        background: #404041
+    &::-webkit-scrollbar-thumb
+        background: #30A842
+        border-radius: 21px
+
 $std_trans: .6s
 $toggle-menu: 635px

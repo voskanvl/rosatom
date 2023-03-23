@@ -6,21 +6,14 @@ $media2: "width <= 1024px"
     background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     height: 100vh
     color: #fff
-    // +cur-w
 
     a
         color: #fff
         text-decoration: none
-        // +cur-w
 
     &__container
         +center-a
         height: 75vh
-        // top: 60vh
-        // @media ($media1)
-        //     top: 55%
-        // @media ($media2)
-        //     top: 62%
         +delete-scrollbar
         @media(height <= 520px)
             top: 60%
@@ -76,28 +69,23 @@ $media2: "width <= 1024px"
         backdrop-filter: blur(24px)
         border-radius: 10px
         padding: 2.5vh 2.142857vw
-        // & > * + *
-        //     margin-top: 10px
 
     &__details
         display: flex
         align-items: center
         column-gap: 1.041667vw
         font-size: clamp(11px,14/1400*100vw,14px)
-        &:nth-child(2)
-            // flex: 1
+
         & > img
             width: min(20%,34px)
 
     &__details-title
         font-weight: 400
         font-size: 20px
-        // margin-bottom: 1.5vh
 
     &__buttons
         width: 100%
         display: flex
-        // align-items: stretch
         justify-content: space-evenly
         column-gap: clamp(5px,12/1400*100vw,12px)
         flex-direction: column
@@ -108,7 +96,6 @@ $media2: "width <= 1024px"
             align-items: center
 
     &__button
-        // +cur_w()
         display: block
         width: 100%
         border-radius: 33px
@@ -116,13 +103,9 @@ $media2: "width <= 1024px"
         background: none
         border: 1px solid #fff
         color: #fff
-        // width: fit-content
         font-weight: 350
         font-size: clamp(12px,16/1400*100vw,16px)
-        // white-space: nowrap
-        // +cur-w
         max-width: 360px
-        // margin: 0 auto
 
         &:hover
             background-color: #30A842
@@ -148,7 +131,6 @@ $media2: "width <= 1024px"
         overflow: hidden
         & > *
             height: 100% !important
-            // +cur-w
 
     &__go
         font-size: 16px
