@@ -19,13 +19,13 @@ export default function toggleMainMenu() {
             menu.classList.toggle("show");
             if (matching.some(({ menu }) => menu.classList.contains("show"))) {
                 Store.menuStore.getState().open();
-                mainMenu!.classList.add("show");
-                mainHeader!.classList.add("show");
+                mainMenu && mainMenu.classList.add("show");
+                mainHeader && mainHeader.classList.add("show");
             } else {
                 Store.menuStore.getState().close();
-                mainMenu!.classList.remove("show");
-                mainHeader!.classList.remove("show");
-                mainHeader!.style.cursor = "inherit";
+                mainMenu && mainMenu.classList.remove("show");
+                mainHeader && mainHeader.classList.remove("show");
+                mainHeader && (mainHeader.style.cursor = "inherit");
             }
         });
     });

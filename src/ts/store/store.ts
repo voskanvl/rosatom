@@ -68,7 +68,7 @@ const store = createStore<StoreState, [["zustand/devtools", never]]>(
 );
 
 const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
-let currentActive = screens.find(e => e.getAttribute("active"));
+const currentActive = screens.find(e => e.getAttribute("active"));
 if (!currentActive) throw Error("нет активного скрина при инициализации приложения");
 store.setState(state => ({ ...state, activeScreenElement: currentActive }));
 

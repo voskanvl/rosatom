@@ -12,14 +12,17 @@
         "build+tar": "tsc && vite build && cp -r assets/* ./dist/assets && tar -czvf rosatom.tar.gz ./dist"
     },
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.56.0",
+        "@typescript-eslint/parser": "^5.56.0",
         "css-has-pseudo": "^4.0.2",
+        "eslint": "^8.36.0",
         "fast-glob": "^3.2.11",
         "json-to-css": "^0.1.0",
         "postcss-media-minmax": "^5.0.0",
         "postcss-preset-env": "^7.8.3",
         "postcss-transform-shortcut": "github:jonathantneal/postcss-transform-shortcut",
         "sass": "^1.54.5",
-        "typescript": "^4.9.5",
+        "typescript": "^5.0.2",
         "vite": "^4.1.4",
         "vite-plugin-pug-transformer": "^1.0.3"
     },
