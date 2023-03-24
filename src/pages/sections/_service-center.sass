@@ -5,6 +5,8 @@ $change_point2: "width <= 380px"
 .service-center
     background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     height: 100vh
+    display: grid
+    place-items: center
 
     & > img
         position: absolute
@@ -15,9 +17,6 @@ $change_point2: "width <= 380px"
         object-fit: cover
         rotate: 0 1 0 180deg
         filter: brightness(90%) contrast(100%)
-
-    &__container
-        @extend .data-center__container
 
     &__plug
         position: absolute
