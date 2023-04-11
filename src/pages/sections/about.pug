@@ -1,2 +1,16 @@
-.about(style="background:#ECF0F3")
-    h1 HELLO!
+section.about(style="background:#ECF0F3; height: 200dvh; ")
+    video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
+
+    .about__block
+        .about__container
+            .title О ЦОД ИННОПОЛИС
+            .about__split 
+                p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
+                p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
+
+    .about__block
+        .about__container
+            .title Преимущества
+            .about__grid 
+                each i in [0,1,2,3,4,5]
+                    .convex= i

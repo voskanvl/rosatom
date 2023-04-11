@@ -15,7 +15,6 @@
         "@typescript-eslint/eslint-plugin": "^5.56.0",
         "@typescript-eslint/parser": "^5.56.0",
         "css-has-pseudo": "^4.0.2",
-        "eslint": "^8.36.0",
         "fast-glob": "^3.2.11",
         "json-to-css": "^0.1.0",
         "postcss-media-minmax": "^5.0.0",

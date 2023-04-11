@@ -3,5 +3,7 @@ block main
     include ../components/searchPopup/searchPopup.pug
     include ../components/main-header/main-header.pug
 
-    section.screen(data-number=0, active)
-        include ./sections/about.pug
+    //- section.screen(data-number=0, active)
+    include ./sections/about.pug
+block footer 
+    include ../pug/layouts/footer.pug
