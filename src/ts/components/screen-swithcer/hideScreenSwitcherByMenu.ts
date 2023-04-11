@@ -6,7 +6,10 @@ export default function hideScreenSwitcherByMenu() {
     if (!menu) throw Error("отсутствует .main-header");
 
     const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
-    if (!screenSwitcher) throw Error("отсутствует screen-switcher");
+    if (!screenSwitcher) {
+        console.warn("отсутствует screen-switcher");
+        return;
+    }
 
     // !!menu &&
     //     menu.addEventListener("mouseenter", () => {

@@ -31,17 +31,18 @@ export default function splides() {
     !!innopolisSplideControlRight &&
         (innopolisSplideControlRight.onclick = () => innopolisSplideInstance.go(">"));
 
-    innopolisSplideInstance.on("active", (slide: SlideComponent) => {
-        if (slide.isClone) return;
-        const img = slide.slide.querySelector<HTMLImageElement>("img");
-        if (!img) throw Error("there isn't img in innopolis slider");
-        const dataInnopolis = innopolisData.innopolisSlider.find(
-            ({ id }) => id === +img.dataset.id!,
-        );
-        if (!dataInnopolis) return;
-        const textElement = document.querySelector<HTMLElement>(".innopolis__text");
-        textElement!.textContent = dataInnopolis?.name;
-    });
+    !!innopolisSplideInstance &&
+        innopolisSplideInstance.on("active", (slide: SlideComponent) => {
+            if (slide.isClone) return;
+            const img = slide.slide.querySelector<HTMLImageElement>("img");
+            if (!img) throw Error("there isn't img in innopolis slider");
+            const dataInnopolis = innopolisData.innopolisSlider.find(
+                ({ id }) => id === +img.dataset.id!,
+            );
+            if (!dataInnopolis) return;
+            const textElement = document.querySelector<HTMLElement>(".innopolis__text");
+            textElement!.textContent = dataInnopolis?.name;
+        });
 
     const breakpoints = {
         550: {
@@ -113,8 +114,8 @@ export default function splides() {
         instance.refresh();
     };
 
-    setPerPage(teamSplideInstance)(); //initial
-    setPerPage(innopolisSplideInstance)(); //initial
+    !!teamSplideInstance && setPerPage(teamSplideInstance)(); //initial
+    !!innopolisSplideInstance && setPerPage(innopolisSplideInstance)(); //initial
 
     window.addEventListener("resize", () => {
         // setPerPage(teamSplideInstance)();

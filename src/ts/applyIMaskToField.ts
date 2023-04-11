@@ -1,7 +1,10 @@
 import IMask from "imask";
 export default function applyIMaskToField() {
     const partnersForm = document.querySelector<HTMLFormElement>(".partners-form");
-    if (!partnersForm) throw Error("отсутствует .partners-form");
+    if (!partnersForm) {
+        console.warn("отсутствует .partners-form");
+        return;
+    }
     const partnersFormPhone = partnersForm.querySelector<HTMLInputElement>("input[name='phone']");
     if (!partnersFormPhone) throw Error("отсутствует .partners-form  input[name='phone']");
     IMask(partnersFormPhone, {

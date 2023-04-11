@@ -63,8 +63,14 @@ export default function handlerRegionMove() {
 
     const popup = document.querySelector<HTMLElement>(".geo-popup");
     const connector = document.querySelector<HTMLElement>(".geonet__connector");
-    if (!popup) throw Error("отсутствует .geo-popup");
-    if (!connector) throw Error("отсутствует .geonet__connector");
+    if (!popup) {
+        console.warn("отсутствует .geo-popup");
+        return;
+    }
+    if (!connector) {
+        console.warn("отсутствует .geonet__connector");
+        return;
+    }
 
     const regionsElementList = document.querySelectorAll<HTMLElement>(".geonet__grouped");
     regionsElementList.forEach(e => {

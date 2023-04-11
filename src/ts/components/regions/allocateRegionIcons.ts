@@ -1,5 +1,9 @@
 export default function allocateRegionIcons() {
-    const container = document.querySelector<HTMLElement>("#regions > svg")!;
+    const container = document.querySelector<HTMLElement>("#regions > svg");
+    if (!container) {
+        console.warn("there isn't #regions > svg");
+        return;
+    }
     const containerRect = container.getBoundingClientRect();
 
     const iconGroups = [...document.querySelectorAll<HTMLElement>(".geonet__region")];

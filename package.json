@@ -23,8 +23,9 @@
         "postcss-transform-shortcut": "github:jonathantneal/postcss-transform-shortcut",
         "sass": "^1.54.5",
         "typescript": "^5.0.2",
-        "vite": "^4.1.4",
-        "vite-plugin-pug-transformer": "^1.0.3"
+        "vite": "^4.2.1",
+        "vite-plugin-pug-transformer": "^1.0.3",
+        "vite-plugin-sass-glob-import": "^2.0.0"
     },
     "dependencies": {
         "@cjting/vite-plugin-svg-sprite": "^0.2.1",

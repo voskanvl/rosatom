@@ -24,7 +24,10 @@ function initScreenSwitcher(screenSwitcher: HTMLElement, screens: HTMLElement[])
 
 function changeSwitcherByStore() {
     const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
-    if (!screenSwitcher) throw Error("отсутствует screen-switcher");
+    if (!screenSwitcher) {
+        console.warn("отсутствует screen-switcher");
+        return;
+    }
 
     store.subscribe(({ block }) => {
         const opacity = 1;
@@ -32,7 +35,7 @@ function changeSwitcherByStore() {
         const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
         !!screenSwitcher && (screenSwitcher.style.opacity = opacity + "");
 
-        screenSwitcher!.style.zIndex = block ? "0" : "";
+        !!screenSwitcher && (screenSwitcher.style.zIndex = block ? "0" : "");
     });
 }
 
@@ -62,7 +65,10 @@ export default function screenSwitcher() {
     if (!screens || !screens.length) throw Error("на странице нет screen'ов");
 
     const screenSwitcher = document.querySelector<HTMLElement>(".screen-switcher");
-    if (!screenSwitcher) throw Error("на странице нет screen-switcher");
+    if (!screenSwitcher) {
+        console.warn("на странице нет screen-switcher");
+        return;
+    }
 
     //начальная инициализация screen-switcher
     initScreenSwitcher(screenSwitcher, [...screens]);

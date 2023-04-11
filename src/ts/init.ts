@@ -80,11 +80,10 @@ export default function init() {
     store.store.subscribe(({ activeScreenNumber }) => {
         const { matches } = matchMedia("(max-width: 768px)");
         const map = document.querySelector<HTMLElement>(".geonet__map");
-        if (!map) throw Error("there .geonet__map");
         if (activeScreenNumber === 4 && matches) {
-            map.style.scale = "1.7 1.7";
+            !!map && (map.style.scale = "1.7 1.7");
         } else {
-            map.style.scale = "";
+            !!map && (map.style.scale = "");
         }
     });
     const md = new MobileDetect(window.navigator.userAgent);

@@ -7,17 +7,18 @@ import * as yaml from "js-yaml";
 import colors from "picocolors";
 import * as fs from "fs";
 import * as path from "path";
+import sassGlobImports from "vite-plugin-sass-glob-import";
 
 const merge = () => {
     console.log(`now merging data files`);
     // const fn = { json: JSON.stringify, yaml: yaml.load }[standart];
     const fn = { json: JSON.stringify, yaml: yaml.load, yml: yaml.load };
-    const files = readdirSync(resolve(__dirname, "src/data"));
+    const files = readdirSync(resolve("src/data"));
     // const jsons = files.filter(file => extname(file) === "." + STANDART);
     return files.reduce(
         (acc, file) => ({
             ...acc,
-            ...fn[extname(file).slice(1)](readFileSync(resolve(__dirname, "src/data", file))),
+            ...fn[extname(file).slice(1)](readFileSync(resolve("src/data", file))),
         }),
         {},
     );
@@ -33,23 +34,23 @@ function htmlsFiles() {
 // const htmls = ["inner", "issue", "main-texts", "about", "podcast", "about"];
 const htmls = htmlsFiles();
 
-const input = htmls.reduce((acc, e) => ({ ...acc, [e]: resolve(__dirname, e + ".html") }), {});
+const input = htmls.reduce((acc, e) => ({ ...acc, [e]: resolve(e + ".html") }), {});
 
 export default defineConfig({
     // plugins: [pugPlugin.default(options, locals)],
-    plugins: [vitePugPlugin({ pugLocals: () => merge() })],
+    plugins: [vitePugPlugin({ pugLocals: () => merge() }), sassGlobImports()],
     build: {
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "index.html"),
+                main: resolve("index.html"),
                 ...input,
             },
         },
     },
     resolve: {
         alias: {
-            "@": resolve(__dirname, "./src"),
-            "@var": resolve(__dirname, "./src/sass/_variables.sass"),
+            "@": resolve("./src"),
+            "@var": resolve("./src/sass/_variables.sass"),
         },
     },
 });
