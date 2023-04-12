@@ -36,16 +36,10 @@
             text-transform: uppercase
 
     &__body
-        // display: flex
-        // justify-content: space-between
-        // flex-wrap: wrap
-        // gap: 70px 1em
-
-        // & > *
-        //     flex: 1 1 15%
         display: grid
         grid-template-columns: repeat(auto-fit, minmax(213px,1fr))
         gap: ph(73) pw(73)
+        margin-bottom: ph(183)
 
     &__division
 
@@ -64,3 +58,13 @@
         font-size: 16px
         font-weight: 350
         text-transform: uppercase
+        margin-bottom: 20px
+
+    &__footer
+        width: 100%
+
+    &__international, &__down
+        margin-left: 5vw
+        display: flex
+        column-gap: 1em
+        margin-block: 30px
