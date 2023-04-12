@@ -1,0 +1,66 @@
+.footer
+    background: linear-gradient(256.45deg, #1C376A 0%, #30A842 163.35%)
+    color: #fff
+    display: grid
+    place-items: center
+
+    &__container
+        width: 90vw
+        margin-top: ph(50)
+
+    a
+        display: block
+        color: #fff
+        text-decoration: none
+
+    & .logo
+        background-image: url(../../../assets/logo/logo-white.png)
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: 0 50%
+        width: 100%
+        height: 100%
+
+    &__head
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: ph(40)
+
+        a
+            color: #fff
+            text-decoration: none
+            font-weight: 700
+            font-size: clamp(20px,50 / 1024 * 100vw,50px)
+            line-height: 65px
+            text-transform: uppercase
+
+    &__body
+        // display: flex
+        // justify-content: space-between
+        // flex-wrap: wrap
+        // gap: 70px 1em
+
+        // & > *
+        //     flex: 1 1 15%
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(213px,1fr))
+        gap: ph(73) pw(73)
+
+    &__division
+
+        h3,h4
+            margin-bottom: 20px
+            text-transform: uppercase
+
+        h4
+            font-weight: 400
+            font-size: 16px
+
+    &__nav-list
+        display: flex
+        flex-direction: column
+        row-gap: 20px
+        font-size: 16px
+        font-weight: 350
+        text-transform: uppercase
