@@ -9,6 +9,7 @@ import toggleMainMenu from "./ts/components/main-header/toggleMainMenu";
 import toggleMobileMenu from "./ts/mobile/toggleMobileMenu";
 import applyMaskText from "./ts/applyMaskText";
 import { controlSearchPopup } from "./ts/components/popup/changeSearchPopup";
+import splidesPages from "./ts/components/sliders/splides -pages";
 
 cursor();
 clickToLogo();
@@ -27,3 +28,4 @@ controlSearchPopup({
     close: ".search-popup__close",
     open: ".options__search",
 });
+splidesPages();

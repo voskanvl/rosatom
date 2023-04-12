@@ -1,16 +1,82 @@
-section.about(style="background:#ECF0F3; height: 200dvh; ")
+include ../../pug/splides.pug
+section.about(style="background:#ECF0F3;")
     video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
 
-    .about__block
+    .about__block#about-cod
         .about__container
-            .title О ЦОД ИННОПОЛИС
+            h2.title О ЦОД ИННОПОЛИС
             .about__split 
                 p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
                 p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
 
-    .about__block
+    .about__block#about-advantages
         .about__container
-            .title Преимущества
+            h2.title Преимущества
             .about__grid 
                 each i in [0,1,2,3,4,5]
                     .convex= i
+
+    #about-statement
+        .about__split(width="100%") 
+            div(style="background: #1C376A;")
+                div(style="height: 100dvh; width: 100%;")
+            div(style="background: #6EABDD;")
+                div(style="height: 100dvh; width: 100%;")
+        #about-statement-frame
+            include ../../../assets/svg/Frame 10194.svg
+            .about__split 
+                aside 
+                    h2
+                        p ОБРАЩЕНИЕ
+                        p РУКОВОДСТВА
+                    img#ceo(src="../../../assets/images/team/2.png" alt="ceo")
+                aside
+                    p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное 
+                    div
+                        p Генеральный 
+                        p директор
+                        h2 
+                            p Николай
+                            p Гончаров
+
+    .about__block#about-cod-in-digitals
+        .about__container
+            h2.title ЦОД В ЦИФРАХ
+            .about__grid.about__grid--4x3  
+                each i in dataCenterCards
+                    .about__cell 
+                        .about__wrap
+                            .title(style="text-shadow: 4px 0px 5px rgba(0, 0, 0, 0.25)")!= i.title 
+                            p!= i.caption
+
+
+    .about__block#clients-talking
+        .about__container
+            h2.title Клиенты говорят о нас
+            .about__split
+                +splide("talking", clients)
+                    .about__blue
+                        p= val.name
+                        p= val.comment 
+
+                include ../../components/partners-form/partners-form.pug
+
+    .about__footer 
+        //- include ../../../assets/svg/above-footer.svg
+        .about__container
+            .about__split 
+                div.about__wrap 
+                    div
+                        h2 Остались вопросы?
+                        p 
+                            p Заполните форму и мы свяжемся
+                            p с вами в ближайшее время.
+
+                    div 
+                        p 
+                            p Вы всегда можете получить
+                            p консультацию по телефону:
+                        a.about__phone(href="tel:81234567890") 
+                            h3 8 123 456 78 90 
+
+                include ../../components/partners-form/partners-form.pug

@@ -1,5 +1,5 @@
 import Splide, { SlideComponent } from "@splidejs/splide";
-import { MSplides } from "../../initSlides";
+import { MSplides } from "./initSlides";
 import innopolisData from "../../innopolisData.json";
 import store from "../../store";
 

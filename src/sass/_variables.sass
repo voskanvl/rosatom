@@ -39,3 +39,31 @@
 $std_trans: .6s
 $toggle-menu: 635px
 $index: calc(1vw + 1vh)
+
+@function pw($x)
+    @return calc($x / 1920 *100vw)
+
+@function pwm($x, $w: 390)
+    @return calc($x / $w *100vw)
+
+@function ph($x)
+    @return calc($x / 1010 *100vh)
+
+@function phm($x, $h: 680)
+    @return calc($x / $h *100vh)
+
+=mq1440()
+    @media (width <= 1440px)
+        @content
+=mq1024()
+    @media (width <= 1024px)
+        @content
+=mq768()
+    @media (width <= 768px)
+        @content
+=mq530()
+    @media (width <= 530px)
+        @content
+=mq425()
+    @media (width <= 425px)
+        @content
