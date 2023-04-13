@@ -10,6 +10,7 @@ import toggleMobileMenu from "./ts/mobile/toggleMobileMenu";
 import applyMaskText from "./ts/applyMaskText";
 import { controlSearchPopup } from "./ts/components/popup/changeSearchPopup";
 import splidesPages from "./ts/components/sliders/splides -pages";
+import SingleRange from "./ts/components/range/singleRange/SingleRange";
 
 cursor();
 clickToLogo();
@@ -29,3 +30,6 @@ controlSearchPopup({
     open: ".options__search",
 });
 splidesPages();
+
+const sr = new SingleRange(document.querySelector(".test")!, { max: 1000 });
+sr.subscribe(console.log);

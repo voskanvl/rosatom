@@ -54,20 +54,20 @@
 
                 &.is-visible
                     .about__blue
-                        translate: 0 0 -100px
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
                         transition: transform $std_trans
 
                 &.is-prev
                     .about__blue
-                        rotate: 0 1 0 45deg
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,45deg)
 
                 &.is-active
                     .about__blue
-                        rotate: 0 1 0 0deg
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
 
                 &.is-next
                     .about__blue
-                        rotate: 0 1 0 -45deg
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-45deg)
 
     &__cell
         display: grid
@@ -83,6 +83,7 @@
     .about__blue
         background: #6EABDD
         color: #fff
+        height: 100%
 
     #about-statement
         position: relative
