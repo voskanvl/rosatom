@@ -1,4 +1,6 @@
 include ../../pug/splides.pug
+include ../../components/service-card/service-card.pug
+
 section.about(style="background:#ECF0F3;")
     video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
 
@@ -13,8 +15,11 @@ section.about(style="background:#ECF0F3;")
         .about__container
             h2.title Преимущества
             .about__grid 
-                each i in [0,1,2,3,4,5]
-                    .convex= i
+                each i in advantages
+                    .convex
+                        +service-card(i)
+
+
 
     #about-statement
         .about__split(width="100%") 
@@ -55,9 +60,10 @@ section.about(style="background:#ECF0F3;")
             h2.title Клиенты говорят о нас
             .about__split
                 +splide("talking", clients)
-                    .about__blue
-                        p= val.name
-                        p= val.comment 
+                    .about__3d
+                        .about__blue
+                            p= val.name
+                            p= val.comment 
 
                 include ../../components/partners-form/partners-form.pug
 

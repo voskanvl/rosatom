@@ -14,12 +14,12 @@
     &__grid
         display: grid
         grid-template-columns: repeat(3,32%)
-        grid-template-rows: repeat(2, auto)
+        grid-template-rows: repeat(2, 1fr)
         gap: 30px 22px
 
         &--4x3
             grid-template-columns: repeat(4,24%)
-            grid-template-rows: repeat(3, auto)
+            grid-template-rows: repeat(3, 1fr)
 
     &__split
         display: grid
@@ -31,31 +31,43 @@
 
     #about-advantages
         margin-top: ph(144)
+        margin-bottom: ph(180)
+
+        .service-card__container
+            color: #303031
+            border-radius: 0
+            backdrop-filter: none
+
+        .service-card__title
+            border: 1px solid #303031
 
     #about-cod-in-digitals
         margin-top: ph(151)
 
     #clients-talking
         margin-top: ph(108)
+        margin-bottom: ph(138)
 
-        .splide__list
-            perspective: 500px
-            perspective-origin: center
+        .splide
 
-            .splide__slide
+            & .splide__slide
 
                 &.is-visible
-                    translate: 0 0 -100px
-                    transition: transform $std_trans
+                    .about__blue
+                        translate: 0 0 -100px
+                        transition: transform $std_trans
 
                 &.is-prev
-                    rotate: 0 1 0 5deg
+                    .about__blue
+                        rotate: 0 1 0 45deg
 
                 &.is-active
-                    rotate: 0 1 0 0deg
+                    .about__blue
+                        rotate: 0 1 0 0deg
 
                 &.is-next
-                    rotate: 0 1 0 -5deg
+                    .about__blue
+                        rotate: 0 1 0 -45deg
 
     &__cell
         display: grid
@@ -133,6 +145,10 @@
         bottom: 0
         translate: -50% 0
         width: 38vw
+
+    &__3d
+        perspective: 500px
+        perspective-origin: center
 
     &__footer
         color: #fff
