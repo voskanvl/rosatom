@@ -31,5 +31,16 @@ controlSearchPopup({
 });
 splidesPages();
 
-const sr = new SingleRange(document.querySelector(".test")!, { max: 1000 });
-sr.subscribe(console.log);
+const ranges = document.querySelectorAll<HTMLElement>(".range__input");
+ranges &&
+    ranges.forEach(range => {
+        const max = range.getAttribute("max"),
+            min = range.getAttribute("min"),
+            val = range.getAttribute("val");
+
+        const sr = new SingleRange(range, {
+            max: max === null ? 0 : +max,
+            min: min === null ? 0 : +min,
+            val: val === null ? undefined : +val,
+        });
+    });

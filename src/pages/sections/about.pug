@@ -1,5 +1,6 @@
 include ../../pug/splides.pug
 include ../../components/service-card/service-card.pug
+include ../../components/range/range.pug
 
 section.about(style="background:#ECF0F3;")
     video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
@@ -87,4 +88,6 @@ section.about(style="background:#ECF0F3;")
 
                 include ../../components/partners-form/partners-form.pug
 
-    .test
+    div Конструктор облака
+    each i in cloud
+        +range(i.val, i.min, i.max, i.label, i.unit)

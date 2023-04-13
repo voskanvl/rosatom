@@ -1,92 +1,11 @@
 interface SingleOptions {
     min?: number;
     max?: number;
+    val?: number;
     class?: string;
 }
 
 const initialOptions = { min: "0", max: "100" };
-
-const style = (className: string) => `
-input[type="range"]${className ? "." + className : ""} {
-    --value: 50%;
-    -webkit-appearance: none;
-    margin-right: 15px;
-    width: 200px;
-    height: 7px;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #fff, #72ADDE);
-    background-size: var(--value) 100%;
-    background-repeat: no-repeat;
-  }
-  
-  /* Input Thumb */
-  input[type="range"]${className ? "." + className : ""}::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background: #72ADDE;
-    cursor: ew-resize;
-    box-shadow: 0 0 2px 0 #555;
-    transition: background .3s ease-in-out;
-  }
-  
-  input[type="range"]${className ? "." + className : ""}::-moz-range-thumb {
-    -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background: #72ADDE;
-    cursor: ew-resize;
-    box-shadow: 0 0 2px 0 #555;
-    transition: background .3s ease-in-out;
-  }
-  
-  input[type="range"]${className ? "." + className : ""} ::-ms-thumb {
-    -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background: #72ADDE;
-    cursor: ew-resize;
-    box-shadow: 0 0 2px 0 #555;
-    transition: background .3s ease-in-out;
-  }
-  
-  input[type="range"]${className ? "." + className : ""}::-webkit-slider-thumb:hover {
-    background: #72ADDE;
-  }
-  
-  input[type="range"]${className ? "." + className : ""}::-moz-range-thumb:hover {
-    background: #72ADDE;
-  }
-  
-  input[type="range"]${className ? "." + className : ""} ::-ms-thumb:hover {
-    background: #72ADDE;
-  }
-  
-  /* Input Track */
-  input[type=range]${className ? "." + className : ""}::-webkit-slider-runnable-track  {
-    -webkit-appearance: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-  }
-  
-  input[type=range]${className ? "." + className : ""}::-moz-range-track {
-    -webkit-appearance: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-  }
-  
-  input[type="range"]${className ? "." + className : ""}::-ms-track {
-    -webkit-appearance: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-  }
-`;
 
 export default class SingleRange {
     root: HTMLElement;
@@ -98,6 +17,11 @@ export default class SingleRange {
     constructor(root: HTMLElement, options?: SingleOptions) {
         this.root = root;
         this.options = { ...initialOptions, ...options };
+        this.value =
+            options && options.val
+                ? ((+options.val - +this.options.min) / (+this.options.max - +this.options.min)) *
+                  100
+                : 50;
         this.createElement();
         this.mount();
     }
@@ -106,6 +30,7 @@ export default class SingleRange {
         this.element = document.createElement("input");
         this.element.type = "range";
         this.element.value = this.value + "";
+        this.element.style.setProperty("--value", this.value + "%");
         this.element.min = "0";
         this.element.max = "100";
         this.options.class && this.element.classList.add(this.options.class);
@@ -120,9 +45,6 @@ export default class SingleRange {
     }
 
     private mount() {
-        const s = document.createElement("style");
-        s.innerHTML = style(this.options.class);
-        this.element && this.root.append(s);
         this.element && this.root.append(this.element);
     }
 

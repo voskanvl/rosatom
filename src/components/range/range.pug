@@ -1,0 +1,7 @@
+mixin range(val, min, max, label, unit)
+    .range
+        if label
+            div= label
+        .range__input(min= min, max= max, val= val)
+        output
+        div= unit
