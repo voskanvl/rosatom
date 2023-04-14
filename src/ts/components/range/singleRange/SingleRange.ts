@@ -5,7 +5,7 @@ interface SingleOptions {
     class?: string;
 }
 
-const initialOptions = { min: "0", max: "100" };
+const initialOptions = { min: 0, max: 100, val: 50, class: "" };
 
 export default class SingleRange {
     root: HTMLElement;
@@ -13,10 +13,21 @@ export default class SingleRange {
     private value: number = 50;
     element: HTMLInputElement | null = null;
     private listeners: ((value: number) => void)[] | null = null;
+    private connectedElement: HTMLElement | null = null;
+    private listenConnectedElement = (event: Event) => {
+        const { value } = event.target as HTMLInputElement;
+        if (+value < this.options.min || +value > this.options.max) return;
+        this.value = ((+value - this.options.min) / (this.options.max - this.options.min)) * 100;
+        this.element && (this.element.value = this.value + "");
+        this.element && this.element.style.setProperty("--value", this.value + "%");
+    };
 
     constructor(root: HTMLElement, options?: SingleOptions) {
         this.root = root;
-        this.options = { ...initialOptions, ...options };
+        this.options = {
+            ...initialOptions,
+            ...Object.fromEntries(Object.entries(options || {}).filter(([_, val]) => !!val)),
+        };
         this.value =
             options && options.val
                 ? ((+options.val - +this.options.min) / (+this.options.max - +this.options.min)) *
@@ -57,5 +68,18 @@ export default class SingleRange {
 
     unsubscribe(cb: (value: number) => void) {
         this.listeners = this.listeners && this.listeners?.filter(e => e !== cb);
+    }
+
+    connectOutput(el: HTMLElement) {
+        this.connectedElement = el;
+        let handler: (v: number) => void;
+
+        if (el.nodeName.toLowerCase() === "input") {
+            handler = (v: number) => ((el as HTMLInputElement).value = (v | 0) + "");
+            this.connectedElement.addEventListener("input", this.listenConnectedElement);
+        } else {
+            handler = (v: number) => (el.innerText = (v | 0) + "");
+        }
+        this.subscribe(handler);
     }
 }

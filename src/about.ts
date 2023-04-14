@@ -43,4 +43,7 @@ ranges &&
             min: min === null ? 0 : +min,
             val: val === null ? undefined : +val,
         });
+
+        const output = range.nextSibling as HTMLInputElement;
+        output && sr.connectOutput(output);
     });
