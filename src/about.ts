@@ -11,6 +11,7 @@ import applyMaskText from "./ts/applyMaskText";
 import { controlSearchPopup } from "./ts/components/popup/changeSearchPopup";
 import splidesPages from "./ts/components/sliders/splides -pages";
 import SingleRange from "./ts/components/range/singleRange/SingleRange";
+import tabs from "./ts/components/tabs/tabs";
 
 cursor();
 clickToLogo();
@@ -47,3 +48,5 @@ ranges &&
         const output = range.nextSibling as HTMLInputElement;
         output && sr.connectOutput(output);
     });
+
+tabs();

@@ -1,0 +1,11 @@
+mixin tabs(arr)
+    .tabs
+        .tabs__container
+            .tabs__controls
+                each i in arr 
+                    .tabs__control
+                        input(type="radio" name="tabs" data-id= i.id)
+                        .tabs__button= i.nameControl
+
+            .tabs__bodies 
+                block

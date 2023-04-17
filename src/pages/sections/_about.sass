@@ -20,6 +20,12 @@
         &--4x3
             grid-template-columns: repeat(4,24%)
             grid-template-rows: repeat(3, 1fr)
+            +mq1024
+                grid-template-columns: repeat(3,32%)
+                grid-template-rows: repeat(4, 1fr)
+            +mq580
+                grid-template-columns: repeat(2,49%)
+                grid-template-rows: repeat(6, 1fr)
 
     &__split
         display: grid
@@ -68,6 +74,11 @@
                 &.is-next
                     .about__blue
                         transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-45deg)
+
+        .about__split
+            +mq1024
+                grid-template-columns: 100%
+                row-gap: 2em
 
     &__cell
         display: grid

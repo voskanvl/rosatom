@@ -24,4 +24,14 @@ cloud:
     max: 20000
     label: SSD Ultra
     unit: Gb
+  - val: 150
+    min: 1
+    max: 150
+    label: Количество виртуальных машин для резервирования
+    unit: шт
+  - val: 1
+    min: 1
+    max: 150
+    label: Объем для резервного копирования
+    unit: Gb
   

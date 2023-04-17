@@ -1,0 +1,35 @@
+.tabs
+
+    &__controls
+        display: flex
+        align-items: center
+        justify-content: center
+        column-gap: pw(30)
+
+    &__page
+        display: none
+    &__page[active]
+        display: block
+
+    &__button
+        background: #ECF0F3
+        box-shadow: 18px 18px 30px #D1D9E6, -18px -18px 30px #FFFFFF
+        border-radius: 90px
+        padding: ph(14) pw(42)
+        color: #303031
+        background: #ECF0F3
+
+    &__control
+        position: relative
+        input
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            opacity: 0
+            z-index: 2
+            &:checked + .tabs__button
+                background: #ECF0F3
+                box-shadow: inset 18px 18px 15px #D1D9E6, inset -18px -18px 15px #FFFFFF
+                border-radius: 90px

@@ -1,6 +1,8 @@
 include ../../pug/splides.pug
 include ../../components/service-card/service-card.pug
 include ../../components/range/range.pug
+include ../../components/partners-form/partners-form.pug
+include ../../components/tabs/tabs.pug
 
 section.about(style="background:#ECF0F3;")
     video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
@@ -52,7 +54,7 @@ section.about(style="background:#ECF0F3;")
                 each i in dataCenterCards
                     .about__cell 
                         .about__wrap
-                            .title(style="text-shadow: 4px 0px 5px rgba(0, 0, 0, 0.25)")!= i.title 
+                            .data-card__title(style="text-shadow: 4px 0px 5px rgba(0, 0, 0, 0.25)")!= i.title 
                             p!= i.caption
 
 
@@ -66,7 +68,7 @@ section.about(style="background:#ECF0F3;")
                             p= val.name
                             p= val.comment 
 
-                include ../../components/partners-form/partners-form.pug
+                +partners-form("ОСТАВИТЬ ОТЗЫВ")
 
     .about__footer 
         //- include ../../../assets/svg/above-footer.svg
@@ -78,16 +80,23 @@ section.about(style="background:#ECF0F3;")
                         p 
                             p Заполните форму и мы свяжемся
                             p с вами в ближайшее время.
-
                     div 
                         p 
                             p Вы всегда можете получить
                             p консультацию по телефону:
                         a.about__phone(href="tel:81234567890") 
                             h3 8 123 456 78 90 
+                +partners-form("")
 
-                include ../../components/partners-form/partners-form.pug
+
 
     div Конструктор облака
     each i in cloud
-        +range(i.val, i.min, i.max, i.label, i.unit)
+        .cloud-item(style="margin-bottom: 17px")
+            +range(i.val, i.min, i.max, i.label, i.unit)
+
+    +tabs(tabs) 
+        .tabs__page(data-id="501")
+            | PAGE 1
+        .tabs__page(data-id="502")
+            | PAGE 2
