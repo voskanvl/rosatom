@@ -1,0 +1,16 @@
+mixin select(name, title, options)
+    .select 
+        .select__container 
+            //- select(name= name)
+            //-     option(value=""  disabled selected)!= title
+            //-     each option in options
+            //-         option(value= option)= option
+            input(type="text", name= name, hidden)
+            input(type="checkbox" name="open")
+            .select__header
+                span.select__title!= title
+                span
+                    img(src="../../../assets/svg/chevron.svg")
+            ul.select__list 
+                each option in options
+                    li= option

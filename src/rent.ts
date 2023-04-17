@@ -59,3 +59,18 @@ vendors &&
                 else el.style.display = "";
             });
     });
+
+/*
+    --- SELECT ---
+*/
+const selects = document.querySelectorAll<HTMLElement>(".select");
+selects &&
+    selects.forEach(select =>
+        select.addEventListener("click", (event: Event) => {
+            const target = event.target as HTMLElement;
+            if (target.nodeName !== "LI") return;
+            const title = select.querySelector<HTMLElement>(".select__title");
+            const dataInput = select.querySelector<HTMLInputElement>("input[type='text']");
+            title && dataInput && (dataInput.value = title.innerText = target.innerText);
+        }),
+    );
