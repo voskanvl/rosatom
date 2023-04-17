@@ -1,0 +1,36 @@
+.rent-tools
+    .rent-tools__container
+        form.rent-tools__options.rent-options
+            .rent-options__block 
+                .rent-options__title Сервер для
+                .rent-options__tag-cloud
+                    each i in rent.tagCloud
+                        .rent-options__check 
+                            input(type="checkbox" name="role")
+                            p= i
+
+            each i in rent.sections 
+                if i.type === "range"
+                    .rent-options__block 
+                        .rent-options__title!= i.title 
+                        .rent-options__minmax 
+                            input(type="number" value= i.range.min)
+                            input(type="number" value= i.range.max)
+                        .rent-options__miltirange(id= i.name)
+                if i.type === "select"
+                    .rent-options__block 
+                        select(name= i.name) 
+                            option(value=""  disabled selected)= i.title
+                            each l in i.list 
+                                option(value= l)= l 
+                if i.type === "select-object"
+                    .rent-options__block 
+                        select(name= i.name) 
+                            option(value=""  disabled selected)= i.title
+                            each l in i.list 
+                                option(value= l.title, data-vendor= l.vendor)= l.title 
+
+
+        .rent-tools__list
+            each i in Array.from({length: 20},(_,index)=>index)
+                p(style="margin: 10px 0; padding: 10px; background: #ddd;")= i

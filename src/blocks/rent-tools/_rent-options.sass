@@ -1,0 +1,39 @@
+.rent-options
+
+    &__block
+        margin-bottom: ph(22)
+
+    &__tag-cloud
+        display: flex
+        flex-wrap: wrap
+        row-gap: 3px
+
+    &__title
+        font-weight: 350
+        font-size: 18px
+        margin-bottom: 12px
+
+    &__check
+        position: relative
+        & > p
+            background: #30A842
+            border-radius: 33px
+            color: #fff
+            font-size: 16px
+            border: 1px solid #30A842
+            transition: $std-trans
+            padding: 4px 20px
+
+        input
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 2
+            opacity: 0
+
+            &:checked + p
+                border: 1px solid #303031
+                background: #ECF0F3
+                color: #303031

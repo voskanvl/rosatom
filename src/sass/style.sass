@@ -5,11 +5,13 @@
 @import "../components/**/*.sass"
 @import "../pages/sections/**/*.sass"
 @import "../pug/layouts/**/*.sass"
+@import "../blocks/**/*.sass"
 
 *,*::after,*::before
     box-sizing: border-box
     margin: 0
     color: inherit
+    cursor: inherit
 
 a
     cursor: inherit !important
@@ -67,3 +69,10 @@ button
     box-shadow: 18px 18px 30px #D1D9E6, -18px -18px 30px #FFFFFF
     border-radius: 10px
     overflow: hidden
+
+.rent
+    &__title
+        font-weight: 700
+    &__container
+        background: #ECF0F3
+        height: max-content

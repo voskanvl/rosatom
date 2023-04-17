@@ -7,6 +7,7 @@
         "dev": "vite  --host",
         "build": "tsc && vite build & cp -r assets/* ./dist/assets",
         "preview": "vite preview",
+        "createBlock": " bash ./create-block.bash",
         "createComponent": " bash ./create-component.bash",
         "tar": "tar -czvf rosatom.tar.gz ./dist",
         "build+tar": "tsc && vite build && cp -r assets/* ./dist/assets && tar -czvf rosatom.tar.gz ./dist"
