@@ -1,10 +1,6 @@
 mixin select(name, title, options)
-    .select 
+    .select
         .select__container 
-            //- select(name= name)
-            //-     option(value=""  disabled selected)!= title
-            //-     each option in options
-            //-         option(value= option)= option
             input(type="text", name= name, hidden)
             input(type="checkbox" name="open")
             .select__header
@@ -13,4 +9,7 @@ mixin select(name, title, options)
                     img(src="../../../assets/svg/chevron.svg")
             ul.select__list 
                 each option in options
-                    li= option
+                    if (typeof option === "object")
+                        li(data-vendor= option.vendor)= option.title 
+                    else
+                        li= option

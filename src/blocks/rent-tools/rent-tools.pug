@@ -12,7 +12,7 @@ include ../../components/select/select.pug
 
             each i in rent.sections 
                 if i.type === "range"
-                    .rent-options__block 
+                    .rent-options__block(id= i.name) 
                         .rent-options__title!= i.title 
                         .rent-options__minmax 
                             input(type="number" value= i.range.min)
@@ -20,19 +20,12 @@ include ../../components/select/select.pug
                         .rent-options__miltirange(id= i.name)
 
                 if i.type === "select"
-                    .rent-options__block 
+                    .rent-options__block(id= i.name)  
                         +select(i.name, i.title, i.list)
-                        //- select(name= i.name) 
-                        //-     option(value=""  disabled selected)= i.title
-                        //-     each l in i.list 
-                        //-         option(value= l)= l 
 
                 if i.type === "select-object"
-                    .rent-options__block 
-                        select(name= i.name) 
-                            option(value=""  disabled selected)= i.title
-                            each l in i.list 
-                                option(value= l.title, data-vendor= l.vendor)= l.title 
+                    .rent-options__block(id= i.name)  
+                        +select(i.name, i.title, i.list)
 
 
         .rent-tools__list

@@ -1,3 +1,8 @@
+=range()
+    background-color: #fff
+    border: 2px solid #6EABDD
+    outline: none
+
 .rent-options
 
     &__block
@@ -43,3 +48,40 @@
                 border: 1px solid #303031
                 background: #ECF0F3
                 color: #303031
+
+    &__minmax
+        display: flex
+        align-items: center
+        justify-content: space-between
+        & > input
+            width: 30%
+            background: none
+            border: none
+            outline: none
+            font-size: 18px
+
+            &:last-child
+                text-align: right
+                &:focus
+                    text-align: left
+
+            &:focus
+                background: #fff
+                border: 1px solid #7777
+
+    &__miltirange
+        margin-top: 8px
+
+        .range
+            &::-webkit-slider-thumb
+                +range
+            &::-moz-range-thumb
+                +range
+            &::-ms-thumb
+                +range
+
+        .range-track
+            background-color: #6EABDD
+
+        .range-rails
+            background-color: #6EABDD

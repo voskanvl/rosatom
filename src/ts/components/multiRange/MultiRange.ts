@@ -43,7 +43,33 @@ const style = (opt: OptionsType) => `
             border: none;
             border-radius: 50%;
             box-shadow: 0 0 1px 1px #ced4da;
-            cursor: pointer;
+            height: 18px;
+            width: 18px;
+            margin-top: 4px;
+            pointer-events: all;
+            position: relative;
+          }
+          .range::-moz-range-thumb{
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #656565;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px #ced4da;
+            height: 18px;
+            width: 18px;
+            margin-top: 4px;
+            pointer-events: all;
+            position: relative;
+          }
+          .range::-ms-thumb
+          {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #656565;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px #ced4da;
             height: 18px;
             width: 18px;
             margin-top: 4px;

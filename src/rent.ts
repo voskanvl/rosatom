@@ -44,10 +44,8 @@ costpermonthEls &&
             );
     });
 
-const vendors = document.querySelector("select[name='vendor']");
-const coretypes = [
-    ...document.querySelectorAll<HTMLOptionElement>("select[name='coretype'] > option"),
-];
+const vendors = document.querySelector<HTMLInputElement>("input[name='vendor']");
+const coretypes = [...document.querySelectorAll<HTMLOptionElement>("#coretype li")];
 
 vendors &&
     vendors.addEventListener("change", (event: Event) => {
@@ -72,5 +70,6 @@ selects &&
             const title = select.querySelector<HTMLElement>(".select__title");
             const dataInput = select.querySelector<HTMLInputElement>("input[type='text']");
             title && dataInput && (dataInput.value = title.innerText = target.innerText);
+            dataInput && dataInput.dispatchEvent(new Event("change"));
         }),
     );
