@@ -4,6 +4,7 @@
     outline: none
 
 .rent-options
+    position: relative
 
     &__block
         margin-bottom: ph(22)
@@ -85,3 +86,12 @@
 
         .range-rails
             background-color: #6EABDD
+
+    &__close
+        position: absolute
+        top: 0
+        right: 0
+        display: none
+
+        +mq1024
+            display: block

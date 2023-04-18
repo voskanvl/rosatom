@@ -73,3 +73,25 @@ selects &&
             dataInput && dataInput.dispatchEvent(new Event("change"));
         }),
     );
+
+/*
+        const selects = document.querySelectorAll<HTMLElement>(".select");
+    --- OPTIONS ---
+*/
+
+const optionsElement = document.querySelector<HTMLElement>(".rent-tools__options");
+const optionsButton = document.querySelector<HTMLButtonElement>(".rent-tools__filter");
+const closeoptionsElement = document.querySelector<HTMLButtonElement>(".rent-options__close");
+
+optionsElement &&
+    optionsButton &&
+    optionsButton.addEventListener("click", () => {
+        if (getComputedStyle(optionsElement).position !== "absolute") return;
+        optionsElement.style.zIndex = "2";
+    });
+optionsElement &&
+    closeoptionsElement &&
+    closeoptionsElement.addEventListener("click", () => {
+        if (getComputedStyle(optionsElement).position !== "absolute") return;
+        optionsElement.style.zIndex = "-1";
+    });

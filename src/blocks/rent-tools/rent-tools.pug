@@ -1,7 +1,11 @@
 include ../../components/select/select.pug
+include ../../components/server-item/server-item.pug
+
 .rent-tools
     .rent-tools__container
         form.rent-tools__options.rent-options
+            .rent-options__close
+                img(src="../../../assets/svg/x.svg" alt="close")
             .rent-options__block 
                 .rent-options__title Сервер для
                 .rent-options__tag-cloud
@@ -12,7 +16,8 @@ include ../../components/select/select.pug
 
             each i in rent.sections 
                 if i.type === "range"
-                    .rent-options__block(id= i.name) 
+                    .rent-options__block(id= i.name)
+                        input(type="text", name= i.name, role="range" hidden="hidden") 
                         .rent-options__title!= i.title 
                         .rent-options__minmax 
                             input(type="number" value= i.range.min)
@@ -28,6 +33,16 @@ include ../../components/select/select.pug
                         +select(i.name, i.title, i.list)
 
 
-        .rent-tools__list
-            each i in Array.from({length: 20},(_,index)=>index)
-                p(style="margin: 10px 0; padding: 10px; background: #ddd;")= i
+        .rent-tools__right
+            .rent-tools__controls
+                button.rent-tools__filter Фильтр
+                .rent-tools__sort
+                    p Сортировать 
+                    select(name="sort")
+                        option(value="По популярности") По популярности
+                        option(value="По возрастанию цены") По возрастанию цены
+                        option(value="По убыванию цены") По убыванию цены
+            ul.rent-tools__list
+                each i in Array.from({length: 7},(_,index)=>index)
+                    li.rent-tools__list-item
+                        +server-item()

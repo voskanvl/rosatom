@@ -5,3 +5,48 @@
         display: grid
         grid-template-columns: 365px auto
         column-gap: pw(19)
+
+        +mq1024
+            grid-template-columns: 100%
+
+            .rent-tools__options
+                position: absolute
+                background: #ECF0F3
+                width: 85%
+                z-index: -1
+
+    &__options
+        z-index: 0
+        @media (width > 1024px)
+            z-index: 0 !important
+
+    &__list
+        list-style: none
+
+        li
+            margin-top: 1em
+            border-top: 1px solid #30A842
+            padding: ph(29) 0 ph(56)
+
+        +mq1024
+            padding-left: 0
+
+    &__controls, &__sort
+        display: flex
+        align-items: center
+        column-gap: 10px
+        padding-left: 1.5em
+
+        +mq1024
+            padding-left: 0
+
+    &__controls
+        flex-wrap: wrap
+        row-gap: 10px
+
+    &__filter
+        @extend .server-item__button
+        display: none
+
+        +mq1024
+            display: block

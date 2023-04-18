@@ -1,0 +1,80 @@
+.server-item
+    display: grid
+    grid-template-columns: minmax(66%, 713px) auto
+    row-gap: 38px
+    +mq1440
+        grid-template-columns: 100%
+
+    &__container
+        // display: flex
+        // flex-direction: column
+        // row-gap: 38px
+        display: grid
+        grid-template-areas: "name recomend 1c" "cpu ram disc"
+        grid-template-columns: repeat(3, 33%)
+        // grid-template-rows: repeat(2, 1fr)
+        row-gap: ph(38)
+        +mq1440
+            grid-template-columns: 22% 35% 43%
+        +mq580
+            grid-template-columns: repeat(2, 50%)
+            grid-template-areas: "recomend 1c" "name cpu" "ram disc"
+
+    &__line
+        display: grid
+        grid-template-columns: minmax(66%, 713px) auto
+
+    &__block
+        display: grid
+        grid-template-columns: repeat(3, 33%)
+        row-gap: 38px
+        +mq1440
+            grid-template-columns: 22% 35% 43%
+
+    &__name
+        grid-area: name
+        font-size: clamp(18px,25 / 1440 * 100vw,25px)
+        color: #303031
+
+    &__tag
+        background: #6EABDD
+        border-radius: 33px
+        font-size: clamp(12px,16 / 1440 * 100vw,16px)
+        color: #FFFFFF
+        display: grid
+        place-items: center
+        white-space: nowrap
+        max-height: 32px
+
+        &:nth-child(1)
+            grid-area: recom
+        &:nth-child(2)
+            grid-area: 1c
+
+    &__button
+        background: #30A842
+        border-radius: 33px
+        font-weight: 350
+        font-size: 16px
+        color: #FFFFFF
+        display: grid
+        place-items: center
+        border: none
+        max-width: 114px
+        place-self: right
+        max-height: 32px
+
+    &__disc
+        place-self: right
+        grid-area: disc
+        +mq580
+            place-self: left
+
+    &__ram
+        place-self: start center
+        grid-area: ram
+        +mq580
+            place-self: left
+
+    &__cpu
+        grid-area: cpu
