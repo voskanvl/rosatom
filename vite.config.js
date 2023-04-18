@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-// import pugPlugin from "vite-plugin-pug";
+// import vitePugPlugin from "vite-plugin-pug-transformer";
 import vitePugPlugin from "./vite-plugin-pug-edited";
 import { resolve, extname, posix } from "path";
 import { readFileSync, readdirSync } from "fs";
@@ -11,10 +11,8 @@ import sassGlobImports from "vite-plugin-sass-glob-import";
 
 const merge = () => {
     console.log(`now merging data files`);
-    // const fn = { json: JSON.stringify, yaml: yaml.load }[standart];
     const fn = { json: JSON.stringify, yaml: yaml.load, yml: yaml.load };
     const files = readdirSync(resolve("src/data"));
-    // const jsons = files.filter(file => extname(file) === "." + STANDART);
     return files.reduce(
         (acc, file) => ({
             ...acc,
@@ -31,14 +29,13 @@ function htmlsFiles() {
         .map(e => path.basename(e).replace(".html", ""));
     return files;
 }
-// const htmls = ["inner", "issue", "main-texts", "about", "podcast", "about"];
 const htmls = htmlsFiles();
 
 const input = htmls.reduce((acc, e) => ({ ...acc, [e]: resolve(e + ".html") }), {});
 
 export default defineConfig({
     // plugins: [pugPlugin.default(options, locals)],
-    plugins: [vitePugPlugin({ pugLocals: () => merge() }), sassGlobImports()],
+    plugins: [vitePugPlugin({ pugLocals: merge }), sassGlobImports()],
     build: {
         rollupOptions: {
             input: {

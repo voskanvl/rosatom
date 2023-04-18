@@ -1,0 +1,26 @@
+extends ./template.pug
+include ../../components/partners-form/partners-form.pug
+block main 
+    include ../../components/searchPopup/searchPopup.pug
+    include ../../components/main-header/main-header.pug
+
+    //- section.screen(data-number=0, active)
+    block inset
+    .about__footer 
+        .about__container
+            .about__split 
+                div.about__wrap 
+                    div
+                        h2 Остались вопросы?
+                        p 
+                            p Заполните форму и мы свяжемся
+                            p с вами в ближайшее время.
+                    div 
+                        p 
+                            p Вы всегда можете получить
+                            p консультацию по телефону:
+                        a.about__phone(href="tel:81234567890") 
+                            h3 8 123 456 78 90 
+                +partners-form("")
+block footer 
+    include ../layouts/footer.pug

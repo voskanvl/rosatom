@@ -1,9 +1,3 @@
-extends ../pug/templates/template.pug
-block main 
-    include ../components/searchPopup/searchPopup.pug
-    include ../components/main-header/main-header.pug
-
-    //- section.screen(data-number=0, active)
+extends ../pug/templates/page.pug
+block inset 
     include ./sections/rent.pug
-block footer 
-    include ../pug/layouts/footer.pug
