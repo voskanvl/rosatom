@@ -1,6 +1,6 @@
 .data-card
     &__container
-        color: #fff
+        color: #303031
         background: rgba(9, 8, 21, 0.01)
         box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
         backdrop-filter: blur(24px)
@@ -9,15 +9,15 @@
         height: 100%
         overflow: hidden
 
-        &:hover
-            & > .data-card__front
-                opacity: 0
+        // &:hover
+        //     & > .data-card__front
+        //         opacity: 0
 
-            & > .data-card__back
-                opacity: 1
+        //     & > .data-card__back
+        //         opacity: 1
 
     &__title
-        font-size: clamp(25px,40/1000*100vh,40px)
+        font-size: clamp(20px,40/1000*100vh,40px)
         font-weight: bold
 
     &__front, &__back

@@ -1,0 +1,23 @@
+.footer__container 
+    .footer__head
+        a(href="/" style="width: max(160px,18%); height: 80px;")
+            .logo
+        a(href="tel:81234567890") 8 123 456 78 90 
+    .footer__body
+        each i in menu 
+            .footer__division
+                h3= i.title 
+                each j in i.menu
+                    - const menuSub = j.menu
+                    h4= j.name
+                    nav.footer__nav-list
+                        if Array.isArray(menuSub)
+                            each k in menuSub
+                                a(href= k.href)!= k.name
+.footer__footer 
+    .footer__international 
+        a(href="#") RUS
+        a(href="#") ENG
+    hr
+    .footer__down 
+        p © 2021. Атомдата. Все права защищены

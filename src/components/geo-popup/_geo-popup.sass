@@ -1,10 +1,15 @@
 .geo-popup
     display: none
-    background: #fffa
-    backdrop-filter: blur(6px)
-    box-shadow: inset 10px 10px 30px #fff
+    background: rgba(#b3f5b3, 20%)
+    backdrop-filter: blur(12px)
+    // box-shadow: inset 10px 10px 30px #fff
     padding: 1em
     border-radius: 10px
+
+    @media (width <= 768px)
+        background: #b3f5b366
+        // box-shadow: inset 10px 10px 0px #fff5, inset -10px -10px 0px #fff5
+
     &__region
         background: #30A842
         border-radius: 33px
@@ -12,7 +17,7 @@
         display: flex
         align-items: center
         justify-content: center
-        margin-bottom: 1.9vh
+        margin: 0 auto 1.9vh
         width: fit-content
         padding: 0.6vh 2.539063vw
 
@@ -20,6 +25,9 @@
         display: flex
         flex-direction: column
         padding: 0
+
+        & > .geonet__topopup
+            position: static
 
     &__dcname
         font-weight: 700
@@ -30,5 +38,6 @@
     &__dcparam
         font-size: clamp(11px,18/768*100vw,18px)
         margin-bottom: 15px
+        color: #134313
         &:last-child
             margin-bottom: unset

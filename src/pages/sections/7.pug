@@ -1,12 +1,25 @@
-include ../../components/team-member/team-member.pug
-.team 
-    .team__container 
-        .team__title.title.text-masked-element(style="--background: #303031; --circle-color: #115DA1") НАША
-            br
-            |КОМАНДА
-        +splide("team",team)
-            +teamMember(val)
-        .team__controls 
-            button.team__control-button.team__control-button--left= "\u27F5"
-            button.team__control-button.team__control-button--right= "\u27F6"
-        
+include ../../components/partners-form/partners-form.pug
+
+.partners 
+    .partners__container.container
+        .partners__title.title.text-masked-element(style="--background: #303031; --circle-color: #30A842") ПАРТНЕРЫ
+            span.contacts__go= "перейти \u27f6"
+        .partners__data 
+            .partners__data-left
+                - 
+                    const partnersEdited = partners.reduce(
+                        (acc, e, i) => {
+                        acc[acc.length - 1].length > 1 ? acc.push([e]) : acc[acc.length - 1].push(e);
+                        return acc;
+                        },
+                        [[]]
+                    )
+                +splide("partners", partnersEdited)
+                    .partners__cell
+                        img(src= val[0])
+                        img(src= val[1])
+                .partners__controls 
+                    button.partners__control-button.partners__control-button--left= "\u27F5"
+                    button.partners__control-button.partners__control-button--right= "\u27F6"
+            .partners__data-right
+                +partners-form()

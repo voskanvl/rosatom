@@ -1,16 +1,20 @@
+.inserting 
+    //- img(src="../../../assets/images/Vectary-texture.png")
+    img#img(src="../../../assets/man.jpg")
+    video#video(autoplay loop muted preload)
+        source(src="../../../assets/3.mp4" )
+    //- <iframe style="pointer-events: none; transform: translate(0%, -4.90698%) translate3d(0px, 0px, 0px) scale(1.0566, 1.0566);" width="560" height="315" src="https://www.youtube.com/embed/ji4RKSGM5Wg?autoplay=1&amp;mute=1&amp;rel=0&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;playlist=ji4RKSGM5Wg&amp;modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="transform: translate(0%, -4.90698%) translate3d(0px, 0px, 0px) scale(1.0566, 1.0566);"></iframe>
 .main-block
-    .inserting 
-        img(src="../../../assets/images/Vectary-texture.png")
     .main-block__leftside
-        h1.main-block__title.text-masked-element    
-            p consectetur
-            p sit amet
-            p &adipiscing
-        
+        h1.main-block__title.text-masked-element(style="--background: #fff")    
+            p Надежная 
+            p инфраструктура 
+            p «под ключ»
+
+
         .socials
             each i in socials
                 a.socials__item(href=i.href) 
                     img(src=i.img)
     aside.main-block__aside
         include ../../components/aside-menu/aside-menu.pug
-            

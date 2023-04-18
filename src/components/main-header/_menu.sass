@@ -1,4 +1,5 @@
-$toggle-menu: 545px
+@import "@var"
+
 .menu
     display: grid
     grid-auto-flow: column
@@ -11,20 +12,23 @@ $toggle-menu: 545px
         display: block
         list-style: none
         text-transform: uppercase
+        color: inherit
 
         & > span
             font-size: clamp(11px,1.166667vw,14px)
             white-space: nowrap
+            transition: color $std_trans
+            color: inherit
 
         & > .list.show
             scale: 1 1 1
             color: #fff
-            & + span
-                // color: #30A842
-                color: transparent
-                background-image: url("../../../assets/svg/x.svg")
-                background-repeat: no-repeat
-                background-position: 50% 50%
+            // & + span
+            //     // color: #30A842
+            //     color: transparent
+            //     background-image: url("../../../assets/svg/x.svg")
+            //     background-repeat: no-repeat
+            //     background-position: 50% 50%
 
     &.show > .menu__item > span
         color: #fff
@@ -32,22 +36,20 @@ $toggle-menu: 545px
     &--white
         color: #fff
 
-    @media (width < $toggle-menu)
+    @media (width <= $toggle-menu)
         display: none
 
 .menu-reduced
     display: none
 
-    @media (width < $toggle-menu)
+    @media (width <= $toggle-menu)
         display: block
-        // &:hover
-        //     color: #fff
-        //     & > .menu-reduced__list
-        //         scale: 1 1 1
-        //         display: grid
-        //         grid-template-columns: 100%
-        //     & > .menu-reduced__close
-        //         scale: 1 1
+
+        &  .options
+            margin-right: auto
+            column-gap: 10px
+            & > .options__international
+                column-gap: 6px
 
     &__list.show
         scale: 1 1 1
@@ -60,12 +62,21 @@ $toggle-menu: 545px
             background-image: url("../../../assets/svg/x.svg")
             background-size: contain
             background-repeat: no-repeat
+        @media (width <= $toggle-menu)
+            grid-template-rows: 10% 90%
+            padding-top: 6em
 
     &__caption
         color: #000
         transition: color .8s
         &--white
             color: #fff
+        @media (width <= $toggle-menu)
+            display: block
+            translate: -19px 0
+            color: transparent
+            background: url("../../../assets/svg/burger.svg") no-repeat
+            background-position: 0 50%
 
     &__close
         background: none
@@ -76,4 +87,4 @@ $toggle-menu: 545px
         right: 2em
         top: 7em
         scale: 0 0
-        transition: transform .2s
+        transition: transform $std_trans

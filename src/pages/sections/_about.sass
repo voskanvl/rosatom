@@ -1,0 +1,194 @@
+.about
+    color: #404041
+
+    &__block
+        display: grid
+        place-items: center
+    &__container
+        width: 80vw
+        margin-inline: auto
+
+        .title
+            margin-bottom: 47px
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3,32%)
+        grid-template-rows: repeat(2, 1fr)
+        gap: 30px 22px
+
+        &--4x3
+            grid-template-columns: repeat(4,24%)
+            grid-template-rows: repeat(3, 1fr)
+            +mq1024
+                grid-template-columns: repeat(3,32%)
+                grid-template-rows: repeat(4, 1fr)
+            +mq580
+                grid-template-columns: repeat(2,49%)
+                grid-template-rows: repeat(6, 1fr)
+
+    &__split
+        display: grid
+        grid-template-columns: repeat(2, 49%)
+        column-gap: 1%
+
+    #about-cod
+        margin-top: ph(130)
+
+    #about-advantages
+        margin-top: ph(144)
+        margin-bottom: ph(180)
+
+        .service-card__container
+            color: #303031
+            border-radius: 0
+            backdrop-filter: none
+
+        .service-card__title
+            border: 1px solid #303031
+
+    #about-cod-in-digitals
+        margin-top: ph(151)
+
+    #clients-talking
+        margin-top: ph(108)
+        margin-bottom: ph(138)
+
+        .splide
+
+            & .splide__slide
+
+                &.is-visible
+                    .about__blue
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
+                        transition: transform $std_trans
+
+                &.is-prev
+                    .about__blue
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,45deg)
+
+                &.is-active
+                    .about__blue
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
+
+                &.is-next
+                    .about__blue
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-45deg)
+
+        .about__split
+            +mq1024
+                grid-template-columns: 100%
+                row-gap: 2em
+
+    &__cell
+        display: grid
+        place-items: center start
+        padding: 20px 25px
+
+        .title
+            margin: 0
+            font-weight: 700
+            font-size: clamp(24px,48 / 1024 * 100vw ,48px)
+            color: #404041
+
+    .about__blue
+        background: #6EABDD
+        color: #fff
+        height: 100%
+
+    #about-statement
+        position: relative
+        .about__split
+            column-gap: 0
+            grid-template-columns: repeat(2,50%)
+
+    #about-statement-frame
+        color: #fff
+        svg,.about__split
+            position: absolute
+            z-index: 1
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+
+        .about__split
+            z-index: 2
+
+            aside:first-child
+                h2
+                    width: min-content
+                    margin: ph(51) auto 0
+                    font-weight: 700
+                    font-size: clamp(30px,60 / 1024 * 100vw,60px)
+                    line-height: 78px
+                    text-transform: uppercase
+                p
+                    line-height: 1.02
+
+            aside:last-child
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                padding: ph(69) pw(126)
+
+                & > p
+                    margin-top: ph(55)
+                    max-width: 431px
+                    font-size: 20px
+
+                & > div
+                    & > p
+                        font-size: 20px
+                        line-height: 105%
+
+                        &:nth-child(2)
+                            margin-bottom: 21px
+
+                    & > h2
+                        font-weight: 700
+                        font-size: clamp(40px,80 / 1024 * 100vw,80px)
+                        line-height: 91.8%
+                        text-transform: uppercase
+
+    #ceo
+        position: absolute
+        left: 25%
+        bottom: 0
+        translate: -50% 0
+        width: 38vw
+
+    &__3d
+        perspective: 500px
+        perspective-origin: center
+
+    &__footer
+        color: #fff
+        width: 100%
+        max-height: 584px
+        background: url("../../../assets/svg/above-footer.svg") no-repeat
+        background-size: cover
+        padding: ph(73) 0 ph(137)
+        // display: grid
+        // place-items: center
+
+        h2
+            font-weight: 700
+            font-size: clamp(30px,60 / 1024 * 100vw,60px)
+            line-height: 78px
+            text-transform: uppercase
+            color: #FFFFFF
+
+        .about__wrap
+            height: 100%
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+
+        .about__phone
+            text-decoration: none
+            & > h3
+                font-weight: 700
+                font-size: clamp(25px,50 / 1024 * 100vw,50px)
+                line-height: 65px
+                text-transform: uppercase

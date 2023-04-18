@@ -1,29 +1,29 @@
 extends ../pug/templates/template.pug
 block main 
-        include ../components/searchPopup/searchPopup.pug
-        include ../components/main-header/main-header.pug
-        ol.screen-switcher
-        //- each i in Array(9).fill(null).map((_,idx)=>idx)
-        //-     section.screen(data-number= i)
-        //-         - const path = `./sections/${i}.pug`
-        //-         include !{path}
+    include ../components/searchPopup/searchPopup.pug
+    include ../components/main-header/main-header.pug
+    ol.screen-switcher.screen-switcher--white
+    //- each i in Array(9).fill(null).map((_,idx)=>idx)
+    //-     section.screen(data-number= i)
+    //-         - const path = `./sections/${i}.pug`
+    //-         include !{path}
 
-        section.screen(data-number=0, active)
-            include ./sections/0.pug
-        section.screen(data-number=1)
-            include ./sections/1.pug
-        section.screen(data-number=2)
-            include ./sections/2.pug
-        section.screen(data-number=3)
-            include ./sections/3.pug
-        section.screen(data-number=4)
-            include ./sections/4.pug
-        section.screen(data-number=5)
-            include ./sections/5.pug
-        section.screen(data-number=6)
-            include ./sections/6.pug
-        section.screen(data-number=7)
-            include ./sections/7.pug
-        section.screen(data-number=8)
-            include ./sections/8.pug
+    section.screen(data-number=0, active)
+        include ./sections/0.pug
+    section.screen(data-number=1)
+        include ./sections/1.pug
+    section.screen(data-number=2)
+        include ./sections/2.pug
+    section.screen(data-number=3)
+        include ./sections/3.pug
+    section.screen(data-number=4)
+        include ./sections/4.pug
+    section.screen(data-number=5)
+        include ./sections/5.pug
+    section.screen(data-number=6)
+        include ./sections/6.pug
+    section.screen(data-number=7)
+        include ./sections/7.pug
+    section.screen(data-number=8)
+        include ./sections/8.pug
 

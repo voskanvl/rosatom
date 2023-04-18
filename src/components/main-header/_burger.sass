@@ -1,9 +1,21 @@
+@import "@var"
 .burger
     margin-right: clamp(5px,74/1920*100vw,74px)
     width: 46px
+    transition: opacity $std_trans
+    padding-block: 1em
 
-    // @media (width < 1440px)
-    //     margin-right: 5px
+    &__title
+        color: #fff
+        list-style: none
+        // position: fixed
+        // top: 20%
+        // left: 0
+        width: 100%
+        margin-bottom: 40px
+        // padding: 0 clamp(5px,200/1920*100vw,200px)
+        font-size: clamp(20px,5vmin,60px)
+        grid-area: 1 / 1 / 2 / -1
 
     &__list
         scale: 1 0
@@ -14,18 +26,35 @@
         width: 100vw
         z-index: -1
         background-color: #1C376A
-        transition: transform .5s
+        transition: transform $std_trans
         transform-origin: 50% 0
         & > .list
             top: 25vh
-            height: 75vh
+            height: 61vh
             padding-top: 0
             overflow-y: auto
+            gap: 3%
+            background: none
             @media (width <= 1024px)
                 padding: 0 1em
+            @media (height <= 480px)
+                top: 40vh
 
-    // &:hover
-    //     & > .burger__list
-    //         scale: 1 1
-    //         & > .list
-    //             scale: 1 1
+    &__image
+        background-image: url("../../../assets/svg/burger.svg")
+        background-repeat: no-repeat
+        width: 46px
+        height: 12px
+        @media (width <= $toggle-menu)
+            display: none
+            pointer-events: none
+
+    &.show
+        & .burger__list
+            scale: 1 1
+
+            & > .list
+                scale: 1
+        & > .burger__image
+            background-image: url("../../../assets/svg/x.svg")
+            height: 46px

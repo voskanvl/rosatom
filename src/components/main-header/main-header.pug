@@ -14,18 +14,29 @@ mixin menuList(arr)
 
 
 
-nav.main-header
-    //- .burger 
-    //-     ul.burger__list
-    //-         .list
-    //-             +menuList(burger)
-    //-     img(src="../../../assets/svg/burger.svg")
+nav.main-header.main-header--white
+    .burger 
+        ul.burger__list
+            .list
+                li.burger__title
+                    h2 Карта сайта
+                +menuList(burger)
+            img.cristal(src="../../../assets/svg/veil.svg")
+        .burger__image
 
     .logo
 
     .menu-reduced 
         ul.menu-reduced__list.list
-            img.cristal(src="../../../assets/svg/cristal.svg")
+            img.cristal(src="../../../assets/svg/veil.svg")
+            .options 
+                .options__search 
+                    include ../../../assets/svg/search.svg
+                .options__lk 
+                    a(href="#") ЛИЧНЫЙ КАБИНЕТ
+                .options__international
+                    a(href="#") Rus
+                    a(href="#") Eng
             +accordion(menu,"menu-reduced__item")
         span.menu-reduced__caption МЕНЮ
 
@@ -34,14 +45,14 @@ nav.main-header
             li.menu__item
                 ul.list
                     +menuList(i.menu)
-                    img.cristal(src="../../../assets/svg/cristal.svg")
+                    img.cristal(src="../../../assets/svg/veil.svg")
                 span= i.title
     .options 
         .options__search 
-            img(src="../../../assets/svg/search.svg")
+            include ../../../assets/svg/search.svg
         .options__lk 
             a(href="#") ЛИЧНЫЙ КАБИНЕТ
-        .options__international 
+        .options__international
             a(href="#") Rus
             a(href="#") Eng
 

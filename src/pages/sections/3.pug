@@ -1,13 +1,13 @@
 .advantages-center
-    img(src="../../../assets/images/advantages.png", const, style="filter:brightness(0.5) hue-rotate(10deg)")
-    img(src="../../../assets/images/advantages.png" data-number="0" style="filter:invert(1)")
-    img(src="../../../assets/images/advantages.png" data-number="1" style="filter:hue-rotate(180deg) brightness(0.5)")
-    img(src="../../../assets/images/advantages.png" data-number="2" style="filter:hue-rotate(230deg) brightness(0.5)")
-    img(src="../../../assets/images/advantages.png" data-number="3" style="filter:hue-rotate(30deg)")
-    img(src="../../../assets/images/advantages.png" data-number="4" style="filter:hue-rotate(90deg)")
-    img(src="../../../assets/images/advantages.png" data-number="5" style="filter:hue-rotate(120deg)")
-    .advantages-center__container
-        h1.advantages-center__title.title.text-masked-element(style="--background: #fff") ПРЕИМУЩЕСТВА
+    img(src="../../../assets/images/advantages.png" const, style="filter:invert(1) brightness(5)")
+    img(src="../../../assets/images/advantages.png" data-number="0" style="filter:hue-rotate(10deg) brightness(0.5) invert(1)")
+    img(src="../../../assets/images/advantages.png" data-number="1" style="filter:hue-rotate(180deg) brightness(0.5) invert(1)")
+    img(src="../../../assets/images/advantages.png" data-number="2" style="filter:hue-rotate(230deg) brightness(0.5) invert(1)")
+    img(src="../../../assets/images/advantages.png" data-number="3" style="filter:hue-rotate(30deg)  brightness(0.5) invert(1)")
+    img(src="../../../assets/images/advantages.png" data-number="4" style="filter:hue-rotate(90deg) brightness(0.5) invert(1)")
+    img(src="../../../assets/images/advantages.png" data-number="5" style="filter:hue-rotate(120deg) brightness(0.5) invert(1)")
+    .advantages-center__container.container
+        h1.advantages-center__title.title.text-masked-element(style="--background: #303031") ПРЕИМУЩЕСТВА
         ul.advantages-center__list
             each i, idx in advantages
                 li.advantages-center__card(data-number= idx)

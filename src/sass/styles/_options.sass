@@ -29,6 +29,7 @@
         display: flex
         column-gap: 0.625vw
         font-size: clamp(12px,18/1440*100vw,18px)
+        transition: color $std_trans
         & > a
             color: inherit
 
@@ -36,8 +37,10 @@
             color: #fff
 
     &__search
-        & > img
+        & > img, svg
+            display: block
             width: 100%
+
         &--white
             filter: invert(1)
 

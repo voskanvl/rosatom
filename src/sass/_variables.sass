@@ -3,9 +3,9 @@
     margin: 0 auto
 
 =cur-b($cursor: pointer)
-    cursor: url("../../assets/cursor/black.png") 19 19, $cursor
+    cursor: url("../../assets/cursor/black.png"), $cursor
 =cur-w($cursor: pointer)
-    cursor: url("../../assets/cursor/white.png") 19 19, $cursor
+    cursor: url("../../assets/cursor/white.png"), $cursor
 
 =delete-scrollbar()
     scrollbar-color: #0000 #0000
@@ -25,3 +25,48 @@
     top: 50%
     translate: -50% -50%
     width: 80%
+
+=scroll-thin()
+    scrollbar-width: thin
+    scrollbar-color: #30A842 #404041
+    &::-webkit-scrollbar
+        width: 7px
+        background: #404041
+    &::-webkit-scrollbar-thumb
+        background: #30A842
+        border-radius: 21px
+
+$std_trans: .6s
+$toggle-menu: 635px
+$index: calc(1vw + 1vh)
+
+@function pw($x)
+    @return calc($x / 1920 *100vw)
+
+@function pwm($x, $w: 390)
+    @return calc($x / $w *100vw)
+
+@function ph($x)
+    @return calc($x / 1010 *100vh)
+
+@function phm($x, $h: 680)
+    @return calc($x / $h *100vh)
+
+=mq1440()
+    @media (width <= 1440px)
+        @content
+=mq1024()
+    @media (width <= 1024px)
+        @content
+=mq768()
+    @media (width <= 768px)
+        @content
+=mq580()
+    @media (width <= 580px)
+        @content
+=mq530()
+    @media (width <= 530px)
+        @content
+=mq425()
+    @media (width <= 425px)
+        @content

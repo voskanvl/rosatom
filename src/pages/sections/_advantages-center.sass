@@ -3,9 +3,9 @@ $change_point0: "width <= 860px"
 $change_point1: "width <= 510px"
 $change_point2: "width <= 380px"
 .advantages-center
-    // +cur-b
     background: #ECF0F3
     height: 100vh
+    color: #303031
 
     & > img
         position: absolute
@@ -20,20 +20,6 @@ $change_point2: "width <= 380px"
         transition: opacity 1s
         &[show], &[const]
             opacity: 1
-
-    &__container
-        // +wid(1520px)
-        // padding-top: 186px
-        // position: absolute
-        // left: 50%
-        // translate: -50%
-        +center-a
-        // height: 75%
-        // overflow-y: auto
-        @media ($change_point1)
-            top: 60%
-        @media ($change_point2)
-            top: 70%
 
     &__list
         display: grid
@@ -60,5 +46,3 @@ $change_point2: "width <= 380px"
 
     &__card
         color: #fff
-        &:hover
-            color: #303031

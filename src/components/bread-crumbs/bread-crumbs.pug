@@ -1,0 +1,7 @@
+mixin bread-crumbs(arr)
+    .bread-crumbs 
+        each i, idx in arr 
+            if idx === arr.length - 1
+                a.bread-crumbs__item(href= i.href, current="current")= i.name
+            else
+                a.bread-crumbs__item(href= i.href)= i.name

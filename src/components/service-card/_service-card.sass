@@ -2,8 +2,9 @@
 .service-card
 
     &__container
+        box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
         padding: 2.5vh clamp(10px, 1.302083vw,25px)
-        border-radius: 33px
+        border-radius: 3.3vmin
         // background: #ECF0F3b0
         background: rgba(9, 8, 21, 0.01)
         // box-shadow: 1vw 1.8vh 3vmin #D1D9E6
@@ -12,15 +13,19 @@
         flex-direction: column
         backdrop-filter: blur(18px)
         transition: 1s
+        color: #fff
 
         &:hover
-            background: #ECF0F3ef
-            background: #fefefeee
+            // background: #ECF0F3ef
+            // background: #fefefeee
             & > .service-card__title
-                background-color: #115DA1
-                color: #fff
+                // background-color: #115DA1
+                background-color: #fff
+                color: #115DA1
 
-        // &--advantages
+        &--advantages
+            color: #303031
+            // box-shadow: inset 0 0 200px #fffa
         //     &:hover
         //         & > .service-card__title
         //             border-color: #30A842
@@ -36,7 +41,8 @@
         // border: 1px solid #115DA1
         transition: background-color .5s
         width: fit-content
-        font-size: clamp(18px,1.5vmax,26px)
+        font-size: clamp(18px,1.5vmax,22px)
+        letter-spacing: -0.02em
         font-weight: 700
         // font-size: 20px
         @media ($change_point1)

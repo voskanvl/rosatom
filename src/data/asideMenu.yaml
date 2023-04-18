@@ -1,15 +1,15 @@
 asideMenu:
+  - title: 2000
+    caption: стойко-мест для клиентов
+    href: "#"
+  - title: 16 МВт
+    caption: полная мощность
+    href: "#"
   - title: 2N
     caption: схема энергоснабжения
     href: "#"
   - title: N+1
     caption: схема охлаждения
-    href: "#"
-  - title: 16 МВт
-    caption: полная мощность
-    href: "#"
-  - title: 2000
-    caption: сбой ко-мест для клиентов
     href: "#"
   - title: TIER III
     caption: соответствие стандарту

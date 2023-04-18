@@ -1,10 +1,6 @@
 .partners
     @extend .innopolis
-    // +cur-w
-    &__container
-        +center-a
-        @media (height <= 520px)
-            top: 65%
+    background: #ECF0F3
 
     &__data
         display: grid
@@ -27,6 +23,9 @@
 
     & .splide
         mask-image: none
+        overflow: hidden
+        & > .splide__track
+            height: unset
 
     &__controls
         @extend .innopolis__controls

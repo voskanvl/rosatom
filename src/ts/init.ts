@@ -1,33 +1,52 @@
 import { scrollScreens } from "./scrollScreens";
-import toggleLogoImage from "./toggleLogoImage";
-import { controlSearchPopup } from "./changeSearchPopup";
-import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
-import screenSwitcher from "./screenSwitcher";
+import toggleLogoImage from "./components/main-header/toggleLogoImage";
+import { controlSearchPopup } from "./components/popup/changeSearchPopup";
+// import changeMainHeaderByScroll from "./changeMainHeaderByScroll";
+import screenSwitcher from "./components/screen-swithcer/screenSwitcher";
 import advantagesHovers from "./advantagesHovers";
-import allocateRegionIcons from "./allocateRegionIcons";
+import allocateRegionIcons from "./components/regions/allocateRegionIcons";
 
 import newsFeedHandler from "./news-feed-handeler";
-import splides from "./splides";
-import handlerRegionMove from "./handlerRegionMove";
-// import openBurger from "./openBurger";
-import hideScreenSwitcherByMenu from "./hideScreenSwitcherByMenu";
-import touchedScroll from "./touchedScroll";
+import splides from "./components/sliders/splides";
+import handlerRegionMove from "./components/regions/handlerRegionMove";
+import hideScreenSwitcherByMenu from "./components/screen-swithcer/hideScreenSwitcherByMenu";
+import touchedScroll from "./mobile/touchedScroll";
 
 import applyMaskText from "./applyMaskText";
 import applyIMaskToField from "./applyIMaskToField";
-import toggleMobileMenu from "./toggleMobileMenu";
-import toggleMainMenu from "./toggleMainMenu";
-import changeScreenSwitcherByScroll from "./changeScreenSwitcherByScroll";
-import changePointerByScreen from "./changePointerByScreen";
-import clickToLogo from "./clickToLogo";
+import toggleMobileMenu from "./mobile/toggleMobileMenu";
+import toggleMainMenu from "./components/main-header/toggleMainMenu";
+import changeScreenSwitcherByScroll from "./components/screen-swithcer/changeScreenSwitcherByScroll";
+// import changePointerByScreen from "./changePointerByScreen";
+import clickToLogo from "./components/main-header/clickToLogo";
+import closeMenu from "./components/main-header/closeMenu";
+import changeMainHeader from "./components/main-header/changeMainHeader";
+import burger from "./components/burger";
+// import changeCursorByMenu from "./changeCursorByMenu";
+import hideBurgerThenMenu from "./components/burger/hideBurgerThenMenu";
+import cursor from "./components/cursor/cursor";
+import MobileDetect from "mobile-detect";
+import randomizePulsIcons from "./components/regions/randomizePulsIcons";
+import store from "./store";
+import changeSearchPopupByScreensAndMenu from "./components/popup/changeSearchPopupByScreensAndMenu";
 
 export default function init() {
-    changePointerByScreen();
+    cursor();
+    // changePointerByScreen();
+    // changeCursorByMenu();
     clickToLogo();
-    // openBurger();
+
+    burger.open();
+    burger.change();
+    burger.close();
+    hideBurgerThenMenu();
+
     toggleLogoImage();
     scrollScreens();
     hideScreenSwitcherByMenu();
+
+    closeMenu("ul.list");
+    closeMenu(".burger__list");
 
     toggleMainMenu();
     toggleMobileMenu();
@@ -40,8 +59,11 @@ export default function init() {
         close: ".search-popup__close",
         open: ".options__search",
     });
+    changeSearchPopupByScreensAndMenu();
 
-    changeMainHeaderByScroll();
+    // changeMainHeaderByScroll();
+    changeMainHeader();
+
     changeScreenSwitcherByScroll();
     screenSwitcher();
     advantagesHovers();
@@ -55,4 +77,20 @@ export default function init() {
 
     allocateRegionIcons();
     window.addEventListener("resize", () => allocateRegionIcons());
+    store.store.subscribe(({ activeScreenNumber }) => {
+        const { matches } = matchMedia("(max-width: 768px)");
+        const map = document.querySelector<HTMLElement>(".geonet__map");
+        if (activeScreenNumber === 4 && matches) {
+            !!map && (map.style.scale = "1.7 1.7");
+        } else {
+            !!map && (map.style.scale = "");
+        }
+    });
+    const md = new MobileDetect(window.navigator.userAgent);
+    if (md.mobile()) {
+        const cursorRound = document.querySelector<HTMLElement>(".cursor__round");
+        !!cursorRound && (cursorRound.style.display = "none");
+    }
+
+    randomizePulsIcons();
 }

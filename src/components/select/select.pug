@@ -1,0 +1,15 @@
+mixin select(name, title, options)
+    .select
+        .select__container 
+            input(type="text", name= name, hidden)
+            input(type="checkbox" name="open")
+            .select__header
+                span.select__title!= title
+                span
+                    img(src="../../../assets/svg/chevron.svg")
+            ul.select__list 
+                each option in options
+                    if (typeof option === "object")
+                        li(data-vendor= option.vendor)= option.title 
+                    else
+                        li= option

@@ -8,42 +8,43 @@ dataCenterCards:
     caption: полная электрическая мощность
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 102
-    title: До 22 кВт
-    caption: мощность на стойку
-    text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 103
-    title: 5000 м<sup>2</sup>
-    caption: общая площадь машинных залов
-    text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 104
     title: 2N
     caption: схема резервирования систем электроснабжения
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 105
+  - id: 103
     title: N+1
     caption: схема резервирования систем охлаждения
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
+  - id: 104
+    title: TIER III
+    caption: соответствие требованиям Uptime
+    text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
+  - id: 105
+    title: До 22 кВт
+    caption: мощность на стойку
+    text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 106
+    title: 5000 м<sup>2</sup>
+    caption: общая площадь машинных залов
+    text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
+ 
+  - id: 107
     title: 5
     caption: контуров физической безопасности
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 107
+  - id: 108
     title: 8
     caption: машинных залов по 250 стойко-мест
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 108
+  - id: 109
     title: 4+
     caption: провайдера связи
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 109
+  - id: 110
     title: 24*7*365
     caption: техническая поддержка
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 110
     title: 99,982%
     caption: коэффициент отказоустойчивости
-    text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
-  - id: 111
-    title: TIER III
-    caption: соответствие требованиям Uptime
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue

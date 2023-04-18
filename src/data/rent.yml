@@ -1,0 +1,78 @@
+rent:
+  tagCloud:
+    - 1С
+    - Базы данных
+    - CRM
+    - Размещение сайта
+    - Облако
+    - Игровой сервер
+  
+  sections:
+ 
+    - type: range
+      title: Цена в месяц, &#8381;
+      name: cost
+      range:
+        min: 2000
+        max: 200000
+    - type: range
+      title:  Ядра, шт.
+      name: core
+      range:
+        min: 2
+        max: 128
+    - type: range
+      title:  Частота, ГГц
+      name: freq
+      range:
+        min: 2
+        max: 128
+    - type: select
+      title: Производитель
+      name: vendor
+      list:
+        - Intel
+        - AMD
+    - type: select-object
+      title: Тип процессора
+      name: coretype
+      list:
+        - vendor: Intel
+          title: Intel® Core™ i9-13900KS
+        - vendor: Intel
+          title: Intel® Core™ i7-1355
+        - vendor: Intel
+          title: Intel® Core™ i5-1334
+        - vendor: AMD
+          title: AMD EPYC™ 9004 SERIES
+        - vendor: AMD
+          title: AMD EPYC™ 7003 SERIES
+        - vendor: AMD
+          title: AMD EPYC™ 7002 SERIES
+    - type: range
+      title:  Объем RAM, ГБ
+      name: ram
+      range:
+        min: 2
+        max: 128
+    - type: select
+      title: Диски
+      name: disks
+      list:
+        - Seagate
+        - Toshiba
+        - WD
+    - type: select
+      title: Особенности конфигурации
+      name: features
+      list:
+        - baby
+        - adult
+        - oldster
+    - type: select
+      title: Регион
+      name: city
+      list:
+        - Москва
+        - Санкт-Петербург
+        - Новосибирск

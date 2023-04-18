@@ -1,24 +1,28 @@
 .team
-    background-color: #ECF0F3
+    // background-color: #ECF0F3
+    background: darken(#1C376A, 10%)
+    background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
     height: 100vh
-    &__container
-        +center-a
+    color: #fff
+    display: grid
+    place-items: center
 
-        @media(height <= 520px)
-            top: 60%
-
-    &__title
+    &__title.title
         font-weight: 700
-        font-size: 80px
+        font-size: calc($index * 2.7)
         width: fit-content
         margin-bottom: 48px
         margin-left: 22px
         @media (width <= 510px)
-            margin-left: 0
+            margin: 0 auto 1em
+
+            & > p
+                padding: 0
+                text-align: center
 
     .team__controls
         @extend .innopolis__controls
 
     .team__control-button
         @extend .innopolis__control-button
-        color: #404041
+        color: #fff

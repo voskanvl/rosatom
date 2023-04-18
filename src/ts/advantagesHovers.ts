@@ -30,7 +30,7 @@ export default function advantagesHovers() {
 
             if (act === "add") {
                 img.setAttribute("show", "show");
-                title.style.setProperty("--background", "#fff");
+                // title.style.setProperty("--background", "#fff");
                 cards.forEach(e => {
                     if (e === target) {
                         e.removeAttribute("glass");

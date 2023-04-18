@@ -1,0 +1,58 @@
+.select
+    border: 1px solid #303031
+    border-radius: 10px
+    padding: 16px 20px
+
+    &__container
+        position: relative
+
+    input[name="open"]
+        position: absolute
+        height: 25px
+        left: 0
+        top: -5px
+        width: 100%
+        background: #7777
+        opacity: 0
+        z-index: 2
+
+        &:checked
+            & ~ .select__list
+                max-height: 30vh
+                margin-top: 1em
+                & li
+                    padding: 6px
+            & + .select__header
+                & img
+                    rotate: 180deg
+
+    &__list
+        max-height: 0
+        overflow: hidden
+        transition: max-height $std-trans
+
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        img
+            rotate: 0
+            transition: transform $std-trans
+
+    &__list
+        list-style: none
+        padding-left: 0
+        margin-inline: -6px
+        margin-top: 0em
+        display: flex
+        flex-direction: column
+        row-gap: 4px
+        transition: $std-trans
+
+        li
+            padding: 0px 6px
+            border-radius: 6px
+            transition: padding $std-trans
+            &:hover
+                background: #ddd

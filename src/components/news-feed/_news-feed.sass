@@ -21,14 +21,7 @@ $change_grid1: 600px
         row-gap: 1.5vh
         max-height: 513px
         overflow-y: auto
-        scrollbar-width: thin
-        scrollbar-color: #30A842 #404041
-        &::-webkit-scrollbar
-            width: 7px
-            background: #404041
-        &::-webkit-scrollbar-thumb
-            background: #30A842
-            border-radius: 21px
+        +scroll-thin()
         @media (width <= $change_grid1)
             height: 20vh
             overflow-y: auto
@@ -39,8 +32,8 @@ $change_grid1: 600px
         padding: 1.1vh 1.388889vw
         margin-right: 18px
         border-radius: 10px
-        background: rgba(255, 255, 255, 0.01)
-        box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+        background: rgba(24, 24, 25, 0.01)
+        box-shadow: inset 0px 0px 68px rgba(24, 24, 25, 0.05)
         backdrop-filter: blur(24px)
         p
             &:nth-child(1)
@@ -65,13 +58,13 @@ $change_grid1: 600px
             display: flex
             align-items: center
             justify-content: space-between
-            border-bottom: 1px solid #fff
+            border-bottom: 1px solid #303031
             padding: 14px 0 10px
         button, input
             background: transparent
             border: none
         input
-            color: #fff
+            color: #303031
             font-size: 18px
             flex: 1 1 90%
             // outline-color: #30A842

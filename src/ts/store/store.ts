@@ -54,25 +54,30 @@ const dec = (state: StoreState) => {
 };
 
 const store = createStore<StoreState, [["zustand/devtools", never]]>(
-    devtools(set => ({
-        block: false,
-        activeScreenNumber: 0,
-        activeScreenElement: null,
-        previousScreenNumber: null,
-        previousScreenElement: null,
-        screens: [...document.querySelectorAll<HTMLElement>(".screen")],
-        inc: () => set(inc),
-        dec: () => set(dec),
-        setScreen: x => set(setScreenHandler(x)),
-    })),
+    devtools(
+        set => ({
+            block: false,
+            activeScreenNumber: 0,
+            activeScreenElement: null,
+            previousScreenNumber: null,
+            previousScreenElement: null,
+            screens: [...document.querySelectorAll<HTMLElement>(".screen")],
+            inc: () => set(inc),
+            dec: () => set(dec),
+            setScreen: x => set(setScreenHandler(x)),
+        }),
+        { name: "store" },
+    ),
 );
 
 const screens = [...document.querySelectorAll<HTMLElement>(".screen")];
-let currentActive = screens.find(e => e.getAttribute("active"));
-if (!currentActive) throw Error("нет активного скрина при инициализации приложения");
+const currentActive = screens.find(e => e.getAttribute("active"));
+if (!currentActive) {
+    console.warn("нет активного скрина при инициализации приложения");
+}
 store.setState(state => ({ ...state, activeScreenElement: currentActive }));
 
-const currentActiveNumber = Number(currentActive.dataset.number); //номер активного скрина
+const currentActiveNumber = (currentActive && Number(currentActive.dataset.number)) || 0; //номер активного скрина
 if (isNaN(currentActiveNumber))
     throw Error("data-number активного скрина не проебразуется в число");
 

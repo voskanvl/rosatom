@@ -7,11 +7,12 @@
     top: 5px
     left: 0
     right: 0
-    z-index: 1
+    z-index: 105
     display: flex
     align-items: center
     padding: 0 clamp(5px,100/1920*100vw,100px) 0 clamp(5px,50/1920*100vw,50px)
-    // cursor: url("../../../assets/cursor/black.png") 19 19, default
+    cursor: inherit
+    max-width: 1920px
 
     & > .logo
         background-image: url("../../../assets/logo/logo.png")
@@ -39,16 +40,25 @@
                 a
                     color: #fff
 
-    // &:has(.menu:hover), &:has(.menu-reduced:hover), &:has(.menu:active), &:has(.menu-reduced:active)
-    //     & > .logo
-    //         background-image: url("../../../assets/logo/logo-white.png")
-    //     & > .options
-    //         &
-    //             color: #fff
-    //             img
-    //                 filter: invert(1)
-    //             a
-    //                 color: #fff
+    &  .options__search svg path
+        fill: #000
+        transition: fill $std-trans
+
+    &--white
+        & > .logo
+            background-image: url("../../../assets/logo/logo-white.png")
+        & > .menu
+            color: #fff
+
+        &  .options__international
+            color: #fff
+        &  .options__search svg path
+            fill: #fff
+
+        &   .menu-reduced__caption
+            color: #fff
+            @media (width <= $toggle-menu)
+                color: transparent
 
     @media (width < 1440px)
         padding: 0 1vw 0 1vw
@@ -58,9 +68,21 @@
             flex: 1 0 50%
             height: 40px
 
+    @media (width <= $toggle-menu)
+        & > .options
+            display: none
+        & > .logo
+            flex-basis: 60%
+            order: 1
+            background-position: center
+
 .cristal
     position: absolute
     bottom: 0
     right: 0
-    width: 50%
-    z-index: -1
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: -2
+    object-fit: cover
+    object-position: 100% 100%

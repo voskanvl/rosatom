@@ -1,13 +1,6 @@
 .geonet 
-    .geonet__container
-        .geonet__connector
-            .geonet__connector-left
-            .geonet__connector-right
-        
-        .geonet__popup
-                    include ../../components/geo-popup/geo-popup.pug 
-                    
-        .geonet__title.title.text-masked-element(style="--background: #303031; --circle-color: #115DA1") 
+    .geonet__container.container
+        .geonet__title.title.text-masked-element(style="--background: #fff; --circle-color: #6EABDD;") 
             p ГЕОРАСПРЕДЕЛЕННАЯ 
             p СЕТЬ
         .geonet__data 
@@ -18,18 +11,35 @@
                         li.geonet__data-type
                             .geonet__data-mark(style="background: "+i.color)
                             .geonet__data-name= i.name
-                
+
 
             .geonet__data-right
-                #regions
-                    include ../../../assets/svg/map.svg
-                .geonet__icon-layer 
-                    each i in geo
-                        .geonet__region(data-regionid= i.id, data-region= i.name)
-                            - const grouped = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
-                            
-                            each key in Object.keys(grouped)
-                                .geonet__grouped(data-group= key, data-color= typedc[key].color )
-                                    each j in grouped[key]
-                                        img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
+
+
+    .geonet__map
+        #regions
+            include ../../../assets/svg/map-big2.svg
+        .geonet__icon-layer 
+            each i in geo
+                .geonet__region(data-regionid= i.id, data-region= i.name)
+                    - const groupedByType = i.dc.reduce((acc, e) => {if (!(e.type in acc)) acc[e.type] = [];acc[e.type].push(e);return acc;}, {});
+
+                    each key in Object.keys(groupedByType)
+                        //- p= JSON.stringify(key, null, 2)
+                        .geonet__grouped(data-group= key, data-color= typedc[key].color )
+                            img.geonet__icon(src= typedc[key].icon, data-name= typedc[key].name, data-param= typedc[key].param)
+                            .geonet__topopup 
+                                each j in i.dc.filter(({type})=>type===key)
+                                    .geo__cod
+                                        .geo-popup__dcname= j.name
+                                        .geo-popup__dcparam= j.param
+
+    .geonet__connector
+        .geonet__connector-left
+        .geonet__connector-right
+    .geonet__popup
+        include ../../components/geo-popup/geo-popup.pug 
+            //- each j in grouped[key]
+            //-     //- p= JSON.stringify(j, null, 2)
+            //-     img.geonet__icon(src= typedc[j.type].icon, data-name= j.name, data-param= j.param)
 

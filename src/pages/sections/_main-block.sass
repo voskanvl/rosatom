@@ -1,7 +1,6 @@
+$toggle: 600px
+
 .main-block
-    // margin-top: 15vh
-    // margin-left: calc(200/1920*100%)
-    // margin-right: 100px
     position: absolute
     top: 50%
     left: 50%
@@ -10,18 +9,26 @@
     width: 85%
     justify-content: space-between
     align-items: center
-    // &__leftside
-    //     margin-top: 98px
     &__title
-        font-size: clamp(35px,4.6875vw, 90px)
-        // line-height: 1.5
+        font-size: clamp(25px,4.6875vw, 90px)
         font-weight: bold
-        color: #303031
+        color: var(--background)
         text-transform: uppercase
+
         @media (width <= 475px)
             letter-spacing: -2px
 
         & > p + p
             margin-top: -13px
+            @media (width <= $toggle)
+                margin-top: 0
     &__aside
         display: block
+
+    &__leftside
+        translate: 0 75%
+        @media (width <= $toggle)
+            translate: 0 -25%
+
+    @media (width <= $toggle)
+        flex-direction: column
