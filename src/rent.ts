@@ -7,6 +7,7 @@ import splidesPages from "./ts/components/sliders/splides -pages";
 import SingleRange from "./ts/components/range/singleRange/SingleRange";
 import tabs from "./ts/components/tabs/tabs";
 import MultyRange from "./ts/components/multiRange/MultiRange";
+import Counter from "./components/number-input/number-input";
 
 initHeader();
 splidesPages();
@@ -75,9 +76,8 @@ selects &&
     );
 
 /*
-        const selects = document.querySelectorAll<HTMLElement>(".select");
-    --- OPTIONS ---
-*/
+        --- OPTIONS ---
+        */
 
 const optionsElement = document.querySelector<HTMLElement>(".rent-tools__options");
 const optionsButton = document.querySelector<HTMLButtonElement>(".rent-tools__filter");
@@ -94,4 +94,17 @@ optionsElement &&
     closeoptionsElement.addEventListener("click", () => {
         if (getComputedStyle(optionsElement).position !== "absolute") return;
         optionsElement.style.zIndex = "-1";
+    });
+
+/*
+    --- config ---     
+*/
+const numInputs = document.querySelectorAll<HTMLElement>(".number-input");
+numInputs &&
+    numInputs.length &&
+    numInputs.forEach(num => {
+        const inp = num.querySelector<HTMLInputElement>("input");
+        const plus = num.querySelector<HTMLElement>(".number-input__button--plus");
+        const minus = num.querySelector<HTMLElement>(".number-input__button--minus");
+        inp && plus && minus && new Counter(inp, { plus, minus });
     });

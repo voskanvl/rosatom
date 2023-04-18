@@ -1,0 +1,17 @@
+description:
+  - icon: "../../assets/svg/config/3209242_check_protection_safe_secured_shield_icon 3.svg"
+    caption: SLA — 100%
+  - icon: "../../assets/svg/config/646196_earth_global_globe_internet_network_icon 1.svg"
+    caption: 1 общий публичный адрес
+  - icon: "../../assets/svg/config/8068311_modem_wifi_router_network_internet_icon 2.svg"
+    caption: 1 Гбит/с порт в Интернет
+  - icon: "../../assets/svg/config/2931144_connect_internet_signal_wifi_wireless_icon 2.svg"
+    caption: 1 Гбит/с порт в Приватную сеть
+  - icon: "../../assets/svg/config/4781833_filter_filters_funnel_list_navigation_icon 2.svg"
+    caption: KVM-консоль для удаленного управления
+  - icon: "../../assets/svg/config/1904675_configuration_edit_gear_options_preferences_icon 2.svg"
+    caption: Замена неисправных комплектующих в течение 3 часов
+  - icon: "../../assets/svg/config/4230536_card_credit_payment_icon 1.svg"
+    caption: Установочный платёж
+  - icon: "../../assets/svg/config/172497_lock_icon 2.svg"
+    caption: Базовая защита от DDOS

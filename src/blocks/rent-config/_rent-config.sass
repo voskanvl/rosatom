@@ -1,2 +1,65 @@
 .rent-config
-    display: block
+
+    &__container
+        display: grid
+        grid-template-columns: 60% 38%
+        column-gap: 2%
+
+    &__main-block
+        border: 1px solid #303031
+        border-radius: 15px
+        padding: ph(25) pw(39)
+
+    &__line
+        display: grid
+        grid-template-columns: pw(181) 50% pw(140) auto
+        place-items: center start
+        grid-template-rows: 55px
+
+        .select
+            width: 100%
+            position: absolute
+            top: 0
+            left: 0
+
+    &__select
+        position: relative
+        width: 100%
+        height: 100%
+
+    &__title
+        font-weight: 400
+        font-size: 25px
+
+    &__list
+        display: flex
+        flex-direction: column
+        row-gap: ph(16)
+        margin-top: ph(20)
+        list-style: none
+        padding-left: 0
+        margin-bottom: ph(35)
+
+    &__list-item
+        display: flex
+        align-items: center
+        color: #303031
+        font-size: 18px
+        column-gap: 10px
+        img
+            width: 25px
+            aspect-ratio: 1
+
+    &__button
+        background: #30A842
+        display: grid
+        place-items: center
+        border: none
+        color: #fff
+        border-radius: 33px
+        width: pw(135)
+        height: 29px
+        font-size: 16px
+
+        span
+            padding-right: 1em

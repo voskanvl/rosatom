@@ -1,2 +1,24 @@
+include ../../components/select/select.pug
+include ../../components/number-input/number-input.pug
 .rent-config
     .rent-config__container
+        .rent-config__main-block 
+            .rent-config__line 
+                span Процессор
+                .rent-config__select
+                    +select("cpu",rent.sections[4].list[0].title,rent.sections[4].list)
+                .rent-config__number 
+                    +number-input()
+
+
+        .rent-config__description 
+            .rent-config__title В цену входит
+            ul.rent-config__list 
+                each i in description
+                    li.rent-config__list-item 
+                        img(src= i.icon, alt="")
+                        span= i.caption
+            button.rent-config__button 
+                div
+                    span Заказать
+                    img(src="../../../assets/svg/arrow-right.svg" alt="")
