@@ -10,8 +10,9 @@ mixin select(name, title, options)
             ul.select__list 
                 each option in options
                     if (typeof option === "object")
-                        - const some = Object.entries(option)
+                        - const datable = Object.fromEntries(Object.entries(option).map(([key,val])=>["data-"+key,val]))
                         //- li(data-vendor= option.vendor)= option.title 
-                        li&attributes({["data-"+some[0][0]]:some[0][1]})= some[1][1]
+                        //- li&attributes({["data-"+some[0][0]]:some[0][1]})= some[1][1]
+                        li&attributes(datable)= option.title
                     else
                         li= option
