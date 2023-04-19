@@ -9,23 +9,36 @@
         border: 1px solid #303031
         border-radius: 15px
         padding: ph(25) pw(39)
+        display: flex
+        flex-direction: column
+        row-gap: ph(40)
 
     &__line
         display: grid
         grid-template-columns: pw(181) 50% pw(140) auto
         place-items: center start
         grid-template-rows: 55px
+        column-gap: 10px
 
         .select
             width: 100%
             position: absolute
             top: 0
             left: 0
+            z-index: 0
+            &:hover
+                z-index: 2
 
     &__select
         position: relative
         width: 100%
         height: 100%
+
+        .select
+            background: #ECF0F3
+
+    &__output
+        place-self: center
 
     &__title
         font-weight: 400

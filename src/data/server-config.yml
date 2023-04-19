@@ -1,0 +1,65 @@
+serverConfig:
+  cpu:
+    name: Процессор
+    list:
+        - vendor: Intel
+          title: Intel® Core™ i9-13900KS
+          price: 13000
+        - vendor: Intel
+          title: Intel® Core™ i7-1355
+          price: 12000
+        - vendor: Intel
+          title: Intel® Core™ i5-1334
+          price: 11000
+        - vendor: AMD
+          title: AMD EPYC™ 9004 SERIES
+          price: 12000
+        - vendor: AMD
+          title: AMD EPYC™ 7003 SERIES
+          price: 11000
+        - vendor: AMD
+          title: AMD EPYC™ 7002 SERIES
+          price: 10000
+  ram:
+    name: Оперативная память
+    list:
+      - title: 8GB DDR4 ECC
+        price: 2000
+      - title: 16GB DDR4 ECC
+        price: 3500
+      - title: 8GB DDR4 
+        price: 1500
+      - title: 16GB DDR4 
+        price: 2000
+
+  mother:
+    name: Материнская плата
+    list:
+      - title: X11SSL-F
+        price: 10000
+
+  tower:
+    name: Корпус
+    list:
+      - title: 813MTQ-350CB (1U)
+        price: 10000
+
+  disk:
+    name: Дисковый накопитель
+    list: 
+      - title: SEAGATE 3TB
+        price: 10000
+      - title: TOSHIBA 3TB
+        price: 10000
+      - title: WD 3TB
+        price: 10000
+
+  gpu:
+    name: PCI-E карта
+    list:
+      - title: Без PCI-E карты
+        price: 0
+      - title: NVIDEA ...
+        price: 50000
+      - title: AMD ...
+        price: 50000

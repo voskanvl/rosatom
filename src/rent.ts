@@ -70,8 +70,16 @@ selects &&
             if (target.nodeName !== "LI") return;
             const title = select.querySelector<HTMLElement>(".select__title");
             const dataInput = select.querySelector<HTMLInputElement>("input[type='text']");
+            if (dataInput && dataInput.value === target.innerText) return;
             title && dataInput && (dataInput.value = title.innerText = target.innerText);
-            dataInput && dataInput.dispatchEvent(new Event("change"));
+            dataInput && dataInput.dispatchEvent(new Event("change", { bubbles: true }));
+            dataInput &&
+                dataInput.dispatchEvent(
+                    new CustomEvent("changeprice", {
+                        bubbles: true,
+                        detail: { value: target.dataset.price },
+                    }),
+                );
         });
 
         select.addEventListener("mouseleave", () => {
@@ -113,5 +121,26 @@ numInputs &&
         const inp = num.querySelector<HTMLInputElement>("input");
         const plus = num.querySelector<HTMLElement>(".number-input__button--plus");
         const minus = num.querySelector<HTMLElement>(".number-input__button--minus");
-        inp && plus && minus && new Counter(inp, { plus, minus });
+        const counter = inp && plus && minus && new Counter(inp, { plus, minus });
+
+        const output = num.parentElement?.nextElementSibling as HTMLElement;
+        counter &&
+            output &&
+            counter.subscribe((val: number) => {
+                const price = +(output.dataset.price || 0);
+                output.innerText = price * val + "";
+                num.parentElement && (num.parentElement.dataset.value = val + "");
+            });
+    });
+
+const confSelects = document.querySelectorAll<HTMLElement>(".rent-config__select");
+confSelects &&
+    confSelects.forEach(el => {
+        el.addEventListener("changeprice", (event: Event) => {
+            const { value: price } = (event as CustomEvent).detail;
+            const counter = el.nextElementSibling as HTMLInputElement;
+            const output = counter.nextElementSibling as HTMLElement;
+            output && counter && (output.innerText = +counter.dataset.value * +price + "");
+            output.dataset.price = price;
+        });
     });

@@ -3,13 +3,14 @@ include ../../components/number-input/number-input.pug
 .rent-config
     .rent-config__container
         .rent-config__main-block 
-            .rent-config__line 
-                span Процессор
-                .rent-config__select
-                    +select("cpu",rent.sections[4].list[0].title,rent.sections[4].list)
-                .rent-config__number 
-                    +number-input()
-
+            each i in Object.keys(serverConfig)
+                .rent-config__line 
+                    span= serverConfig[i].name
+                    .rent-config__select
+                        +select(i,serverConfig[i].list[0].title,serverConfig[i].list)
+                    .rent-config__number(data-value="1") 
+                        +number-input()
+                    .rent-config__output(data-price=  serverConfig[i].list[0].price)= serverConfig[i].list[0].price
 
         .rent-config__description 
             .rent-config__title В цену входит

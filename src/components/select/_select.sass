@@ -14,9 +14,14 @@
         width: 100%
         background: #7777
         opacity: 0
-        z-index: 2
+        z-index: 0
+
+        &:hover
+            & ~ .select__list
+                z-index: 2
 
         &:checked
+
             & ~ .select__list
                 max-height: 30vh
                 margin-top: 1em
@@ -29,7 +34,7 @@
     &__list
         max-height: 0
         overflow: hidden
-        transition: max-height $std-trans
+        transition: max-height $std-trans, z-index 0 $std-trans
 
     &__header
         display: flex
