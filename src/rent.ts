@@ -64,7 +64,7 @@ vendors &&
 */
 const selects = document.querySelectorAll<HTMLElement>(".select");
 selects &&
-    selects.forEach(select =>
+    selects.forEach(select => {
         select.addEventListener("click", (event: Event) => {
             const target = event.target as HTMLElement;
             if (target.nodeName !== "LI") return;
@@ -72,11 +72,18 @@ selects &&
             const dataInput = select.querySelector<HTMLInputElement>("input[type='text']");
             title && dataInput && (dataInput.value = title.innerText = target.innerText);
             dataInput && dataInput.dispatchEvent(new Event("change"));
-        }),
-    );
+        });
+
+        select.addEventListener("mouseleave", () => {
+            const dataInput = select.querySelector<HTMLInputElement>("input[name='open']");
+            dataInput && (dataInput.checked = false);
+            select.style.zIndex = "2";
+            setTimeout(() => (select.style.zIndex = ""), 600);
+        });
+    });
 
 /*
-        --- OPTIONS ---
+        --- OPTIONS BLOCK in RENT PAGE---
         */
 
 const optionsElement = document.querySelector<HTMLElement>(".rent-tools__options");
