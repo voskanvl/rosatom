@@ -2,8 +2,11 @@
 
     &__container
         display: grid
-        grid-template-columns: 60% 38%
+        grid-template-columns: 70% auto
         column-gap: 2%
+        +mq1024
+            grid-template-columns: 100%
+            row-gap: ph(20)
 
     &__main-block
         border: 1px solid #303031
@@ -12,6 +15,8 @@
         display: flex
         flex-direction: column
         row-gap: ph(40)
+        +mq1024
+            row-gap: ph(10)
 
     &__line
         display: grid
@@ -28,6 +33,17 @@
             z-index: 0
             &:hover
                 z-index: 2
+
+        +mq1440
+            grid-template-columns: 30% auto
+            row-gap: 10px
+        +mq768
+            grid-template-columns: 100%
+            grid-template-rows: repeat(4, 55px)
+            row-gap: 1vh
+            border-top: 1px solid #30303180
+            & > *
+                place-self: center
 
     &__select
         position: relative
@@ -53,6 +69,15 @@
         padding-left: 0
         margin-bottom: ph(35)
 
+        +mq1024
+            flex-direction: row
+            flex-wrap: wrap
+            & > *
+                flex-basis: 32%
+        +mq768
+            & > *
+                flex-basis: 100%
+
     &__list-item
         display: flex
         align-items: center
@@ -76,3 +101,8 @@
 
         span
             padding-right: 1em
+
+    &__output
+        +mq1440
+            font-weight: 700
+            font-size: 22px
