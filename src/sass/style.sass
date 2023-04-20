@@ -69,3 +69,34 @@ button
     box-shadow: 18px 18px 30px #D1D9E6, -18px -18px 30px #FFFFFF
     border-radius: 10px
     overflow: hidden
+
+.hint
+    position: absolute
+    bottom: 0px
+    right: 0px
+    width: fit-content
+    max-width: 30%
+    opacity: 0
+    transition: opacity $std-trans
+
+    & > .convex
+        padding: 1em
+
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: #0002
+    backdrop-filter: blur(6px)
+    display: grid
+    place-items: center
+
+    &__close
+        background: url("../../assets/svg/x-square.svg") no-repeat
+        width: 46px
+        height: 46px
+        position: absolute
+        top: -1em
+        right: -1em
