@@ -94,9 +94,3 @@ section.about(style="background:#ECF0F3;")
     each i in cloud
         .cloud-item(style="margin-bottom: 17px")
             +range(i.val, i.min, i.max, i.label, i.unit)
-
-    +tabs(tabs) 
-        .tabs__page(data-id="501" active="active")
-            | PAGE 1
-        .tabs__page(data-id="502")
-            | PAGE 2

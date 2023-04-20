@@ -1,0 +1,11 @@
+extends ./template.pug
+include ../../components/partners-form/partners-form.pug
+block main 
+    include ../../components/searchPopup/searchPopup.pug
+    include ../../components/main-header/main-header.pug
+
+    //- section.screen(data-number=0, active)
+    block inset
+
+block footer 
+    include ../layouts/footer.pug

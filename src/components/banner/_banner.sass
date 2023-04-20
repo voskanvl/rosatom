@@ -1,0 +1,35 @@
+.banner
+    height: max(420px,33vw)
+    position: relative
+    display: grid
+    grid-template-columns: repeat(2,49%)
+    column-gap: 2%
+    place-items: center start
+
+    +mq1024
+        grid-template-columns: 100%
+        grid-template-rows: auto 0
+        margin-top: 100px
+
+    &--left
+        display: flex
+        flex-direction: column
+        row-gap: ph(44)
+        font-size: clamp(16px,24 / 1024 * 100vw,24px)
+
+    &--right
+        img
+            place-self: center end
+            position: absolute
+            top: 0
+            right: 0
+            z-index: -1
+            height: 100%
+            aspect-ratio: 1
+
+            +mq1024
+                filter: contrast(0.2) brightness(1.8)
+
+            +mq425
+                width: 100%
+                height: unset

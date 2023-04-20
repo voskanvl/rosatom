@@ -1,0 +1,56 @@
+.rent
+    &__title
+        font-weight: 700
+        margin-bottom: ph(91)
+    &__container.container
+        background: #ECF0F3
+        height: max-content
+        width: unset
+    &__actions
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr))
+        gap: pw(22)
+        margin-bottom: ph(160)
+
+        +mq1024
+            row-gap: ph(50)
+
+        +mq580
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+
+        .convex
+            &:nth-child(2)
+                background: url("../../assets/images/honeycombs.png") no-repeat
+                background-position: 100% 0
+
+    &__action
+        margin: ph(138) pw(22) ph(25)
+
+    &__action-title
+        border: 1px solid #115DA1
+        border-radius: 33px
+        padding: 6px 18px
+        width: 108px
+        margin-bottom: 19px
+
+    &__action-list
+        padding-left: 1em
+        & > li::marker
+            content: "- "
+
+    &__include
+        list-style: none
+        padding-left: 0
+
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(292px,1fr))
+
+        row-gap: ph(60)
+        column-gap: pw(20)
+
+        +mq1024
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr))
+
+        +mq580
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr))
+            row-gap: ph(20)
