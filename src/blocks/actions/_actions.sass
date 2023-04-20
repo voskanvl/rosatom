@@ -1,0 +1,36 @@
+.actions-block
+
+    &__title
+        margin-bottom: ph(47)
+
+    &__actions
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+        gap: pw(22)
+        margin-bottom: ph(160)
+
+        +mq1024
+            row-gap: ph(50)
+
+            +mq580
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+
+        .convex
+            &:nth-child(2)
+                background: #ECF0F3 url("../../assets/images/honeycombs.png") no-repeat
+                background-position: 100% 0
+
+    &__action
+        margin: ph(138) pw(22) ph(25)
+
+    &__action-title
+        border: 1px solid #115DA1
+        border-radius: 33px
+        padding: 6px 18px
+        width: 108px
+        margin-bottom: 19px
+
+    &__action-list
+        padding-left: 1em
+        & > li::marker
+            content: "- "

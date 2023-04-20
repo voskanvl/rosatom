@@ -3,6 +3,7 @@ include ../../components/service-card/service-card.pug
 include ../../components/range/range.pug
 include ../../components/tabs/tabs.pug
 include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../blocks/actions/actions.pug
 
 .rent 
     .rent__container.container
@@ -20,15 +21,17 @@ include ../../components/bread-crumbs/bread-crumbs.pug
             .tabs__page(data-id="502")
                 include ../../blocks/rent-config/rent-config.pug
 
-        .rent__title.title.text-masked-element(style="--background: #303031") АКЦИИ
-        .rent__actions
-            each i in actions 
-                .convex
-                    .rent__action
-                        .rent__action-title= i.name 
-                        ul.rent__action-list
-                            each j in i.list 
-                                li=j
+            +actions-block(actions)
+        //- .rent__title.title.text-masked-element(style="--background: #303031") АКЦИИ
+        //- .rent__actions
+        //-     each i in actions 
+        //-         .convex
+        //-             .rent__action
+        //-                 .rent__action-title= i.name 
+        //-                 ul.rent__action-list
+        //-                     each j in i.list 
+        //-                         li=j
+
 
         .rent__title.title.text-masked-element(style="--background: #303031") ЧТО ВХОДИТ В СТОИМОСТЬ
         ul.rent__include 

@@ -1,0 +1,12 @@
+
+mixin actions-block(arr)
+    .actions-block
+        .actions-block__title.title.text-masked-element(style="--background: #303031") АКЦИИ
+        .actions-block__actions
+            each i in arr 
+                .convex
+                    .actions-block__action
+                        .actions-block__action-title= i.name 
+                        ul.actions-block__action-list
+                            each j in i.list 
+                                li=j

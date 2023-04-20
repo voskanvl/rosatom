@@ -16,11 +16,7 @@ section.about(style="background:#ECF0F3;")
 
     .about__block#about-advantages
         .about__container
-            h2.title Преимущества
-            .about__grid 
-                each i in advantages
-                    .convex
-                        +service-card(i)
+            include ../../blocks/advantages/advantages.pug
 
 
 

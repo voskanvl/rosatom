@@ -1,0 +1,14 @@
+services:
+  - img: "../../assets/svg/services/1.svg"
+    title: РАЗМЕЩЕНИЕ ОБОРУДОВАНИЯ
+    tiled: true
+    rotated: true
+  - img: "../../assets/svg/services/2.svg"
+    title: АРЕНДА СЕРВЕРНОГО ОБОРУДОВАНИЯ
+  - img: "../../assets/svg/services/3.svg"
+    title: ОБЛАЧНАЯ ИНФРАСТРУКТУРА
+    tiled: true
+  - img: "../../assets/svg/services/4.svg"
+    title: ТЕЛЕКОММУНИКАЦИОННЫЕ УСЛУГИ 
+  - img: "../../assets/svg/services/5.svg"
+    title: ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ

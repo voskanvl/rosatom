@@ -1,15 +1,9 @@
-import "./sass/style.sass";
-import "@splidejs/splide/css";
-
-import initHeader from "./ts/initHeader";
-
 import splidesPages from "./ts/components/sliders/splides -pages";
 import SingleRange from "./ts/components/range/singleRange/SingleRange";
 import tabs from "./ts/components/tabs/tabs";
 import MultyRange from "./ts/components/multiRange/MultiRange";
 import Counter from "./components/number-input/number-input";
 
-initHeader();
 splidesPages();
 
 const ranges = document.querySelectorAll<HTMLElement>(".range__input");
