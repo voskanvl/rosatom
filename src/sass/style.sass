@@ -92,11 +92,67 @@ button
     backdrop-filter: blur(6px)
     display: grid
     place-items: center
+    z-index: 2
 
     &__close
         background: url("../../assets/svg/x-square.svg") no-repeat
         width: 46px
         height: 46px
         position: absolute
-        top: -1em
-        right: -1em
+        top: -40px
+        right: -40px
+
+.feedback
+
+    &__body
+        position: relative
+        background: linear-gradient(202.44deg, #30A842 0%, #173D7A 103.26%)
+        border-radius: 10px
+        width: min(494px, 96vw)
+        height: 76vh
+        color: #fff
+        padding: ph(49) pw(39) ph(56)
+
+    &__title
+        font-weight: 700
+        font-size: clamp(20px, 30 / 1024 * 100vw,30px)
+        text-transform: uppercase
+        margin-bottom: ph(17)
+
+    &__caption
+        font-weight: 350
+        font-size: clamp(14px,18 * 1024 * 100vw,18px)
+        margin-bottom: ph(30)
+
+    &__input
+        display: block
+        width: 100%
+        background: rgba(255, 255, 255, 0.1)
+        border: 1px solid #FFFFFF
+        box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+        backdrop-filter: blur(24px)
+        border-radius: 7px
+        padding: 11px 36px
+        font-size: 16px
+        margin-bottom: ph(14)
+
+        &::placeholder
+            color: #fff
+
+    &__agree
+        display: flex
+        align-items: flex-start
+        column-gap: pw(22)
+        margin-bottom: ph(9)
+
+        & > input
+            margin-top: 10px
+
+    &__submit
+        display: block
+        background: #30A842
+        border-radius: 33px
+        border: 0
+        +fz(18,1024,25)
+        padding: 10px 30px
+        margin: 0 auto

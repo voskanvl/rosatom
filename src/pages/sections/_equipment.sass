@@ -1,0 +1,79 @@
+.equipment
+
+    &__container.container
+        background: #ECF0F3
+        height: unset
+
+    &__title
+        margin-top: 123px
+
+    .banner
+        margin-bottom: 173px
+        img
+            aspect-ratio: unset
+        +mq1024
+            margin-top: 0
+            margin-bottom: 50px
+
+    &__list
+        display: flex
+        flex-direction: column
+        row-gap: ph(70)
+        margin-bottom: ph(154)
+
+    .convex
+        display: grid
+        place-items: center
+        padding: ph(55) pw(129)
+
+    &__item
+        width: 100%
+        display: grid
+        grid-template-columns: 70% auto
+        position: relative
+
+    &__row
+        display: flex
+        align-items: center
+        column-gap: pw(11)
+        margin-top: 6px
+
+        & > img
+            &:hover
+                & + .hint
+                    opacity: 1
+
+    &__item-left
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        column-gap: pw(26)
+
+    &__item-right
+        display: grid
+        place-items: center end
+
+    &__item-button
+        border-radius: 33px
+        border: 1px solid #303031
+        padding: 10px 30px
+        font-size: clamp(18px,25 / 1024 * 100vw,25px)
+
+        &--green
+            background: #30A842
+            border-color: #30A842
+            color: #fff
+
+    .select__list
+        list-style: disc
+        padding-left: 2em
+
+        & > li
+            pointer-events: none
+
+    &__item-title
+        font-size: clamp(18px,25 / 1024 * 100vw,25px)
+
+    &__item-left-right
+        display: flex
+        flex-direction: column
+        row-gap: ph(45)

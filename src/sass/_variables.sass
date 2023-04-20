@@ -70,3 +70,6 @@ $index: calc(1vw + 1vh)
 =mq425()
     @media (width <= 425px)
         @content
+
+=fz($to,$through,$from)
+    font-size: clamp(#{$to}px,#{$from} / #{$through} * 100vw ,#{$from}px)

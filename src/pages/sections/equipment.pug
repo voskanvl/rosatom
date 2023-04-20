@@ -1,0 +1,57 @@
+include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../components/banner/banner.pug
+include ../../components/select/select.pug
+include ../../blocks/actions/actions.pug
+
+
+.equipment 
+    .equipment__container.container
+
+        +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Размещение оборудования", href:"#"}])
+
+
+        +banner("../../../assets/svg/equipment.svg")
+            .equipment__title.title.text-masked-element(style="--background: #303031; ")
+                p Размещение
+                p оборудования
+            div
+                p Давно выяснено, что при оценке дизайна и 
+                p композиции читаемый текст мешает сосредоточиться. 
+                p Lorem Ipsum используют потому, что тот обеспечивает
+                p более или менее стандартное 
+
+
+            button.rent-config__button 
+                div
+                    span Заказать услугу
+                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+        .equipment__list
+            each i in equipment
+                .convex
+                    .equipment__item
+                        .equipment__item-left
+                            div(style={background: "#D9D9D9",width: "100%"})
+                            div.equipment__item-left-right 
+                                .equipment__item-title= i.caption
+                                p А ещё стремящиеся вытеснить традиционное производство, нанотехнологии будут рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок.
+                                +select(null, i.title, i.list)
+
+                        .equipment__item-right
+                            div
+                                button.equipment__item-button.equipment__item-button--green 
+                                    div
+                                        span Заказать услугу
+                                .equipment__row
+                                    button.equipment__item-button  Подробнее
+                                    img(src="../../../assets/svg/question.svg" alt="question")
+                                    .hint 
+                                        .convex 
+                                            p А ещё стремящиеся вытеснить традиционное производство, нанотехнологии будут рассмотрены 
+
+        include ../../blocks/colocation/colocation.pug
+
+
+
+
+

@@ -30,14 +30,7 @@ include ../../components/banner/banner.pug
                         img(src="../../../assets/svg/arrow-right.svg" alt="")
 
 
-        .rent__title.title.text-masked-element(style="--background: #303031") 
-            p ЧТО ВКЛЮЧАЕТ В СЕБЯ УСЛУГА 
-            p COLOCATION
-        ul.rent__include 
-            each i in description
-                li
-                    img(src= i.icon, alt="")
-                    p= i.caption
+        include ../../blocks/colocation/colocation.pug
 
 
 
