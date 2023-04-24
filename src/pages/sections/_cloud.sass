@@ -1,0 +1,46 @@
+.cloud
+
+    &__container
+        @extend .equipment__container
+
+    &__order
+        display: flex
+        align-items: center
+        column-gap: pw(56)
+
+    &__button
+        font-weight: 350
+        +fz(18,1024,25)
+        padding: 10px 30px
+        background: #30A842
+        border-radius: 33px
+        border: none
+        color: #fff
+        display: flex
+        column-gap: pw(20)
+        align-items: center
+
+    &__constructor
+        padding: ph(40) pw(40)
+        margin-bottom: ph(181)
+
+        & > div:first-child
+            margin-bottom: 17px
+            +fz(20,1024,25)
+
+    &__constructor-inner
+        display: grid
+        grid-template-columns: 85% auto
+
+        +mq1024
+            grid-template-columns: 100%
+            row-gap: ph(30)
+
+    &__soft
+        display: grid
+        grid-template-columns: repeat(2,1fr)
+        row-gap: 7px
+        width: 35%
+
+h3.cloud__title.title.text-masked-element
+    margin: ph(136) 0 ph(39)

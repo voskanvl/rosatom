@@ -1,0 +1,70 @@
+include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../components/banner/banner.pug
+include ../../components/select/select.pug
+include ../../blocks/actions/actions.pug
+include ../../components/range/range.pug
+include ../../components/check/check.pug
+
+
+.cloud 
+    .cloud__container.container
+
+        +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Облачная инфраструктура", href:"#"}])
+
+
+        +banner("../../../assets/svg/cloud.svg")
+            .cloud__title.title.text-masked-element(style="--background: #303031; ")
+                p ОБЛАЧНАЯ
+                p ИНФРАСТРУКТУРА
+            div
+                p Давно выяснено, что при оценке дизайна и 
+                p композиции читаемый текст мешает сосредоточиться. 
+                p Lorem Ipsum используют потому, что тот обеспечивает
+                p более или менее стандартное 
+
+            .cloud__order  
+                div.cloud__cloud
+                    p Цена от:
+                        strong 15 000 ₽
+                    p ЗА 1 МЕТР В ГОД
+                button.cloud__button 
+                    span Заказать услугу
+                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+
+
+        h3.cloud__title.title.text-masked-element(style="--background: #303031;")
+            p СПРОЕКТИРУЙТЕ
+            p СОБСТВЕННОЕ ОБЛАКО
+        .convex.cloud__constructor
+            h4(style="margin-bottom: 17px; ") Конструктор облака
+            .cloud__constructor-inner
+                .cloud__constructor-left
+                    each i in cloud
+                        .cloud-item(style="margin-bottom: 17px")
+                            +range(i.val, i.min, i.max, i.label, i.unit)
+                    hr
+
+                    h4(style="margin: 17px 0; ") Какое дополнительное ПО необходимо:
+                    .cloud__soft
+                        +check("soft", "Офисный пакет")
+                        +check("soft", "Рендеринг")
+                        +check("soft", "Графический дизайн")
+                        +check("soft", "3-д визуализация")
+
+
+                .cloud__constructor-right
+                    button.rent-config__button 
+                        div
+                            span Заказать
+                            img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+
+
+
+        include ../../blocks/colocation/colocation.pug
+
+
+
+
+
