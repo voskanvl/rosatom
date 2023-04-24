@@ -66,8 +66,13 @@ export default function feedback({
 
     const submitEl = createInput("", "submit", "feedback__submit", "submit");
     submitEl.value = "Записаться";
+    submitEl.disabled = true;
 
     element.append(name, email, phone, textarea, agree, submitEl);
+
+    check.addEventListener("click", () => {
+        submitEl.disabled = !check.checked;
+    });
 
     submitEl.addEventListener("click", (event: Event) => {
         event.preventDefault();
@@ -79,6 +84,11 @@ export default function feedback({
             const fail = error as ZodError;
             console.log(fail);
         }
+
+        fetch("/mail.php", {
+            method: "POST",
+            body: new FormData(element),
+        });
     });
 
     return element;
