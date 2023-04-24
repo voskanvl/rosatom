@@ -1,0 +1,60 @@
+.docs-convex
+    display: grid
+    grid-template-columns: 70% auto
+    margin-bottom: ph(70)
+
+    &__left
+        display: grid
+        grid-template-columns: 30% auto
+        width: 100%
+        column-gap: pw(98)
+
+        & > .splide
+            background: #ECF0F3
+            box-shadow: 18px 18px 30px #D1D9E6, -18px -18px 30px #FFFFFF
+            border-radius: 10px
+
+            & img
+                width: 100%
+
+    &__right
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+
+    &__title, &__data-label
+        background: #30A842
+        border: 1px solid #30A842
+        border-radius: 33px
+        color: #fff
+        width: max-content
+        +fz(12,1024,20)
+        padding: 10px 30px
+
+    &__title
+        margin-bottom: ph(36)
+
+    &__data-label
+        background: unset
+        border: 1px solid #30A842
+        color: #303031
+        margin-bottom: ph(18)
+
+    &__slider-controls
+        display: flex
+        column-gap: pw(17)
+
+    &__slider-control
+        border-radius: 50%
+        border: 1px solid #30A842
+        width: 49px
+        aspect-ratio: 1
+        display: grid
+        place-items: center
+
+        & > svg > path
+            fill: #30A842 !important
+
+        &--left
+            rotate: 180deg

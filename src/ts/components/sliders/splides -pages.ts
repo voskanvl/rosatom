@@ -12,10 +12,10 @@ export default function splidesPages() {
         },
         // controls: {
         //     left: document.querySelector<HTMLElement>(
-        //         ".catalog__slider .slider-controls__button.slider-controls__button--left",
+        //         "#s1 .docs-convex__slider-control.docs-convex__slider-control--left",
         //     )!,
         //     right: document.querySelector<HTMLElement>(
-        //         ".catalog__slider .slider-controls__button.slider-controls__button--right",
+        //         "#s1 .docs-convex__slider-control.docs-convex__slider-control--right",
         //     )!,
         // },
     };
