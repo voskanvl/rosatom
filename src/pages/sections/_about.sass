@@ -80,6 +80,15 @@
                 grid-template-columns: 100%
                 row-gap: 2em
 
+            input, textarea
+                background: #ECF0F3
+                box-shadow: 10px 10px 20px #D1D9E6, -10px -10px 20px #FFFFFF
+
+            [type="submit"]
+                border: none
+                background: #30A842
+                color: #fff
+
     &__cell
         display: grid
         place-items: center start
@@ -95,6 +104,16 @@
         background: #6EABDD
         color: #fff
         height: 100%
+        border-radius: 10px
+        padding: 1em
+
+        img
+            width: 80%
+            aspect-ratio: 1
+            margin: 0 auto
+            clip-path: path("M111.248 19.4695C95.6556 5.20954 81.8549 -0.881879 60.77 0.102307C44.1142 0.879757 33.2581 4.25389 20.9401 15.517C9.58953 25.8956 5.47907 35.2111 2.40536 50.299C0.248681 60.8854 2.67615 67.165 2.40536 77.9664C2.06438 91.5672 -1.14374 104.843 0.433577 112.748C1.99237 120.561 5.94157 124.52 12.2643 129.349C20.5454 135.673 63.6973 130.638 90.3467 114.725C112.445 101.529 133.465 91.8496 134.909 66.1089C136.054 45.708 126.307 33.2426 111.248 19.4695Z")
+            object-fit: cover
+            object-position: 100% 0
 
     #about-statement
         position: relative
@@ -194,9 +213,13 @@
                 text-transform: uppercase
 
         .partners-form__form.partners-form__form
-            >:is(input, textarea)
+            >:is(input, textarea, [type="submit"])
                 border: 1px solid #fff
                 color: #fff
 
                 &::placeholder
                     color: #fff
+
+            [type="submit"]
+                background: #fff
+                color: #30A842

@@ -61,6 +61,7 @@ section.about(style="background:#ECF0F3;")
                 +splide("talking", clients)
                     .about__3d
                         .about__blue
+                            img(src="https://picsum.photos/200")
                             p= val.name
                             p= val.comment 
 
@@ -83,10 +84,3 @@ section.about(style="background:#ECF0F3;")
                         a.about__phone(href="tel:81234567890") 
                             h3 8 123 456 78 90 
                 +partners-form("")
-
-
-
-    div Конструктор облака
-    each i in cloud
-        .cloud-item(style="margin-bottom: 17px")
-            +range(i.val, i.min, i.max, i.label, i.unit)
