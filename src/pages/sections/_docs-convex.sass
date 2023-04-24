@@ -3,16 +3,30 @@
     grid-template-columns: 70% auto
     margin-bottom: ph(70)
 
+    +mq1024
+        grid-template-columns: 100%
+        row-gap: ph(30)
+
     &__left
         display: grid
         grid-template-columns: 30% auto
         width: 100%
         column-gap: pw(98)
 
+        +mq768
+            grid-template-columns: 100%
+            row-gap: ph(30)
+
+            & > .splide
+                grid-area: 2 / 1
+
         & > .splide
             background: #ECF0F3
             box-shadow: 18px 18px 30px #D1D9E6, -18px -18px 30px #FFFFFF
             border-radius: 10px
+            display: grid
+            place-items: center
+            // max-height: 20vh
 
             & img
                 width: 100%
@@ -22,6 +36,27 @@
         flex-direction: column
         justify-content: space-between
         height: 100%
+
+        +mq1024
+            // flex-direction: row-reverse
+            // justify-content: space-between
+            display: grid
+            grid-template-columns: 30% auto
+            column-gap: pw(98)
+            width: 100%
+            place-items: start center
+
+            & > div:last-child
+                grid-area: 1 / 1
+
+        +mq425
+            grid-template-columns: 100%
+            row-gap: 10px
+
+            & > div:first-child
+                display: flex
+                flex-direction: column
+                align-items: center
 
     &__title, &__data-label
         background: #30A842
