@@ -1,6 +1,28 @@
 import { SCREEN_NUMBER_TO_CHANGE } from "../../config";
 import store from "../../store";
 
+export const setBlackCursor = () => {
+    document.body.style.cursor = "url('../../assets/cursor/mini-black.svg'), none";
+    const curR = document.querySelector<HTMLElement>(".cursor__round");
+    curR && (curR.style.borderColor = "#303031");
+};
+
+export const handlerStore = (cursorRound: HTMLElement, x: boolean) => {
+    x
+        ? (function () {
+              cursorRound.style.setProperty("--color", "#fff");
+              document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), none";
+          })()
+        : (function () {
+              cursorRound.style.setProperty("--color", "#303031");
+              document.body.style.cursor = SCREEN_NUMBER_TO_CHANGE.some(
+                  e => e === store.store.getState().activeScreenNumber,
+              )
+                  ? "url('../../assets/cursor/mini-white.svg'), none"
+                  : "url('../../assets/cursor/mini-black.svg'), none";
+          })();
+};
+
 export default function cursor() {
     // initCursor();
 
@@ -22,24 +44,8 @@ export default function cursor() {
         cursorRound.style.translate = "";
     });
 
-    const handlerStore = (x: boolean) => {
-        x
-            ? (function () {
-                  cursorRound.style.setProperty("--color", "#fff");
-                  document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), none";
-              })()
-            : (function () {
-                  cursorRound.style.setProperty("--color", "#303031");
-                  document.body.style.cursor = SCREEN_NUMBER_TO_CHANGE.some(
-                      e => e === store.store.getState().activeScreenNumber,
-                  )
-                      ? "url('../../assets/cursor/mini-white.svg'), none"
-                      : "url('../../assets/cursor/mini-black.svg'), none";
-              })();
-    };
-
     //---   init cursor ---
-    handlerStore(true);
+    handlerStore(cursorRound, true);
 
     store.store.subscribe(({ activeScreenNumber }) => {
         handlerStore(SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber));
