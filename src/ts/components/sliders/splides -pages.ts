@@ -10,14 +10,14 @@ export default function splidesPages() {
             pagination: false,
             focus: "center",
         },
-        // controls: {
-        //     left: document.querySelector<HTMLElement>(
-        //         "#s1 .docs-convex__slider-control.docs-convex__slider-control--left",
-        //     )!,
-        //     right: document.querySelector<HTMLElement>(
-        //         "#s1 .docs-convex__slider-control.docs-convex__slider-control--right",
-        //     )!,
-        // },
+        controls: {
+            left: document.querySelector<HTMLElement>(
+                ".about__slider-control.about__slider-control--left",
+            )!,
+            right: document.querySelector<HTMLElement>(
+                ".about__slider-control.about__slider-control--right",
+            )!,
+        },
     };
 
     return new SlideClass({

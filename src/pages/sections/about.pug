@@ -58,12 +58,19 @@ section.about(style="background:#ECF0F3;")
         .about__container
             h2.title Клиенты говорят о нас
             .about__split
-                +splide("talking", clients)
-                    .about__3d
-                        .about__blue
-                            img(src="https://picsum.photos/200")
-                            p= val.name
-                            p= val.comment 
+                div
+                    +splide("talking", clients)
+                        .about__3d
+                            .about__blue
+                                img(src="https://picsum.photos/200")
+                                p.about__blue-name= val.name
+                                p= val.comment 
+                    .about__slider-controls
+                        .about__slider-control.about__slider-control--left
+                            include ../../../assets/svg/arrow-right.svg
+                        .about__slider-control.about__slider-control--right
+                            include ../../../assets/svg/arrow-right.svg
+
 
                 +partners-form("ОСТАВИТЬ ОТЗЫВ")
 

@@ -65,7 +65,7 @@
 
                 &.is-prev
                     .about__blue
-                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,45deg)
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,10deg)
 
                 &.is-active
                     .about__blue
@@ -73,7 +73,7 @@
 
                 &.is-next
                     .about__blue
-                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-45deg)
+                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-10deg)
 
         .about__split
             +mq1024
@@ -100,7 +100,7 @@
             font-size: clamp(24px,48 / 1024 * 100vw ,48px)
             color: #404041
 
-    .about__blue
+    &__blue
         background: #6EABDD
         color: #fff
         height: 100%
@@ -114,6 +114,12 @@
             clip-path: path("M111.248 19.4695C95.6556 5.20954 81.8549 -0.881879 60.77 0.102307C44.1142 0.879757 33.2581 4.25389 20.9401 15.517C9.58953 25.8956 5.47907 35.2111 2.40536 50.299C0.248681 60.8854 2.67615 67.165 2.40536 77.9664C2.06438 91.5672 -1.14374 104.843 0.433577 112.748C1.99237 120.561 5.94157 124.52 12.2643 129.349C20.5454 135.673 63.6973 130.638 90.3467 114.725C112.445 101.529 133.465 91.8496 134.909 66.1089C136.054 45.708 126.307 33.2426 111.248 19.4695Z")
             object-fit: cover
             object-position: 100% 0
+
+    &__blue-name
+        font-weight: bold
+        font-size: 20px
+        text-align: center
+        margin-bottom: 6px
 
     #about-statement
         position: relative
@@ -223,3 +229,17 @@
             [type="submit"]
                 background: #fff
                 color: #30A842
+
+    &__slider-controls
+        display: flex
+        align-items: center
+        justify-content: center
+        column-gap: 18px
+
+        svg > path
+            fill: #303031
+
+    &__slider-control
+        &--left
+            rotate: 180deg
+            translate: 0 -2px
