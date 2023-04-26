@@ -9,6 +9,16 @@ export default function splidesPages() {
             perPage: 3,
             pagination: false,
             focus: "center",
+            breakpoints: {
+                768: {
+                    perPage: 2,
+                    focus: undefined,
+                },
+                500: {
+                    perPage: 1,
+                    focus: undefined,
+                },
+            },
         },
         controls: {
             left: document.querySelector<HTMLElement>(

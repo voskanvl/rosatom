@@ -13,9 +13,13 @@
 
     &__grid
         display: grid
-        grid-template-columns: repeat(3,32%)
-        grid-template-rows: repeat(2, 1fr)
-        gap: 30px 22px
+        grid-template-columns: repeat(auto-fill,minmax(370px, 1fr))
+        grid-auto-rows: 1fr
+        gap: 30px 2.2vh
+
+        +mq1024
+            grid-template-columns: repeat(auto-fill,minmax(280px, 1fr))
+            gap: 0
 
         &--4x3
             grid-template-columns: repeat(4,24%)
@@ -26,6 +30,8 @@
             +mq580
                 grid-template-columns: repeat(2,49%)
                 grid-template-rows: repeat(6, 1fr)
+            +mq425
+                grid-template-columns: 100%
 
     &__split
         display: grid
@@ -34,6 +40,11 @@
 
     #about-cod
         margin-top: ph(130)
+
+        .about__split
+            +mq768
+                grid-template-columns: 100%
+                row-gap: 10px
 
     #about-advantages
         margin-top: ph(144)
@@ -92,7 +103,7 @@
     &__cell
         display: grid
         place-items: center start
-        padding: 20px 25px
+        padding: 20px 2.5vh
 
         .title
             margin: 0
@@ -127,15 +138,25 @@
             column-gap: 0
             grid-template-columns: repeat(2,50%)
 
+            +mq768
+                grid-template-columns: 100%
+                grid-auto-rows: 50vh
+
+        aside
+            position: relative
+
     #about-statement-frame
         color: #fff
-        svg,.about__split
+        & > img,.about__split
             position: absolute
             z-index: 1
             width: 100%
             height: 100%
             top: 0
             left: 0
+
+        & > img
+            object-fit: cover
 
         .about__split
             z-index: 2
@@ -176,12 +197,22 @@
                         line-height: 91.8%
                         text-transform: uppercase
 
+                +mq768
+                    flex-direction: column-reverse
+                    // padding-top: 0
+                    align-items: center
+                    justify-content: center
+                    div
+                        width: 100%
+                        & > *
+                            text-align: center
+
     #ceo
         position: absolute
-        left: 25%
+        left: 50%
         bottom: 0
         translate: -50% 0
-        width: 38vw
+        width: max(300px,35vw)
 
     &__3d
         perspective: 500px
