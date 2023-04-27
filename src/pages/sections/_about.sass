@@ -228,12 +228,17 @@
         // display: grid
         // place-items: center
 
+        .about__split
+            +mq768
+                grid-template-columns: 100%
+
         h2
             font-weight: 700
             font-size: clamp(30px,60 / 1024 * 100vw,60px)
-            line-height: 78px
+            line-height: 1.1
             text-transform: uppercase
             color: #FFFFFF
+            margin-bottom: 10px
 
         .about__wrap
             height: 100%

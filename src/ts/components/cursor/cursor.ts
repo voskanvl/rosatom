@@ -2,7 +2,7 @@ import { SCREEN_NUMBER_TO_CHANGE } from "../../config";
 import store from "../../store";
 
 export const setBlackCursor = () => {
-    document.body.style.cursor = "url('../../assets/cursor/mini-black.svg'), none";
+    document.body.style.cursor = "url('../../assets/cursor/mini-black.svg') 10 10, none";
     const curR = document.querySelector<HTMLElement>(".cursor__round");
     curR && (curR.style.borderColor = "#303031");
 };
@@ -11,15 +11,15 @@ export const handlerStore = (cursorRound: HTMLElement, x: boolean) => {
     x
         ? (function () {
               cursorRound.style.setProperty("--color", "#fff");
-              document.body.style.cursor = "url('../../assets/cursor/mini-white.svg'), none";
+              document.body.style.cursor = "url('../../assets/cursor/mini-white.svg') 10 10, none";
           })()
         : (function () {
               cursorRound.style.setProperty("--color", "#303031");
               document.body.style.cursor = SCREEN_NUMBER_TO_CHANGE.some(
                   e => e === store.store.getState().activeScreenNumber,
               )
-                  ? "url('../../assets/cursor/mini-white.svg'), none"
-                  : "url('../../assets/cursor/mini-black.svg'), none";
+                  ? "url('../../assets/cursor/mini-white.svg') 19 19, none"
+                  : "url('../../assets/cursor/mini-black.svg') 19 19, none";
           })();
 };
 
@@ -48,12 +48,15 @@ export default function cursor() {
     handlerStore(cursorRound, true);
 
     store.store.subscribe(({ activeScreenNumber }) => {
-        handlerStore(SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber));
+        handlerStore(
+            cursorRound,
+            SCREEN_NUMBER_TO_CHANGE.some(e => e === activeScreenNumber),
+        );
     });
     store.menuStore.subscribe(({ isOpen }) => {
-        handlerStore(isOpen);
+        handlerStore(cursorRound, isOpen);
     });
     store.burgerStore.subscribe(({ isOpen }) => {
-        handlerStore(isOpen);
+        handlerStore(cursorRound, isOpen);
     });
 }

@@ -134,7 +134,11 @@ confSelects &&
             const { value: price } = (event as CustomEvent).detail;
             const counter = el.nextElementSibling as HTMLInputElement;
             const output = counter.nextElementSibling as HTMLElement;
-            output && counter && (output.innerText = +counter.dataset.value * +price + "");
+            output &&
+                counter &&
+                counter.dataset &&
+                counter.dataset.value &&
+                (output.innerText = +counter.dataset.value * +price + "");
             output.dataset.price = price;
         });
     });
