@@ -1,6 +1,6 @@
 .about
     color: #404041
-    margin-top: 90px
+    // margin-top: 90px
 
     &__block
         display: grid
@@ -38,6 +38,60 @@
         display: grid
         grid-template-columns: repeat(2, 49%)
         column-gap: 1%
+
+    &__banner
+        position: relative
+        height: 100vh
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    #banner
+        position: absolute
+        top: 55%
+        width: calc(100% - pw(197))
+        left: pw(197)
+
+        color: #fff
+
+        &.about__split
+            place-items: start center
+
+        h2
+            +fz(22, 1440, 80)
+
+        & > div
+            display: flex
+            flex-direction: column
+            row-gap: 18px
+
+            &:first-child
+                & > p
+                    +fz(12, 1440, 20)
+
+            &:last-child
+                small
+                    font-size: 18px
+                    font-weight: bold
+
+        +mq768
+            left: 2em
+
+            &.about__split
+                column-gap: pw(30)
+
+        +mq580
+            grid-template-columns: 100%
+            place-items: center
+            row-gap: 30px
+
+            & > div
+                align-items: center
+
+        @media (height <= 600px)
+            top: 30%
 
     #about-cod
         margin-top: ph(130)

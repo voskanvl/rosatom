@@ -5,7 +5,18 @@ include ../../components/partners-form/partners-form.pug
 include ../../components/tabs/tabs.pug
 
 section.about(style="background:#ECF0F3;")
-    video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
+    //- video(src="../../../assets/РЭА.mp4" poster="../../../assets/images/about-main.jpg" alt="about-main" autoplay loop muted draggable="false" style="width: 100%; aspect-ratio: 16 / 9; object-fit: fill;")
+    div.about__banner
+        img(src="../../../assets/images/about-main.jpg" alt="office")
+        .about__split#banner 
+            div 
+                h2 О КОМПАНИИ
+                p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
+            div 
+                small 
+                    p Смотреть 
+                    p видеоролик о ЦОД
+                include ../../../assets/svg/start-video.svg
 
     .about__block#about-cod
         .about__container
