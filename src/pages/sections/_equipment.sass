@@ -27,10 +27,14 @@
         padding: ph(55) pw(129)
 
     &__item
+        position: relative
         width: 100%
         display: grid
         grid-template-columns: 70% auto
         position: relative
+        +mq1440
+            grid-template-columns: 100%
+            row-gap: 30px
 
     &__row
         display: flex
@@ -38,15 +42,20 @@
         column-gap: pw(11)
         margin-top: 6px
 
-        & > img
-            &:hover
-                & + .hint
-                    opacity: 1
+        // & > img
+        //     &:hover
+        //         & + .hint
+        //             opacity: 1
 
     &__item-left
         display: grid
         grid-template-columns: repeat(2, 1fr)
         column-gap: pw(26)
+
+        +mq1024
+            grid-template-columns: 100%
+            grid-template-rows: repeat(2, 1fr)
+            row-gap: 30px
 
     &__item-right
         display: grid

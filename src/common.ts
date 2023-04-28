@@ -17,3 +17,7 @@ phones &&
             lazy: false,
         });
     });
+
+const mainHeader = document.querySelector<HTMLElement>(".main-header");
+mainHeader && (mainHeader.style.position = "absolute");
+mainHeader && mainHeader.classList.remove("main-header--white");

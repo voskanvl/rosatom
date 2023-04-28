@@ -8,13 +8,16 @@
 
     input[name="open"]
         position: absolute
-        height: 25px
+        height: 45px
         left: 0
         top: -5px
         width: 100%
         background: #7777
         opacity: 0
         z-index: 0
+
+        +mq425
+            height: 55px
 
         &:hover
             & ~ .select__list
