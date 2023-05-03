@@ -59,7 +59,7 @@ const createModal = () => {
         right: 2em;
         color: red;
         font-size: 50px;
-        z-index; 2
+        z-index: 2;
     `;
 
     modal.append(close);
@@ -114,6 +114,16 @@ const iniSlider = (slider: HTMLElement, id: string, constrols?: ControlsType) =>
             perPage: 3,
             padding: "10px",
             focus: "center",
+            breakpoints: {
+                1440: {
+                    perPage: 2,
+                },
+                1024: {
+                    perPage: 1,
+                    focus: undefined,
+                    padding: 10,
+                },
+            },
         });
     const sliderSplideInstance = splidesInstance.instances["#" + id];
     constrols && (constrols.left.onclick = () => sliderSplideInstance.go("-1"));

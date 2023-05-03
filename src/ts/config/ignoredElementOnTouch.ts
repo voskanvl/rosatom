@@ -9,6 +9,8 @@ export const ignoredElementOnTouch = {
         ".geonet__popup",
         ".search-popup__close",
         ".options",
+        "#innopolis",
+        "#outer-modal",
     ],
     drop: [
         ".team__container",
@@ -21,5 +23,7 @@ export const ignoredElementOnTouch = {
         ".geonet__popup",
         ".search-popup__close",
         ".options",
+        "#innopolis",
+        "#outer-modal",
     ],
 };

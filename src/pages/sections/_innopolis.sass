@@ -46,6 +46,10 @@
             // width: unset
             width: 90%
 
+            @media (width<=1024px)
+                width: 100%
+                // padding-inline: 2em
+
     &__text
         font-size: 18px
         font-weight: lighter
@@ -122,6 +126,11 @@
         width: 100%
         overflow: hidden
 
+#modal-innopolis
+    height: 90dvh
+    .splide__track
+        height: 100%
+
 #modal-innopolis .splide__slide
     --from: 1%
     --to: 60%
@@ -131,10 +140,15 @@
 
     &.is-next
         mask-image: linear-gradient(to right, #000 var(--from), transparent var(--to))
+
     &.is-prev
         mask-image: linear-gradient(to left, #000 var(--from), transparent var(--to))
+
     &.is-active
         mask-image: linear-gradient(to left, #000 var(--from), #000 var(--to))
+
+        // @media (width<=1024px)
+        //     margin-inline: 10px
 
 #outer-modal
     .controls
@@ -147,6 +161,10 @@
         display: flex
         align-items: center
         justify-content: space-between
+
         .left
             rotate: 180deg
             translate: 0 -2px
+
+        @media (width<=1024px)
+            padding-inline: 8px
