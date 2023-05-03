@@ -41,7 +41,7 @@
 
     &__banner
         position: relative
-        height: 100vh
+        height: 100dvh
 
         img
             width: 100%
@@ -89,6 +89,9 @@
 
             & > div
                 align-items: center
+
+        +mq425
+            left: 10px
 
         @media (height <= 600px)
             top: 30%

@@ -18,8 +18,8 @@ export const handlerStore = (cursorRound: HTMLElement, x: boolean) => {
               document.body.style.cursor = SCREEN_NUMBER_TO_CHANGE.some(
                   e => e === store.store.getState().activeScreenNumber,
               )
-                  ? "url('../../assets/cursor/mini-white.svg') 19 19, none"
-                  : "url('../../assets/cursor/mini-black.svg') 19 19, none";
+                  ? "url('../../assets/cursor/mini-white.svg') 10 10, none"
+                  : "url('../../assets/cursor/mini-black.svg') 10 10, none";
           })();
 };
 

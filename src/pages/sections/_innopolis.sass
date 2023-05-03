@@ -41,6 +41,11 @@
         min-height: 236px
         object-fit: cover
 
+        &--fullscreen
+            height: 100%
+            // width: unset
+            width: 90%
+
     &__text
         font-size: 18px
         font-weight: lighter
@@ -116,3 +121,32 @@
     & #innopolis
         width: 100%
         overflow: hidden
+
+#modal-innopolis .splide__slide
+    --from: 1%
+    --to: 60%
+    mask-image: linear-gradient(to right, #0000 var(--from), #0000 var(--to))
+    transition: $std_trans
+    will-change: transform
+
+    &.is-next
+        mask-image: linear-gradient(to right, #000 var(--from), transparent var(--to))
+    &.is-prev
+        mask-image: linear-gradient(to left, #000 var(--from), transparent var(--to))
+    &.is-active
+        mask-image: linear-gradient(to left, #000 var(--from), #000 var(--to))
+
+#outer-modal
+    .controls
+        position: absolute
+        z-index: 2
+        top: 50%
+        translate: 0 -50%
+        width: 100%
+        padding-inline: 3em
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .left
+            rotate: 180deg
+            translate: 0 -2px

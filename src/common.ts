@@ -3,8 +3,10 @@ import "@splidejs/splide/css";
 
 import initHeader from "./ts/initHeader";
 import IMask from "imask";
+import { setBlackCursor } from "./ts/components/cursor/cursor";
 
 initHeader();
+setBlackCursor();
 
 const phones = document.querySelectorAll<HTMLInputElement>("input[name='phone']");
 phones &&

@@ -29,6 +29,7 @@ import MobileDetect from "mobile-detect";
 import randomizePulsIcons from "./components/regions/randomizePulsIcons";
 import store from "./store";
 import changeSearchPopupByScreensAndMenu from "./components/popup/changeSearchPopupByScreensAndMenu";
+import handleCODSlider from "./components/sliders/handleCODSlider";
 
 export default function init() {
     cursor();
@@ -93,4 +94,6 @@ export default function init() {
     }
 
     randomizePulsIcons();
+
+    handleCODSlider();
 }

@@ -25,4 +25,6 @@ export default function modal(
         document.body.style.overflowY = "";
         modalEl.remove();
     });
+
+    return modalEl;
 }
