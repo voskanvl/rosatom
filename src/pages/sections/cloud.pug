@@ -12,24 +12,29 @@ include ../../components/check/check.pug
         +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Облачная инфраструктура", href:"#"}])
 
 
-        +banner("../../../assets/svg/cloud.svg")
-            .cloud__title.title.text-masked-element(style="--background: #303031; ")
-                p ОБЛАЧНАЯ
-                p ИНФРАСТРУКТУРА
-            div
-                p Давно выяснено, что при оценке дизайна и 
-                p композиции читаемый текст мешает сосредоточиться. 
-                p Lorem Ipsum используют потому, что тот обеспечивает
-                p более или менее стандартное 
+        //- +banner("../../../assets/svg/cloud.svg")
+        .banner 
+            .banner--left
+                .cloud__title.title.text-masked-element(style="--background: #303031; ")
+                    p ОБЛАЧНАЯ
+                    p ИНФРАСТРУКТУРА
+                div
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
 
-            .cloud__order  
-                div.cloud__cloud
-                    p Цена от:
-                        strong 15 000 ₽
-                    p ЗА 1 МЕТР В ГОД
-                button.cloud__button 
-                    span Заказать услугу
-                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                .cloud__order  
+                    div.cloud__cloud
+                        p Цена от:
+                            strong 15 000 ₽
+                        p ЗА 1 МЕТР В ГОД
+                    button.cloud__button 
+                        span Заказать услугу
+                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+            .banner--right
+                include ../../../assets/svg/cloud.svg
 
 
 

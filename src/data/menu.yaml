@@ -18,10 +18,10 @@ menu:
           
       - name: Аренда сереверного оборудования
         menu:
-          - name: Аренда готовго сервера
-            href: "#"
+          - name: Аренда готового сервера
+            href: "/rent.html"
           - name: Конфигуратор
-            href: "#"
+            href: "/rent.html?config"
 
 
 

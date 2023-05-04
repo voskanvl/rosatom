@@ -1,4 +1,4 @@
-import blockScrollWindow from "../../blockScrollWindow";
+import blockScrollWindow from "../../helpers/blockScrollWindow";
 import store from "../../store";
 
 export default function changeBurger() {

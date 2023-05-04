@@ -5,9 +5,9 @@ mixin tabs(arr)
                 each i, idx in arr 
                     .tabs__control
                         if idx===0
-                            input(type="radio" name="tabs" data-id= i.id checked="checked")
+                            input(type="radio" name="tabs" data-id= i.id checked="checked" data-name="")
                         else
-                            input(type="radio" name="tabs" data-id= i.id)
+                            input(type="radio" name="tabs" data-id= i.id data-name="config")
                         .tabs__button= i.nameControl
 
             .tabs__bodies 

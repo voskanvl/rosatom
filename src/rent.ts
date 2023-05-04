@@ -142,3 +142,19 @@ confSelects &&
             output.dataset.price = price;
         });
     });
+
+//--- toggle tab by url
+const tabControls = document.querySelectorAll<HTMLInputElement>(
+    ".tabs__control > input[type='radio']",
+);
+const switchTabs = () =>
+    location.search === "?config"
+        ? (tabControls[1] as HTMLElement).click()
+        : (tabControls[0] as HTMLElement).click();
+
+switchTabs();
+
+window.addEventListener("popstate", () => {
+    switchTabs();
+});
+//---

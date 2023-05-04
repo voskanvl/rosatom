@@ -13,10 +13,17 @@ export default function tabs() {
     }
     inputs.forEach(input =>
         input.addEventListener("click", () => {
-            const { id } = input.dataset;
+            const { id, name } = input.dataset;
             pages.forEach(page => {
-                if (page.dataset.id === id) page.setAttribute("active", "active");
-                else page.removeAttribute("active");
+                if (page.dataset.id === id) {
+                    page.setAttribute("active", "active");
+
+                    const url = new URL(location.toString());
+                    url.search = name || "";
+                    history.pushState(null, "", url);
+                } else {
+                    page.removeAttribute("active");
+                }
             });
         }),
     );
