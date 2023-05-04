@@ -1,8 +1,11 @@
 @import "@var"
 
 .menu
-    display: grid
-    grid-auto-flow: column
+    // display: grid
+    // grid-auto-flow: column
+    display: flex
+    justify-content: space-evenly
+    flex: 1
     @media (width < 1440px)
         padding-left: 0
         flex-basis: max-content
@@ -15,7 +18,7 @@
         text-transform: uppercase
         color: inherit
 
-        & > span
+        & > :is(span, a)
             font-size: clamp(11px,1.166667vw,14px)
             white-space: nowrap
             transition: color $std_trans
@@ -33,7 +36,7 @@
 
         a
             text-decoration: none
-    &.show > .menu__item > span
+    &.show > .menu__item > :is(span,a)
         color: #fff
 
     &--white

@@ -3,7 +3,7 @@ mixin menuList(arr)
     each j in arr
         if j.menu 
             li.list__item.list__item--big 
-                a(href="#"+ j.name)!= j.name
+                span!= j.name
 
                 //--- заменил в предыдущем теге span на a, при выключеной обрабоке меню
 
@@ -49,7 +49,10 @@ nav.main-header.main-header--white
                 ul.list
                     +menuList(i.menu)
                     img.cristal(src="../../../assets/svg/veil.svg")
-                a(href="#"+i.title)= i.title
+                if !i.menu.length
+                    a(href= i.href)= i.title
+                else 
+                    span= i.title
 
                 //--- заменил в предыдущем теге span на a, при выключеной обрабоке меню
 

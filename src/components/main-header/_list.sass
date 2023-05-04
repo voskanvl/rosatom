@@ -16,7 +16,7 @@
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(278px,1fr))
     gap: 5%
-    place-items: start
+    place-items: start center
     +scroll-thin()
 
     &__item
@@ -29,6 +29,7 @@
         &--big
             font-size: clamp(18px,4vmin,40px)
             font-weight: bold
+            width: max-content
             & > span
                 line-height: 1.09
         &--small
@@ -42,7 +43,7 @@
         display: flex
         flex-direction: column
         row-gap: 13px
-        max-width: 80%
+        // max-width: 80%
 
     & + span
         padding-block: 1em
