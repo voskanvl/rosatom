@@ -38,6 +38,22 @@
         display: grid
         grid-template-columns: repeat(2, 49%)
         column-gap: 1%
+        .about__split
+            column-gap: 0
+            grid-template-columns: repeat(2,1fr)
+
+            +mq768
+                grid-template-columns: 100%
+                grid-auto-rows: 50vh
+
+            &:first-child
+                height: 100%
+
+            .splide
+                height: 100%
+
+                &__track
+                    height: 100%
 
     &__banner
         position: relative
@@ -125,26 +141,39 @@
 
         .splide
 
-            & .splide__slide
+            // & .splide__slide
 
-                &.is-visible
-                    .about__blue
-                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
-                        transition: transform $std_trans
+            //     &.is-visible
+            //         .about__blue
+            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
+            //             transition: transform $std_trans
 
-                &.is-prev
-                    .about__blue
-                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,10deg)
+            //     &.is-prev
+            //         .about__blue
+            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,10deg)
 
-                &.is-active
-                    .about__blue
-                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
+            //     &.is-active
+            //         .about__blue
+            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
 
-                &.is-next
-                    .about__blue
-                        transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-10deg)
+            //     &.is-next
+            //         .about__blue
+            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-10deg)
 
         .about__split
+
+            +mq768
+                grid-template-columns: 100%
+                grid-auto-rows: 50vh
+
+            &:first-child
+                height: 100%
+
+            .splide
+                height: 100%
+
+                &__track
+                    height: 100%
             +mq1024
                 grid-template-columns: 100%
                 row-gap: 2em
@@ -175,30 +204,49 @@
         height: 100%
         border-radius: 10px
         padding: 1em
+        height: 100%
 
-        img
-            width: 80%
-            aspect-ratio: 1
-            margin: 0 auto
-            clip-path: path("M111.248 19.4695C95.6556 5.20954 81.8549 -0.881879 60.77 0.102307C44.1142 0.879757 33.2581 4.25389 20.9401 15.517C9.58953 25.8956 5.47907 35.2111 2.40536 50.299C0.248681 60.8854 2.67615 67.165 2.40536 77.9664C2.06438 91.5672 -1.14374 104.843 0.433577 112.748C1.99237 120.561 5.94157 124.52 12.2643 129.349C20.5454 135.673 63.6973 130.638 90.3467 114.725C112.445 101.529 133.465 91.8496 134.909 66.1089C136.054 45.708 126.307 33.2426 111.248 19.4695Z")
-            object-fit: cover
-            object-position: 100% 0
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 20px
+
+        // img
+        //     width: 80%
+        //     aspect-ratio: 1
+        //     margin: 0 auto
+        //     clip-path: path("M111.248 19.4695C95.6556 5.20954 81.8549 -0.881879 60.77 0.102307C44.1142 0.879757 33.2581 4.25389 20.9401 15.517C9.58953 25.8956 5.47907 35.2111 2.40536 50.299C0.248681 60.8854 2.67615 67.165 2.40536 77.9664C2.06438 91.5672 -1.14374 104.843 0.433577 112.748C1.99237 120.561 5.94157 124.52 12.2643 129.349C20.5454 135.673 63.6973 130.638 90.3467 114.725C112.445 101.529 133.465 91.8496 134.909 66.1089C136.054 45.708 126.307 33.2426 111.248 19.4695Z")
+        //     object-fit: cover
+        //     object-position: 100% 0
+
+    &__blue-left
+        display: grid
+        grid-template-columns: 1fr 2fr
+        column-gap: pw(24)
 
     &__blue-name
         font-weight: bold
         font-size: 20px
-        text-align: center
-        margin-bottom: 6px
+        // text-align: center
+        // margin-bottom: 6px
 
     #about-statement
         position: relative
         .about__split
             column-gap: 0
-            grid-template-columns: repeat(2,50%)
+            grid-template-columns: repeat(2,1fr)
 
             +mq768
                 grid-template-columns: 100%
                 grid-auto-rows: 50vh
+
+            &:first-child
+                height: 100%
+
+            .splide
+                height: 100%
+
+                &__track
+                    height: 100%
 
         aside
             position: relative
@@ -327,13 +375,61 @@
     &__slider-controls
         display: flex
         align-items: center
-        justify-content: center
         column-gap: 18px
+        padding-inline: 2em
+        margin-top: -2em
 
         svg > path
-            fill: #303031
+            fill: #fff
 
     &__slider-control
+        rotate: 0
         &--left
             rotate: 180deg
             translate: 0 -2px
+
+    &__blue-right
+        display: flex
+        flex-direction: column
+        row-gap: ph(31)
+        height: 323px
+        overflow: auto
+
+        scrollbar-width: thin
+
+        &::-webkit-scrollbar
+            width: 2px
+            background: #0000
+            padding: 0
+            margin: 0
+
+        &::-webkit-scrollbar-thumb
+            width: 2px
+            background: #fff
+
+    &__accordion
+        margin-top: 1em
+        display: grid
+        grid-template-rows: 0fr
+        transition: grid-template-rows $std_trans
+
+        & > div
+            overflow: hidden
+
+    &__blue-continue
+        position: relative
+
+    input.about__accordion-trigger
+        box-shadow: unset
+        background: none
+        position: absolute
+        display: block
+        width: 100%
+        top: 0
+        left: 0
+        height: 1.5em
+        z-index: 2
+        opacity: 0
+
+        &:checked + .about__accordion
+            grid-template-rows: 1fr

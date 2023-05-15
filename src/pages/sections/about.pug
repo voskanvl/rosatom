@@ -72,17 +72,30 @@ section.about(style="background:#ECF0F3;")
             .about__split
                 div
                     +splide("talking", clients)
-                        .about__3d
-                            .about__blue
+                        //- .about__3d
+                        .about__blue
+                            .about__blue-left
                                 svg(viewBox="0 0 135 133" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
                                     path(d="M111.248 19.9695C95.6557 5.70954 81.8549 -0.381879 60.77 0.602307C44.1142 1.37976 33.2581 4.75389 20.9401 16.017C9.58949 26.3956 5.47903 35.7111 2.40531 50.799C0.248638 61.3854 2.67611 67.665 2.40531 78.4664C2.06433 92.0672 -1.14379 105.343 0.433534 113.248C1.99233 121.061 5.94153 125.02 12.2642 129.849C20.5454 136.173 63.6973 131.138 90.3467 115.225C112.445 102.029 133.465 92.3496 134.909 66.6089C136.054 46.208 126.307 33.7426 111.248 19.9695Z" fill="url(#pattern0)")
                                     defs
                                         pattern(id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1")
                                             use(xlink:href="#image0_61_5845" transform="matrix(0.005 0 0 0.00511364 0 -0.267045)")
                                         image(id="image0_61_5845" width="200" height="300" xlink:href="https://picsum.photos/200")
+                                .about__blue-contact
+                                    p.about__blue-name= val.name 
+                                    p= val.role 
 
-                                p.about__blue-name= val.name
+                            .about__blue-right
                                 p= val.comment 
+
+                                .about__blue-continue
+                                    u Читать полностью
+                                    input.about__accordion-trigger(type="checkbox" name="")
+
+                                    .about__accordion 
+                                        div Хорошая новость в том, что докер решает эту проблему. Докер предоставляет специальный сервис, называемый docker registry. Docker registry предназначен для хранения и дистрибуции готовых образов. Собрав новый образ (или новую версию образа) вы можете закачать его в docker registry. Соответственно, потом его можно скачать оттуда на любой сервер. Главная фишка здесь в том, что физически качаться будут только те слои, которые нужны.
+
+
                     .about__slider-controls
                         .about__slider-control.about__slider-control--left
                             include ../../../assets/svg/arrow-right.svg
