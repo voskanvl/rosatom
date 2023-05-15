@@ -31,6 +31,11 @@
             & img
                 width: 100%
 
+    &__middle
+        display: flex
+        flex-direction: column
+        row-gap: 24px
+
     &__right
         display: flex
         flex-direction: column
@@ -59,16 +64,17 @@
                 align-items: center
 
     &__title, &__data-label
-        background: #30A842
-        border: 1px solid #30A842
+        // background: #30A842
+        // border: 1px solid #30A842
+        border: 1px solid #303031
         border-radius: 33px
-        color: #fff
+        color: #303031
         width: max-content
         +fz(12,1024,20)
         padding: 10px 30px
 
     &__title
-        margin-bottom: ph(36)
+        // margin-bottom: ph(12)
 
     &__data-label
         background: unset
