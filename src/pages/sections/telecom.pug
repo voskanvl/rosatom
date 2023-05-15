@@ -14,20 +14,25 @@ include ../../components/banner/banner.pug
             p ТЕЛЕКОММУНИКАЦИОННЫЕ 
             p УСЛУГИ
 
-        +banner("../../../assets/images/pngtree-information-technology-cloud-computing-internet_6406325 1.png")
-            div
-                p Основная идея телеком услуг - это связь 
-                p различных устройств между собой
-            .telecom__row
-                div 
-                    p Цена от: 
-                        strong 15 000 ₽ 
-                    p за 1 метр в год
+        //- +banner("../../../assets/images/pngtree-information-technology-cloud-computing-internet_6406325 1.png")
+        .banner 
+            .banner--left
+                div
+                    p Основная идея телеком услуг - это связь 
+                    p различных устройств между собой
+                .telecom__row
+                    div 
+                        p Цена от: 
+                            strong 15 000 ₽ 
+                        p за 1 метр в год
 
-                button.rent-config__button 
-                    div
-                        span Заказать
-                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    button.rent-config__button 
+                        div
+                            span Заказать
+                            img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+            .banner--right
+                include ../../../assets/svg/telecom.svg
 
 
         include ../../blocks/colocation/colocation.pug

@@ -10,21 +10,26 @@ include ../../blocks/actions/actions.pug
         +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Размещение оборудования", href:"#"}])
 
 
-        +banner("../../../assets/svg/equipment.svg")
-            .equipment__title.title.text-masked-element(style="--background: #303031; ")
-                p Размещение
-                p оборудования
-            div
-                p Давно выяснено, что при оценке дизайна и 
-                p композиции читаемый текст мешает сосредоточиться. 
-                p Lorem Ipsum используют потому, что тот обеспечивает
-                p более или менее стандартное 
-
-
-            button.rent-config__button 
+        //- +banner("../../../assets/svg/equipment.svg")
+        .banner 
+            .banner--left
+                .equipment__title.title.text-masked-element(style="--background: #303031; ")
+                    p Размещение
+                    p оборудования
                 div
-                    span Заказать услугу
-                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
+
+
+                button.rent-config__button 
+                    div
+                        span Заказать услугу
+                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+            .banner--right
+                include ../../../assets/svg/equipment.svg
 
         .equipment__list
             each i in equipment

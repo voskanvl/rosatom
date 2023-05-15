@@ -13,19 +13,24 @@ include ../../blocks/actions/actions.pug
         +bread-crumbs([{name: "Главная", href:"/"}, {name: "Услуги", href:"#"}])
 
 
-        +banner("../../../assets/svg/green-cancer.svg")
-            .services__title.title.text-masked-element(style="--background: #303031; ") УСЛУГИ
-            div
-                p Давно выяснено, что при оценке дизайна и 
-                p композиции читаемый текст мешает сосредоточиться. 
-                p Lorem Ipsum используют потому, что тот обеспечивает
-                p более или менее стандартное 
-
-
-            button.rent-config__button 
+        //- +banner("../../../assets/svg/green-cancer.svg")
+        .banner 
+            .banner--left
+                .services__title.title.text-masked-element(style="--background: #303031; ") УСЛУГИ
                 div
-                    span Посмотреть все услуги
-                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
+
+
+                button.rent-config__button 
+                    div
+                        span Посмотреть все услуги
+                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+            .banner--right
+                include ../../../assets/svg/green-cancer.svg
 
         .services__tiles
             each i in services
