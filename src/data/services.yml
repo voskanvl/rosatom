@@ -12,3 +12,6 @@ services:
     title: ТЕЛЕКОММУНИКАЦИОННЫЕ УСЛУГИ 
   - img: "../../assets/svg/services/5.svg"
     title: ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+    tiled: true
+  - img: "../../assets/svg/services/6.svg"
+    title: ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ
