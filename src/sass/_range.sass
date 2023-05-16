@@ -1,5 +1,6 @@
 .cloud-item
     input[type="range"]
+        --thumb-margin: -0px
         --value: 50%
         -webkit-appearance: none
         margin-right: 15px
@@ -21,6 +22,7 @@
         cursor: inherit !important
         box-shadow: 0 0 2px 0 #555
         transition: background .3s ease-in-out
+        margin-top: var(--thumb-margin)
 
     input[type="range"]::-moz-range-thumb
         -webkit-appearance: none
@@ -31,6 +33,7 @@
         cursor: inherit !important
         box-shadow: 0 0 2px 0 #555
         transition: background .3s ease-in-out
+        margin-top: var(--thumb-margin)
 
     input[type="range"] ::-ms-thumb
         -webkit-appearance: none
@@ -41,6 +44,7 @@
         cursor: inherit !important
         box-shadow: 0 0 2px 0 #555
         transition: background .3s ease-in-out
+        margin-top: var(--thumb-margin)
 
     input[type="range"]::-webkit-slider-thumb:hover
         background: #72ADDE

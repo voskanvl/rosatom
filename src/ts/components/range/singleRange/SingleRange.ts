@@ -4,23 +4,42 @@ interface SingleOptions {
     val?: number
     step?: number
     class?: string
+    scale?: {
+        is: boolean
+        unit?: string
+    }
 }
 
 const initialOptions = { min: 0, max: 100, val: 50, class: "", step: 1 }
 
 export default class SingleRange {
     root: HTMLElement
-    options: Required<SingleOptions>
+    options: Required<Omit<SingleOptions, "scale">> & {
+        scale?: {
+            is: boolean
+            unit?: string
+        }
+    }
     private value: number = 50
     element: HTMLInputElement | null = null
     private listeners: ((value: number) => void)[] | null = null
     private connectedElement: HTMLElement | null = null
     private listenConnectedElement = (event: Event) => {
-        const { value } = event.target as HTMLInputElement
-        if (+value < this.options.min || +value > this.options.max) return
+        const targetEl = event.target as HTMLInputElement
+        const { value } = targetEl
+        // if (+value < this.options.min || +value > this.options.max) return
+        if (+value < this.options.min) {
+            targetEl.value = this.options.min + ""
+            return
+        }
+        if (+value > this.options.max) {
+            targetEl.value = this.options.max + ""
+            return
+        }
         this.value = +value
         this.element && (this.element.value = this.value + "")
-        this.element && this.element.style.setProperty("--value", this.value + "%")
+        this.element &&
+            this.element.style.setProperty("--value", this.valuePercent(this.value) + "%")
     }
 
     constructor(root: HTMLElement, options?: SingleOptions) {
@@ -30,8 +49,16 @@ export default class SingleRange {
             ...Object.fromEntries(Object.entries(options || {}).filter(([_, val]) => !!val)),
         }
         this.value = (options && options.val) || 0
+
         this.createElement()
         this.mount()
+
+        const scale = this.options.scale && this.createScale()
+        if (scale) {
+            this.element?.insertAdjacentElement("afterend", scale.datalist)
+            // this.element?.setAttribute("list", scale.id)
+            this.element?.style.setProperty("----thumb-margin", "-12px")
+        }
     }
 
     private createElement() {
@@ -83,5 +110,45 @@ export default class SingleRange {
             handler = (v: number) => (el.innerText = (v | 0) + "")
         }
         this.subscribe(handler)
+    }
+
+    createScale() {
+        if (!this.element) return
+
+        const id = "markers" + Date.now()
+        const datalist = document.createElement("datalist")
+        datalist.id = id
+        // this.element.setAttribute("list", id)
+
+        const spacesVolume = (this.options.max - this.options.min) / this.options.step
+
+        for (let i = 0; i <= spacesVolume; i++) {
+            const option = document.createElement("option")
+            option.value = i * this.options.step + this.options.min + ""
+
+            const unit = (this.options.scale && this.options.scale.unit) || ""
+            option.label = i * this.options.step + this.options.min + " " + unit
+            datalist.append(option)
+        }
+
+        const setCurrentOption = (
+            optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[],
+            val: string,
+        ) => {
+            optionElements.forEach(option => {
+                option.value === val
+                    ? option.setAttribute("current", "true")
+                    : option.removeAttribute("current")
+            })
+        }
+
+        const optionElements = datalist.querySelectorAll("option")
+        this.element.addEventListener("input", (event: Event) => {
+            const val = (event.target as HTMLInputElement).value
+            setCurrentOption(optionElements, val)
+        })
+
+        setCurrentOption(optionElements, this.value + "")
+        return { datalist, id }
     }
 }

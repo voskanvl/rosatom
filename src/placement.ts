@@ -9,13 +9,15 @@ ranges &&
         const max = range.getAttribute("max"),
             min = range.getAttribute("min"),
             val = range.getAttribute("val"),
-            step = range.getAttribute("step")
+            step = range.getAttribute("step"),
+            unit = range.getAttribute("unit")
 
         const sr = new SingleRange(range, {
             max: max === null ? 0 : +max,
             min: min === null ? 0 : +min,
             val: val === null ? undefined : +val,
             step: step === null ? undefined : +step,
+            scale: { is: true, unit: unit || "" },
         })
 
         const output = range.nextSibling as HTMLInputElement

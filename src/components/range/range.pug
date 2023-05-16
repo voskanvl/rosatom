@@ -2,6 +2,6 @@ mixin range(val, min, max, label, unit)
     .range
         if label
             div= label
-        .range__input(min= min, max= max, val= val,  step= attributes.step)
-        input(type="number", value= val)
+        .range__input(min= min, max= max, val= val,  step= attributes.step, unit= attributes.unit )
+        input(type="number", value= val,  step= attributes.step)
         div= unit
