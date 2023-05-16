@@ -1,17 +1,23 @@
 services:
   - img: "../../assets/svg/services/1.svg"
     title: РАЗМЕЩЕНИЕ ОБОРУДОВАНИЯ
+    href: "/placement.html"
     tiled: true
     rotated: true
   - img: "../../assets/svg/services/2.svg"
     title: АРЕНДА СЕРВЕРНОГО ОБОРУДОВАНИЯ
+    href: "/rent.html"
   - img: "../../assets/svg/services/3.svg"
     title: ОБЛАЧНАЯ ИНФРАСТРУКТУРА
+    href: "/cloud.html"
     tiled: true
   - img: "../../assets/svg/services/4.svg"
     title: ТЕЛЕКОММУНИКАЦИОННЫЕ УСЛУГИ 
+    href: "/telecom.html"
   - img: "../../assets/svg/services/5.svg"
     title: ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+    href: "/additional-services.html"
     tiled: true
   - img: "../../assets/svg/services/6.svg"
     title: ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ
+    href: "#"

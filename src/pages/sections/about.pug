@@ -55,22 +55,22 @@ section.about(style="background:#ECF0F3;")
                             p Николай
                             p Гончаров
 
-    .about__block#about-cod-in-digitals
-        .about__container
-            h2.title ЦОД В ЦИФРАХ
-            .about__grid.about__grid--4x3  
-                each i in dataCenterCards
-                    .about__cell 
-                        .about__wrap
-                            .data-card__title(style="text-shadow: 4px 0px 5px rgba(0, 0, 0, 0.25)")!= i.title 
-                            p!= i.caption
+    //- .about__block#about-cod-in-digitals
+    //-     .about__container
+    //-         h2.title ЦОД В ЦИФРАХ
+    //-         .about__grid.about__grid--4x3  
+    //-             each i in dataCenterCards
+    //-                 .about__cell 
+    //-                     .about__wrap
+    //-                         .data-card__title(style="text-shadow: 4px 0px 5px rgba(0, 0, 0, 0.25)")!= i.title 
+    //-                         p!= i.caption
 
 
     .about__block#clients-talking
         .about__container
             h2.title Клиенты говорят о нас
             .about__split
-                div
+                div.about__slider
                     +splide("talking", clients)
                         //- .about__3d
                         .about__blue

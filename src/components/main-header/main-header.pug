@@ -3,7 +3,10 @@ mixin menuList(arr)
     each j in arr
         if j.menu 
             li.list__item.list__item--big 
-                span!= j.name
+                if j.href
+                    a(href= j.href)= j.name
+                else 
+                    span!= j.name
 
                 //--- заменил в предыдущем теге span на a, при выключеной обрабоке меню
 

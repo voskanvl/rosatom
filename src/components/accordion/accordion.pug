@@ -2,15 +2,22 @@ mixin accordion(arr, classListItem)
     .accordion
         ul.accordion__container
             each i in arr
-                li.accordion__item(class=classListItem)= i.title
-                    ul.accordion__item-list
-                        each j in i.menu
-                            if j.menu
-                                li.accordion__menu(style="color: #30A842")!= j.name+" \u25BC"
-                                    ul.accordion__item-list
-                                        each k in j.menu
-                                            li.accordion__menu
-                                                a(href= k.href)= k.name
-                            else 
-                                li.accordion__node
-                                    a(href= j.href)= j.name
+                if i.menu.length
+                    li.accordion__item(class=classListItem)= i.title
+                        ul.accordion__item-list
+                            each j in i.menu
+                                if j.menu
+                                    li.accordion__menu(style="color: #30A842")!= j.name+" \u25BC" 
+                                        ul.accordion__item-list
+                                            each k in j.menu
+                                                li.accordion__menu
+                                                    a(href= k.href)= k.name
+                                else 
+                                    li.accordion__node
+                                        a(href= j.href)= j.name
+                else 
+                    if i.href 
+                        a(href= i.href)
+                            li.accordion__item(class=classListItem)= i.title
+                    else
+                        span= i.title

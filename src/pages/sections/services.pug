@@ -34,7 +34,7 @@ include ../../blocks/actions/actions.pug
 
         .services__tiles
             each i in services
-                .convex(data-tiled= !!i.tiled, data-rotated= !!i.rotated)
+                a.convex(href= i.href, data-tiled= !!i.tiled, data-rotated= !!i.rotated)
                     img(src= i.img, alt="")
                     p= i.title
 

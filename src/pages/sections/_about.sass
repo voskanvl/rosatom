@@ -5,6 +5,7 @@
     &__block
         display: grid
         place-items: center
+
     &__container
         width: 80vw
         margin-inline: auto
@@ -139,27 +140,6 @@
         margin-top: ph(108)
         margin-bottom: ph(138)
 
-        .splide
-
-            // & .splide__slide
-
-            //     &.is-visible
-            //         .about__blue
-            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
-            //             transition: transform $std_trans
-
-            //     &.is-prev
-            //         .about__blue
-            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,10deg)
-
-            //     &.is-active
-            //         .about__blue
-            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,0deg)
-
-            //     &.is-next
-            //         .about__blue
-            //             transform: translate3d(0, 0, -100px) rotate3d(0,1,0,-10deg)
-
         .about__split
 
             +mq768
@@ -176,7 +156,7 @@
                     height: 100%
             +mq1024
                 grid-template-columns: 100%
-                row-gap: 2em
+                row-gap: 3em
 
             input, textarea
                 background: #ECF0F3
@@ -210,6 +190,9 @@
         grid-template-columns: repeat(2, 1fr)
         gap: 20px
 
+        +mq768
+            grid-template-columns: 100%
+
         // img
         //     width: 80%
         //     aspect-ratio: 1
@@ -226,8 +209,6 @@
     &__blue-name
         font-weight: bold
         font-size: 20px
-        // text-align: center
-        // margin-bottom: 6px
 
     #about-statement
         position: relative
@@ -287,7 +268,7 @@
                 & > p
                     margin-top: ph(55)
                     max-width: 431px
-                    font-size: 20px
+                    +fz(12,768,20)
 
                 & > div
                     & > p
@@ -299,13 +280,12 @@
 
                     & > h2
                         font-weight: 700
-                        font-size: clamp(40px,80 / 1024 * 100vw,80px)
+                        +fz(30,1024,80)
                         line-height: 91.8%
                         text-transform: uppercase
 
                 +mq768
                     flex-direction: column-reverse
-                    // padding-top: 0
                     align-items: center
                     justify-content: center
                     div
@@ -320,6 +300,9 @@
         translate: -50% 0
         width: max(300px,35vw)
 
+        @media (width <= 768px) and (height <= 850px)
+            display: none
+
     &__3d
         perspective: 500px
         perspective-origin: center
@@ -331,8 +314,6 @@
         background: url("../../../assets/svg/above-footer.svg") no-repeat
         background-size: cover
         padding: ph(73) 0 ph(137)
-        // display: grid
-        // place-items: center
 
         .about__split
             +mq768
@@ -381,6 +362,11 @@
 
         svg > path
             fill: #fff
+
+        +mq768
+            margin-top: 0.5em
+            filter: invert(1)
+            padding-inline: 0
 
     &__slider-control
         rotate: 0
@@ -433,3 +419,6 @@
 
         &:checked + .about__accordion
             grid-template-rows: 1fr
+
+    // &__slider
+    //     min-height: 400px
