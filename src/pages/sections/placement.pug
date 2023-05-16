@@ -1,0 +1,97 @@
+include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../components/banner/banner.pug
+include ../../components/select/select.pug
+include ../../blocks/actions/actions.pug
+include ../../components/range/range.pug
+include ../../components/check/check.pug
+include ../../components/tabs/tabs.pug
+include ../../components/select/select.pug
+include ../../components/number-input/number-input.pug
+
+.placement 
+    .cloud__container.container
+
+        +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Размещение оборудования", href:"#"}])
+
+
+        //- +banner("../../../assets/svg/cloud.svg")
+        .banner 
+            .banner--left
+                .cloud__title.title.text-masked-element(style="--background: #303031; ")
+                    p РАЗМЕЩЕНИЕ 
+                    p ОБОРУДОВАНИЯ
+                div
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
+
+                .cloud__order  
+
+                    button.cloud__button 
+                        span Заказать услугу
+                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+            .banner--right
+                include ../../../assets/svg/placement.svg
+
+        +tabs(tabsPlacement) 
+            .tabs__page(data-id="601" active="active")
+                //- include ../../blocks/rent-tools/rent-tools.pug
+                .cloud__constructor
+                    .cloud__constructor-inner
+                        .cloud__constructor-left.convex
+                            .cloud-item(style="margin-bottom: 17px")
+                                +range(10, 1, 24, "Количество юнитов", "Шт")
+                            .cloud-item(style="margin-bottom: 17px")
+                                +range(500, 300, 600, "Мощность каждого юнита", "Вт")(step="20")
+
+                            button.rent-config__button 
+                                div
+                                    span Заказать размещение
+                                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                        .cloud__constructor-right
+                            p Оборудование обеспечивается двумя независимыми подводами электропитания, предоставляется подключение к интернету в общем канале шириной 100 Мбит/с
+                            p Базовое размещение оборудования высотой 1 U мощностью не более 400 Вт
+                            p Дополнительное unit-место сверх базового размещения ( за каждый 1 U)
+                            p Дополнительная мощность сверх базового размещения 1 U места (за каждые полные или неполные 100 Вт)
+
+
+            .tabs__page(data-id="602")
+                //- include ../../blocks/rent-config/rent-config.pug
+                .cloud__constructor
+                    .cloud__constructor-inner
+                        .cloud__constructor-left
+                            p(style="margin-bottom: 3em") В Дата-центре гарантируется температура, необходимая для комфортного функционирования серверов. Питание на стойку подается по двум лучам от двух вводов. Дата-центр обладает всеми необходимыми ресурсами для поддержания бесперебойной работы серверного и телекоммуникационного оборудования.
+                    .cloud__constructor-inner
+                        .cloud__constructor-left.convex
+                            .cloud-item(style="margin-bottom: 17px")
+                                +range(10, 1, 24, "Количество стоек", "Шт")
+                            .cloud-item(style="margin-bottom: 17px")
+                                +range(10, 1, 24, "Мощность на стойку", "кВт")
+
+                            button.rent-config__button 
+                                div
+                                    span Заказать размещение
+                                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                        .cloud__constructor-right
+                            ul 
+                                li Серверная стойка на 42 U;
+                                li Резервированное электропитание N+1 от 4 до 12 кВт на стойку
+                                li Подключение к двум ИБП
+                                li Резервированное охлаждение N+1
+                                li Физическая безопасность 24/7;
+                                li Гарантированное подключение к более 30 операторам связи;
+                                li Базовый пакет администрирования (Горячая/холодная перезагрузка, консультации по телефону);
+                                li Возможность обслуживания оборудования в режиме 24/7 с предоставлением рабочего места;
+                                li Общий интернет канал шириной 100 Мбит/с + IP-адрес (бесплатно)
+
+
+
+
+
+
+
+
+
+

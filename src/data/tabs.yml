@@ -3,3 +3,9 @@ tabs:
     nameControl: Аренда готового сервера
   - id: 502
     nameControl: Конфигуратор сервера
+
+tabsPlacement:
+  - id: 601
+    nameControl: Аренда юнита
+  - id: 602
+    nameControl:  Аренда стойки

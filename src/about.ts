@@ -1,16 +1,16 @@
-import splidesPages from "./ts/components/sliders/splides -pages";
-import SingleRange from "./ts/components/range/singleRange/SingleRange";
-import modal from "./ts/components/modal/modal";
-import video from "./ts/components/modal/video";
+import splidesPages from "./ts/components/sliders/splides-pages"
+// import SingleRange from "./ts/components/range/singleRange/SingleRange";
+import modal from "./ts/components/modal/modal"
+import video from "./ts/components/modal/video"
 
 //--- CHECK ABOUT PAGE
-const isAboutPage = !!document.querySelector("section.about");
+const isAboutPage = !!document.querySelector("section.about")
 if (isAboutPage) {
-    const mainHeader = document.querySelector(".main-header");
-    mainHeader && mainHeader.classList.add("main-header--white");
+    const mainHeader = document.querySelector(".main-header")
+    mainHeader && mainHeader.classList.add("main-header--white")
 }
 
-splidesPages();
+splidesPages()
 
 // const ranges = document.querySelectorAll<HTMLElement>(".range__input");
 // ranges &&
@@ -31,9 +31,9 @@ splidesPages();
 
 //--- START VIDEO ---
 
-const videoSwitcher = document.querySelector<HTMLElement>("#startvideo");
+const videoSwitcher = document.querySelector<HTMLElement>("#startvideo")
 videoSwitcher &&
     videoSwitcher.addEventListener("click", () => {
-        const modalEl = modal(video());
-        modalEl.style.zIndex = "106";
-    });
+        const modalEl = modal(video())
+        modalEl.style.zIndex = "106"
+    })

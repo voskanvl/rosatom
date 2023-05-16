@@ -1,0 +1,25 @@
+.placement
+
+    .cloud__constructor-inner
+        grid-template-columns: minmax(0,820px) 1fr
+        column-gap: pw(78)
+
+    .convex
+        padding: 1.5em
+
+    .cloud__constructor-right
+        font-size: 18px
+        display: flex
+        flex-direction: column
+        row-gap: 2.5rem
+
+    .range
+        grid-template-columns: auto max-content 10%
+        grid-template-rows: repeat(2, 1fr)
+        font-size: clamp(20px,25 / 1024 * 100vw ,25px)
+        & > *:first-child
+            grid-area: 1 / 1 / 2 / -1
+
+    .rent-config__button
+        position: absolute
+        inset: auto 0 ph(45) pw(40)
