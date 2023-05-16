@@ -20,6 +20,7 @@ export default class SingleRange {
             unit?: string
         }
     }
+    private optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[] | null = null
     private value: number = 50
     element: HTMLInputElement | null = null
     private listeners: ((value: number) => void)[] | null = null
@@ -40,6 +41,10 @@ export default class SingleRange {
         this.element && (this.element.value = this.value + "")
         this.element &&
             this.element.style.setProperty("--value", this.valuePercent(this.value) + "%")
+
+        if (this.options.scale && this.optionElements) {
+            this.setCurrentOption(this.optionElements, value)
+        }
     }
 
     constructor(root: HTMLElement, options?: SingleOptions) {
@@ -112,6 +117,17 @@ export default class SingleRange {
         this.subscribe(handler)
     }
 
+    setCurrentOption(
+        optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[],
+        val: string,
+    ) {
+        optionElements.forEach(option => {
+            option.value === val
+                ? option.setAttribute("current", "true")
+                : option.removeAttribute("current")
+        })
+    }
+
     createScale() {
         if (!this.element) return
 
@@ -131,24 +147,15 @@ export default class SingleRange {
             datalist.append(option)
         }
 
-        const setCurrentOption = (
-            optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[],
-            val: string,
-        ) => {
-            optionElements.forEach(option => {
-                option.value === val
-                    ? option.setAttribute("current", "true")
-                    : option.removeAttribute("current")
-            })
-        }
-
         const optionElements = datalist.querySelectorAll("option")
+        this.optionElements = optionElements
+
         this.element.addEventListener("input", (event: Event) => {
             const val = (event.target as HTMLInputElement).value
-            setCurrentOption(optionElements, val)
+            this.setCurrentOption(optionElements, val)
         })
 
-        setCurrentOption(optionElements, this.value + "")
+        this.setCurrentOption(optionElements, this.value + "")
         return { datalist, id }
     }
 }
