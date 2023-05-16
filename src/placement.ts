@@ -25,7 +25,7 @@ ranges &&
     })
 
 //--- svg animation ---
-const svgEl = document.querySelector<HTMLOrSVGImageElement>(".cloud .banner--right > svg")
+const svgEl = document.querySelector<HTMLOrSVGImageElement>(".placement .banner--right > svg")
 
 if (svgEl) {
     setInterval(() => {
