@@ -1,14 +1,25 @@
 .placement
 
+    .banner
+        +mq1024
+            margin-top: 0
+
+    .cloud__constructor-left.convex
+        min-height: 368px
+
     .cloud__constructor-inner
-        grid-template-columns: minmax(0,820px) 1fr
+        grid-template-columns: minmax(0,2fr) 1fr
         column-gap: pw(78)
+
+        +mq1440
+            grid-template-columns: 100%
+            row-gap: 30px
 
     .convex
         padding: 1.5em
 
     .cloud__constructor-right
-        font-size: 18px
+        +fz(14, 1024, 18)
         display: flex
         flex-direction: column
         row-gap: 2.5rem
@@ -19,6 +30,22 @@
         font-size: clamp(20px,25 / 1024 * 100vw ,25px)
         & > *:first-child
             grid-area: 1 / 1 / 2 / -1
+
+        & > *:first-child, & > *:last-child
+            +fz(14,1024,25)
+
+        @media (width <= 930px)
+            grid-template-columns: repeat(3, minmax(0,1fr))
+            place-items: center
+
+            & > *:first-child
+                grid-area: 1 / 1 / 2 / 2
+
+            .range__input
+                grid-area: 2 / 1 / 3 / -1
+
+            input[type="number"]
+                width: 80%
 
     .rent-config__button
         position: absolute

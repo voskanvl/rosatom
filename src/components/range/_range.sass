@@ -3,14 +3,14 @@
     grid-template-columns: 18% auto max-content 10%
     place-items: center start
 
+    // +mq768
+    //     grid-template-columns: 60% auto 10%
+    //     row-gap: ph(6)
+
+    //     & > div:first-child
+    //         grid-area: 1 / 1 / 2 / -1
+
     +mq768
-        grid-template-columns: 60% auto 10%
-        row-gap: ph(6)
-
-        & > div:first-child
-            grid-area: 1 / 1 / 2 / -1
-
-    +mq650
         grid-template-columns: 49% 49%
         row-gap: ph(10)
         place-items: center
@@ -38,7 +38,7 @@
 
     option
         padding: 0
-        font-size: 14px
+        +fz(10, 1024, 16)
         width: 2ch
         // overflow: hidden
 
