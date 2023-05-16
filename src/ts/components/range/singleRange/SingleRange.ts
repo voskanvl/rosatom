@@ -8,17 +8,19 @@ interface SingleOptions {
         is: boolean
         unit?: string
     }
+    array?: string
 }
 
 const initialOptions = { min: 0, max: 100, val: 50, class: "", step: 1 }
 
 export default class SingleRange {
     root: HTMLElement
-    options: Required<Omit<SingleOptions, "scale">> & {
+    options: Required<Omit<SingleOptions, "scale" | "array">> & {
         scale?: {
             is: boolean
             unit?: string
         }
+        array?: string
     }
     private optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[] | null = null
     private value: number = 50
@@ -46,6 +48,7 @@ export default class SingleRange {
             this.setCurrentOption(this.optionElements, value)
         }
     }
+    private array: string[] | number[] | undefined
 
     constructor(root: HTMLElement, options?: SingleOptions) {
         this.root = root
@@ -58,11 +61,19 @@ export default class SingleRange {
         this.createElement()
         this.mount()
 
-        const scale = this.options.scale && this.createScale()
+        const scale = this.options.scale && this.createScaleByStep()
         if (scale) {
             this.element?.insertAdjacentElement("afterend", scale.datalist)
             // this.element?.setAttribute("list", scale.id)
             this.element?.style.setProperty("----thumb-margin", "-12px")
+        }
+
+        if (this.options.array) {
+            try {
+                this.array = JSON.parse(this.options.array)
+            } catch (error) {
+                console.warn(error)
+            }
         }
     }
 
@@ -128,7 +139,49 @@ export default class SingleRange {
         })
     }
 
-    createScale() {
+    createScaleByArray() {
+        if (!this.element || !this.array || !Array.isArray(this.array)) return
+        const id = "markers" + Date.now()
+        const datalist = document.createElement("datalist")
+        datalist.id = id
+
+        const spacesVolume = this.array.length - 1
+
+        for (let i = 0; i <= spacesVolume; i++) {
+            const option = document.createElement("option")
+            option.value = i + ""
+            option.label = this.array[i].toString()
+            datalist.append(option)
+        }
+
+        const optionElements = datalist.querySelectorAll("option")
+        this.optionElements = optionElements
+
+        this.element.addEventListener("input", (event: Event) => {
+            const val = (event.target as HTMLInputElement).value
+            this.setCurrentOption(optionElements, val)
+        })
+
+        this.setCurrentOption(optionElements, this.value + "")
+        return { datalist, id }
+
+        return datalist
+    }
+
+    createOptionsByStep(spacesVolume: number): HTMLOptionElement[] {
+        const arr: HTMLOptionElement[] = []
+        for (let i = 0; i <= spacesVolume; i++) {
+            const option = document.createElement("option")
+            option.value = i * this.options.step + this.options.min + ""
+
+            const unit = (this.options.scale && this.options.scale.unit) || ""
+            option.label = i * this.options.step + this.options.min + " " + unit
+            arr.push(option)
+        }
+
+        return arr
+    }
+    createScaleByStep() {
         if (!this.element) return
 
         const id = "markers" + Date.now()
@@ -138,16 +191,20 @@ export default class SingleRange {
 
         const spacesVolume = (this.options.max - this.options.min) / this.options.step
 
-        for (let i = 0; i <= spacesVolume; i++) {
-            const option = document.createElement("option")
-            option.value = i * this.options.step + this.options.min + ""
+        // for (let i = 0; i <= spacesVolume; i++) {
+        //     const option = document.createElement("option")
+        //     option.value = i * this.options.step + this.options.min + ""
 
-            const unit = (this.options.scale && this.options.scale.unit) || ""
-            option.label = i * this.options.step + this.options.min + " " + unit
-            datalist.append(option)
-        }
+        //     const unit = (this.options.scale && this.options.scale.unit) || ""
+        //     option.label = i * this.options.step + this.options.min + " " + unit
+        //     datalist.append(option)
+        // }
 
-        const optionElements = datalist.querySelectorAll("option")
+        const optionElements = this.createOptionsByStep(spacesVolume)
+
+        optionElements.forEach(el => datalist.append(el))
+
+        // const optionElements = datalist.querySelectorAll("option")
         this.optionElements = optionElements
 
         this.element.addEventListener("input", (event: Event) => {
