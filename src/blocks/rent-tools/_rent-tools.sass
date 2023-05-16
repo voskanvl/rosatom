@@ -5,6 +5,7 @@
         display: grid
         grid-template-columns: 365px auto
         column-gap: pw(19)
+        position: relative
 
         +mq1024
             grid-template-columns: 100%
@@ -28,6 +29,13 @@
             border-top: 1px solid #30A842
             padding: ph(29) 0 ph(56)
 
+            +mq1024
+                padding: ph(29) 0 ph(10)
+
+            &:last-child
+                border-bottom: 1px solid #30A842
+                margin-bottom: 2em
+
         +mq1024
             padding-left: 0
 
@@ -50,3 +58,14 @@
 
         +mq1024
             display: block
+
+    &__sticky
+        height: max-content
+        position: sticky
+        top: 0
+
+        +mq1024
+            position: absolute
+            z-index: -1
+            width: 125%
+            top: 0

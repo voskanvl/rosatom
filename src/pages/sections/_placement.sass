@@ -50,3 +50,36 @@
     .rent-config__button
         position: absolute
         inset: auto 0 ph(45) pw(40)
+
+    & svg g[data-fly]
+        animation: fly 3s infinite
+
+    & svg path[data-scale]
+        animation: scale 3s infinite
+
+    & svg path[data-opacity]
+        animation: opacity 1.5s infinite
+
+@keyframes fly
+    0%
+        translate: 0 0
+    50%
+        translate: 0 -20px
+    100%
+        translate: 0 0
+
+@keyframes scale
+    0%
+        scale: 1 1
+    50%
+        scale: 1.05 1.05
+    100%
+        scale: 1 1
+
+@keyframes opacity
+    0%
+        opacity: 1
+    50%
+        opacity: 0.1
+    100%
+        opacity: 1

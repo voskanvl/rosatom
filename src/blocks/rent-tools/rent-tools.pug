@@ -3,34 +3,35 @@ include ../../components/server-item/server-item.pug
 
 .rent-tools
     .rent-tools__container
-        form.rent-tools__options.rent-options
-            .rent-options__close
-                img(src="../../../assets/svg/x.svg" alt="close")
-            .rent-options__block 
-                .rent-options__title Сервер для
-                .rent-options__tag-cloud
-                    each i in rent.tagCloud
-                        .rent-options__check 
-                            input(type="checkbox" name="role")
-                            p= i
+        div.rent-tools__sticky
+            form.rent-tools__options.rent-options
+                .rent-options__close
+                    img(src="../../../assets/svg/x.svg" alt="close")
+                .rent-options__block 
+                    .rent-options__title Сервер для
+                    .rent-options__tag-cloud
+                        each i in rent.tagCloud
+                            .rent-options__check 
+                                input(type="checkbox" name="role")
+                                p= i
 
-            each i in rent.sections 
-                if i.type === "range"
-                    .rent-options__block(id= i.name)
-                        input(type="text", name= i.name, role="range" hidden="hidden") 
-                        .rent-options__title!= i.title 
-                        .rent-options__minmax 
-                            input(type="number" value= i.range.min)
-                            input(type="number" value= i.range.max)
-                        .rent-options__miltirange(id= i.name)
+                each i in rent.sections 
+                    if i.type === "range"
+                        .rent-options__block(id= i.name)
+                            input(type="text", name= i.name, role="range" hidden="hidden") 
+                            .rent-options__title!= i.title 
+                            .rent-options__minmax 
+                                input(type="number" value= i.range.min)
+                                input(type="number" value= i.range.max)
+                            .rent-options__miltirange(id= i.name)
 
-                if i.type === "select"
-                    .rent-options__block(id= i.name)  
-                        +select(i.name, i.title, i.list)
+                    if i.type === "select"
+                        .rent-options__block(id= i.name)  
+                            +select(i.name, i.title, i.list)
 
-                if i.type === "select-object"
-                    .rent-options__block(id= i.name)  
-                        +select(i.name, i.title, i.list)
+                    if i.type === "select-object"
+                        .rent-options__block(id= i.name)  
+                            +select(i.name, i.title, i.list)
 
 
         .rent-tools__right
@@ -46,3 +47,4 @@ include ../../components/server-item/server-item.pug
                 each i in Array.from({length: 7},(_,index)=>index)
                     li.rent-tools__list-item
                         +server-item()
+            button.server-item__button.server-item__more Смотреть еще

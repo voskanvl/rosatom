@@ -16,9 +16,13 @@
         row-gap: ph(38)
         +mq1440
             grid-template-columns: 22% 35% 43%
+        // +mq580
+        //     grid-template-columns: repeat(2, 50%)
+        //     grid-template-areas: "recomend 1c" "name cpu" "ram disc"
         +mq580
-            grid-template-columns: repeat(2, 50%)
-            grid-template-areas: "recomend 1c" "name cpu" "ram disc"
+            grid-template-columns: 100%
+            grid-template-areas: "recomend" "1c" "name" "cpu" "ram" "disc"
+            row-gap: 10px
 
     &__line
         display: grid
@@ -33,7 +37,7 @@
 
     &__name
         grid-area: name
-        font-size: clamp(18px,25 / 1440 * 100vw,25px)
+        font-size: 25px
         color: #303031
 
     &__tag
@@ -62,7 +66,11 @@
         border: none
         max-width: 114px
         place-self: right
-        max-height: 32px
+        height: 32px
+        min-width: 150px
+
+        +mq580
+            place-self: left
 
     &__disc
         place-self: right
@@ -78,3 +86,9 @@
 
     &__cpu
         grid-area: cpu
+
+    &__more
+        margin-left: 2em
+
+        +mq1024
+            margin-left: 0

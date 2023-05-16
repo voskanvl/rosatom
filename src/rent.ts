@@ -3,6 +3,7 @@ import SingleRange from "./ts/components/range/singleRange/SingleRange"
 import tabs from "./ts/components/tabs/tabs"
 import MultyRange from "./ts/components/multiRange/MultiRange"
 import Counter from "./components/number-input/number-input"
+import debounce from "./ts/helpers/debounce"
 
 splidesPages()
 
@@ -88,7 +89,7 @@ selects &&
         --- OPTIONS BLOCK in RENT PAGE---
         */
 
-const optionsElement = document.querySelector<HTMLElement>(".rent-tools__options")
+const optionsElement = document.querySelector<HTMLElement>(".rent-tools__sticky")
 const optionsButton = document.querySelector<HTMLButtonElement>(".rent-tools__filter")
 const closeoptionsElement = document.querySelector<HTMLButtonElement>(".rent-options__close")
 
@@ -103,6 +104,17 @@ optionsElement &&
     closeoptionsElement.addEventListener("click", () => {
         if (getComputedStyle(optionsElement).position !== "absolute") return
         optionsElement.style.zIndex = "-1"
+
+        const media = matchMedia("(min-width: 1025px)").matches
+        media ? (optionsElement.style.zIndex = "0") : (optionsElement.style.zIndex = "-1")
+
+        window.addEventListener(
+            "resize",
+            debounce(() => {
+                const media = matchMedia("(min-width: 1025px)").matches
+                media ? (optionsElement.style.zIndex = "0") : (optionsElement.style.zIndex = "-1")
+            }, 200),
+        )
     })
 
 /*
