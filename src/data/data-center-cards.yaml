@@ -1,7 +1,7 @@
 dataCenterCards:
   - id: 100
     title: 2000
-    caption: стойко-мест для клиентов
+    caption: стойко-мест 
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 101
     title: 16 МВт
@@ -41,7 +41,7 @@ dataCenterCards:
     caption: провайдера связи
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 110
-    title: 24*7*365
+    title: 24/7/365
     caption: техническая поддержка
     text: Quisque a imperdiet tellus, sit amet ullamcorper ligula. Nullam sit amet ante tristique, ornare turpis ac, faucibus augue
   - id: 110

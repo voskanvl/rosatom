@@ -12,7 +12,7 @@ services:
     href: "/cloud.html"
     tiled: true
   - img: "../../assets/svg/services/4.svg"
-    title: ТЕЛЕКОММУНИКАЦИОННЫЕ УСЛУГИ 
+    title: УСЛУГИ СВЯЗИ
     href: "/telecom.html"
   - img: "../../assets/svg/services/5.svg"
     title: ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ

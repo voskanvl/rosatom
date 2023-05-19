@@ -4,9 +4,12 @@
             .logo
         a(href="tel:81234567890") 8 123 456 78 90 
     .footer__body
-        each i in menu 
+        each i in menuFooter 
             .footer__division
-                h3= i.title 
+                if i.href 
+                    a.footer__division-title(href= i.href)= i.title
+                else
+                    h3= i.title 
                 each j in i.menu
                     - const menuSub = j.menu
                     h4= j.name

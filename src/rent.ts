@@ -4,6 +4,16 @@ import tabs from "./ts/components/tabs/tabs"
 import MultyRange from "./ts/components/multiRange/MultiRange"
 import Counter from "./components/number-input/number-input"
 import debounce from "./ts/helpers/debounce"
+import feedback from "./ts/components/modal/feedback"
+import modal from "./ts/components/modal/modal"
+
+const button2 = document.querySelector<HTMLButtonElement>(".rent-config__button")
+button2 && button2.addEventListener("click", () => modal(feedback()))
+
+const buttons = document.querySelectorAll<HTMLButtonElement>(".server-item__button")
+buttons &&
+    buttons.length &&
+    buttons.forEach(button => button.addEventListener("click", () => modal(feedback())))
 
 splidesPages()
 

@@ -114,7 +114,7 @@
             top: 30%
 
     #about-cod
-        margin-top: ph(130)
+        margin-block: ph(130)
 
         .about__split
             +mq768
@@ -179,7 +179,7 @@
             color: #404041
 
     &__blue
-        background: #6EABDD
+        background: #6EABDD00
         color: #fff
         height: 100%
         border-radius: 10px
@@ -420,5 +420,7 @@
         &:checked + .about__accordion
             grid-template-rows: 1fr
 
-    // &__slider
+    &__slider
+        background: #6EABDD
+        border-radius: 10px
     //     min-height: 400px

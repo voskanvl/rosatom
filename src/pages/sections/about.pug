@@ -21,14 +21,14 @@ section.about(style="background:#ECF0F3;")
 
     .about__block#about-cod
         .about__container
-            h2.title О ЦОД ИННОПОЛИС
+            h2.title.text-masked-element(style="--background: #303031")  О ЦОД ИННОПОЛИС
             .about__split 
                 p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
                 p ДАВНО ВЫЯСНЕНО, ЧТО ПРИ ОЦЕНКЕ ДИЗАЙНА И КОМПОЗИЦИИ ЧИТАЕМЫЙ ТЕКСТ МЕШАЕТ СОСРЕДОТОЧИТЬСЯ. LOREM IPSUM ИСПОЛЬЗУЮТ ПОТОМУ, ЧТО ТОТ ОБЕСПЕЧИВАЕТ БОЛЕЕ ИЛИ МЕНЕЕ СТАНДАРТНОЕ 
 
-    .about__block#about-advantages
-        .about__container
-            include ../../blocks/advantages/advantages.pug
+    //- .about__block#about-advantages
+    //-     .about__container
+    //-         include ../../blocks/advantages/advantages.pug
 
 
 
@@ -68,7 +68,7 @@ section.about(style="background:#ECF0F3;")
 
     .about__block#clients-talking
         .about__container
-            h2.title Клиенты говорят о нас
+            h2.title.text-masked-element(style="--background: #303031")  Клиенты говорят о нас
             .about__split
                 div.about__slider
                     +splide("talking", clients)

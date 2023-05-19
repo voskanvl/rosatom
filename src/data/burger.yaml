@@ -1,83 +1,19 @@
 burger:
-  - name: Документы
+  - name: Услуги
     menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
+      - name: Размещение оборудования
+        href: "/placement.html"
+      - name: Облачная инфраструктура
+        href: "/cloud.html"
+      - name: Телекоммуникационные услуги
+        href: "/telecom.html"
+      - name: Дополнительные услуги
+        href: "/additional-services.html"
+      - name: Аренда сервера
+        href: "/rent.html"
+  - name: Информационный центр
     menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
-    menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
-    menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
-    menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
-    menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
-    menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  - name: Документы
-    menu: 
-      - name: Лицензии
-        href: "#"
-      - name: Сертификаты
-        href: "#"
-      - name: Регламенты
-        href: "#"
-      - name: Правила
-        href: "#"
-  
+      - name: Документы
+        href: "/docs.html"
+
  

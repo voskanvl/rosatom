@@ -25,10 +25,10 @@ include ../../components/check/check.pug
                     p более или менее стандартное 
 
                 .cloud__order  
-                    div.cloud__cloud
-                        p Цена от:
-                            strong 15 000 ₽
-                        p ЗА 1 МЕТР В ГОД
+                    //- div.cloud__cloud
+                    //-     p Цена от:
+                    //-         strong 15 000 ₽
+                    //-     p ЗА 1 МЕТР В ГОД
                     button.cloud__button 
                         span Заказать услугу
                         img(src="../../../assets/svg/arrow-right.svg" alt="")
@@ -48,6 +48,16 @@ include ../../components/check/check.pug
                     each i in cloud
                         .cloud-item(style="margin-bottom: 17px")
                             +range(i.val, i.min, i.max, i.label, i.unit)
+                    hr
+                    .cloud__block
+                        .cloud__gpu 
+                            +check("gpu", "Требуется ли GPU  в облачной инфраструктуре")
+                            //- br
+                            .cloud__select-gpu
+                                div
+                                    each i in GPU
+                                        .cloud-item(style="margin-bottom: 17px")
+                                            +range(i.val, i.min, i.max, i.label, i.unit)
                     hr
 
                     h4(style="margin: 17px 0; ") Какое дополнительное ПО необходимо:

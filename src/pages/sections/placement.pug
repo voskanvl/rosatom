@@ -42,7 +42,7 @@ include ../../components/number-input/number-input.pug
                     .cloud__constructor-inner
                         .cloud__constructor-left.convex
                             .cloud-item(style="margin-bottom: 17px")
-                                +range(10, 1, 24, "Количество юнитов", "Шт")
+                                +range(10, 1, 12, "Количество юнитов", "Шт")
                             .cloud-item(style="margin-bottom: 17px")
                                 +range(500, 300, 600, "Мощность каждого юнита", "Вт")(step="100" unit="Вт")
 
@@ -68,7 +68,7 @@ include ../../components/number-input/number-input.pug
                             .cloud-item(style="margin-bottom: 17px")
                                 +range(10, 1, 20, "Количество стоек", "Шт")
                             .cloud-item(style="margin-bottom: 17px")
-                                +range(18, 3, 21, "Мощность на стойку", "кВт")(step="3" unit="КВт")
+                                +range(7, 5, 10, "Мощность на стойку", "кВт")(step="1" unit="КВт")
 
                             button.rent-config__button 
                                 div

@@ -1,11 +1,10 @@
-menu:
+menuFooter:
   - title: о компании
     menu: []
     href: "/about.html"
 
   - title: услуги
-    # href: "/services.html"
-    menu: 
+    menu:
       - name: услуги
         menu: 
         - name: Услуги (главная)

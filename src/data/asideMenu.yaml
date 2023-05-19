@@ -1,7 +1,7 @@
 asideMenu:
-  - title: 2000
-    caption: стойко-мест для клиентов
-    href: "#"
+  # - title: 2000
+  #   caption: стойко-мест для клиентов
+    # href: "#"
   - title: 16 МВт
     caption: полная мощность
     href: "#"

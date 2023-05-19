@@ -45,6 +45,25 @@
         row-gap: 7px
         width: 35%
 
+    &__block
+        padding-block: 1em
+
+    &__select-gpu
+        display: grid
+        grid-template-rows: 0fr
+        padding-top: 0
+        transition: grid-template-rows $std-trans, padding-top $std-trans
+
+        .cloud__block
+            padding-block: 0
+
+        & > *
+            overflow: hidden
+
+        &[open]
+            grid-template-rows: 1fr
+            padding-top: 1em
+
 h3.cloud__title.title.text-masked-element
     margin: ph(136) 0 ph(39)
     +fz(20,1920,60)

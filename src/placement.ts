@@ -1,5 +1,12 @@
 import SingleRange from "./ts/components/range/singleRange/SingleRange"
 import tabs from "./ts/components/tabs/tabs"
+import feedback from "./ts/components/modal/feedback"
+import modal from "./ts/components/modal/modal"
+
+const button1 = document.querySelector<HTMLButtonElement>(".cloud__button")
+const button2 = document.querySelector<HTMLButtonElement>(".rent-config__button")
+button1 && button1.addEventListener("click", () => modal(feedback()))
+button2 && button2.addEventListener("click", () => modal(feedback()))
 
 tabs()
 
