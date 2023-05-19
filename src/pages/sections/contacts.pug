@@ -1,0 +1,46 @@
+.contacts-page
+    .contacts-page__container.container
+        .contacts-page__title.title.text-masked-element(style="--background: #303031; ")
+            p КОНТАКТЫ
+
+        .contacts__data
+
+            .contacts__main-address.contacts__panel.convex#address
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/ping.svg" alt="ping")
+                    span= common.address
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/telephone.svg" alt="telephone")
+                    a(href="tel:"+common.phone)= common.phone
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/mail.svg" alt="telephone")
+                    a(href="mailto:"+common.mail)= common.mail
+                .contacts__buttons 
+                    a.contacts__button(href="#") Информация для юр. лиц
+                    a.contacts__button(href="#") Информация для физ. лиц
+                    a.contacts__button(href="#") Вакансии
+
+            .contacts__sales.contacts__panel.convex#sales
+                .contacts__details-title Отдел продаж
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/telephone.svg" alt="telephone")
+                    a(href="tel:"+common.sales.phone)= common.sales.phone
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/mail.svg" alt="telephone")
+                    a(href="mailto:"+common.sales.mail)= common.sales.mail
+                .contacts__buttons 
+                    button.contacts__button Заказать звонок
+                    button.contacts__button Стать клиентом
+
+            .contacts__support.contacts__panel.convex#support
+                .contacts__details-title Техническая поддержка
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/telephone.svg" alt="telephone")
+                    a(href="tel:"+common.support.phone)= common.support.phone
+                .contacts__details 
+                    img(src="../../../assets/svg/contacts/mail.svg" alt="telephone")
+                    a(href="mailto:"+common.support.mail)= common.support.mail
+                .contacts__buttons 
+                    button.contacts__button Заказать вопрос
+            .contacts__map(id="map")
+            //- input(id="inputSearch")

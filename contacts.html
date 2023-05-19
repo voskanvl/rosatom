@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Росатом</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9b27ecf5-fac6-419d-b8f5-184a9818db91&lang=ru_RU"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        var map = ymaps.ready(function () {
+            const map = new ymaps.Map("map", {
+                center: [55.751837, 48.751597],
+                zoom: 13,
+                controls: ["routePanelControl"],
+            })
+            var multiRoute = new ymaps.multiRouter.MultiRoute(
+                {
+                    // Описание опорных точек мультимаршрута.
+                    referencePoints: [[55.751837, 48.751597], "Москва, ул. Мясницкая"],
+                    // Параметры маршрутизации.
+                    params: {
+                        // Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
+                        results: 2,
+                    },
+                },
+                {
+                    // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
+                    boundsAutoApply: true,
+                },
+            )
+
+            map.behaviors.disable("scrollZoom")
+            // map.behaviors.disable("drag");
+
+            const control = map.controls.get("routePanelControl")
+            control.routePanel.state.set({
+                fromEnabled: true,
+                from: "",
+                to: [55.751837, 48.751597],
+                toEnabled: false,
+                type: "auto",
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <template data-type="pug" data-src="./src/pages/contacts.pug"></template>
+    <script type="module" src="/src/common.ts" defer></script>
+    <script type="module" src="/src/contacts.ts" defer></script>
+</body>
+
+</html>

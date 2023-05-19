@@ -1,0 +1,53 @@
+.contacts-page
+    background: #ECF0F3
+    height: max(100vh, 980px)
+    display: grid
+    place-items: start center
+
+    &__container.container
+        // all: initial
+        // height: max-content
+        all: initial
+        padding: max(5%, 80px) 10% 10%
+        font-family: Rosatom, sans-serif
+        width: 80%
+
+    .contacts__data
+        grid-template-columns: repeat(3, minmax(0,1fr))
+        gap: 30px
+        grid-template-rows: repeat(2,max-content)
+        grid-template-areas: "address sales support" "map map map"
+        overflow: visible
+        margin-top: 2vh
+
+        #address
+            grid-area: address
+
+        #sales
+            grid-area: sales
+
+        #support
+            grid-area: support
+
+        #map
+            grid-area: map
+
+    .contacts__details
+        img
+            filter: invert(1)
+
+    .contacts__buttons
+        flex-direction: row
+        align-content: center
+
+    .contacts__button
+        color: #303031
+        border-color: #303031
+        display: flex
+        align-items: center
+
+        &:hover
+            color: #fff
+
+    #map
+        height: min(400px, 30vh)
