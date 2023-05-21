@@ -1,7 +1,7 @@
 interface SingleOptions {
     min?: number
     max?: number
-    val?: number
+    val?: number | string
     step?: number
     class?: string
     scale?: {
@@ -22,15 +22,14 @@ export default class SingleRange {
         }
         array?: string
     }
-    private optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[] | null = null
-    private value: number = 50
+    private optionElements: HTMLOptionElement[] | null = null
+    private value: number = 0
     element: HTMLInputElement | null = null
-    private listeners: ((value: number) => void)[] | null = null
+    private listeners: ((value: string) => void)[] | null = null
     private connectedElement: HTMLElement | null = null
     private listenConnectedElement = (event: Event) => {
         const targetEl = event.target as HTMLInputElement
         const { value } = targetEl
-        // if (+value < this.options.min || +value > this.options.max) return
         if (+value < this.options.min) {
             targetEl.value = this.options.min + ""
             return
@@ -48,33 +47,65 @@ export default class SingleRange {
             this.setCurrentOption(this.optionElements, value)
         }
     }
-    private array: string[] | number[] | undefined
+    // private array: string[] | number[] | undefined
+    private mapValueLabel: Record<string, string> = {} as Record<string, string>
 
     constructor(root: HTMLElement, options?: SingleOptions) {
         this.root = root
         this.options = {
             ...initialOptions,
-            ...Object.fromEntries(Object.entries(options || {}).filter(([_, val]) => !!val)),
+            ...Object.fromEntries(
+                Object.entries(options || {}).filter(
+                    ([_, val]) => val !== undefined || val !== null,
+                ),
+            ),
         }
-        this.value = (options && options.val) || 0
+        let valuesArray: string[] = []
 
-        this.createElement()
-        this.mount()
+        if (!this.options.scale) {
+            const rangeWidth = (+this.options.max - +this.options.min) / (+this.options.step || 1)
+            valuesArray = [...Array(rangeWidth + 1).keys()].map(i => i + +this.options.min + "")
+        }
 
-        const scale = this.options.scale && this.createScaleByStep()
-        if (scale) {
-            this.element?.insertAdjacentElement("afterend", scale.datalist)
-            // this.element?.setAttribute("list", scale.id)
-            this.element?.style.setProperty("----thumb-margin", "-12px")
+        if (this.options.scale) {
+            for (
+                let i = 0;
+                i <= (+this.options.max - +this.options.min) / (+this.options.step || 1);
+                i++
+            ) {
+                // const val = this.options.scale?.unit ? i + " " + this.options.scale?.unit : i + ""
+                const val: string =
+                    +this.options.min +
+                    (+this.options.step || 1) * i +
+                    (this.options.scale.unit ? " " + this.options.scale.unit : "")
+                valuesArray.push(val)
+            }
         }
 
         if (this.options.array) {
             try {
-                this.array = JSON.parse(this.options.array)
+                valuesArray = JSON.parse(this.options.array.replace(/\'/g, '"'))
+                if (!valuesArray || !Array.isArray(valuesArray)) return
             } catch (error) {
                 console.warn(error)
             }
         }
+
+        this.options.min = 0
+        this.options.max = valuesArray.length - 1
+        this.options.step = 1
+        this.root.innerHTML = ""
+        this.value = valuesArray.indexOf(
+            this.options.val + (this.options.scale?.unit ? " " + this.options.scale.unit : ""),
+        )
+        this.createElement()
+        this.mount()
+
+        const elementOptions = this.createOptionElements(valuesArray)
+        const scale = this.createScaleByStep(elementOptions)
+        this.options.scale?.is &&
+            scale &&
+            this.element?.insertAdjacentElement("afterend", scale.datalist)
     }
 
     private createElement() {
@@ -89,11 +120,12 @@ export default class SingleRange {
 
         this.element.addEventListener("input", ({ currentTarget }: Event) => {
             const { value } = currentTarget as HTMLInputElement
-            // const width = +this.options.max - +this.options.min
-            // const computed = (+value / 100) * width + +this.options.min //приводим к заданному в options min и max диапазону
             this.element?.style.setProperty("--value", this.valuePercent(+value) + "%")
-            value !== null && this.listeners && this.listeners.forEach(cb => cb(+value))
+
+            this.listeners && this.listeners.forEach(cb => cb(this.mapValueLabel[value]))
         })
+
+        return this.element
     }
 
     private valuePercent = (value: number): number => {
@@ -104,115 +136,73 @@ export default class SingleRange {
         this.element && this.root.append(this.element)
     }
 
-    subscribe(cb: (value: number) => void) {
+    subscribe(cb: (value: string) => void) {
         if (this.listeners && this.listeners.length) {
         } else {
             this.listeners = [cb]
         }
     }
 
-    unsubscribe(cb: (value: number) => void) {
+    unsubscribe(cb: (value: string) => void) {
         this.listeners = this.listeners && this.listeners?.filter(e => e !== cb)
     }
 
     connectOutput(el: HTMLElement) {
         this.connectedElement = el
-        let handler: (v: number) => void
+        let handler: (v: string) => void
 
         if (el.nodeName.toLowerCase() === "input") {
-            handler = (v: number) => ((el as HTMLInputElement).value = (v | 0) + "")
+            handler = (v: string) => ((el as HTMLInputElement).value = v)
             this.connectedElement.addEventListener("input", this.listenConnectedElement)
         } else {
-            handler = (v: number) => (el.innerText = (v | 0) + "")
+            handler = (v: string) => (el.innerText = v)
         }
         this.subscribe(handler)
     }
 
-    setCurrentOption(
-        optionElements: NodeListOf<HTMLOptionElement> | HTMLOptionElement[],
-        val: string,
-    ) {
+    private setCurrentOption(optionElements: HTMLOptionElement[], val: string) {
         optionElements.forEach(option => {
-            option.value === val
-                ? option.setAttribute("current", "true")
-                : option.removeAttribute("current")
+            if (option.value === val) {
+                option.setAttribute("current", "true")
+            } else {
+                option.removeAttribute("current")
+            }
         })
     }
 
-    createScaleByArray() {
-        if (!this.element || !this.array || !Array.isArray(this.array)) return
-        const id = "markers" + Date.now()
-        const datalist = document.createElement("datalist")
-        datalist.id = id
-
-        const spacesVolume = this.array.length - 1
-
-        for (let i = 0; i <= spacesVolume; i++) {
-            const option = document.createElement("option")
-            option.value = i + ""
-            option.label = this.array[i].toString()
-            datalist.append(option)
-        }
-
-        const optionElements = datalist.querySelectorAll("option")
-        this.optionElements = optionElements
-
-        this.element.addEventListener("input", (event: Event) => {
-            const val = (event.target as HTMLInputElement).value
-            this.setCurrentOption(optionElements, val)
-        })
-
-        this.setCurrentOption(optionElements, this.value + "")
-        return { datalist, id }
-
-        return datalist
-    }
-
-    createOptionsByStep(spacesVolume: number): HTMLOptionElement[] {
+    private createOptionElements(valueArray: number[] | string[]): HTMLOptionElement[] {
         const arr: HTMLOptionElement[] = []
-        for (let i = 0; i <= spacesVolume; i++) {
+        for (let i = 0; i < valueArray.length; i++) {
             const option = document.createElement("option")
-            option.value = i * this.options.step + this.options.min + ""
+            option.value = valueArray[i].toString()
 
-            const unit = (this.options.scale && this.options.scale.unit) || ""
-            option.label = i * this.options.step + this.options.min + " " + unit
+            // const unit = (this.options.scale && this.options.scale.unit) || ""
+            option.label = valueArray[i].toString()
             arr.push(option)
+            this.mapValueLabel = { ...this.mapValueLabel, [i + ""]: valueArray[i].toString() }
         }
 
+        console.log(this.mapValueLabel)
         return arr
     }
-    createScaleByStep() {
+
+    private createScaleByStep(optionElements: HTMLOptionElement[]) {
         if (!this.element) return
 
         const id = "markers" + Date.now()
         const datalist = document.createElement("datalist")
         datalist.id = id
-        // this.element.setAttribute("list", id)
-
-        const spacesVolume = (this.options.max - this.options.min) / this.options.step
-
-        // for (let i = 0; i <= spacesVolume; i++) {
-        //     const option = document.createElement("option")
-        //     option.value = i * this.options.step + this.options.min + ""
-
-        //     const unit = (this.options.scale && this.options.scale.unit) || ""
-        //     option.label = i * this.options.step + this.options.min + " " + unit
-        //     datalist.append(option)
-        // }
-
-        const optionElements = this.createOptionsByStep(spacesVolume)
 
         optionElements.forEach(el => datalist.append(el))
 
-        // const optionElements = datalist.querySelectorAll("option")
         this.optionElements = optionElements
 
         this.element.addEventListener("input", (event: Event) => {
             const val = (event.target as HTMLInputElement).value
-            this.setCurrentOption(optionElements, val)
+            this.setCurrentOption(optionElements, this.mapValueLabel[val])
         })
 
-        this.setCurrentOption(optionElements, this.value + "")
+        this.setCurrentOption(optionElements, this.mapValueLabel[this.value + ""])
         return { datalist, id }
     }
 }
