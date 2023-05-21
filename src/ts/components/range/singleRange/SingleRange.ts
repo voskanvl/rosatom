@@ -27,27 +27,7 @@ export default class SingleRange {
     element: HTMLInputElement | null = null
     private listeners: ((value: string) => void)[] | null = null
     private connectedElement: HTMLElement | null = null
-    private listenConnectedElement = (event: Event) => {
-        const targetEl = event.target as HTMLInputElement
-        const { value } = targetEl
-        if (+value < this.options.min) {
-            targetEl.value = this.options.min + ""
-            return
-        }
-        if (+value > this.options.max) {
-            targetEl.value = this.options.max + ""
-            return
-        }
-        this.value = +value
-        this.element && (this.element.value = this.value + "")
-        this.element &&
-            this.element.style.setProperty("--value", this.valuePercent(this.value) + "%")
 
-        if (this.options.scale && this.optionElements) {
-            this.setCurrentOption(this.optionElements, value)
-        }
-    }
-    // private array: string[] | number[] | undefined
     private mapValueLabel: Record<string, string> = {} as Record<string, string>
 
     constructor(root: HTMLElement, options?: SingleOptions) {
@@ -73,7 +53,6 @@ export default class SingleRange {
                 i <= (+this.options.max - +this.options.min) / (+this.options.step || 1);
                 i++
             ) {
-                // const val = this.options.scale?.unit ? i + " " + this.options.scale?.unit : i + ""
                 const val: string =
                     +this.options.min +
                     (+this.options.step || 1) * i +
@@ -106,6 +85,8 @@ export default class SingleRange {
         this.options.scale?.is &&
             scale &&
             this.element?.insertAdjacentElement("afterend", scale.datalist)
+
+        this.listenConnectedElement = this.listenConnectedElement.bind(this)
     }
 
     private createElement() {
@@ -160,6 +141,28 @@ export default class SingleRange {
         this.subscribe(handler)
     }
 
+    private listenConnectedElement(event: Event) {
+        const targetEl = event.target as HTMLInputElement
+        const { value } = targetEl
+        console.log(this.options)
+        if (+value < +this.options.min) {
+            targetEl.value = this.options.min + ""
+            return
+        }
+        if (+value > this.options.max) {
+            targetEl.value = this.options.max + ""
+            return
+        }
+        this.value = +value
+        this.element && (this.element.value = this.value + "")
+        this.element &&
+            this.element.style.setProperty("--value", this.valuePercent(this.value) + "%")
+
+        if (this.options.scale && this.optionElements) {
+            this.setCurrentOption(this.optionElements, value)
+        }
+    }
+
     private setCurrentOption(optionElements: HTMLOptionElement[], val: string) {
         optionElements.forEach(option => {
             if (option.value === val) {
@@ -182,7 +185,6 @@ export default class SingleRange {
             this.mapValueLabel = { ...this.mapValueLabel, [i + ""]: valueArray[i].toString() }
         }
 
-        console.log(this.mapValueLabel)
         return arr
     }
 
