@@ -1,4 +1,4 @@
-interface SingleOptions {
+export interface SingleOptions {
     min?: number
     max?: number
     val?: number | string
@@ -26,7 +26,7 @@ export default class SingleRange {
     private value: number = 0
     element: HTMLInputElement | null = null
     private listeners: ((value: string) => void)[] | null = null
-    private connectedElement: HTMLElement | null = null
+    // private connectedElement: HTMLElement | null = null
 
     private mapValueLabel: Record<string, string> = {} as Record<string, string>
 
@@ -129,12 +129,12 @@ export default class SingleRange {
     }
 
     connectOutput(el: HTMLElement) {
-        this.connectedElement = el
+        // this.connectedElement = el
         let handler: (v: string) => void
 
         if (el.nodeName.toLowerCase() === "input") {
             handler = (v: string) => ((el as HTMLInputElement).value = v)
-            this.connectedElement.addEventListener("input", this.listenConnectedElement)
+            el.addEventListener("input", this.listenConnectedElement)
         } else {
             handler = (v: string) => (el.innerText = v)
         }
