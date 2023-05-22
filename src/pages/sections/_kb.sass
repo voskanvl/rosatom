@@ -14,13 +14,19 @@
         display: flex
         justify-content: space-between
         align-items: center
+        margin-bottom: ph(59)
 
     &__main
         display: grid
         grid-template-columns: 365px minmax(0,1fr)
+        column-gap: pw(60)
 
     &__catalog
         position: relative
+        padding-left: 0
+
+        a
+            text-decoration: none
 
     &__catalog, &__catalog-list
         list-style: none
@@ -60,6 +66,7 @@
             & > .kb__catalog-list-name
                 background: #0000
                 box-shadow: none
+                padding-inline: 1.5em
 
                 & > img
                     rotate: 180deg
@@ -71,6 +78,13 @@
 
             & > *
                 overflow: hidden
+                list-style: none
+                padding-left: 1.5em
+
+                display: flex
+                flex-direction: column
+                row-gap: 5px
+                font-size: 14px
 
     &__catalog-list-name
         width: 100%
@@ -88,3 +102,50 @@
             rotate: 0deg
             transition: $std-trans
             transform-origin: 50% 50%
+
+    &__content
+        font-size: 20px
+        a
+            color: #30A842
+
+        h2
+            margin-block: 20px
+
+        li
+            &::marker
+                content: " — "
+                color: #30A842
+        p
+            padding: 0.5em 0
+
+    &__search
+        display: flex
+        flex: 0 1 50%
+        align-items: center
+        padding: 4px 26px 4px 6px
+        gap: 12px
+
+        height: 71px
+
+        background: #ECF0F3
+        box-shadow: inset 2px 3px 6px #AEC1D0, inset -12px -4px 13px #FFFFFF
+        border-radius: 51px
+
+        img
+            width: 22px
+            height: 22px
+
+        input
+            border: none
+            padding: 1em
+            flex: 1
+            font-size: 20px
+            background: none
+            &::placeholder
+                color: rgba(#000, 23%)
+
+    .kb__search-plug
+        width: 63px
+        height: 63px
+        background: #fff
+        border-radius: 50%
