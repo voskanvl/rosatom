@@ -10,7 +10,7 @@
         "createBlock": " bash ./create-block.bash",
         "createComponent": " bash ./create-component.bash",
         "tar": "tar -czvf rosatom.tar.gz ./dist",
-        "build+tar": "tsc && vite build && cp -r assets/* ./dist/assets && tar -czvf rosatom.tar.gz ./dist"
+        "build+copy assets + tar": "tsc && vite build && cp -r assets/* ./dist/assets && tar -czvf rosatom.tar.gz ./dist"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.56.0",

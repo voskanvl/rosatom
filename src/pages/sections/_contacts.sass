@@ -1,6 +1,7 @@
-$media0: "width <= 1800px"
+$media0: "width <= 1600px"
 $media1: "width <= 1400px"
 $media2: "width <= 1024px"
+$media3: "width <= 768px"
 
 .contacts
     background: linear-gradient(242.46deg, #1C376A 0%, #30A842 186.27%)
@@ -18,14 +19,14 @@ $media2: "width <= 1024px"
 
     &__data
         width: 100%
-        height: 60vh
+        max-height: 80vh
         overflow: auto
         display: grid
         grid-template-columns: 24% 24% 49%
-        grid-template-rows: repeat(2, minmax(260px, 23.2vh))
-        grid-template-areas: "details sales map" "details support map"
+        grid-template-rows: repeat(2, minmax(300px, 23.2vh))
+        grid-template-areas: "details sales map" "socials support map"
         gap: 13px
-        margin-top: 6.1vh
+        margin-top: 1vh
         scrollbar-width: thin
         scrollbar-color: #30A842 #404041
         &::-webkit-scrollbar
@@ -36,17 +37,21 @@ $media2: "width <= 1024px"
             border-radius: 21px
 
         @media ($media0)
-            grid-template-areas: "details details map" "sales support map"
-            grid-template-rows: 52% 45%
-            height: 66vh
+            grid-template-areas: "details sales map" "socials support map"
+            grid-template-rows: max-content 45%
             margin-top: 3vh
         @media ($media1)
-            grid-template-columns: 32% 32% 32%
-            grid-template-areas: "details sales support" "map map map"
+            grid-template-columns: repeat(4, minmax(0,1fr))
+            grid-template-areas: "details sales support socials" "map map map map"
         @media ($media2)
+            grid-template-columns: repeat(2, minmax(0,1fr))
+            grid-template-rows: repeat(3,auto)
+            grid-template-areas: "details sales" "support socials" "map map"
+        @media ($media3)
             grid-template-columns: 100%
-            grid-template-rows: repeat(4,auto)
-            grid-template-areas: "details" "sales" "support" "map"
+            grid-template-rows: auto auto auto auto 80vh
+            grid-template-areas: "details" "sales" "support" "socials" "map" "map"
+            padding-right: 1em
 
         & > *
             display: flex
@@ -97,7 +102,7 @@ $media2: "width <= 1024px"
         border: 1px solid #fff
         color: #fff
         font-weight: 350
-        font-size: clamp(12px,16/1400*100vw,16px)
+        font-size: clamp(12px,14/10*100vw,14px)
         max-width: 360px
 
         &:hover
@@ -112,6 +117,9 @@ $media2: "width <= 1024px"
 
     &__support
         grid-area: support
+
+    &__socials
+        grid-area: socials
 
     &__map
         border-radius: 10px

@@ -1,0 +1,136 @@
+kb:
+  - section: Работа в панели управления
+    list: 
+      - name: Аккаунт
+        list: 
+          - title: Регистрация
+            href: "#"
+          - title: Восстановление доступа
+            href: "#"
+          - title: Управление пользователями и роли
+            href: "#"
+          - title: Уведомления
+            href: "#"
+
+      - name: Биллинг
+        list: 
+          - title: По времени
+            href: "#"
+          - title: По месту
+            href: "#"
+
+      - name: Документы
+        list: 
+          - title: Регистрация
+            href: "#"
+          - title: Восстановление доступа
+            href: "#"
+          - title: Управление пользователями и роли
+            href: "#"
+          - title: Уведомления
+            href: "#"
+
+      - name: Регионы, зоны доступности и пулы
+        list: 
+          - title: Регистрация
+            href: "#"
+          - title: Восстановление доступа
+            href: "#"
+          - title: Управление пользователями и роли
+            href: "#"
+          - title: Уведомления
+            href: "#"
+
+      - name: Матрицы доступности
+        list: 
+          - title: Первичные
+            href: "#"
+          - title: Вторичные
+            href: "#"
+          - title: Третичные
+            href: "#"
+
+  - section: Серверы и оборудование
+    list: 
+      - name: Выделенные серверы
+        list: 
+          - title: 1U
+            href: "#"
+          - title: 2U
+            href: "#"
+          - title: 3U
+            href: "#"
+
+      - name: Размещение оборудования
+        list: 
+          - title: Напольное
+            href: "#"
+          - title: Настольное
+            href: "#"
+          - title: Потолочное
+            href: "#"
+
+      - name: Межсетевые экраны
+        list: 
+          - title: Управляемые коммутаторы
+            href: "#"
+          - title: Пакетные фильтры
+            href: "#"
+          - title: Инспеткоры состояния
+            href: "#"
+
+      - name: Аттестованный сегмент ЦОД
+        list: 
+          - title: Пожарный
+            href: "#"
+          - title: Торговый
+            href: "#"
+          - title: Симметричный
+            href: "#"
+
+
+  - section: Облачная платформа
+    list: 
+      - name: Облачные серверы
+        list: 
+          - title: Linux
+            href: "#"
+          - title: Windows
+            href: "#"
+          - title: MacOS
+            href: "#"
+
+      - name: Облачные базы данных
+        list: 
+          - title: Oracle
+            href: "#"
+          - title: Mongo
+            href: "#"
+          - title: SQL
+            href: "#"
+
+      - name: Облачные функции
+        list: 
+          - title: Копирование
+            href: "#"
+          - title: Складирование
+            href: "#"
+          - title: Авторизация
+            href: "#"
+
+      - name: Менеджер секретов
+        list: 
+          - title: Младший
+            href: "#"
+          - title: Старший
+            href: "#"
+
+
+      - name: Объектное хранилище
+        list: 
+          - title: Масштабируемое
+            href: "#"
+          - title: Немасштабируемое
+            href: "#"
+          - title: Амбивалентное
+            href: "#"

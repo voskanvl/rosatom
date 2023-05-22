@@ -6,25 +6,32 @@
 
     &__container.container
         height: unset
-        // padding: 0
-        // width: 80%
+        padding: max(8%, 80px) 0 1em
+        width: 80%
+        display: flex
+        flex-direction: column
 
     .contacts__data
-        colum-gap: 30px
+        column-gap: ph(30)
         overflow: visible
         margin-top: 2vh
         display: flex
         flex-wrap: wrap
         height: unset
+        max-height: unset
         margin-bottom: 1em
 
         & > *
             flex: 1 0 280px
-            max-height: 320px
+            max-height: max-content
 
     .contacts__details
         img
             filter: invert(1)
+
+        &--straight
+            img
+                filter: none
 
     .contacts__buttons
         flex-direction: row

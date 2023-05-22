@@ -1,0 +1,25 @@
+
+.kb 
+    .kb__container.container
+
+        .kb__title
+            .title.text-masked-element(style="--background: #303031; ") БАЗА ЗНАНИЙ
+            div SEARCH
+
+        .kb__main 
+            aside.kb__aside 
+                each section in kb 
+                    ul.kb__catalog
+                        .kb__catalog-section= section.section
+                        each list, idx in section.list 
+                            li.kb__catalog-list
+                                .kb__catalog-list-name
+                                    span= list.name
+                                    img(src="../../../assets/svg/chevron.svg")
+                                div.kb__catalog-block
+                                    ul 
+                                        each i in list.list
+                                            li
+                                                a(href= i.href)= i.title  
+
+            .kb__content

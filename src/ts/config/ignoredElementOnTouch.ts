@@ -11,6 +11,7 @@ export const ignoredElementOnTouch = {
         ".options",
         "#innopolis",
         "#outer-modal",
+        ".contacts__data",
     ],
     drop: [
         ".team__container",
@@ -25,5 +26,6 @@ export const ignoredElementOnTouch = {
         ".options",
         "#innopolis",
         "#outer-modal",
+        ".contacts__data",
     ],
-};
+}
