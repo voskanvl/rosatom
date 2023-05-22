@@ -17,14 +17,16 @@ ranges &&
             min = range.getAttribute("min"),
             val = range.getAttribute("val"),
             step = range.getAttribute("step"),
-            unit = range.getAttribute("unit")
+            unit = range.getAttribute("unit"),
+            array = range.getAttribute("array")
 
         const sr = new SingleRange(range, {
             max: max === null ? 0 : +max,
             min: min === null ? 0 : +min,
-            val: val === null ? undefined : +val,
+            val: val === null ? undefined : val,
             step: step === null ? undefined : +step,
             scale: { is: true, unit: unit || "" },
+            array: array ? array : undefined,
         })
 
         const output = range.nextSibling as HTMLInputElement
