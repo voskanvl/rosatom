@@ -1,3 +1,7 @@
+=flex-column
+    display: flex
+    flex-direction: column
+
 .kb
     display: grid
     place-items: center
@@ -9,6 +13,7 @@
         height: unset
         min-height: 100vh
         width: 82%
+        color: #303031
 
     &__title
         display: flex
@@ -17,9 +22,43 @@
         margin-bottom: ph(59)
 
     &__main
+        position: relative
         display: grid
         grid-template-columns: 365px minmax(0,1fr)
         column-gap: pw(60)
+
+        +mq1024
+            grid-template-columns: 100%
+
+    &__aside
+        +flex-column
+        row-gap: 10px
+        padding-inline: 1.7em
+        height: 70vh
+        overflow-x: hidden
+        overflow-y: auto
+
+        scrollbar-width: thin
+
+        &::-webkit-scrollbar
+            width: 3px
+
+        &::-webkit-scrollbar-thumb
+            width: 3px
+            background: #30A842
+            border-radius: 2px
+
+        +mq1024
+            // padding: 0
+            position: absolute
+            background: #ECF0F350
+            backdrop-filter: blur(4px)
+            height: 100%
+            left: -600px
+            transition: left $std-trans
+
+            &[open]
+                left: -50px
 
     &__catalog
         position: relative
@@ -30,8 +69,7 @@
 
     &__catalog, &__catalog-list
         list-style: none
-        display: flex
-        flex-direction: column
+        +flex-column
         row-gap: 10px
 
     &__catalog-section
@@ -46,8 +84,7 @@
 
     &__catalog-list
         position: relative
-        display: flex
-        flex-direction: column
+        +flex-column
         transition: $std-trans
 
         &[open]
@@ -81,8 +118,7 @@
                 list-style: none
                 padding-left: 1.5em
 
-                display: flex
-                flex-direction: column
+                +flex-column
                 row-gap: 5px
                 font-size: 14px
 
@@ -110,11 +146,15 @@
 
         h2
             margin-block: 20px
+            +fz(20,1024,40)
 
         li
             &::marker
                 content: " — "
                 color: #30A842
+        p,ul
+            +fz(12,1024,20)
+
         p
             padding: 0.5em 0
 
@@ -125,7 +165,7 @@
         padding: 4px 26px 4px 6px
         gap: 12px
 
-        height: 71px
+        height: ph(71)
 
         background: #ECF0F3
         box-shadow: inset 2px 3px 6px #AEC1D0, inset -12px -4px 13px #FFFFFF
@@ -136,16 +176,33 @@
             height: 22px
 
         input
+            width: max(8ch,100%)
             border: none
-            padding: 1em
+            height: 100%
             flex: 1
             font-size: 20px
             background: none
             &::placeholder
                 color: rgba(#000, 23%)
 
-    .kb__search-plug
-        width: 63px
-        height: 63px
+    &__search-plug
+        aspect-ratio: 1
+        height: 100%
         background: #fff
         border-radius: 50%
+
+    &__open-mobile-aside
+        position: fixed
+        top: 50%
+        left: pw(16)
+        rotate: -90deg
+        display: none
+        transition: transform $std-trans
+
+        +mq1024
+            display: block
+
+        // &:hover + .kb__aside
+        //     left: -50px
+        &[open]
+            rotate: 90deg
