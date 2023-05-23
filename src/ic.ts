@@ -21,7 +21,6 @@ const videoCards = document.querySelectorAll<HTMLElement>(".ic-video__card")
 const video = document.querySelector<HTMLVideoElement>("video")
 const videoContainer = document.querySelector<HTMLElement>(".ic-video__media")
 const modal = document.querySelector<HTMLVideoElement>(".ic-modal")
-const fallback = document.querySelector<HTMLVideoElement>(".ic-video__fallback")
 
 video &&
     video.addEventListener("play", () => {
@@ -110,10 +109,17 @@ splide &&
         const id = (event.slide.children[0] as HTMLElement).dataset.id
         const item = codNews && codNews.querySelector<HTMLElement>(`.short-news[data-id="${id}"]`)
 
-        item && item.scrollIntoView({ behavior: "smooth", block: "center" })
-
         const prevShot = codNews && codNews.querySelector<HTMLElement>(".short-news[current]")
         prevShot && prevShot.removeAttribute("current")
         item && item.setAttribute("current", "current")
+
+        item && item.scrollIntoView({ behavior: "smooth", block: "center" })
+        item &&
+            codNewsList &&
+            codNewsList.scrollTo({
+                top: item.offsetTop - codNewsList.offsetTop - codNewsList.clientHeight / 2,
+
+                behavior: "smooth",
+            })
     })
 //---
