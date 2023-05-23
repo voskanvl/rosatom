@@ -1,0 +1,49 @@
+include ../../pug/splides.pug
+include ../../components/service-card/service-card.pug
+include ../../components/range/range.pug
+include ../../components/partners-form/partners-form.pug
+include ../../components/tabs/tabs.pug
+
+section.about.ic(style="background:#ECF0F3;")
+    div.about__banner
+        img(src="../../../assets/images/ic.jpg" alt="office")
+        .about__split#banner 
+            div 
+                h2 ИНФОРМАЦИОННЫЙ ЦЕНТР ЦОД
+            div 
+                //- small 
+                //-     p Смотреть 
+                //-     p видеоролик о ЦОД
+                //- #startvideo
+                //-     include ../../../assets/svg/start-video.svg
+
+    include ../../blocks/ic-panorama/ic-panorama.pug
+
+    h2.title.text-masked-element(style="--background: #303031") ФОТОГАЛЕРЕЯ
+    .innopolis
+        .innopolis__leftside
+            +splide("innopolis",innopolisSlider)
+                img.innopolis__img(src= val.img, data-id= val.id)
+            .innopolis__controls 
+                button.innopolis__control-button.innopolis__control-button--left= "\u27F5"
+                button.innopolis__control-button.innopolis__control-button--right= "\u27F6"
+
+
+
+    .about__footer 
+        //- include ../../../assets/svg/above-footer.svg
+        .about__container
+            .about__split 
+                div.about__wrap 
+                    div
+                        h2 Остались вопросы?
+                        p 
+                            p Заполните форму и мы свяжемся
+                            p с вами в ближайшее время.
+                    div 
+                        p 
+                            p Вы всегда можете получить
+                            p консультацию по телефону:
+                        a.about__phone(href="tel:81234567890") 
+                            h3 8 123 456 78 90 
+                +partners-form("")

@@ -1,0 +1,31 @@
+.ic-panorama
+    button.rent-config__button 
+        div
+            span Посмотреть все видео
+            img(src="../../../assets/svg/arrow-right.svg" alt="")
+    .ic-modal
+        .ic-modal__close X
+
+        .ic-video__controls 
+            .ic-video__control.ic-video__control--left
+                img(src="../../../assets/svg/arrow-right.svg")
+            .ic-video__control.ic-video__control--right
+                img(src="../../../assets/svg/arrow-right.svg")
+
+        +splide("ic-video", icVideo)
+            .ic-video__card(data-video= val.video) 
+                img(src= val.placeholder)
+                .ic-video__row 
+                    span= val.name 
+                    date= val.date
+
+        .ic-video__media
+            .ic-video__fallback
+                .lds-ring
+                    div
+                    div
+                    div
+                    div
+
+
+            video(onload="loadVideo(this)" src="../../../assets/3.mp4", muted, controls)

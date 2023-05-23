@@ -1,0 +1,25 @@
+icVideo:
+  - video: "../../assets/3.mp4"
+    placeholder: "../../assets/images/thinking-man.jpg"
+    name: Видео 1
+    date: 11.11.22
+  - video: "../../assets/РЭА.mp4"
+    placeholder: "../../assets/images/thinking-man.jpg"
+    name: Видео 2
+    date: 11.11.22
+  - video: "../../assets/3.mp4"
+    placeholder: "../../assets/images/thinking-man.jpg"
+    name: Видео 3
+    date: 11.11.22
+  - video: "../../assets/РЭА.mp4"
+    placeholder: "../../assets/images/thinking-man.jpg"
+    name: Видео 4
+    date: 11.11.22
+  - video: "../../assets/3.mp4"
+    placeholder: "../../assets/images/thinking-man.jpg"
+    name: Видео 5
+    date: 11.11.22
+  - video: "../../assets/РЭА.mp4"
+    placeholder: "../../assets/images/thinking-man.jpg"
+    name: Видео 6
+    date: 11.11.22

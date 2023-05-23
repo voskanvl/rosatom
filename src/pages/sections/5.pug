@@ -2,14 +2,15 @@ include ../../pug/splides.pug
 .innopolis
     .innopolis__container.container
         h1.innopolis__title.title.text-masked-element(style="--background: #303031; --circle-color: #30A842") ЦОД ИННОПОЛИС
-        .innopolis__grid
-            .innopolis__leftside
-                a.innopolis__details.text-masked-element(style="--background: #303031; --circle-color: #30A842" href="#")!= "подробнее о ЦОД \u27F6" 
-                +splide("innopolis",innopolisSlider)
-                    img.innopolis__img(src= val.img, data-id= val.id)
-                .innopolis__controls 
-                    button.innopolis__control-button.innopolis__control-button--left= "\u27F5"
-                    button.innopolis__control-button.innopolis__control-button--right= "\u27F6"
-                p.innopolis__text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates praesentium eum accusantium consequatur, neque omnis expedita. Vel error perferendis odit iusto ex eveniet officiis nobis a non. Explicabo maxime adipisci illum ducimus nihil neque laboriosam rerum, quis ipsa vel commodi!
-            .innopolis__rightside
-                include ../../components/news-feed/news-feed.pug
+        .innopolis
+            .innopolis__grid
+                .innopolis__leftside
+                    a.innopolis__details.text-masked-element(style="--background: #303031; --circle-color: #30A842" href="#")!= "подробнее о ЦОД \u27F6" 
+                    +splide("innopolis",innopolisSlider)
+                        img.innopolis__img(src= val.img, data-id= val.id)
+                    .innopolis__controls 
+                        button.innopolis__control-button.innopolis__control-button--left= "\u27F5"
+                        button.innopolis__control-button.innopolis__control-button--right= "\u27F6"
+                    p.innopolis__text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates praesentium eum accusantium consequatur, neque omnis expedita. Vel error perferendis odit iusto ex eveniet officiis nobis a non. Explicabo maxime adipisci illum ducimus nihil neque laboriosam rerum, quis ipsa vel commodi!
+                .innopolis__rightside
+                    include ../../components/news-feed/news-feed.pug
