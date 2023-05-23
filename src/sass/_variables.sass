@@ -36,6 +36,17 @@
         background: #30A842
         border-radius: 21px
 
+=string-limiter($x:3)
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -moz-box
+    -moz-box-orient: vertical
+    display: -webkit-box
+    -webkit-line-clamp: $x
+    -webkit-box-orient: vertical
+    line-clamp: $x
+    box-orient: vertical
+
 $std_trans: .6s
 $toggle-menu: 635px
 $index: calc(1vw + 1vh)

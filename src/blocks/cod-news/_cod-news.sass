@@ -1,12 +1,19 @@
 .cod-news
     display: grid
-    grid-template-columns: minmax(0,3fr) minmax(200px,1fr)
+    grid-template-columns: minmax(0,3fr) 350px
+    width: 100%
+
+    +mq768
+        grid-template-columns: 100%
+        grid-template-rows: 1fr 30vh
 
     &__slider
         // width: 100%
         margin-top: 1.5em
         .splide
             width: 100%
+            height: 100%
+            max-height: 530px
 
     .ic-video__card
         color: #303031
@@ -16,6 +23,9 @@
 
     .ic-video__row
         align-items: flex-start
+
+        & > span
+            +string-limiter(5)
 
         & > date
             color: #fff
@@ -31,9 +41,9 @@
             scroll-behavior: smooth
             scroll-snap-type: y mandatory
 
-            padding: 1.5em 1em 0 1.5em
+            padding: 1.5em 1em 1.6em 1.5em
             list-style: none
-            max-height: 50vh
+            max-height: 65vh
             overflow: auto
 
             display: flex
@@ -53,6 +63,9 @@
         .short-news
             scroll-snap-align: center
 
+            display: flex
+            justify-content: space-between
+
             background: #ECF0F3
             box-shadow: 10px 10px 20px #D1D9E6, -10px -10px 20px #FFFFFF
             border-radius: 10px
@@ -65,3 +78,7 @@
 
             &[current]
                 box-shadow: inset 10px 10px 10px #D1D9E6, inset -10px -10px 10px #FFFFFF
+
+            & > span
+                &:first-child
+                    +string-limiter(5)
