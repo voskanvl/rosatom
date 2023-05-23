@@ -57,8 +57,12 @@
             left: -600px
             transition: left $std-trans
 
-            &[open]
-                left: -50px
+        +mq580
+            padding: 0 1em 0 2em
+            width: calc(100% + ph(50))
+
+        &[open]
+            left: ph(-50)
 
     &__catalog
         position: relative
@@ -162,7 +166,7 @@
         display: flex
         flex: 0 1 50%
         align-items: center
-        padding: 4px 26px 4px 6px
+        padding: 4px pw(26) 4px 6px
         gap: 12px
 
         height: ph(71)
@@ -180,7 +184,7 @@
             border: none
             height: 100%
             flex: 1
-            font-size: 20px
+            +fz(14, 1024, 20)
             background: none
             &::placeholder
                 color: rgba(#000, 23%)
@@ -198,6 +202,7 @@
         rotate: -90deg
         display: none
         transition: transform $std-trans
+        z-index: 3
 
         +mq1024
             display: block
