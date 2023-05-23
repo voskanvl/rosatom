@@ -7,15 +7,12 @@ include ../../components/tabs/tabs.pug
 section.about.ic(style="background:#ECF0F3;")
     div.about__banner
         img(src="../../../assets/images/ic.jpg" alt="office")
-        .about__split#banner 
-            div 
-                h2 ИНФОРМАЦИОННЫЙ ЦЕНТР ЦОД
-            div 
-                //- small 
-                //-     p Смотреть 
-                //-     p видеоролик о ЦОД
-                //- #startvideo
-                //-     include ../../../assets/svg/start-video.svg
+
+        h2 ИНФОРМАЦИОННЫЙ ЦЕНТР ЦОД
+
+    .ic-container.container
+        h2.title.text-masked-element(style="--background: #303031") НОВОСТИ ЦОД
+        include ../../blocks/cod-news/cod-news.pug
 
     include ../../blocks/ic-panorama/ic-panorama.pug
 

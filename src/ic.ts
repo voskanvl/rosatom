@@ -1,5 +1,5 @@
+import { SlideComponent } from "@splidejs/splide"
 import splidesPages from "./ts/components/sliders/splides-ic"
-
 //--- CHECK ABOUT PAGE
 const isAboutPage = !!document.querySelector("section.about")
 if (isAboutPage) {
@@ -7,7 +7,7 @@ if (isAboutPage) {
     mainHeader && mainHeader.classList.add("main-header--white")
 }
 
-splidesPages()
+const splides = splidesPages()
 
 //--- VIDEO ---
 
@@ -68,4 +68,52 @@ video &&
         video.setAttribute("started", "started")
     })
 
+//---
+//--- NEWS ---
+const codNews = document.querySelector<HTMLElement>(".cod-news__right")
+const codNewsList = document.querySelector<HTMLElement>(".cod-news__right > ul")
+const splide = splides.splidesInstance?.instances["#cod-news"]
+
+codNews &&
+    codNews.addEventListener("click", ({ target }: Event) => {
+        const targetEl = target as HTMLElement
+        const short = targetEl.closest<HTMLElement>(".short-news")
+
+        if (!short) return
+
+        const prevShot = codNews.querySelector<HTMLElement>(".short-news[current]")
+        prevShot && prevShot.removeAttribute("current")
+        short.setAttribute("current", "current")
+        const id = short.dataset.id
+        codNews.dispatchEvent(new CustomEvent("current", { detail: id }))
+    })
+
+codNews &&
+    codNews.addEventListener("current", (event: Event) => {
+        const { detail } = event as CustomEvent
+
+        const root = splide?.root
+        if (!root) return
+
+        const icVideoCards = [...root.querySelectorAll<HTMLElement>(".ic-video__card")]
+        const currentVideoCards = icVideoCards.find(e => e.dataset.id === detail)
+
+        const currentLi = currentVideoCards?.parentElement
+        const ariaLabel = currentLi && currentLi.getAttribute("aria-label")
+        const orderNumberLi = ariaLabel && parseInt(ariaLabel)
+
+        orderNumberLi && splide.go(+orderNumberLi - 1)
+    })
+
+splide &&
+    splide.on("active", (event: SlideComponent) => {
+        const id = (event.slide.children[0] as HTMLElement).dataset.id
+        const item = codNews && codNews.querySelector<HTMLElement>(`.short-news[data-id="${id}"]`)
+
+        item && item.scrollIntoView({ behavior: "smooth", block: "center" })
+
+        const prevShot = codNews && codNews.querySelector<HTMLElement>(".short-news[current]")
+        prevShot && prevShot.removeAttribute("current")
+        item && item.setAttribute("current", "current")
+    })
 //---

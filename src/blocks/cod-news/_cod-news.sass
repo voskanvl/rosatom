@@ -1,0 +1,67 @@
+.cod-news
+    display: grid
+    grid-template-columns: minmax(0,3fr) minmax(200px,1fr)
+
+    &__slider
+        // width: 100%
+        margin-top: 1.5em
+        .splide
+            width: 100%
+
+    .ic-video__card
+        color: #303031
+
+        & img
+            width: 100%
+
+    .ic-video__row
+        align-items: flex-start
+
+        & > date
+            color: #fff
+
+    .cloud__button
+        font-size: 16px
+        font-weight: 350
+        width: max-content
+
+    &__right
+        & > ul
+            scroll-margin-top: 1.5em
+            scroll-behavior: smooth
+            scroll-snap-type: y mandatory
+
+            padding: 1.5em 1em 0 1.5em
+            list-style: none
+            max-height: 50vh
+            overflow: auto
+
+            display: flex
+            flex-direction: column
+            row-gap: 20px
+
+            scrollbar-width: thin
+
+            &::-webkit-scrollbar
+                width: 3px
+
+            &::-webkit-scrollbar-thumb
+                width: 3px
+                background: #30A842
+                border-radius: 3px
+
+        .short-news
+            scroll-snap-align: center
+
+            background: #ECF0F3
+            box-shadow: 10px 10px 20px #D1D9E6, -10px -10px 20px #FFFFFF
+            border-radius: 10px
+
+            padding: 1em
+            height: max-content
+            flex: 1
+
+            transition: box-shadow $std-trans
+
+            &[current]
+                box-shadow: inset 10px 10px 10px #D1D9E6, inset -10px -10px 10px #FFFFFF

@@ -1,0 +1,19 @@
+.cod-news
+    .cod-news__left
+        .cod-news__slider
+            +splide("cod-news", newsFeed)
+                .ic-video__card(data-id= val.id) 
+                    img(src= val.img)
+                    .ic-video__row 
+                        span= val.text 
+                        date= val.date
+                    button.cloud__button 
+                        span Отправить
+                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+    .cod-news__right
+        ul 
+            each i in newsFeed 
+                li.short-news(data-id= i.id) 
+                    span= i.text 
+                    span= i.date 
