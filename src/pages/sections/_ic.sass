@@ -7,9 +7,13 @@
         min-height: 100vh
         display: grid
         place-items: center
+        padding-block: 1em
 
         & > div
             width: 81vw
+
+            @media (width <= 510px)
+                width: 98vw
 
     .about__banner
         h2

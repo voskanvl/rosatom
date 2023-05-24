@@ -94,7 +94,7 @@ codNews &&
         const root = splide?.root
         if (!root) return
 
-        const icVideoCards = [...root.querySelectorAll<HTMLElement>(".ic-video__card")]
+        const icVideoCards = [...root.querySelectorAll<HTMLElement>(".cod-news__card")]
         const currentVideoCards = icVideoCards.find(e => e.dataset.id === detail)
 
         const currentLi = currentVideoCards?.parentElement

@@ -2,14 +2,15 @@
     .cod-news__left
         .cod-news__slider
             +splide("cod-news", newsFeed)
-                .ic-video__card(data-id= val.id) 
-                    img(src= val.img)
-                    .ic-video__row 
-                        span= val.text 
-                        date= val.date
-                    button.cloud__button 
-                        span Отправить
-                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+                .cod-news__card(data-id= val.id) 
+                    img.cod-news__image(src= val.img)
+                    .cod-news__card-footer
+                        .cod-news__row 
+                            span= val.text 
+                            date= val.date
+                        button.cloud__button 
+                            span Отправить
+                            img(src="../../../assets/svg/arrow-right.svg" alt="")
 
     .cod-news__right
         ul 
