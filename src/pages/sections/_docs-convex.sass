@@ -13,6 +13,12 @@
         width: 100%
         column-gap: pw(98)
 
+        & > img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center
+
         +mq768
             grid-template-columns: 100%
             row-gap: ph(30)
@@ -70,7 +76,7 @@
         border-radius: 33px
         color: #303031
         width: max-content
-        +fz(12,1024,20)
+        +fz(17,1024,20)
         padding: 10px 30px
 
     &__title

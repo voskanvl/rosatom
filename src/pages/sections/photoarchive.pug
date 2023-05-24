@@ -1,0 +1,25 @@
+include ../../pug/splides.pug
+include ../../components/bread-crumbs/bread-crumbs.pug
+
+
+.photogallary
+    .services__container.container
+
+        +bread-crumbs([{name: "Главная", href:"/"}, {name: "Фотоархив", href:"/photoarchive.html"}])
+
+        .services__title.title.text-masked-element(style="--background: #303031; ") ФОТОАРХИВ
+
+        .services__tiles
+            each i in photoGallary
+                a.convex.photogallary__tile(href= i.href, data-tiled= !!i.tiled, data-rotated= !!i.rotated)
+                    img(src= i.img, alt="")
+                    p= i.description
+
+
+    .photogallary__modal
+        .photogallary__close
+        +splide("photogallary", photoGallary.map(e=>e.img))
+            img(src= val)
+
+
+

@@ -39,7 +39,7 @@ menu:
           - name: Отзывы (+ форма оставить отзыв)
             href: "#"
           - name: Фотоархив
-            href: "#"
+            href: "/photoarchive.html"
           - name: Видеоархив
             href: "#"
           - name: Заявка на посещение (экскурсию) в ЦОД 
@@ -47,7 +47,7 @@ menu:
           - name: Документы
             href: "/docs.html"
           - name: Вакансии
-            href: "#"
+            href: "/vacancy.html"
         
 
   - title: контакты

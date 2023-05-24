@@ -1,0 +1,46 @@
+include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../pug/splides.pug
+
+mixin docsConvex(id, img,role,description,date)
+    .convex.docs-convex(id= id)
+        .docs-convex__left
+            img(src= img)
+            .docs-convex__middle
+                .docs-convex__title= role
+                p Должностные обязанности и требования
+                p= description
+                div
+                    div Дата публикации вакансии:
+                    date= date
+
+        .docs-convex__right
+            //- div
+            //-     .docs-convex__data-label ДАТА ВЫДАЧИ
+            //-     date= date
+            //- div 
+            //-     .docs-convex__slider-controls 
+            //-         .docs-convex__slider-control.docs-convex__slider-control--left 
+            //-             include ../../../assets/svg/arrow-right.svg
+            //-         .docs-convex__slider-control.docs-convex__slider-control--right 
+            //-             include ../../../assets/svg/arrow-right.svg
+
+
+
+
+.docs 
+    .docs__container.container
+
+        +bread-crumbs([{name: "Главная", href:"/"}, {name: "Вакансии", href:"/vacancy.html"}])
+
+
+        .docs__title.title.text-masked-element(style="--background: #303031; ")
+            p ВАКАНСИИ
+
+        p.docs__text Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+        each i, indx in vacancy
+            +docsConvex("s"+indx, i.img, i.role, i.description, i.date)
+
+
+
+
+

@@ -1,0 +1,44 @@
+@import "../../blocks/ic-panorama/_ic-panorama"
+.photogallary
+
+    &__tile
+        & > img
+            margin-top: 12px
+            width: 15vw
+            border-radius: 10px
+            overflow: hidden
+
+    .services__tiles
+        margin-top: ph(50)
+
+    &__modal
+        position: fixed
+        inset: 0
+        background: #000a
+        z-index: -2
+        backdrop-filter: blur(6px)
+
+        display: grid
+        place-items: center
+
+        .splide
+            width: 80vw
+            height: 80vh
+            margin-inline: auto
+            & img
+                rotate: 0
+                aspect-ratio: 16 / 8
+                width: 100%
+                object-fit: cover
+                object-position: center
+
+        &[open]
+            z-index: 200
+
+    &__close
+        position: absolute
+        width: 32px
+        height: 32px
+        top: 2em
+        right: 2em
+        background: url("../../../assets/svg/x.svg") no-repeat

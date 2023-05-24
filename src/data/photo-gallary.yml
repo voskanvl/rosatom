@@ -1,0 +1,31 @@
+photoGallary:
+  - img: "../../assets/images/photo-gallary/1025-1024x768.jpg"
+    description: Laborum occaecat aute ad reprehenderit dolor aute deserunt pariatur sit adipisicing ipsum ex enim officia.
+    tiled: true
+  - img: "../../assets/images/photo-gallary/1047-1024x768.jpg"
+    description: Sit ipsum deserunt esse Lorem consequat.
+  - img: "../../assets/images/photo-gallary/1071-1024x768.jpg"
+    description: Ex velit elit sint esse sunt laborum ad.
+    tiled: true
+  - img: "../../assets/images/photo-gallary/208-1024x768.jpg"
+    description: Exercitation occaecat aliqua aute deserunt.
+  - img: "../../assets/images/photo-gallary/449-1024x768.jpg"
+    description: Non voluptate reprehenderit aute id Lorem magna velit cillum aliqua ea laborum adipisicing tempor sit.
+    tiled: true
+  - img: "../../assets/images/photo-gallary/54-1024x768.jpg"
+    description: Non non nulla sit occaecat sint.
+  - img: "../../assets/images/photo-gallary/554-1024x768.jpg"
+    description: Lorem qui laboris elit esse ad.
+    tiled: true
+  - img: "../../assets/images/photo-gallary/658-1024x768.jpg"
+    description: Ipsum qui irure culpa velit sit fugiat irure eu.
+  - img: "../../assets/images/photo-gallary/742-1024x768.jpg"
+    description: Proident sunt aute do elit anim dolor qui labore nisi incididunt ipsum esse labore est.
+    tiled: true
+  - img: "../../assets/images/photo-gallary/766-1024x768.jpg"
+    description: Ex aliqua esse id elit sint consequat sint nisi.
+  - img: "../../assets/images/photo-gallary/890-1024x768.jpg"
+    description: Velit aliqua enim sunt culpa ipsum.
+    tiled: true
+  - img: "../../assets/images/photo-gallary/958-1024x768.jpg"
+    description: In adipisicing in nulla est proident commodo ea deserunt.
