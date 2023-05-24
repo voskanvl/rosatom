@@ -1,0 +1,26 @@
+include ../../pug/splides.pug
+include ../../components/bread-crumbs/bread-crumbs.pug
+
+
+.videogallary
+    .services__container.container
+
+        +bread-crumbs([{name: "Главная", href:"/"}, {name: "Видеоархив", href:"/videoarchive.html"}])
+
+        .services__title.title.text-masked-element(style="--background: #303031; ") ВИДЕОАРХИВ
+
+        .services__tiles
+            each i in videoGallary
+
+                a.convex.photogallary__tile(href= i.href, data-tiled= !!i.tiled, data-rotated= !!i.rotated)
+                    video(src= i.img, alt="",controls)
+                    p= i.description
+
+
+    .photogallary__modal
+        .photogallary__close
+        +splide("photogallary", videoGallary.map(e=>e.img))
+            video(src= val, controls)
+
+
+

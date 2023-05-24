@@ -1,12 +1,15 @@
 @import "../../blocks/ic-panorama/_ic-panorama"
-.photogallary
+.photogallary, .videogallary, .newsgallary
 
     &__tile
-        & > img
+        & > img, video
             margin-top: 12px
             width: 15vw
             border-radius: 10px
             overflow: hidden
+
+        & > p
+            +string-limiter()
 
     .services__tiles
         margin-top: ph(50)
@@ -25,7 +28,7 @@
             width: 80vw
             height: 80vh
             margin-inline: auto
-            & img
+            & img, video
                 rotate: 0
                 aspect-ratio: 16 / 8
                 width: 100%

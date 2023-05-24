@@ -35,13 +35,13 @@ menu:
           - name: информационный центр (центр)
             href: "/ic.html"
           - name: Архив новостей
-            href: "#"
+            href: "/newsarchive.html"
           - name: Отзывы (+ форма оставить отзыв)
             href: "#"
           - name: Фотоархив
             href: "/photoarchive.html"
           - name: Видеоархив
-            href: "#"
+            href: "/videoarchive.html"
           - name: Заявка на посещение (экскурсию) в ЦОД 
             href: "#"
           - name: Документы

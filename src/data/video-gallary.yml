@@ -1,0 +1,31 @@
+videoGallary:
+  - img: "../../assets/3.mp4"
+    description: Laborum occaecat aute ad reprehenderit dolor aute deserunt pariatur sit adipisicing ipsum ex enim officia.
+    tiled: true
+  - img: "../../assets/РЭА.mp4"
+    description: Sit ipsum deserunt esse Lorem consequat.
+  - img: "../../assets/3.mp4"
+    description: Ex velit elit sint esse sunt laborum ad.
+    tiled: true
+  - img: "../../assets/РЭА.mp4"
+    description: Exercitation occaecat aliqua aute deserunt.
+  - img: "../../assets/3.mp4"
+    description: Non voluptate reprehenderit aute id Lorem magna velit cillum aliqua ea laborum adipisicing tempor sit.
+    tiled: true
+  - img: "../../assets/РЭА.mp4"
+    description: Non non nulla sit occaecat sint.
+  - img: "../../assets/3.mp4"
+    description: Lorem qui laboris elit esse ad.
+    tiled: true
+  - img: "../../assets/РЭА.mp4"
+    description: Ipsum qui irure culpa velit sit fugiat irure eu.
+  - img: "../../assets/3.mp4"
+    description: Proident sunt aute do elit anim dolor qui labore nisi incididunt ipsum esse labore est.
+    tiled: true
+  - img: "../../assets/РЭА.mp4"
+    description: Ex aliqua esse id elit sint consequat sint nisi.
+  - img: "../../assets/3.mp4"
+    description: Velit aliqua enim sunt culpa ipsum.
+    tiled: true
+  - img: "../../assets/РЭА.mp4"
+    description: In adipisicing in nulla est proident commodo ea deserunt.

@@ -1,0 +1,19 @@
+include ../../pug/splides.pug
+include ../../components/bread-crumbs/bread-crumbs.pug
+
+
+.newsgallary
+    .services__container.container
+
+        +bread-crumbs([{name: "Главная", href:"/"}, {name: "Архив новостей", href:"/newsarchive.html"}])
+
+        .services__title.title.text-masked-element(style="--background: #303031; ") АРХИВ НОВОСТЕЙ
+
+        .services__tiles
+            each i in newsFeed.map((e,idx)=>!!(idx%2)?e:({...e, tiled: true}))
+                a.convex.photogallary__tile(href= i.href, data-tiled= !!i.tiled, data-rotated= !!i.rotated)
+                    img(src= i.img, alt="")
+                    p= i.text
+
+
+
