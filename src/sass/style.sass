@@ -72,6 +72,10 @@ button
     box-shadow: 18px 18px 30px #D1D9E6, -18px -18px 30px #FFFFFF
     border-radius: 10px
     overflow: hidden
+    transition: box-shadow calc($std-trans * 2)
+
+    &:hover
+        box-shadow: 18px 18px 30px #30A84280, -18px -18px 30px #FFFFFF
 
 .hint
     position: absolute
