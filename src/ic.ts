@@ -13,10 +13,6 @@ const splides = splidesPages()
 
 let isPlayVideo = false
 
-function loadVideo(arg) {
-    console.log(arg)
-}
-
 const videoCards = document.querySelectorAll<HTMLElement>(".ic-video__card")
 const video = document.querySelector<HTMLVideoElement>("video")
 const videoContainer = document.querySelector<HTMLElement>(".ic-video__media")

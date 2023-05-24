@@ -17,14 +17,14 @@ section.about.ic(style="background:#ECF0F3;")
 
     include ../../blocks/ic-panorama/ic-panorama.pug
 
-    h2.title.text-masked-element(style="--background: #303031") ФОТОГАЛЕРЕЯ
-    .innopolis
-        .innopolis__leftside
-            +splide("innopolis",innopolisSlider)
-                img.innopolis__img(src= val.img, data-id= val.id)
-            .innopolis__controls 
-                button.innopolis__control-button.innopolis__control-button--left= "\u27F5"
-                button.innopolis__control-button.innopolis__control-button--right= "\u27F6"
+    .ic__container
+        div.ic__galary
+            h2.title.text-masked-element(style="--background: #303031") ФОТОГАЛЕРЕЯ
+            +splide("ic-galary",innopolisSlider)
+                img.ic__galary-img(src= val.img)
+            .ic__galary-controls 
+                button.ic__galary-button.ic__galary-button--left= "\u27F5"
+                button.ic__galary-button.ic__galary-button--right= "\u27F6"
 
 
 

@@ -23,3 +23,54 @@
             +fz(22,1024,80)
             left: 9%
             width: min-content
+
+    &__galary
+        height: 66vh
+
+        & img
+            display: block
+            width: 100%
+            border-radius: 10px
+            overflow: hidden
+            height: 340px
+            object-fit: cover
+            object-position: center
+
+        .splide
+            --x: 50%
+            --spread: 8%
+            --delta: 10%
+            height: min(480px, 60vh)
+            margin-top: 6.1vh
+            mask-image: linear-gradient(to right, transparent 0 var(--spread), #000 calc( var(--spread) + var(--delta) ) calc(100% - var(--spread) - var(--delta)), transparent calc(100% - var(--spread)) 100%)
+
+        .splide__track
+            height: 100%
+
+        .splide__slide
+            & > img
+                scale: 1
+                translate: 0 0
+                box-shadow: none
+                transition: $std-trans
+
+            &.is-active > img
+                position: absolute
+                scale: 1.1 1.1
+                height: min(400px, 50vh)
+                translate: 0% 10%
+                z-index: 2
+
+                +mq1024
+                    scale: 1
+                    translate: 0 0
+
+    &__galary-controls
+        display: flex
+        justify-content: center
+        margin-top: ph(30)
+
+        button
+            background: none
+            border: none
+            font-size: 25px
