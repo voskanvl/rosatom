@@ -55,7 +55,10 @@ nav.main-header.main-header--white
                 if !i.menu.length
                     a(href= i.href)= i.title
                 else 
-                    span= i.title
+                    if i.href
+                        a(href= i.href)= i.title
+                    else
+                        span= i.title
 
                 //--- заменил в предыдущем теге span на a, при выключеной обрабоке меню
 

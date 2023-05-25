@@ -3,7 +3,9 @@ import Store from "../../store"
 export default function toggleMainMenu() {
     const mainHeader = document.querySelector<HTMLElement>(".main-header")
     const mainMenu = document.querySelector<HTMLElement>(".menu")
-    const triggers = [...document.querySelectorAll<HTMLElement>(".menu > .menu__item > span")]
+    const triggers = [
+        ...document.querySelectorAll<HTMLElement>(".menu > .menu__item > *:last-child"),
+    ]
 
     const matching: { trigger: HTMLElement; menu: HTMLElement }[] = triggers.map(e => ({
         trigger: e,

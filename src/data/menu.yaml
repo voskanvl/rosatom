@@ -1,56 +1,53 @@
 menu:
-  - title: о компании
-    menu: []
-    href: "/about.html"
+    - title: о компании
+      menu: []
+      href: "/about.html"
 
-  - title: услуги
-    # href: "/services.html"
-    menu: 
-      - name: услуги
-        menu: 
-        - name: Услуги (главная)
-          href: "/services.html"
-        - name: Размещение оборудования
-          href: "/placement.html"
-        - name: Облачная инфраструктура
-          href: "/cloud.html"
-        - name: Телекоммуникационные услуги
-          href: "/telecom.html"
-        - name: Дополнительные услуги
-          href: "/additional-services.html"
-          
-      - name: Аренда сереверного оборудования
-        menu:
-          - name: Аренда готового сервера
-            href: "/rent.html"
-          - name: Конфигуратор
-            href: "/rent.html?config"
+    - title: услуги
+      href: "/services.html"
+      menu:
+          - name: услуги
+            menu:
+                - name: Услуги (главная)
+                  href: "/services.html"
+                - name: Размещение оборудования
+                  href: "/placement.html"
+                - name: Облачная инфраструктура
+                  href: "/cloud.html"
+                - name: Телекоммуникационные услуги
+                  href: "/telecom.html"
+                - name: Дополнительные услуги
+                  href: "/additional-services.html"
 
+          - name: Аренда сереверного оборудования
+            menu:
+                - name: Аренда готового сервера
+                  href: "/rent.html"
+                - name: Конфигуратор
+                  href: "/rent.html?config"
 
+    - title: информационный центр
+      href: "/ic.html"
+      menu:
+          - name: информационный центр
+            menu:
+                - name: информационный центр (центр)
+                  href: "/ic.html"
+                - name: Архив новостей
+                  href: "/newsarchive.html"
+                - name: Отзывы (+ форма оставить отзыв)
+                  href: "#"
+                - name: Фотоархив
+                  href: "/photoarchive.html"
+                - name: Видеоархив
+                  href: "/videoarchive.html"
+                - name: Заявка на посещение (экскурсию) в ЦОД
+                  href: "#"
+                - name: Документы
+                  href: "/docs.html"
+                - name: Вакансии
+                  href: "/vacancy.html"
 
-  - title: информационный центр
-    menu:
-        - name: информационный центр
-          menu:
-          - name: информационный центр (центр)
-            href: "/ic.html"
-          - name: Архив новостей
-            href: "/newsarchive.html"
-          - name: Отзывы (+ форма оставить отзыв)
-            href: "#"
-          - name: Фотоархив
-            href: "/photoarchive.html"
-          - name: Видеоархив
-            href: "/videoarchive.html"
-          - name: Заявка на посещение (экскурсию) в ЦОД 
-            href: "#"
-          - name: Документы
-            href: "/docs.html"
-          - name: Вакансии
-            href: "/vacancy.html"
-        
-
-  - title: контакты
-    menu: []
-    href: "/contacts.html"
-  
+    - title: контакты
+      menu: []
+      href: "/contacts.html"
