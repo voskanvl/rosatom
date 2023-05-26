@@ -53,12 +53,15 @@
                 width: 100%
                 // padding-inline: 2em
 
-        @media (height < 620px)
-            aspect-ratio: unset
-            height: 90%
-
         @media (width<=1024px)
             min-height: unset
+
+        @media (height < 620px) or (width <= 768px)
+            aspect-ratio: unset
+            height: 100%
+        @media (height >= 620px) or (width <= 768px)
+            aspect-ratio: unset
+            height: 90%
 
     &__text
         +fz(12, 1024, 18)
