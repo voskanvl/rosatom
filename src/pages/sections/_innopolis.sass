@@ -41,6 +41,9 @@
         min-height: 236px
         object-fit: cover
 
+        aspect-ratio: 16 / 9
+        object-position: center
+
         &--fullscreen
             height: 100%
             // width: unset
@@ -50,8 +53,15 @@
                 width: 100%
                 // padding-inline: 2em
 
+        @media (height < 620px)
+            aspect-ratio: unset
+            height: 90%
+
+        @media (width<=1024px)
+            min-height: unset
+
     &__text
-        font-size: 18px
+        +fz(12, 1024, 18)
         font-weight: lighter
 
     & .splide
@@ -65,8 +75,9 @@
         & .splide__track
             overflow: visible
             height: 42vh
+
             @media (width <= 768px) or (height <= 600px)
-                height: 50vh
+                height: 23vh
 
         & .splide__slide
             transition: .6s
@@ -109,7 +120,7 @@
     &__controls
         display: flex
         justify-content: center
-        margin: 30px 0
+        margin: ph(30) 0
         & > *
             cursor: inherit
         @media (width <= 768px)

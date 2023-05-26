@@ -1,19 +1,5 @@
 .geonet 
-    .geonet__container.container
-        .geonet__title.title.text-masked-element(style="--background: #fff; --circle-color: #6EABDD;") 
-            p ГЕОРАСПРЕДЕЛЕННАЯ 
-            p СЕТЬ
-        .geonet__data 
-            .geonet__data-left
-                .geonet__data-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta illum quo quisquam dolores corporis iure qui cupiditate laborum quae eligendi consequatur ipsam aperiam modi consectetur animi porro nulla ex veniam quis, accusamus corrupti provident delectus nobis? Iusto, vitae quidem?
-                ul.geonet__data-types 
-                    each i in typedc
-                        li.geonet__data-type
-                            .geonet__data-mark(style="background: "+i.color)
-                            .geonet__data-name= i.name
 
-
-            .geonet__data-right
 
 
     .geonet__map
@@ -33,6 +19,22 @@
                                     .geo__cod
                                         .geo-popup__dcname= j.name
                                         .geo-popup__dcparam= j.param
+
+    .geonet__container.container
+        .geonet__title.title.text-masked-element(style="--background: #fff; --circle-color: #6EABDD;") 
+            p ГЕОРАСПРЕДЕЛЕННАЯ 
+            p СЕТЬ
+        .geonet__data 
+            .geonet__data-left
+                .geonet__data-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta illum quo quisquam dolores corporis iure qui cupiditate laborum quae eligendi consequatur ipsam aperiam modi consectetur animi porro nulla ex veniam quis, accusamus corrupti provident delectus nobis? Iusto, vitae quidem?
+                ul.geonet__data-types 
+                    each i in typedc
+                        li.geonet__data-type
+                            .geonet__data-mark(style="background: "+i.color)
+                            .geonet__data-name= i.name
+
+
+            .geonet__data-right
 
     .geonet__connector
         .geonet__connector-left
