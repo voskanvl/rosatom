@@ -55,13 +55,13 @@
 
         @media (width<=1024px)
             min-height: unset
-
-        @media (height < 620px) or (width <= 768px)
-            aspect-ratio: unset
-            height: 100%
-        @media (height >= 620px) or (width <= 768px)
+            height: 66%
+        @media (height < 750px) and (width <= 768px)
             aspect-ratio: unset
             height: 90%
+        @media (height >= 750px) and (width <= 768px)
+            aspect-ratio: unset
+            height: 70%
 
     &__text
         +fz(12, 1024, 18)
@@ -104,10 +104,7 @@
 
                     @media (height <= 750px)
                         scale: 1.1 1.1
-                    @media (height <= 620px)
-                        scale: 1.1 1.05
-
-                    @media (width <= 370px)
+                    @media (height <= 620px) or (width <=370px)
                         scale: 1 1
 
         &__slide
