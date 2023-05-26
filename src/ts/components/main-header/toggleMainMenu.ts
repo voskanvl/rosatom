@@ -13,7 +13,8 @@ export default function toggleMainMenu() {
     }))
 
     matching.forEach(({ menu, trigger }) => {
-        trigger.addEventListener("mouseenter", () => {
+        if ("maxTouchPoints" in navigator && navigator.maxTouchPoints > 0) return
+        trigger.addEventListener("mouseover", () => {
             matching.forEach(
                 ({ menu: menuOthers }) =>
                     menu !== menuOthers && menuOthers.classList.remove("show"),
