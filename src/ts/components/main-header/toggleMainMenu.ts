@@ -4,7 +4,7 @@ export default function toggleMainMenu() {
     const mainHeader = document.querySelector<HTMLElement>(".main-header")
     const mainMenu = document.querySelector<HTMLElement>(".menu")
     const triggers = [
-        ...document.querySelectorAll<HTMLElement>(".menu > .menu__item > *:last-child"),
+        ...document.querySelectorAll<HTMLElement>(".menu > .menu__item > *:last-child[data-menu]"),
     ]
 
     const matching: { trigger: HTMLElement; menu: HTMLElement }[] = triggers.map(e => ({
@@ -13,8 +13,8 @@ export default function toggleMainMenu() {
     }))
 
     matching.forEach(({ menu, trigger }) => {
-        if ("maxTouchPoints" in navigator && navigator.maxTouchPoints > 0) return
-        trigger.addEventListener("mouseover", () => {
+        trigger.addEventListener("mouseenter", () => {
+            if ("maxTouchPoints" in navigator && navigator.maxTouchPoints > 0) return
             matching.forEach(
                 ({ menu: menuOthers }) =>
                     menu !== menuOthers && menuOthers.classList.remove("show"),

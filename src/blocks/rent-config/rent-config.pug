@@ -12,14 +12,14 @@ include ../../components/number-input/number-input.pug
                         +number-input()
                     .rent-config__output(data-price=  serverConfig[i].list[0].price)= serverConfig[i].list[0].price
 
-        .rent-config__description 
-            .rent-config__title В цену входит
-            ul.rent-config__list 
-                each i in description
-                    li.rent-config__list-item 
-                        img(src= i.icon, alt="")
-                        span= i.caption
-            button.rent-config__button 
-                div
-                    span Заказать
-                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+        //- .rent-config__description 
+        //-     .rent-config__title В цену входит
+        //-     ul.rent-config__list 
+        //-         each i in description
+        //-             li.rent-config__list-item 
+        //-                 img(src= i.icon, alt="")
+        //-                 span= i.caption
+    button.rent-config__button 
+        div
+            span Заказать
+            img(src="../../../assets/svg/arrow-right.svg" alt="")

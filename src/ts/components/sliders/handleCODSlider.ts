@@ -1,29 +1,29 @@
-import { MSplides } from "./initSlides";
-import xsvg from "../../../../assets/svg/x.svg";
-import arrow from "../../../../assets/svg/arrow-right.svg";
+import { MSplides } from "./initSlides"
+import xsvg from "../../../../assets/svg/x.svg"
+import arrow from "../../../../assets/svg/arrow-right.svg"
 
 const createControls = () => {
-    const controls = document.createElement("div");
-    controls.classList.add("controls");
+    const controls = document.createElement("div")
+    controls.classList.add("controls")
 
-    const left = document.createElement("div");
-    const imgLeft = document.createElement("img");
-    left.classList.add("left");
-    imgLeft.src = arrow;
-    left.append(imgLeft);
+    const left = document.createElement("div")
+    const imgLeft = document.createElement("img")
+    left.classList.add("left")
+    imgLeft.src = arrow
+    left.append(imgLeft)
 
-    const right = document.createElement("div");
-    const imgRight = document.createElement("img");
-    right.classList.add("right");
-    imgRight.src = arrow;
-    right.append(imgRight);
+    const right = document.createElement("div")
+    const imgRight = document.createElement("img")
+    right.classList.add("right")
+    imgRight.src = arrow
+    right.append(imgRight)
 
-    controls.append(left, right);
+    controls.append(left, right)
 
-    return { controls, left, right };
-};
+    return { controls, left, right }
+}
 const createModal = () => {
-    const modal = document.createElement("div");
+    const modal = document.createElement("div")
 
     modal.style.cssText = `
     position: fixed;
@@ -36,55 +36,55 @@ const createModal = () => {
     height: 100dvh;
     background: #000a;
     backdrop-filter: blur(4px);
-    `;
+    `
 
-    modal.id = "outer-modal";
+    modal.id = "outer-modal"
 
-    let closeSignal: ((val: unknown) => void) | null = null;
+    let closeSignal: ((val: unknown) => void) | null = null
 
     const doClose = new Promise(resolve => {
-        closeSignal = resolve;
-    });
+        closeSignal = resolve
+    })
 
-    const close = document.createElement("div");
-    close.addEventListener("click", () => closeSignal && closeSignal("close"));
+    const close = document.createElement("div")
+    close.addEventListener("click", () => closeSignal && closeSignal("close"))
 
-    const x = document.createElement("img");
-    x.src = xsvg;
-    close.append(x);
+    const x = document.createElement("img")
+    x.src = xsvg
+    close.append(x)
 
     close.style.cssText = `
         position: absolute;
         top: 0.5em;
-        right: 2em;
+        right: 0.5em;
         color: red;
         font-size: 50px;
         z-index: 2;
-    `;
+    `
 
-    modal.append(close);
+    modal.append(close)
 
-    return { modal, doClose };
-};
+    return { modal, doClose }
+}
 
 const createSlider = (root: HTMLElement, id: string): HTMLElement => {
-    const slider = document.createElement("div");
+    const slider = document.createElement("div")
 
     const srcs = [...root.querySelectorAll<HTMLImageElement>("img")]
         .map(el => ({ id: el.dataset.id, src: el.src }))
         .filter(el => el.id !== undefined)
         .reduce((acc, el) => {
-            if (!acc[el.id || "unknown"]) acc[el.id || "unknown"] = [];
-            acc[el.id || "unknown"].push(el.src);
-            return acc;
-        }, {} as Record<string, string[]>);
+            if (!acc[el.id || "unknown"]) acc[el.id || "unknown"] = []
+            acc[el.id || "unknown"].push(el.src)
+            return acc
+        }, {} as Record<string, string[]>)
 
     const insertingImages = Object.entries(srcs)
         .map(
             ([key, src]) =>
                 `<li class="splide__slide"><img class="innopolis__img innopolis__img--fullscreen" data-id="${key}" src="${src[0]}"></li>`,
         )
-        .join("");
+        .join("")
     slider.innerHTML = `
         <section class="splide" id="${id}">
             <div class="splide__track">
@@ -93,18 +93,18 @@ const createSlider = (root: HTMLElement, id: string): HTMLElement => {
                 </ul>
             </div>
         </section>
-    `;
+    `
 
-    return slider;
-};
+    return slider
+}
 
 type ControlsType = {
-    left: HTMLElement;
-    right: HTMLElement;
-};
+    left: HTMLElement
+    right: HTMLElement
+}
 
 const iniSlider = (slider: HTMLElement, id: string, constrols?: ControlsType) => {
-    let splidesInstance: MSplides = new MSplides();
+    let splidesInstance: MSplides = new MSplides()
     slider &&
         splidesInstance.add("#" + id, {
             type: "loop",
@@ -124,27 +124,27 @@ const iniSlider = (slider: HTMLElement, id: string, constrols?: ControlsType) =>
                     padding: 10,
                 },
             },
-        });
-    const sliderSplideInstance = splidesInstance.instances["#" + id];
-    constrols && (constrols.left.onclick = () => sliderSplideInstance.go("-1"));
-    constrols && (constrols.right.onclick = () => sliderSplideInstance.go("+1"));
+        })
+    const sliderSplideInstance = splidesInstance.instances["#" + id]
+    constrols && (constrols.left.onclick = () => sliderSplideInstance.go("-1"))
+    constrols && (constrols.right.onclick = () => sliderSplideInstance.go("+1"))
 
     return {
         sliderSplideInstance,
         deleteSlider: () => ((splidesInstance as MSplides | null) = null),
-    };
-};
+    }
+}
 
 export default function handleCODSlider() {
-    const innopolisSlider = document.querySelector<HTMLElement>("#innopolis");
-    if (!innopolisSlider) return;
+    const innopolisSlider = document.querySelector<HTMLElement>("#innopolis")
+    if (!innopolisSlider) return
 
-    const ID = "modal-innopolis";
+    const ID = "modal-innopolis"
     innopolisSlider.addEventListener("click", async ({ target }: Event) => {
-        const targetElement = (target as HTMLElement).closest(".splide__slide");
-        if (!targetElement) return;
+        const targetElement = (target as HTMLElement).closest(".splide__slide")
+        if (!targetElement) return
 
-        const ariaLabel = targetElement.getAttribute("aria-label");
+        const ariaLabel = targetElement.getAttribute("aria-label")
         ariaLabel &&
             console.log(
                 "%cMyProject%cline:76%cariaLabel",
@@ -152,27 +152,27 @@ export default function handleCODSlider() {
                 "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
                 "color:#fff;background:rgb(23, 44, 60);padding:3px;border-radius:2px",
                 parseInt(ariaLabel),
-            );
+            )
 
-        const { modal, doClose } = createModal();
-        const slider = createSlider(innopolisSlider, ID);
+        const { modal, doClose } = createModal()
+        const slider = createSlider(innopolisSlider, ID)
 
-        document.body.append(modal);
-        const { controls, left, right } = createControls();
-        modal.append(slider, controls);
+        document.body.append(modal)
+        const { controls, left, right } = createControls()
+        modal.append(slider, controls)
 
-        const { sliderSplideInstance, deleteSlider } = iniSlider(slider, ID, { left, right });
+        const { sliderSplideInstance, deleteSlider } = iniSlider(slider, ID, { left, right })
 
         setTimeout(() => {
-            ariaLabel && sliderSplideInstance && sliderSplideInstance.go(parseInt(ariaLabel) - 1);
-        }, 100);
+            ariaLabel && sliderSplideInstance && sliderSplideInstance.go(parseInt(ariaLabel) - 1)
+        }, 100)
 
         try {
-            await doClose;
-            deleteSlider();
-            modal.remove();
+            await doClose
+            deleteSlider()
+            modal.remove()
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
-    });
+    })
 }

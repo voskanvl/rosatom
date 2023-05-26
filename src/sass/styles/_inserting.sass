@@ -3,8 +3,8 @@
     position: absolute
     z-index: -1
     inset: 0
-    & > #img
-        display: block
+    & > #img, #img-blur
+        display: none
         position: absolute
         inset: 0
         width: 100vw
@@ -12,10 +12,26 @@
         object-fit: cover
         z-index: -1
 
+    & > #img
+        display: block
+        @media (width <= 768px)
+            display: none
+
+    & > #img-blur
+        rotate: -180deg
+        filter: brightness(0.45)
+        @media (width <= 768px)
+            display: block
+
     & > video
         width: 100vw
         height: 100vh
         object-fit: cover
         object-position: center
-        @media (width <= 600px)
-            display: none
+
+        @media (width <= 768px)
+            object-fit: contain
+            object-position: top
+            height: max-content
+        // @media (width <= 600px)
+        //     display: none

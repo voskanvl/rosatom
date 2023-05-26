@@ -76,6 +76,11 @@
         &.about__split
             place-items: start center
 
+            & > *:nth-child(2)
+                +mq580
+                    flex-direction: row
+                    column-gap: 1em
+
         h2
             +fz(22, 1440, 80)
 
@@ -424,3 +429,10 @@
         background: #6EABDD
         border-radius: 10px
     //     min-height: 400px
+
+    #startvideo
+        width: clamp(30px,111/1024 * 100vw,111px)
+        aspect-ratio: 1
+
+        & > svg
+            width: 100%

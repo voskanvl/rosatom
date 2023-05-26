@@ -8,16 +8,18 @@ menu:
       menu:
           - name: услуги
             menu:
-                - name: Услуги (главная)
-                  href: "/services.html"
                 - name: Размещение оборудования
                   href: "/placement.html"
+                - name: Аренда серверного оборудования
+                  href: "/rent.html"
                 - name: Облачная инфраструктура
                   href: "/cloud.html"
-                - name: Телекоммуникационные услуги
+                - name: Услуги связи
                   href: "/telecom.html"
                 - name: Дополнительные услуги
                   href: "/additional-services.html"
+                - name: Информационнная безопасность
+                  href: "#"
 
           - name: Аренда сереверного оборудования
             menu:

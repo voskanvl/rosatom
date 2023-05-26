@@ -56,7 +56,7 @@ nav.main-header.main-header--white
                     a(href= i.href)= i.title
                 else 
                     if i.href
-                        a(href= i.href)= i.title
+                        a(href= i.href, data-menu)= i.title
                     else
                         span= i.title
 

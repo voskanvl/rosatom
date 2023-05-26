@@ -9,12 +9,12 @@ rent:
   
   sections:
  
-    - type: range
-      title: Цена в месяц, &#8381;
-      name: cost
-      range:
-        min: 2000
-        max: 200000
+    # - type: range
+    #   title: Цена в месяц, &#8381;
+    #   name: cost
+    #   range:
+    #     min: 2000
+    #     max: 200000
     - type: range
       title:  Ядра, шт.
       name: core

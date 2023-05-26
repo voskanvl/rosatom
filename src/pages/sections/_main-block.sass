@@ -1,11 +1,11 @@
 $toggle: 600px
 
 .main-block
+    display: none
     position: absolute
     top: 50%
     left: 50%
     translate: -50% -50%
-    display: flex
     width: 85%
     justify-content: space-between
     align-items: center
@@ -32,3 +32,61 @@ $toggle: 600px
 
     @media (width <= $toggle)
         flex-direction: column
+
+    &--desktop
+        @media (width > 768px)
+            display: flex
+
+    &--mobile
+        position: static
+        @media (width <= 768px)
+            display: block
+            top: 0
+            bottom: 0
+            left: 0
+            translate: 0 0
+            width: 100vw
+
+        .main-block__leftside
+            margin-top: 2vh
+            padding: 1em
+            translate: 0 0
+            // position: absolute
+            // bottom: 10vh
+
+            // @media (orientation: landscape)
+                // bottom: 50vh
+
+    &__aside--mobile
+        display: none
+        translate: 0 -50px
+        width: 100%
+        // padding: 1em
+        color: #fff
+
+        @media (width <= 768px)
+            display: block
+
+        & > *
+            margin: 0
+
+            a
+                text-decoration: none
+
+        ul
+            background: #fff1
+            backdrop-filter: blur(6px)
+            padding: 1em 3em
+            border-radius: 0
+            list-style: none
+
+            display: grid
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+            gap: 1em
+            place-items: center
+
+            @media (height <= 620px)
+                padding: 1em
+
+        li
+            text-align: center

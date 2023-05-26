@@ -44,15 +44,6 @@
         aspect-ratio: 16 / 9
         object-position: center
 
-        &--fullscreen
-            height: 100%
-            // width: unset
-            width: 90%
-
-            @media (width<=1024px)
-                width: 100%
-                // padding-inline: 2em
-
         @media (width<=1024px)
             min-height: unset
             height: 66%
@@ -62,6 +53,16 @@
         @media (height >= 750px) and (width <= 768px)
             aspect-ratio: unset
             height: 70%
+
+        &--fullscreen
+            height: 100%
+            // width: unset
+            width: 90%
+
+            @media (width<=1024px)
+                width: 100%
+                height: 100%
+                // padding-inline: 2em
 
     &__text
         +fz(12, 1024, 18)
