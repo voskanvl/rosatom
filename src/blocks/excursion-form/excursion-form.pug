@@ -1,0 +1,21 @@
+form.excursion-form(action="mail.php") 
+    fieldset#ulgroup
+        label(for="phisic") 
+            input#phisic(type="radio", name="ul")
+            span Частное лицо
+        label(for="phisic") 
+            input#ul(type="radio", name="ul")
+            span Представитель компании
+
+    fieldset#maingroup
+        input#name(type="text", name="name", placeholder="ФИО контактного лица")
+        input#phone(type="text", name="phone", placeholder="Телефон контактного лица")
+        input#email(type="text", name="email", placeholder="Email")
+        input#role(type="text", name="role", placeholder="Дожность контактного лица")
+        input#company(type="text", name="company", placeholder="Название компании")
+        input#sphere(type="text", name="sphere", placeholder="Сфера деятельности")
+    fieldset#disclamer
+        input#agree(type="checkbox", name="agree")
+        span Даю согласие на обработку моих персональных данный в соответствии с политикой обработки персональных данных
+
+    button.button

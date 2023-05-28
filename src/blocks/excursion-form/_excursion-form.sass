@@ -1,2 +1,41 @@
 .excursion-form
-    display: block
+    background: rgba(236, 240, 243, 0.1)
+    backdrop-filter: blur(13px)
+    border-radius: 20px
+    padding: ph(36) pw(53)
+
+    color: #fff
+
+    fieldset
+        border: none
+
+        &#ulgroup
+            display: flex
+            column-gap: pw(60)
+
+            label
+                display: flex
+                column-gap: 10px
+
+        &#maingroup
+            display: flex
+            flex-direction: column
+
+            input
+                border: none
+                background: transparent
+                border-bottom: 1px solid #fff
+                color: #fff
+                font-size: 18px
+                padding-block: ph(18)
+
+                &::placeholder
+                    color: #fff
+
+                &:first-child
+                    border-top: 1px solid #fff
+
+        &#disclamer
+            display: flex
+            align-items: flex-start
+            column-gap: pw(22)
