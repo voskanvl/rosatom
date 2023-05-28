@@ -23,17 +23,20 @@ const schema = z.object({
 })
 const form = document.querySelector<HTMLFormElement>("form")
 
-let formObject =
-    form && Object.keys(schema.shape).reduce((acc, e) => ({ ...acc, [e]: form[e].value }), {})
-
-formObject = { ...formObject, agree: document.querySelector<HTMLInputElement>("#agree")?.checked }
-console.log("🚀 ~ formObject:", formObject)
-
 form &&
     form.addEventListener("submit", async (event: Event) => {
         event.preventDefault()
         didSend = true
         const url = form.action
+
+        let formObject =
+            form &&
+            Object.keys(schema.shape).reduce((acc, e) => ({ ...acc, [e]: form[e].value }), {})
+
+        formObject = {
+            ...formObject,
+            agree: document.querySelector<HTMLInputElement>("#agree")?.checked,
+        }
 
         try {
             schema.parse(formObject)
