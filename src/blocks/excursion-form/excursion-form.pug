@@ -1,23 +1,29 @@
 form.excursion-form(action="mail.php") 
     fieldset#ulgroup
         label(for="phisic") 
-            input#phisic(type="radio", name="ul")
+            input#phisic(type="radio", name="ul", value="no", checked)
             span Частное лицо
         label(for="phisic") 
-            input#ul(type="radio", name="ul")
+            input#ul(type="radio", name="ul", value="yes")
             span Представитель компании
 
     fieldset#maingroup
         input#name(type="text", name="name", placeholder="ФИО контактного лица")
+        label.excursion-form__error(for="name")
         input#phone(type="text", name="phone", placeholder="Телефон контактного лица")
+        label.excursion-form__error(for="phone")
         input#email(type="text", name="email", placeholder="Email")
+        label.excursion-form__error(for="email") 
         input#role(type="text", name="role", placeholder="Дожность контактного лица")
+        label.excursion-form__error(for="role")
         input#company(type="text", name="company", placeholder="Название компании")
+        label.excursion-form__error(for="company")
         input#sphere(type="text", name="sphere", placeholder="Сфера деятельности")
+        label.excursion-form__error(for="sphere") 
     fieldset#disclamer
         input#agree(type="checkbox", name="agree")
         span Даю согласие на обработку моих персональных данный в соответствии с политикой обработки персональных данных
-
+        label.excursion-form__error(for="agree") 
     button.cloud__button 
         div
             span Записаться

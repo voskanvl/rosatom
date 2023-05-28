@@ -1,39 +1,73 @@
-import splidesPages from "./ts/components/sliders/splides-pages"
-// import SingleRange from "./ts/components/range/singleRange/SingleRange";
-import modal from "./ts/components/modal/modal"
-import video from "./ts/components/modal/video"
+import { z, ZodError } from "zod"
 
 //--- CHECK ABOUT PAGE
-const isAboutPage = !!document.querySelector("section.about")
-if (isAboutPage) {
+const isExcursionPage = !!document.querySelector("section.excursion")
+if (isExcursionPage) {
     const mainHeader = document.querySelector(".main-header")
     mainHeader && mainHeader.classList.add("main-header--white")
 }
 
-splidesPages()
+//--- FORM ---
+const TIMEOUT = 3000
+let didSend = false
+const schema = z.object({
+    name: z.string().min(2, { message: "Имя должно содержать не менее двух букв" }),
+    phone: z.string().min(11, { message: "Количество цифр в телефоне должно быть 10" }),
+    email: z.string().email({ message: "Проверьте на корректность введеный email" }),
+    agree: z.literal(true, {
+        errorMap: () => ({
+            message:
+                "Без Вашего согласия на обработку персональных данных мы не сможем отправить запрос",
+        }),
+    }),
+})
+const form = document.querySelector<HTMLFormElement>("form")
 
-// const ranges = document.querySelectorAll<HTMLElement>(".range__input");
-// ranges &&
-//     ranges.forEach(range => {
-//         const max = range.getAttribute("max"),
-//             min = range.getAttribute("min"),
-//             val = range.getAttribute("val");
+let formObject =
+    form && Object.keys(schema.shape).reduce((acc, e) => ({ ...acc, [e]: form[e].value }), {})
 
-//         const sr = new SingleRange(range, {
-//             max: max === null ? 0 : +max,
-//             min: min === null ? 0 : +min,
-//             val: val === null ? undefined : +val,
-//         });
+formObject = { ...formObject, agree: document.querySelector<HTMLInputElement>("#agree")?.checked }
+console.log("🚀 ~ formObject:", formObject)
 
-//         const output = range.nextSibling as HTMLInputElement;
-//         output && sr.connectOutput(output);
-//     });
+form &&
+    form.addEventListener("submit", async (event: Event) => {
+        event.preventDefault()
+        didSend = true
+        const url = form.action
 
-//--- START VIDEO ---
+        try {
+            schema.parse(formObject)
+            const res = await fetch(url, {
+                method: "POST",
+                body: new FormData(form),
+            })
 
-const videoSwitcher = document.querySelector<HTMLElement>("#startvideo")
-videoSwitcher &&
-    videoSwitcher.addEventListener("click", () => {
-        const modalEl = modal(video())
-        modalEl.style.zIndex = "106"
+            let outMessage = ""
+
+            if (res.ok) {
+                outMessage = "ЗАЯВКА ОТПРАВЛЕНА УСПЕШНО"
+            } else {
+                outMessage = "ОТПРАВИТЬ НЕ УДАЛОСЬ. ПОПРОБУЙТЕ ЕЩЕ РАЗ ИЛИ ПЕРЕЗАГРУЗИТЕ СТРАНИЦУ"
+            }
+
+            const prevFormHTML = form.innerHTML
+            form.innerHTML = outMessage
+            setTimeout(() => {
+                form.innerHTML = prevFormHTML
+                form.reset()
+            }, TIMEOUT || 3000)
+        } catch (error) {
+            const fail = error as ZodError
+            console.log(fail)
+            const errors = fail.errors.map(({ message, path: [name] }) => ({ path: name, message }))
+            errors.forEach(({ message, path }) => {
+                console.log("🚀 ~ message, path :", message, path)
+                const label = (
+                    form[path] as HTMLInputElement
+                ).parentElement?.querySelector<HTMLElement>(`label[for="${path}"]`)
+                label && (label.innerHTML = message)
+            })
+        }
     })
+
+//---
