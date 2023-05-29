@@ -10,9 +10,24 @@ include ../../blocks/actions/actions.pug
 
         +bread-crumbs([{name: "Услуги", href:"/"}, {name: " Аренда готового сервера", href:"#"}])
 
-        .rent__title.title.text-masked-element(style="--background: #303031") 
-            p АРЕНДА
-            p ОБОРУДОВАНИЯ
+        .banner 
+            .banner--left
+                .cloud__title.title.text-masked-element(style="--background: #303031; ")
+                    p АРЕНДА
+                    p ОБОРУДОВАНИЯ
+                div
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
+
+                .cloud__order  
+                    button.cloud__button 
+                        span Заказать услугу
+                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+
+            .banner--right
+                include ../../../assets/svg/rent.svg
 
 
         +tabs(tabs) 
