@@ -6,6 +6,11 @@ export const setBlackCursor = () => {
     const curR = document.querySelector<HTMLElement>(".cursor__round")
     curR && (curR.style.borderColor = "#303031")
 }
+export const setWhiteCursor = () => {
+    document.body.style.cursor = "url('../../assets/cursor/mini-white.svg') 10 10, none"
+    const curR = document.querySelector<HTMLElement>(".cursor__round")
+    curR && (curR.style.borderColor = "#fff")
+}
 
 export const handlerStore = (cursorRound: HTMLElement, x: boolean) => {
     x

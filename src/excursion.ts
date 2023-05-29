@@ -1,4 +1,5 @@
 import { z, ZodError } from "zod"
+import { setWhiteCursor } from "./ts/components/cursor/cursor"
 
 //--- CHECK ABOUT PAGE
 const isExcursionPage = !!document.querySelector("section.excursion")
@@ -6,6 +7,8 @@ if (isExcursionPage) {
     const mainHeader = document.querySelector(".main-header")
     mainHeader && mainHeader.classList.add("main-header--white")
 }
+
+setWhiteCursor()
 
 //--- FORM ---
 const TIMEOUT = 3000
@@ -22,6 +25,18 @@ const schema = z.object({
     }),
 })
 const form = document.querySelector<HTMLFormElement>("form")
+const fieldsetUlEl = form && form.querySelector<HTMLFieldSetElement>("fieldset#ulgroup")
+const inputUlEl = form && form.querySelector<HTMLInputElement>("input[name='ul'][value='yes']")
+const ulFields = form && form.querySelectorAll<HTMLInputElement>("input[data-forul]")
+
+fieldsetUlEl &&
+    fieldsetUlEl.addEventListener("input", (event: Event) => {
+        if (event.target === inputUlEl) {
+            ulFields?.forEach(e => (e.style.display = ""))
+        } else {
+            ulFields?.forEach(e => (e.style.display = "none"))
+        }
+    })
 
 form &&
     form.addEventListener("submit", async (event: Event) => {
