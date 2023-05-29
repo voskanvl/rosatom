@@ -6,7 +6,7 @@ include ../../components/banner/banner.pug
 .additional-services 
     .additional-services__container.container
 
-        +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Дополнительные услуги", href:"#"}])
+        +bread-crumbs([{name: "Услуги", href:"/services.html"}, {name: "Дополнительные услуги", href:"#"}])
 
 
         +banner("../../../assets/svg/additional.svg")
@@ -19,11 +19,10 @@ include ../../components/banner/banner.pug
                 p Lorem Ipsum используют потому, что тот обеспечивает
                 p более или менее стандартное 
 
-
-            button.rent-config__button 
-                div
-                    span Заказать услугу
-                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+            .cloud__order
+                button.button.additional-services__button= "Заказать услугу \u27F6" 
+                button.button.button--transparent
+                    a(href="/kb.html") БАЗА ЗНАНИЙ 
 
         .equipment__list
             each i in additionalServices
@@ -37,9 +36,7 @@ include ../../components/banner/banner.pug
 
                         .equipment__item-right
                             div
-                                button.equipment__item-button.equipment__item-button--green 
-                                    div
-                                        span Цена по запросу
+                                button.button= "Цена по запросу"
 
 
 

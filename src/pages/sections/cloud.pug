@@ -9,7 +9,7 @@ include ../../components/check/check.pug
 .cloud 
     .cloud__container.container
 
-        +bread-crumbs([{name: "Услуги", href:"#"}, {name: "Облачная инфраструктура", href:"#"}])
+        +bread-crumbs([{name: "Услуги", href:"/services.html"}, {name: "Облачная инфраструктура", href:"#"}])
 
 
         //- +banner("../../../assets/svg/cloud.svg")
@@ -29,9 +29,10 @@ include ../../components/check/check.pug
                     //-     p Цена от:
                     //-         strong 15 000 ₽
                     //-     p ЗА 1 МЕТР В ГОД
-                    button.cloud__button 
-                        span Заказать услугу
-                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    button.button= "Заказать услугу \u27F6" 
+                    button.button.button--transparent
+                        a(href="/kb.html") БАЗА ЗНАНИЙ    
+
 
             .banner--right
                 include ../../../assets/svg/cloud.svg
@@ -69,10 +70,7 @@ include ../../components/check/check.pug
 
 
                 .cloud__constructor-right
-                    button.rent-config__button 
-                        div
-                            span Заказать
-                            img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    button.button= "Заказать \u27F6" 
 
 
 

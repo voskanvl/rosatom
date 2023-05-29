@@ -13,7 +13,7 @@ setWhiteCursor()
 
 //--- FORM ---
 const TIMEOUT = 3000
-let didSend = false
+// let didSend = false
 const schema = z.object({
     name: z.string().min(2, { message: "Имя должно содержать не менее двух букв" }),
     phone: z.string().min(11, { message: "Количество цифр в телефоне должно быть 10" }),
@@ -51,7 +51,7 @@ fieldsetUlEl &&
 form &&
     form.addEventListener("submit", async (event: Event) => {
         event.preventDefault()
-        didSend = true
+        // didSend = true
         const url = form.action
 
         let formObject =

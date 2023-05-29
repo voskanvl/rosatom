@@ -28,9 +28,9 @@ include ../../components/number-input/number-input.pug
 
                 .cloud__order  
 
-                    button.cloud__button 
-                        span Заказать услугу
-                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    button.button= "Заказать услугу \u27F6" 
+                    button.button.button--transparent
+                        a(href="/kb.html") БАЗА ЗНАНИЙ  
 
             .banner--right
                 include ../../../assets/svg/placement.svg
@@ -48,10 +48,8 @@ include ../../components/number-input/number-input.pug
                             //- .cloud-item(style="margin-bottom: 17px")
                             //-     +range( 'c', null, null,"Тест массива")(array="['a','b','c','d','skjdhfkjhs']")
 
-                            button.rent-config__button 
-                                div
-                                    span Заказать размещение
-                                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                            button.button= "Заказать размещение \u27F6" 
+
                         .cloud__constructor-right
                             p Оборудование обеспечивается двумя независимыми подводами электропитания, предоставляется подключение к интернету в общем канале шириной 100 Мбит/с
                             p Базовое размещение оборудования высотой 1 U мощностью не более 400 Вт
@@ -72,10 +70,9 @@ include ../../components/number-input/number-input.pug
                             .cloud-item(style="margin-bottom: 17px")
                                 +range(7, 5, 10, "Мощность на стойку", "кВт")(step="1" unit="КВт")
 
-                            button.rent-config__button 
-                                div
-                                    span Заказать размещение
-                                    img(src="../../../assets/svg/arrow-right.svg" alt="")
+                            button.button= "Заказать размещение \u27F6"  
+
+
                         .cloud__constructor-right
                             ul 
                                 li Серверная стойка на 42 U;

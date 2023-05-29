@@ -6,7 +6,11 @@
     &__order
         display: flex
         align-items: center
-        column-gap: pw(56)
+        gap: 7px
+        flex-wrap: wrap
+
+        +mq580
+            justify-content: center
 
     &__button
         font-weight: 350

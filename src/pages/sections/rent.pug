@@ -8,7 +8,7 @@ include ../../blocks/actions/actions.pug
 .rent 
     .rent__container.container
 
-        +bread-crumbs([{name: "Услуги", href:"/"}, {name: " Аренда готового сервера", href:"#"}])
+        +bread-crumbs([{name: "Услуги", href:"/services.html"}, {name: " Аренда готового сервера", href:"#"}])
 
         .banner 
             .banner--left
@@ -22,9 +22,9 @@ include ../../blocks/actions/actions.pug
                     p более или менее стандартное 
 
                 .cloud__order  
-                    button.cloud__button 
-                        span Заказать услугу
-                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    button.button= "Заказать услугу \u27F6"
+                    button.button.button--transparent
+                        a(href="/kb.html") БАЗА ЗНАНИЙ  
 
             .banner--right
                 include ../../../assets/svg/rent.svg

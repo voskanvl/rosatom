@@ -23,10 +23,7 @@ include ../../blocks/actions/actions.pug
                     p более или менее стандартное 
 
 
-                button.rent-config__button 
-                    div
-                        span Заказать услугу
-                        img(src="../../../assets/svg/arrow-right.svg" alt="")
+                button.button.equipment__button= "Заказать услугу \u27F6"
 
             .banner--right
                 include ../../../assets/svg/equipment.svg
@@ -44,11 +41,9 @@ include ../../blocks/actions/actions.pug
 
                         .equipment__item-right
                             div
-                                button.equipment__item-button.equipment__item-button--green 
-                                    div
-                                        span Заказать услугу
+                                button.button Заказать услугу
                                 .equipment__row
-                                    button.equipment__item-button  Подробнее
+                                    button.button.button--transparent Подробнее
                                     img.equipment__hintswitcher(src="../../../assets/svg/question.svg" alt="question")
                         .hint 
                             .convex 

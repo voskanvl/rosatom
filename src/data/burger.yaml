@@ -3,17 +3,34 @@ burger:
     menu: 
       - name: Размещение оборудования
         href: "/placement.html"
+      - name: Аренда серверного оборудования
+        href: "/rent.html"
       - name: Облачная инфраструктура
         href: "/cloud.html"
-      - name: Телекоммуникационные услуги
+      - name: Услуги связи
         href: "/telecom.html"
       - name: Дополнительные услуги
         href: "/additional-services.html"
-      - name: Аренда сервера
-        href: "/rent.html"
+      - name: Информационнная безопасность
+        href: "#"
+
   - name: Информационный центр
     menu: 
+      - name: Информационный центр (центр)
+        href: "/ic.html"
+      - name: Архив новостей
+        href: "/newsarchive.html"
+      - name: Отзывы (+ форма оставить отзыв)
+        href: "#"
+      - name: Фотоархив
+        href: "/photoarchive.html"
+      - name: Видеоархив
+        href: "/videoarchive.html"
+      - name: Заявка на посещение (экскурсию) в ЦОД
+        href: "/excursion.html"
       - name: Документы
         href: "/docs.html"
+      - name: Вакансии
+        href: "/vacancy.html"
 
  

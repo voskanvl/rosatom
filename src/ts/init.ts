@@ -27,7 +27,7 @@ import hideBurgerThenMenu from "./components/burger/hideBurgerThenMenu"
 import cursor from "./components/cursor/cursor"
 import MobileDetect from "mobile-detect"
 import randomizePulsIcons from "./components/regions/randomizePulsIcons"
-import store from "./store"
+// import store from "./store"
 import changeSearchPopupByScreensAndMenu from "./components/popup/changeSearchPopupByScreensAndMenu"
 import handleCODSlider from "./components/sliders/handleCODSlider"
 

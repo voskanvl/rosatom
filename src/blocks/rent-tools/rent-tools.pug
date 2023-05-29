@@ -36,7 +36,7 @@ include ../../components/server-item/server-item.pug
 
         .rent-tools__right
             .rent-tools__controls
-                button.rent-tools__filter Фильтр
+                button.button= "Фильтр \u27F6"
                 .rent-tools__sort
                     p Сортировать 
                     select(name="sort")
@@ -47,4 +47,4 @@ include ../../components/server-item/server-item.pug
                 each i in Array.from({length: 7},(_,index)=>index)
                     li.rent-tools__list-item
                         +server-item()
-            button.server-item__more Смотреть еще
+            button.button.server-item__more СМОТРЕТЬ ЕЩЕ

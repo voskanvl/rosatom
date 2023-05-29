@@ -44,7 +44,7 @@ menu:
                 - name: Видеоархив
                   href: "/videoarchive.html"
                 - name: Заявка на посещение (экскурсию) в ЦОД
-                  href: "#"
+                  href: "/excursion.html"
                 - name: Документы
                   href: "/docs.html"
                 - name: Вакансии

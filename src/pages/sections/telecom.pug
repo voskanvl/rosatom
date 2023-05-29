@@ -8,11 +8,10 @@ include ../../components/banner/banner.pug
 .telecom 
     .telecom__container.container
 
-        +bread-crumbs([{name: "Услуги", href:"/"}, {name: " Телекоммуникационные услуги", href:"#"}])
+        +bread-crumbs([{name: "Услуги", href:"/services.html"}, {name: "Услуги связи", href:"#"}])
 
         .telecom__title.title.text-masked-element(style="--background: #303031; ") 
-            p ТЕЛЕКОММУНИКАЦИОННЫЕ 
-            p УСЛУГИ
+            p УСЛУГИ СВЯЗИ
 
         //- +banner("../../../assets/images/pngtree-information-technology-cloud-computing-internet_6406325 1.png")
         .banner 
@@ -20,16 +19,15 @@ include ../../components/banner/banner.pug
                 div
                     p Основная идея телеком услуг - это связь 
                     p различных устройств между собой
-                .telecom__row
+                .cloud__order 
                     //- div 
                     //-     p Цена от: 
                     //-         strong 15 000 ₽ 
                     //-     p за 1 метр в год
 
-                    button.rent-config__button 
-                        div
-                            span Заказать услугу
-                            img(src="../../../assets/svg/arrow-right.svg" alt="")
+                    button.button= "Заказать услугу \u27F6"  
+                    button.button.button--transparent
+                        a(href="/kb.html") БАЗА ЗНАНИЙ  
 
             .banner--right
                 include ../../../assets/svg/telecom.svg

@@ -11,9 +11,10 @@
         padding-bottom: 0
 
     &__row
-        display: flex
-        column-gap: 1em
-        align-items: center
+        // display: flex
+        // column-gap: 1em
+        // align-items: center
+        @extend .cloud__order
 
     &__title
         &--small
@@ -21,3 +22,6 @@
             font-weight: bold
             color: #303031
             margin-bottom: ph(31)
+
+    .cloud__order
+        margin-top: 2em

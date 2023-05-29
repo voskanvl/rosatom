@@ -13,10 +13,11 @@
                 each j in i.menu
                     - const menuSub = j.menu
                     h4= j.name
-                    nav.footer__nav-list
-                        if Array.isArray(menuSub)
-                            each k in menuSub
-                                a(href= k.href)!= k.name
+                    if j.menu
+                        nav.footer__nav-list
+                            if Array.isArray(menuSub)
+                                each k in menuSub
+                                    a(href= k.href)!= k.name
 .footer__footer 
     .footer__international 
         a(href="#") RUS
