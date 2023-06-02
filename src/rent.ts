@@ -64,9 +64,7 @@ vendors &&
             })
     })
 
-/*
-    --- SELECT ---
-*/
+//    --- SELECT ---
 const selects = document.querySelectorAll<HTMLElement>(".select")
 selects &&
     selects.forEach(select => {
@@ -95,9 +93,7 @@ selects &&
         })
     })
 
-/*
-        --- OPTIONS BLOCK in RENT PAGE---
-        */
+//--- OPTIONS BLOCK in RENT PAGE---
 
 const optionsElement = document.querySelector<HTMLElement>(".rent-tools__sticky")
 const optionsButton = document.querySelector<HTMLButtonElement>(".rent-tools__filter")
@@ -127,9 +123,7 @@ optionsElement &&
         )
     })
 
-/*
-    --- config ---     
-*/
+//    --- config ---
 const numInputs = document.querySelectorAll<HTMLElement>(".number-input")
 numInputs &&
     numInputs.length &&
