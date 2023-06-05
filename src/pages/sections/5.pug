@@ -6,7 +6,7 @@ include ../../pug/splides.pug
             .innopolis__leftside
                 a.innopolis__details.text-masked-element(style="--background: #303031; --circle-color: #30A842" href="#")!= "подробнее о ЦОД \u27F6" 
                 +splide("innopolis",innopolisSlider)
-                    img.innopolis__img(src= val.img, data-id= val.id)
+                    img.innopolis__img(src= val.img, data-id= val.id, data-description= val.description)
                 .innopolis__controls 
                     button.innopolis__control-button.innopolis__control-button--left= "\u27F5"
                     button.innopolis__control-button.innopolis__control-button--right= "\u27F6"
