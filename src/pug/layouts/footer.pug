@@ -10,14 +10,10 @@
                     a.footer__division-title(href= i.href)= i.title
                 else
                     h3= i.title 
-                each j in i.menu
-                    - const menuSub = j.menu
-                    h4= j.name
-                    if j.menu
+                    if i.menu
                         nav.footer__nav-list
-                            if Array.isArray(menuSub)
-                                each k in menuSub
-                                    a(href= k.href)!= k.name
+                            each j in i.menu
+                                a(href= j.href)!= j.name
 .footer__footer 
     .footer__international 
         a(href="#") RUS
