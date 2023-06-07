@@ -41,7 +41,7 @@ forms &&
         if (form) {
             const nameEl = form.querySelector<HTMLInputElement>("input[name='name']")
             const emailEl = form.querySelector<HTMLInputElement>("input[name='email']")
-            const phoneEl = form.querySelector<HTMLInputElement>("input[name='phone']")
+            const phoneEl = form.querySelector<HTMLInputElement>("input[name='form_text_3']")
             const buttonEl = form.querySelector<HTMLInputElement>("button[type='submit']")
 
             const pre = document.createElement("pre")

@@ -4,6 +4,7 @@ menuFooter:
     href: "/about.html"
 
   - title: услуги
+    href: "/services.html"
     menu:
        
         - name: Размещение оборудования
@@ -24,6 +25,7 @@ menuFooter:
 
 
   - title: информационный центр
+    href: "/ic.html"
     menu:
         
           - name: Архив новостей

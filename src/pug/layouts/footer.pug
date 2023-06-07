@@ -8,12 +8,11 @@
             .footer__division
                 if i.href 
                     a.footer__division-title(href= i.href)= i.title
-                else
-                    h3= i.title 
-                    if i.menu
-                        nav.footer__nav-list
-                            each j in i.menu
-                                a(href= j.href)!= j.name
+
+                if i.menu
+                    nav.footer__nav-list
+                        each j in i.menu
+                            a(href= j.href)!= j.name
 .footer__footer 
     .footer__international 
         a(href="#") RUS
