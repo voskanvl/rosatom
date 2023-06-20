@@ -11,6 +11,10 @@ geo:
       - name: ЦОД Москва 3
         param: 2000 стойко-мест, 16 МВт.
         type: project
+      - name: ЦОД StoreData
+        param: 150 стойко-мест, 1,6 МВт.
+        type: active
+        
   - id: 69
     name: Тверская область
     dc:
@@ -24,9 +28,7 @@ geo:
       - name: ЦОД Xelent
         param: 984 стойко-мест, 10 МВт.
         type: active
-      - name: ЦОД StoreData
-        param: 150 стойко-мест, 1,6 МВт.
-        type: active
+      
   - id: 16
     name: Татарстан
     dc:

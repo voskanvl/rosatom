@@ -1,18 +1,18 @@
-import IMask from "imask";
-import { ZodError, z } from "zod";
+import IMask from "imask"
+// import { ZodError, z } from "zod";
 
 const initialData = {
     title: "для заказа осталось заполнить форму ниже",
     caption:
         "Спасибо, данные вашего заказа будут переданы в отдел продаж. После чего ожидайте звонка!",
-};
+}
 
 function createElement(className: string, text: string, type: string = "div") {
-    const element = document.createElement(type);
-    element.classList.add(className);
-    element.innerText = text;
+    const element = document.createElement(type)
+    element.classList.add(className)
+    element.innerText = text
 
-    return element;
+    return element
 }
 
 function createInput(
@@ -21,75 +21,74 @@ function createInput(
     className: string = "feedback__input",
     type: string = "text",
 ) {
-    const element = document.createElement("input");
-    element.classList.add(className);
-    element.name = name;
-    element.type = type;
-    element.placeholder = placeholder;
-
-    return element;
+    const element = document.createElement("input")
+    element.classList.add(className)
+    element.name = name
+    element.type = type
+    element.placeholder = placeholder
+    return element
 }
 
 export default function feedback({
     title,
     caption,
 }: typeof initialData = initialData): HTMLElement {
-    const element = document.createElement("form");
-    element.classList.add("feedback__body");
+    const element = document.createElement("form")
+    element.classList.add("feedback__body")
 
     const titleEl = createElement("feedback__title", title),
-        captionEl = createElement("feedback__caption", caption);
+        captionEl = createElement("feedback__caption", caption)
 
-    element.append(titleEl);
-    element.append(captionEl);
+    element.append(titleEl)
+    element.append(captionEl)
 
     const name = createInput("Имя", "name"),
         email = createInput("E-mail", "email"),
-        phone = createInput("", "phone");
+        phone = createInput("", "phone")
 
-    IMask(phone, { mask: "+{7}(000)000-00-00", lazy: false });
+    IMask(phone, { mask: "+{7}(000)000-00-00", lazy: false })
 
-    const textarea = document.createElement("textarea");
-    textarea.placeholder = "Чем мы можем вам помочь?";
-    textarea.classList.add("feedback__input");
-    textarea.cols = 30;
-    textarea.rows = 10;
+    const textarea = document.createElement("textarea")
+    textarea.placeholder = "Чем мы можем вам помочь?"
+    textarea.classList.add("feedback__input")
+    textarea.cols = 30
+    textarea.rows = 10
 
     const agree = createElement("feedback__agree", ""),
         check = createInput("", "agree", "feedback__agree-check", "checkbox"),
         agreeCaption = createElement(
             "feedback__agree-caption",
             "Даю согласие на обработку моих персональных данный в соответствии с политикой обработки персональных данных",
-        );
+        )
 
-    agree.append(check, agreeCaption);
+    agree.append(check, agreeCaption)
 
-    const submitEl = createInput("", "submit", "feedback__submit", "submit");
-    submitEl.value = "Записаться";
-    submitEl.disabled = true;
+    const submitEl = createInput("", "submit", "feedback__submit", "submit")
+    submitEl.value = "Записаться"
+    submitEl.disabled = true
 
-    element.append(name, email, phone, textarea, agree, submitEl);
+    element.append(name, email, phone, textarea, agree, submitEl)
 
     check.addEventListener("click", () => {
-        submitEl.disabled = !check.checked;
-    });
+        submitEl.disabled = !check.checked
+    })
 
-    submitEl.addEventListener("click", (event: Event) => {
-        event.preventDefault();
-        const schema = z.string().email({ message: "Invalid email address" });
+    // submitEl.addEventListener("click", (event: Event) => {
+    //     event.preventDefault()
+    //     // const schema = z.string().email({ message: "Invalid email address" });
 
-        try {
-            schema.parse(email.value);
-        } catch (error) {
-            const fail = error as ZodError;
-            console.log(fail);
-        }
+    //     try {
+    //         // schema.parse(email.value);
+    //     } catch (error) {
+    //         // const fail = error as ZodError;
+    //         // console.log(fail);
+    //     }
 
-        fetch("/mail.php", {
-            method: "POST",
-            body: new FormData(element),
-        });
-    });
+    //     fetch("/mail.php", {
+    //         method: "POST",
+    //         body: new FormData(element),
+    //     })
+    // })
 
-    return element;
+    return element
 }

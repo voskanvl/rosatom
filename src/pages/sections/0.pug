@@ -2,10 +2,10 @@
     //- img(src="../../../assets/images/Vectary-texture.png")
     img#img(src="../../../assets/man.jpg")
     img#img-blur(src="../../../assets/man-blur.jpg")
-    video#video(autoplay loop muted preload)
-        source(src="../../../assets/3.mp4" )
+    video#video(autoplay loop muted preload playsinline)
+        source(src="../../../assets/3.mp4" type="video/mp4")
 
-    aside.main-block__aside.main-block__aside--mobile
+    .main-block__aside.main-block__aside--mobile
         ul 
             each i in asideMenu
                 li 
