@@ -40,8 +40,9 @@ export default function touchedScroll() {
         y = event.touches[0].screenY
     }
 
-    const handleEnd = (event: TouchEvent) => {
+    const handleEnd = (event: TouchEvent | MouseEvent) => {
         const target = event.target as HTMLElement
+
         if (target.classList.contains("screen-switcher__item")) return target.click()
 
         ignoredElementOnTouch.click.forEach(e => {
@@ -61,9 +62,15 @@ export default function touchedScroll() {
 
         if (ignoredElementOnTouch.drop.some(e => !!target.closest(e))) return
 
-        if (isScrolable(target)) return
+        if (store.getState().activeScreenNumber !== 5 && isScrolable(target)) return
 
-        const delta = event.changedTouches[0].screenY - y
+        let delta = 0
+        if ("changedTouches" in event) {
+            delta = event.changedTouches[0].screenY - y
+        } else {
+            delta = event.screenY - y
+        }
+
         if (delta > 1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL)
             store.getState().dec()
         if (delta < -1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL)
@@ -74,4 +81,5 @@ export default function touchedScroll() {
 
     document.addEventListener("touchstart", handleStart, { passive: false })
     document.addEventListener("touchend", handleEnd, { passive: false })
+    document.addEventListener("mouseup", handleEnd, { passive: false })
 }

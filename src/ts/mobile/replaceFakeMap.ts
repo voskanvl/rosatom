@@ -2,15 +2,16 @@ import allocateRegionIcons from "../components/regions/allocateRegionIcons"
 import store from "../store"
 
 export default function replaceFakeMap() {
-    const fakeMap = document.querySelector<HTMLElement>("#fake-map")
     const regions = document.querySelector<HTMLElement>("#regions")
+    const img = document.querySelector<HTMLImageElement>("#regions > img")
+    const svg = document.querySelector<HTMLImageElement>("#regions > svg")
     const iconLayer = document.querySelector<HTMLElement>(".geonet__icon-layer")
 
     regions &&
-        fakeMap &&
-        fakeMap.addEventListener("click", () => {
-            fakeMap.style.display = "none"
-            regions.style.display = "block"
+        regions &&
+        regions.addEventListener("click", () => {
+            img && (img.style.display = "none")
+            svg && (svg.style.display = "block")
             iconLayer && (iconLayer.style.display = "block")
             allocateRegionIcons()
         })
@@ -18,8 +19,8 @@ export default function replaceFakeMap() {
     store.store.subscribe(() => {
         const a = matchMedia("(max-width: 768px)").matches
         if (!a) return
-        fakeMap && (fakeMap.style.display = "block")
-        regions && (regions.style.display = "none")
+        img && (img.style.display = "block")
+        svg && (svg.style.display = "none")
         iconLayer && (iconLayer.style.display = "none")
     })
 }
