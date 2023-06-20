@@ -5,16 +5,21 @@ import { ignoredElementOnTouch } from "../config"
 const THRESHOLD_TOUCHED_SCROLL = 0.1
 
 const isScrolable = (el: HTMLElement): boolean => {
-    const getOverflow = (el: Element): boolean => {
-        const { overflowY } = window.getComputedStyle(el)
-        return overflowY === "scroll" || overflowY === "auto"
+    const isOverflow = (el: Element): boolean => {
+        const { overflowY, height } = window.getComputedStyle(el)
+        const { scrollHeight } = el
+        console.log(scrollHeight, height)
+        // return overflowY === "scroll" || overflowY === "auto"
+        const parsedHeight = Math.ceil(parseFloat(height))
+        if (scrollHeight > parsedHeight && overflowY !== "hidden") return true
+        return false
     }
 
     let canParent = el
     while (
         !canParent.classList.contains("screen") &&
         canParent !== document.body &&
-        !getOverflow(canParent)
+        !isOverflow(canParent)
     ) {
         canParent = canParent.parentElement as HTMLElement
     }
@@ -54,27 +59,15 @@ export default function touchedScroll() {
             }
         })
 
-        // if (target.classList.contains("screen-switcher__item")) return target.click();
-        // ignoredElementOnTouch.click.forEach(e => {
-        //     const closestElement = target.closest(e) as HTMLElement;
-        //     if (closestElement && "click" in target) return target.click();
-
-        //     //Ищем среди предков первый кликабельный элемент
-        //     let currentEl = target;
-        //     while (!("click" in currentEl) || currentEl === document.body) {
-        //         currentEl = currentEl.parentElement!;
-        //     }
-        //     currentEl.click();
-        // });
-
         if (ignoredElementOnTouch.drop.some(e => !!target.closest(e))) return
 
         if (isScrolable(target)) return
 
         const delta = event.changedTouches[0].screenY - y
-        delta > 1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL
-            ? store.getState().dec()
-            : store.getState().inc()
+        if (delta > 1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL)
+            store.getState().dec()
+        if (delta < -1 && Math.abs(delta / innerHeight) > THRESHOLD_TOUCHED_SCROLL)
+            store.getState().inc()
 
         return true
     }

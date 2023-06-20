@@ -5,7 +5,15 @@ $change_lay: "width <= 768px"
     color: #fff
     height: 100vh
     position: relative
+    overflow: hidden
     // +cur-b
+
+    &__container.container
+        position: absolute
+        z-index: 2
+        height: max-content
+        height: 100vh
+        pointer-events: none
 
     &__title
         & > p
@@ -29,7 +37,7 @@ $change_lay: "width <= 768px"
                 margin-top: 1em
 
         &-right
-            & > #regions
+            & > #regions, #fake-map
                 top: 0
                 position: fixed
                 width: 100%
@@ -65,6 +73,9 @@ $change_lay: "width <= 768px"
         top: 0
         z-index: 2
 
+        +mq768
+            display: none
+
     &__region
         position: fixed
         top: 0
@@ -94,6 +105,8 @@ $change_lay: "width <= 768px"
         bottom: 10%
         width: max-content
         z-index: 11
+        opacity: 1
+        transition: opacity $std_trans
         @media (width <= 768px)
             translate: 0% 0%
             right: 6vw
@@ -119,10 +132,6 @@ $change_lay: "width <= 768px"
         &-right
             border-top: 2px solid #303031
 
-    & #regions > svg
-        // width: 100%
-        height: 100vh
-
     &__topopup
         visibility: hidden
         position: absolute
@@ -132,27 +141,49 @@ $change_lay: "width <= 768px"
         top: 0
         position: absolute
         // translate: 60% 0%
-        height: 50vh
+        // height: 100vh
         translate: pw(700) 0
+        overflow-y: hidden
+        // width: 100vw
         // left: 0vw
 
-        @media (width <= 1024px)
-            translate: pw(350) 0
+        // // @media (width <= 1024px)
+        // //     translate: pw(350) 0
+        // @media (width <= 1024px)
+        //     translate: pw(350) 0
         @media (width <= 768px)
             translate: 0 0
-        @media (width <= 600px)
-            translate: -300px 80px
+        // @media (width <= 600px)
+        //     // translate: -300px 80px
+        //     translate: 0px 80px
+
         @media (width <= 400px)
             translate: -330px 80px
 
-        //     translate: 50% 50%
+        & > *
+            overflow: hidden
 
-        // @media (width <= 768px)
-        //     translate: 30% 50%
+#regions
+    & > svg
+        // width: 100%
+        height: 100vh
+    +mq768
+        display: none
 
-        // @media (width <= 768px) and (orientation: landscape)
-        //     bottom: 0%
-        //     translate: 30% 0%
+#fake-map
+    // position: fixed
+    // top: 0
+    // left: 0
+    // width: 100vw
+    // height: 100vh
+    display: none
+
+    & > img
+        height: 100vh
+        object-fit: cover
+
+    +mq768
+        display: block
 
 @keyframes puls
     0%

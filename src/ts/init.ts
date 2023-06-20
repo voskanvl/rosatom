@@ -30,6 +30,8 @@ import randomizePulsIcons from "./components/regions/randomizePulsIcons"
 // import store from "./store"
 import changeSearchPopupByScreensAndMenu from "./components/popup/changeSearchPopupByScreensAndMenu"
 import handleCODSlider from "./components/sliders/handleCODSlider"
+import replaceFakeMap from "./mobile/replaceFakeMap"
+import hideGeonetPopupByScreen from "./components/regions/hideGeonetPopupByScreen"
 
 export default function init() {
     cursor()
@@ -96,4 +98,6 @@ export default function init() {
     randomizePulsIcons()
 
     handleCODSlider()
+    replaceFakeMap()
+    hideGeonetPopupByScreen()
 }

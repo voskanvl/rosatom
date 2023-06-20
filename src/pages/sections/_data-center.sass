@@ -4,7 +4,7 @@
     color: #303031
     // background: linear-gradient(to right, #dcfbfb 85%, #cee3f2) no-repeat
     background-size: contain
-    height: 100vw
+    height: 100vh
     & > img
         position: absolute
         inset: 0
@@ -44,6 +44,7 @@
         @media (width <= 768px)
             $precent-repeat: 33%
             grid-template-columns: repeat(auto-fit,minmax($precent-repeat,1fr))
+            grid-auto-rows: 11vh
         @media (width <= 425px)
             $precent-repeat: 49%
             grid-template-columns: repeat(auto-fit,minmax($precent-repeat,1fr))

@@ -17,8 +17,11 @@
         //         opacity: 1
 
     &__title
-        font-size: clamp(20px,40/1000*100vh,40px)
+        font-size: clamp(17px,40/1440*100vw,40px)
         font-weight: bold
+
+        +mq768
+            line-height: 1
 
     &__front, &__back
         opacity: 1
@@ -28,6 +31,7 @@
     &__back
         opacity: 0
         font-size: clamp(12px,18/1000*100vh,18px)
+        display: none
 
     &__caption
-        font-size: clamp(12px,18/1000*100vh,18px)
+        font-size: clamp(12px,18/1440*100vw,18px)
