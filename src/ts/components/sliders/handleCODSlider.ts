@@ -33,7 +33,7 @@ const createModal = () => {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100dvh;
+    height: 100vh;
     background: #000a;
     backdrop-filter: blur(4px);
     `

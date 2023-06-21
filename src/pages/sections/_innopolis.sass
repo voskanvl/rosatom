@@ -5,7 +5,8 @@
     color: #303031
 
     &__container.container
-        height: 100vh
+        // height: 100vh
+        overflow: hidden
 
     &__title
         margin-bottom: 14px
@@ -15,8 +16,10 @@
         display: grid
         grid-template-columns: repeat(2,49%)
         gap: 19px
+        overflow-x: hidden
         @media ( width <= 1440px)
             grid-template-columns: 100%
+            overflow-x: hidden
             overflow-y: auto
             +delete-scrollbar
 
