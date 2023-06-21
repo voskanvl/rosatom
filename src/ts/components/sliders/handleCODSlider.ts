@@ -85,6 +85,7 @@ const createSlider = (root: HTMLElement, id: string): HTMLElement => {
                 `<li class="splide__slide"><img class="innopolis__img innopolis__img--fullscreen" data-id="${key}" src="${src[0]}"></li>`,
         )
         .join("")
+
     slider.innerHTML = `
         <section class="splide" id="${id}">
             <div class="splide__track">
@@ -140,7 +141,10 @@ export default function handleCODSlider() {
     if (!innopolisSlider) return
 
     const ID = "modal-innopolis"
+    let isModalOpen = false
+
     innopolisSlider.addEventListener("click", async ({ target }: Event) => {
+        if (isModalOpen) return
         const targetElement = (target as HTMLElement).closest(".splide__slide")
         if (!targetElement) return
 
@@ -150,10 +154,17 @@ export default function handleCODSlider() {
         const slider = createSlider(innopolisSlider, ID)
 
         document.body.append(modal)
+        isModalOpen = true
+
         const { controls, left, right } = createControls()
         modal.append(slider, controls)
 
         const { sliderSplideInstance, deleteSlider } = iniSlider(slider, ID, { left, right })
+        console.log(
+            "sliderSplideInstance",
+            sliderSplideInstance.options.perPage,
+            sliderSplideInstance.options.perMove,
+        )
 
         setTimeout(() => {
             ariaLabel && sliderSplideInstance && sliderSplideInstance.go(parseInt(ariaLabel) - 1)
@@ -163,6 +174,7 @@ export default function handleCODSlider() {
             await doClose
             deleteSlider()
             modal.remove()
+            isModalOpen = false
         } catch (error) {
             console.log(error)
         }

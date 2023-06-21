@@ -18,10 +18,15 @@
 
     &__title
         &--small
-            +fz(30,1024,60)
+            +fz(18,1024,60)
             font-weight: bold
             color: #303031
             margin-bottom: ph(31)
 
     .cloud__order
         margin-top: 2em
+
+    .about__split
+        +mq768
+            grid-template-columns: 100%
+            row-gap: 1rem

@@ -7,6 +7,9 @@
             border-radius: 10px
             overflow: hidden
 
+            +mq425
+                width: max(230px,15vw)
+
         & > p
             +string-limiter()
 
@@ -31,6 +34,9 @@
             width: 80vw
             height: 80vh
             margin-inline: auto
+            display: grid
+            place-items: center
+
             & img, video
                 rotate: 0
                 aspect-ratio: 16 / 8
@@ -38,6 +44,10 @@
                 object-fit: cover
                 object-position: center
                 border-radius: 10px
+
+            &__arrows
+                width: 100%
+                position: absolute
 
         &[open]
             z-index: 200
@@ -49,3 +59,4 @@
         top: 2em
         right: 2em
         background: url("../../../assets/svg/x.svg") no-repeat
+        z-index: 2
