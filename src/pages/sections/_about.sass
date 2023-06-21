@@ -186,6 +186,7 @@
     &__blue
         background: #6EABDD00
         color: #fff
+
         height: 100%
         border-radius: 10px
         padding: 1em
@@ -197,6 +198,8 @@
 
         +mq768
             grid-template-columns: 100%
+            grid-template-rows: max-content auto
+            row-gap: 2vh
 
         // img
         //     width: 80%
@@ -382,8 +385,9 @@
     &__blue-right
         display: flex
         flex-direction: column
+        justify-content: flex-start
         row-gap: ph(31)
-        height: 323px
+        // height: 323px
         overflow: auto
 
         scrollbar-width: thin
