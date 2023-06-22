@@ -46,7 +46,6 @@ export default function touchedScroll() {
         if (target.classList.contains("screen-switcher__item")) return target.click()
 
         ignoredElementOnTouch.click.forEach(e => {
-            console.log("🚀 ~ target.tagName :", target.tagName, "click" in target)
             let currentEl = target
             if (target.closest(e)) {
                 if ("click" in target) {
@@ -81,5 +80,5 @@ export default function touchedScroll() {
 
     document.addEventListener("touchstart", handleStart, { passive: false })
     document.addEventListener("touchend", handleEnd, { passive: false })
-    document.addEventListener("mouseup", handleEnd, { passive: false })
+    // document.addEventListener("mouseup", handleEnd, { passive: false })
 }
