@@ -26,7 +26,7 @@ const setScreenHandler = (x: number) => (state: StoreState) => {
     // if (state.block) return state;
 
     const { activeScreenElement: currentElement, screens } = state
-    if (!currentElement) throw Error("нет активного элемента. ошибка инициализации")
+    if (!currentElement) console.warn("нет активного элемента. ошибка инициализации")
 
     let next = x
     if (next < 0) next = 0
@@ -35,7 +35,7 @@ const setScreenHandler = (x: number) => (state: StoreState) => {
     const nextElement = screens.find(e => e.dataset.number === next + "")
     if (!nextElement) throw Error("невозможно найти следующий скрин")
 
-    currentElement.removeAttribute("active")
+    currentElement && currentElement.removeAttribute("active")
     recomposing(x, state.screens)
 
     nextElement.setAttribute("active", "active")

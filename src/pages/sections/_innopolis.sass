@@ -142,21 +142,34 @@
     .splide__track
         height: 100%
 
+#modal-innopolis > #mask-splide
+    position: fixed
+    inset: 0
+    mask-image: linear-gradient(to right, #000 10%, #0000 40%, #0000 60%, #000 90%)
+    z-index: 1
+    background: #000
+    pointer-events: none
+
+    +mq1024
+        mask-image: none
+        mask-image: linear-gradient(to right, #000 0%, #0000 10%, #0000 90%, #000 100%)
+        // background: #0000
+
 #modal-innopolis .splide__slide
-    --from: 1%
-    --to: 60%
-    mask-image: linear-gradient(to right, #0000 var(--from), #0000 var(--to))
-    transition: $std_trans
-    will-change: transform
+    // --from: 1%
+    // --to: 60%
+    // mask-image: linear-gradient(to right, #0000 var(--from), #0000 var(--to))
+    // transition: $std_trans
+    // will-change: transform
 
-    &.is-next
-        mask-image: linear-gradient(to right, #000 var(--from), transparent var(--to))
+    // &.is-next
+    //     mask-image: linear-gradient(to right, #000 var(--from), transparent var(--to))
 
-    &.is-prev
-        mask-image: linear-gradient(to left, #000 var(--from), transparent var(--to))
+    // &.is-prev
+    //     mask-image: linear-gradient(to left, #000 var(--from), transparent var(--to))
 
-    &.is-active
-        mask-image: linear-gradient(to left, #000 var(--from), #000 var(--to))
+    // &.is-active
+    //     mask-image: linear-gradient(to left, #000 var(--from), #000 var(--to))
 
         // @media (width<=1024px)
         //     margin-inline: 10px

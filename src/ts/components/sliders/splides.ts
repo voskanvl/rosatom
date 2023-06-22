@@ -1,6 +1,7 @@
 import Splide, { SlideComponent } from "@splidejs/splide"
 import { MSplides } from "./initSlides"
 import store from "../../store"
+import debounce from "../../helpers/debounce"
 
 export default function splides() {
     const splidesInstance = new MSplides()
@@ -26,9 +27,9 @@ export default function splides() {
         ".innopolis__control-button--right",
     )
     !!innopolisSplideControlLeft &&
-        (innopolisSplideControlLeft.onclick = () => innopolisSplideInstance.go("<"))
+        (innopolisSplideControlLeft.onclick = debounce(() => innopolisSplideInstance.go("<"), 200))
     !!innopolisSplideControlRight &&
-        (innopolisSplideControlRight.onclick = () => innopolisSplideInstance.go(">"))
+        (innopolisSplideControlRight.onclick = debounce(() => innopolisSplideInstance.go(">"), 200))
 
     !!innopolisSplideInstance &&
         innopolisSplideInstance.on("active", (slide: SlideComponent) => {

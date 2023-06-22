@@ -1,6 +1,7 @@
 import { MSplides } from "./initSlides"
 import xsvg from "../../../../assets/svg/x.svg"
 import arrow from "../../../../assets/svg/arrow-right.svg"
+import debounce from "../../helpers/debounce"
 
 const createControls = () => {
     const controls = document.createElement("div")
@@ -93,6 +94,7 @@ const createSlider = (root: HTMLElement, id: string): HTMLElement => {
                     ${insertingImages}
                 </ul>
             </div>
+            <div id="mask-splide"></div>
         </section>
     `
 
@@ -127,8 +129,20 @@ const iniSlider = (slider: HTMLElement, id: string, constrols?: ControlsType) =>
             },
         })
     const sliderSplideInstance = splidesInstance.instances["#" + id]
-    constrols && (constrols.left.onclick = () => sliderSplideInstance.go("-1"))
-    constrols && (constrols.right.onclick = () => sliderSplideInstance.go("+1"))
+    constrols &&
+        constrols.left.addEventListener(
+            "click",
+            debounce(() => {
+                sliderSplideInstance.go("-1")
+            }, 200),
+        )
+    constrols &&
+        constrols.right.addEventListener(
+            "click",
+            debounce(() => {
+                sliderSplideInstance.go("+1")
+            }, 200),
+        )
 
     return {
         sliderSplideInstance,
