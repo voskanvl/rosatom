@@ -1,15 +1,21 @@
 .banner
-    height: max(420px,33vw)
+    // height: max(420px,33vw)
     position: relative
     display: grid
     grid-template-columns: repeat(2,49%)
     column-gap: 2%
     place-items: center start
+    margin-top: 20px
+    margin-bottom: 30px
 
-    +mq1440
-        grid-template-columns: 100%
-        grid-template-rows: auto 0
-        margin-top: 100px
+    // +mq1440
+    //     grid-template-columns: 100%
+    //     grid-template-rows: auto 0
+    //     margin-top: 100px
+
+    +mq1024
+        grid-template-columns: 1fr
+        grid-template-rows: 50vw auto
 
     &--left
         display: flex
@@ -18,18 +24,29 @@
         font-size: clamp(16px,24 / 1024 * 100vw,24px)
         z-index: 1
 
+        +mq1024
+            grid-row-start: 2
+
     &--right
+        position: relative
+        width: 100%
+        height: 100%
         img, svg
             place-self: center end
-            position: absolute
+            // position: absolute
             top: 0
             right: 0
             height: 100%
+            width: 100%
             aspect-ratio: 1
 
-            +mq1024
-                filter: contrast(0.2) brightness(1.8)
+            // +mq1024
+            //     filter: contrast(0.2) brightness(1.8)
 
-            +mq425
-                width: 100%
-                height: unset
+            // +mq425
+            //     width: 100%
+            //     height: unset
+
+    // &--right svg
+    //     +mq1024
+    //         top: -100px

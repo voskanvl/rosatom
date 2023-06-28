@@ -9,20 +9,38 @@ include ../../components/banner/banner.pug
         +bread-crumbs([{name: "Услуги", href:"/services.html"}, {name: "Дополнительные услуги", href:"#"}])
 
 
-        +banner("../../../assets/svg/additional.svg")
-            .equipment__title.title.text-masked-element(style="--background: #303031; ")
-                p ДОПОЛНИТЕЛЬНЫЕ
-                p УСЛУГИ
-            div
-                p Давно выяснено, что при оценке дизайна и 
-                p композиции читаемый текст мешает сосредоточиться. 
-                p Lorem Ipsum используют потому, что тот обеспечивает
-                p более или менее стандартное 
+        //- +banner("../../../assets/svg/additional.svg")
+        //-     .equipment__title.title.text-masked-element(style="--background: #303031; ")
+        //-         p ДОПОЛНИТЕЛЬНЫЕ
+        //-         p УСЛУГИ
+        //-     div
+        //-         p Давно выяснено, что при оценке дизайна и 
+        //-         p композиции читаемый текст мешает сосредоточиться. 
+        //-         p Lorem Ipsum используют потому, что тот обеспечивает
+        //-         p более или менее стандартное 
 
-            .cloud__order
-                button.button.additional-services__button= "Заказать услугу \u27F6" 
-                button.button.button--transparent
-                    a(href="/kb.html") БАЗА ЗНАНИЙ 
+        //-     .cloud__order
+        //-         button.button.additional-services__button= "Заказать услугу \u27F6" 
+        //-         button.button.button--transparent
+        //-             a(href="/kb.html") БАЗА ЗНАНИЙ 
+
+        .banner 
+            .banner--left
+                .telecom__title.title.text-masked-element(style="--background: #303031; ") 
+                    p ДОПОЛНИТЕЛЬНЫЕ
+                    p УСЛУГИ
+                div
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
+                .cloud__order 
+                    button.button= "Заказать услугу \u27F6"  
+                    button.button.button--transparent
+                        a(href="/kb.html") БАЗА ЗНАНИЙ  
+
+            .banner--right
+                include ../../../assets/svg/additional.svg
 
         .equipment__list
             each i in additionalServices

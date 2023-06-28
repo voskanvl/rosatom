@@ -1,14 +1,15 @@
 .telecom
     &__container.container
+        background: #ECF0F3
         height: unset
 
         +mq425
             padding-inline: 5%
 
     &__title.title.text-masked-element
-        margin-top: ph(90)
-        margin-bottom: -100px
-        padding-bottom: 0
+        // margin-top: ph(90)
+        // margin-bottom: -100px
+        // padding-bottom: 0
 
     &__row
         // display: flex
@@ -30,3 +31,8 @@
         +mq768
             grid-template-columns: 100%
             row-gap: 1rem
+
+    .banner
+        margin-top: 0
+        & > svg
+            scale: 1.4
