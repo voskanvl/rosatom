@@ -13,6 +13,23 @@
         //     margin-bottom: 50px
         //     height: auto
 
+        svg g#fly1
+            animation: fly-up 3s linear infinite
+        svg g#fly2
+            animation: fly-up 3s 0.5s linear infinite
+        svg g#fly3
+            animation: fly-up 3s 0.7s linear infinite
+
+        svg g#fly1mirror
+            animation: fly-down 3s linear infinite alternate
+        svg g#fly2mirror
+            animation: fly-down 3s 0.5s linear infinite alternate
+        svg g#fly3mirror
+            animation: fly-down 3s 0.7s linear infinite alternate
+
+        svg #wide-web
+            background: linear-gradient(red, black)
+
     .convex
         display: grid
         place-items: center
@@ -20,3 +37,26 @@
 
     &__button
         max-width: 15em
+
+@keyframes fly-up
+    0%
+        translate: 0 0
+
+    50%
+        translate: 0 -30px
+
+    100%
+        translate: 0 0
+
+@keyframes fly-down
+    0%
+        translate: 0 0
+        opacity: 0.3
+
+    50%
+        translate: 0 30px
+        opacity: 0.1
+
+    100%
+        translate: 0 0
+        opacity: 0.3
