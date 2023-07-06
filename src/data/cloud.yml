@@ -14,16 +14,6 @@ cloud:
     max: 20000
     label: SSD Standart
     unit: Gb
-  # - val: 20000
-  #   min: 1000
-  #   max: 20000
-  #   label: SSD Fast
-  #   unit: Gb
-  # - val: 4950
-  #   min: 1000
-  #   max: 20000
-  #   label: SSD Ultra
-  #   unit: Gb
   - val: 150
     min: 1
     max: 150

@@ -1,0 +1,31 @@
+include ../../pug/splides.pug
+include ../../components/service-card/service-card.pug
+include ../../components/range/range.pug
+include ../../components/tabs/tabs.pug
+include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../blocks/actions/actions.pug
+
+.rent 
+    .rent__container.container
+
+        +bread-crumbs([{name: "Услуги", href:"/services.html"}, {name: " Аренда готового сервера", href:"#"}])
+
+        .banner 
+            .banner--left
+                .cloud__title.title.text-masked-element(style="--background: #303031; ")
+                    p ИНФОРМАЦИОННАЯ
+                    p БЕЗОПАСНОСТЬ
+                div
+                    p Давно выяснено, что при оценке дизайна и 
+                    p композиции читаемый текст мешает сосредоточиться. 
+                    p Lorem Ipsum используют потому, что тот обеспечивает
+                    p более или менее стандартное 
+
+                .cloud__order  
+                    button.button= "Заказать услугу \u27F6"
+                    button.button.button--transparent
+                        a(href="/kb.html") БАЗА ЗНАНИЙ  
+
+            .banner--right
+                include ../../../assets/svg/equipment.svg
+

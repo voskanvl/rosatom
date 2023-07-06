@@ -100,4 +100,10 @@ export default function init() {
     handleCODSlider()
     replaceFakeMap()
     hideGeonetPopupByScreen()
+
+    setTimeout(() => {
+        const contactsData = document.querySelector<HTMLElement>(".contacts__data")
+        document.body.focus()
+        contactsData && contactsData.scrollTo(0, 0)
+    }, 1200)
 }

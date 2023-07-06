@@ -5,6 +5,11 @@ include ../../components/service-card/service-card.pug
     .service-center__container.container
         .service-center__title.title.text-masked-element(style="--background: #fff") УСЛУГИ
         ul.service-center__list
-            each i in serviceCards
+            each i in menu.find(e=>e.title==="услуги").menu
                 li.service-center__card
-                    +service-card(i)
+                    .service-card__container(class=x?"service-card__container--"+x:"")
+                        .service-card__title= i.name
+                        ul.service-card__list
+                            each j in i.menu
+                                li
+                                    a(href= j.href)= j.name

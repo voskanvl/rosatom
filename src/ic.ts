@@ -109,7 +109,8 @@ splide &&
         prevShot && prevShot.removeAttribute("current")
         item && item.setAttribute("current", "current")
 
-        item && item.scrollIntoView({ behavior: "smooth", block: "center" })
+        document.body.style.overflow = "hidden"
+        item && item.scrollIntoView({ block: "nearest", behavior: "smooth" })
         item &&
             codNewsList &&
             codNewsList.scrollTo({
@@ -117,5 +118,6 @@ splide &&
 
                 behavior: "smooth",
             })
+        document.body.style.overflow = ""
     })
 //---

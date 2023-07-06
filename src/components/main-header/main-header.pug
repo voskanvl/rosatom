@@ -1,22 +1,5 @@
 include ../accordion/accordion.pug
-mixin menuList(arr)
-    each j in arr
-        if j.menu 
-            li.list__item.list__item--big 
-                if j.href
-                    a(href= j.href)= j.name
-                else 
-                    span!= j.name
-
-                //--- заменил в предыдущем теге span на a, при выключеной обрабоке меню
-
-                ul.list--details     
-                    each k in j.menu 
-                        li.list__item.list__item--small
-                            a(href=k.href)!= k.name
-        else
-            li.list__item.list__item--big
-                a(href=j.href)!= j.name
+include ./menu-list.pug
 
 
 
@@ -49,8 +32,11 @@ nav.main-header.main-header--white
     ul.menu
         each i in menu 
             li.menu__item
+
                 ul.list
-                    +menuList(i.menu)
+                    //- span.list-header(style="position:absolute;")= i.title
+                    .wrapper
+                        +menuList(i)
                     img.cristal(src="../../../assets/svg/veil.svg")
                 if !i.menu.length
                     a(href= i.href)= i.title

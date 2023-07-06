@@ -80,11 +80,11 @@ export default class SingleRange {
         this.createElement()
         this.mount()
 
-        const elementOptions = this.createOptionElements(valuesArray)
-        const scale = this.createScaleByStep(elementOptions)
-        this.options.scale?.is &&
-            scale &&
-            this.element?.insertAdjacentElement("afterend", scale.datalist)
+        if (this.options.scale?.is) {
+            const elementOptions = this.createOptionElements(valuesArray)
+            const scale = this.createScaleByStep(elementOptions)
+            scale && this.element?.insertAdjacentElement("afterend", scale.datalist)
+        }
 
         this.listenConnectedElement = this.listenConnectedElement.bind(this)
     }

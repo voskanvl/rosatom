@@ -20,6 +20,10 @@ export default function toggleMainMenu() {
                     menu !== menuOthers && menuOthers.classList.remove("show"),
             )
             menu.classList.toggle("show")
+
+            triggers.forEach(e => e.classList.remove("active"))
+            trigger.classList.add("active")
+
             if (matching.some(({ menu }) => menu.classList.contains("show"))) {
                 Store.menuStore.getState().open()
                 mainMenu && mainMenu.classList.add("show")

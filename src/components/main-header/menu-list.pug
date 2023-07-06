@@ -1,0 +1,11 @@
+mixin menuList(item)
+    if (item.menu && item.menu.length)
+        each block in item.menu 
+            ul.list--details 
+                a.list--details-title(href= block.href)= block.name
+                ul.list--details 
+                    if (block.menu && block.menu.length)
+                        each subblock in block.menu
+                            li
+                                a(href= subblock.href)= subblock.name
+

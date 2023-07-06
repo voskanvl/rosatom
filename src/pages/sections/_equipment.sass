@@ -52,12 +52,12 @@
 
     &__item-left
         display: grid
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(1, 1fr)
         column-gap: pw(26)
 
         +mq1024
             grid-template-columns: 100%
-            grid-template-rows: repeat(2, 1fr)
+            grid-template-rows: repeat(1, 1fr)
             row-gap: 30px
 
     &__item-right
@@ -88,4 +88,4 @@
     &__item-left-right
         display: flex
         flex-direction: column
-        row-gap: ph(45)
+        row-gap: 1rem

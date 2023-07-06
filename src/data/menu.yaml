@@ -6,49 +6,101 @@ menu:
     - title: услуги
       href: "/services.html"
       menu:
-          - name: услуги
-            menu:
-                - name: Размещение оборудования
-                  href: "/placement.html"
-                - name: Аренда серверного оборудования
-                  href: "/rent.html"
-                - name: Облачная инфраструктура
-                  href: "/cloud.html"
-                - name: Услуги связи
-                  href: "/telecom.html"
-                - name: Дополнительные услуги
-                  href: "/additional-services.html"
-                - name: Информационнная безопасность
+            - name: Размещение оборудования
+              href: "/placement.html"
+              menu: 
+                - name: Аренда машинного зала
+                  href: "#"
+                - name: Аренда стойки
+                  href: "#"
+                - name: Аренда выделенной секции в серверном шкафу
+                  href: "#"
+                - name: Аренда юнит места в стойке
+                  href: "#"
+                - name: Организация индивидуальной защищенной зоны в машинном зале
+                  href: "#"
+            - name: Аренда серверного оборудования
+              href: "/rent.html"
+              menu: 
+                - name: Аренда выделенного сервера
+                  href: "#"
+                - name: Аренда  выделенного сервера с GPU
+                  href: "#"
+            - name: Облачная инфраструктура
+              href: "/cloud.html"
+              menu:
+                - name: IAAS, PAAS, SAAS
+                  href: "#"
+                - name: Резервное копирование
+                  href: "#"
+                - name: Развертывание частного облака
+                  href: "#"
+            - name: Услуги связи
+              href: "/telecom.html"
+              menu: 
+                - name: Доступ в Интернет
+                  href: "#"
+                - name: Организация сетей передачи данных
+                  href: "#"
+                - name: Аренда каналов связи до любых площадок
+                  href: "#"
+                - name: Аренда темных волокон
+                  href: "#"
+                - name: Аренда складских помещений
+                  href: "#"
+            - name: Дополнительные услуги
+              href: "/additional-services.html"
+              menu:
+                - name: Услуга «Умные руки»
+                  href: "#"
+                - name: Online-мониторинг в личном кабинете клиента
+                  href: "#"
+                - name: Аренда офисных помещений, складов
+                  href: "#"
+                - name: Выделенный паркинг для клиентов
+                  href: "#"
+                - name: Комфортная зона выгрузки
                   href: "#"
 
-          - name: Аренда сереверного оборудования
-            menu:
-                - name: Аренда готового сервера
-                  href: "/rent.html"
-                - name: Конфигуратор
-                  href: "/rent.html?config"
+            - name: Информационнная безопасность
+              href: "#"
+              menu:
+                - name: Защита от DDoS-атак
+                  href: "#"
+                - name: Фильтрация нежелательного трафика
+                  href: "#"
+                - name: Web Application FireWall
+                  href: "#"
+                - name: PCI DSS
+                  href: "#"
+                - name: Размещение персональных данных в соответствии с 152-ФЗ
+                  href: "#"
+
+
+
 
     - title: информационный центр
       href: "/ic.html"
       menu:
-          - name: информационный центр
+          - name: информационный центр (центр)
+            href: "/ic.html"
             menu:
-                - name: информационный центр (центр)
-                  href: "/ic.html"
-                - name: Архив новостей
-                  href: "/newsarchive.html"
-                - name: Отзывы (+ форма оставить отзыв)
-                  href: "#"
-                - name: Фотоархив
-                  href: "/photoarchive.html"
-                - name: Видеоархив
-                  href: "/videoarchive.html"
-                - name: Заявка на посещение (экскурсию) в ЦОД
-                  href: "/excursion.html"
-                - name: Документы
-                  href: "/docs.html"
-                - name: Вакансии
-                  href: "/vacancy.html"
+            - name: информационный центр (центр)
+              href: "/ic.html"
+            - name: Архив новостей
+              href: "/newsarchive.html"
+            - name: Отзывы (+ форма оставить отзыв)
+              href: "#"
+            - name: Фотоархив
+              href: "/photoarchive.html"
+            - name: Видеоархив
+              href: "/videoarchive.html"
+            - name: Заявка на посещение (экскурсию) в ЦОД
+              href: "/excursion.html"
+            - name: Документы
+              href: "/docs.html"
+            - name: Вакансии
+              href: "/vacancy.html"
 
     - title: контакты
       menu: []
