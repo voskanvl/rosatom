@@ -1,0 +1,32 @@
+include ../../pug/splides.pug
+include ../../components/service-card/service-card.pug
+include ../../components/range/range.pug
+include ../../components/tabs/tabs.pug
+include ../../components/bread-crumbs/bread-crumbs.pug
+include ../../components/banner/banner.pug
+include ../../blocks/actions/actions.pug
+
+
+.services 
+    .services__container.container
+
+
+        .banner 
+            .banner--left
+                .services__title.title.text-masked-element(style="--background: #303031; margin-top: 0;") КОД СТАТУСА 404
+                div
+                    p К сожалению запрашиваемая Вами страница
+                    p на сервере отсутвует
+
+                button.button(onclick="history.back()" style="width: max-content;") ← Вернуться на предыдущую страницу
+
+
+
+            .banner--right
+                include ../../../assets/svg/404.svg
+
+
+
+
+
+
