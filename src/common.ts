@@ -4,10 +4,12 @@ import "@splidejs/splide/css"
 import initHeader from "./ts/initHeader"
 import IMask from "imask"
 import { setBlackCursor } from "./ts/components/cursor/cursor"
+import store from "./ts/store"
 // import { ZodError, z } from "zod"
 
 initHeader()
 setBlackCursor()
+store.lockStore.getState().lock()
 
 const phones = document.querySelectorAll<HTMLInputElement>("input[name='phone']")
 phones &&

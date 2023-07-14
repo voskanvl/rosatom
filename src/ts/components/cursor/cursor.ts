@@ -1,13 +1,16 @@
 import { SCREEN_NUMBER_TO_CHANGE } from "../../config"
 import store from "../../store"
 
+const CURSOR_BLACK = "url('../../assets/cursor/mini-black.svg') 10 10, none"
+const CURSOR_WHITE = "url('../../assets/cursor/mini-white.svg') 10 10, none"
+
 export const setBlackCursor = () => {
-    document.body.style.cursor = "url('../../assets/cursor/mini-black.svg') 10 10, none"
+    document.body.style.cursor = CURSOR_BLACK
     const curR = document.querySelector<HTMLElement>(".cursor__round")
     curR && (curR.style.borderColor = "#303031")
 }
 export const setWhiteCursor = () => {
-    document.body.style.cursor = "url('../../assets/cursor/mini-white.svg') 10 10, none"
+    document.body.style.cursor = CURSOR_WHITE
     const curR = document.querySelector<HTMLElement>(".cursor__round")
     curR && (curR.style.borderColor = "#fff")
 }
@@ -16,15 +19,15 @@ export const handlerStore = (cursorRound: HTMLElement, x: boolean) => {
     x
         ? (function () {
               cursorRound.style.setProperty("--color", "#fff")
-              document.body.style.cursor = "url('../../assets/cursor/mini-white.svg') 10 10, none"
+              document.body.style.cursor = CURSOR_WHITE
           })()
         : (function () {
               cursorRound.style.setProperty("--color", "#303031")
-              document.body.style.cursor = SCREEN_NUMBER_TO_CHANGE.some(
-                  e => e === store.store.getState().activeScreenNumber,
-              )
-                  ? "url('../../assets/cursor/mini-white.svg') 10 10, none"
-                  : "url('../../assets/cursor/mini-black.svg') 10 10, none"
+              document.body.style.cursor =
+                  !store.lockStore.getState().state &&
+                  SCREEN_NUMBER_TO_CHANGE.some(e => e === store.store.getState().activeScreenNumber)
+                      ? CURSOR_WHITE
+                      : CURSOR_BLACK
           })()
 }
 
