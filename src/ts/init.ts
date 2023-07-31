@@ -32,6 +32,7 @@ import changeSearchPopupByScreensAndMenu from "./components/popup/changeSearchPo
 import handleCODSlider from "./components/sliders/handleCODSlider"
 import replaceFakeMap from "./mobile/replaceFakeMap"
 import hideGeonetPopupByScreen from "./components/regions/hideGeonetPopupByScreen"
+import refInAbout from "./refInAbout"
 
 export default function init() {
     cursor()
@@ -106,4 +107,6 @@ export default function init() {
         document.body.focus()
         contactsData && contactsData.scrollTo(0, 0)
     }, 1200)
+
+    refInAbout()
 }

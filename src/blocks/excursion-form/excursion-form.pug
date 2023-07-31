@@ -8,22 +8,22 @@ form.excursion-form(action="mail.php")
             span Представитель компании
 
     fieldset#maingroup
-        input#name(type="text" name="name" placeholder="ФИО контактного лица")
+        input.fl#name(type="text" name="name" placeholder="ФИО контактного лица")
         label.excursion-form__error(for="name")
 
-        input#phone(type="text" name="phone" placeholder="Телефон контактного лица")
+        input.fl#phone(type="text" name="phone" placeholder="Телефон контактного лица")
         label.excursion-form__error(for="phone")
 
-        input#email(type="text" name="email" placeholder="Email")
+        input.fl#email(type="text" name="email" placeholder="Email")
         label.excursion-form__error(for="email") 
 
-        input#role(type="text" name="role" placeholder="Дожность контактного лица" data-forul)
+        input.ul#role(type="text" name="role" placeholder="Дожность контактного лица" data-forul)
         label.excursion-form__error(for="role")
 
-        input#company(type="text" name="company" placeholder="Название компании" data-forul)
+        input.ul#company(type="text" name="company" placeholder="Название компании" data-forul)
         label.excursion-form__error(for="company")
 
-        input#sphere(type="text" name="sphere" placeholder="Сфера деятельности" data-forul)
+        input.ul#sphere(type="text" name="sphere" placeholder="Сфера деятельности" data-forul)
         label.excursion-form__error(for="sphere") 
 
     fieldset#disclamer

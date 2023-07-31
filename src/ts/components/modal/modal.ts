@@ -7,8 +7,8 @@ export default function modal(
     { blockScroll }: ModalOptionType = { blockScroll: true },
 ) {
     if (blockScroll) {
-        document.body.style.height = "100vh"
-        document.body.style.overflowY = "hidden"
+        // document.body.style.height = "100vh"
+        // document.body.style.overflowY = "hidden"
     }
     const modalEl = document.createElement("div")
     const closeEl = document.createElement("div")
@@ -21,8 +21,8 @@ export default function modal(
     document.body.append(modalEl)
 
     closeEl.addEventListener("click", () => {
-        document.body.style.height = ""
-        document.body.style.overflowY = ""
+        // document.body.style.height = ""
+        // document.body.style.overflowY = ""
         modalEl.remove()
     })
 

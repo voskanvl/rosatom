@@ -28,7 +28,7 @@ setWhiteCursor()
 const form = document.querySelector<HTMLFormElement>("form")
 const fieldsetUlEl = form && form.querySelector<HTMLFieldSetElement>("fieldset#ulgroup")
 const inputUlEl = form && form.querySelector<HTMLInputElement>("input[name='ul'][value='yes']")
-const ulFields = form && form.querySelectorAll<HTMLInputElement>("input[data-forul]")
+const ulFields = form && form.querySelectorAll<HTMLInputElement>("input.ul")
 const phoneEl = form && form.querySelector<HTMLInputElement>("input[name='phone']")
 // const errorEls = form && form.querySelectorAll<HTMLInputElement>(".excursion-form__error")
 

@@ -139,7 +139,8 @@ button.button
     backdrop-filter: blur(6px)
     display: grid
     place-items: center
-    z-index: 2
+    z-index: 200
+    animation: show-modal 1s 1
 
     &__close
         background: url("../../assets/svg/x-square.svg") no-repeat
@@ -148,6 +149,12 @@ button.button
         position: absolute
         top: -40px
         right: -40px
+
+@keyframes show-modal
+    0%
+        opacity: 0
+    100%
+        opacity: 1
 
 .feedback
 

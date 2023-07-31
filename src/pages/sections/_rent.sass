@@ -57,3 +57,37 @@
 
     // .banner svg
     //     width: 50%
+
+    svg g#fly1
+        animation: fly-up 3s linear infinite
+    svg g#slide
+        animation: slide 3s 0.5s linear infinite
+    svg g#swing
+        animation: swing 3s 0.7s linear infinite
+
+@keyframes fly-up
+    0%
+        translate: 0 0
+
+    50%
+        translate: 0 -30px
+
+    100%
+        translate: 0 0
+
+@keyframes slide
+    0%
+        translate: 0 0
+
+    33%
+        translate: 30px 0
+
+    66%
+        translate: -30px 0
+
+    100%
+        translate: 0 0
+
+@keyframes swing
+    50%
+        rotate: 1 0 1 5deg

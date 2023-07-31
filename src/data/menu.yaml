@@ -1,8 +1,29 @@
 menu:
     - title: о компании
-      menu: []
       href: "/about.html"
-
+      menu: 
+        - name: О компании
+          href: "/about.html"
+          menu:
+            - name: Баннер
+              href: /?q=0
+            - name: ЦОД в цифрах
+              href: /?q=1
+            - name: Услуги
+              href: /?q=2
+            - name: Преимущества
+              href: /?q=3
+            - name: Геораспеределенная сеть
+              href: /?q=4
+            - name: ЦОД Иннополис
+              href: /?q=5
+            - name: Наша команда
+              href: /?q=6
+            - name: Партнеры
+              href: /?q=7
+            - name: Контакты
+              href: /?q=8
+          
     - title: услуги
       href: "/services.html"
       menu:
